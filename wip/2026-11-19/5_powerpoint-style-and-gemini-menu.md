@@ -46,15 +46,6 @@ Thử mở thư mục Drive bằng WebFetch; không đọc được thì chỉ d
 - [ ] Máy trung gian: 20 lượt / 5 phút / người + trần chung; deploy, thử gọi thật, sửa `proxy/HUONG-DAN.md` (để sau khi owner duyệt 10 slide)
 - [ ] Kiểm tra: không tràn chữ, "nheo mắt", đọc được ở 1280×720 và laptop nhỏ, in PDF ≤ 30 trang, không lỗi JS, không lộ key, không có ảnh mẫu/ảnh Gemini trong repo (`git ls-files`), commit (không push)
 ## Kết quả
-### Layout học được (5 ảnh mẫu, 2026-11-19)
-| Ảnh | Kiểu | Học được | Dùng cho |
-|---|---|---|---|
-| mau-17 | Mục lục đánh số | 4 ô lưới 2×2; vòng tròn xanh đậm có số 01–04 + chấm cam ở góc; tên mục màu xanh, serif đậm; 1 dòng mô tả; tiêu đề giữa, rất to | Slide 3 (bản đồ buổi học) |
-| mau-18 | Mở phần | Số "01" xanh rất to → tên phần đen 2 dòng, cực to → 1 câu phụ; hình lớn bên phải; trang trí góc (tam giác hồng, vòng vàng, nét lượn) | Slide 1 (bìa), slide 6 (hình lớn + ý chính) |
-| mau-19 | Lưới ý vòng tròn biểu tượng | 3×2; hình trong vòng tròn xanh, tên màu xanh, 2 dòng mô tả căn giữa; nhiều khoảng thở | Slide 2, 4, 7 |
-| mau-20 | Bảng | Hàng tiêu đề hồng chữ cam; cột đầu xanh đậm chữ trắng; số to, đậm, căn giữa | Kiểu `.pp table` (dùng ở đợt 2) |
-| mau-21 | Trung tâm + 4 ý | Cụm vòng tròn biểu tượng hồng ở giữa; 4 ý hai bên, nối bằng đường mảnh có chấm; bên trái căn phải, bên phải căn trái | Slide 9 (4 cái tên AI) |
-| Chung | — | Nền kem; tiêu đề serif đậm xanh đen; thân bài sans; 4 màu: xanh lá đậm, cam san hô, hồng nhạt, vàng; trang trí chỉ ở góc, không che chữ | Mọi slide `.pp` |
 ### Layout học được (5 ảnh mẫu `mau-17…21`)
 | Ảnh | Layout | Cái tạo điểm nhấn | Dùng ở slide |
 |---|---|---|---|
