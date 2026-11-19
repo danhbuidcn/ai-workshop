@@ -35,7 +35,8 @@ Owner (2026-11-19): Làm bộ tài liệu workshop 1–2h cho 3 bạn (30+ tuổ
   - 8 file [outline/00-mo-dau.md](../../outline/00-mo-dau.md) … [07-bai-tap-cuoi.md](../../outline/07-bai-tap-cuoi.md). "4 năng lực" = khung AI Fluency của Anthropic (giao việc – mô tả – đánh giá – chịu trách nhiệm); công thức prompt 5 phần.
 - [x] Làm bộ slide HTML: 1 file `index.html` ở gốc repo (thành trang chủ GitHub Pages), CSS/JS viết sẵn trong file, không cần mạng; nút chuyển slide, phím mũi tên, `#số` để nhảy slide, in ra PDF (mỗi slide 1 trang)
   - [index.html](../../index.html): 61 slide, khung 1280×720 tự co theo màn hình; ◀ ▶, phím ←/→/Space/Home/End, F toàn màn hình, vuốt trên điện thoại, nút "Sao chép" ở mọi ô prompt. Chrome headless: 0 slide tràn chữ, in PDF ra đúng 61 trang.
-- [ ] Làm phiếu thực hành từng phần + đề bài tập cuối + prompt mẫu có nút "Sao chép": 1 file `handouts/index.html` (in được)
+- [x] Làm phiếu thực hành từng phần + đề bài tập cuối + prompt mẫu có nút "Sao chép": 1 file `handouts/index.html` (in được)
+  - [handouts/index.html](../../handouts/index.html): 7 phiếu, 28 ô prompt có nút "Sao chép", ô trống để viết tay; bài tập cuối có ví dụ Gemini của owner + khung 4 khối + 3 mẫu (GV Anh, GV Trung, nhân sự). In PDF: 15 trang, mỗi phiếu sang trang mới.
 - [ ] `README.md` giới thiệu ngắn + cách mở
 - [ ] Kiểm tra: đọc lại với góc nhìn người non-tech (không thuật ngữ, câu ngắn), mở thử trong trình duyệt, kiểm tra link
 - [ ] Tạo repo GitHub public cá nhân + bật GitHub Pages (chỉ làm sau khi owner xác nhận tên repo và rà nội dung không có thông tin riêng tư)

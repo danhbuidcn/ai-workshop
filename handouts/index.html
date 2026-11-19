@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phiếu thực hành – Làm việc với AI</title>
+<style>
+  :root { --ink: #1f2937; --muted: #6b7280; --line: #e5e7eb; --c: #6366f1; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #fffaf3; color: var(--ink); font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    font-size: 18px; line-height: 1.6; }
+  main { max-width: 860px; margin: 0 auto; padding: 32px 20px 80px; }
+  header { text-align: center; margin-bottom: 24px; }
+  header h1 { font-size: 34px; margin: 8px 0; }
+  nav.toc { background: #fff; border: 2px solid var(--line); border-radius: 16px; padding: 14px 20px; margin-bottom: 28px; }
+  nav.toc a { color: var(--c); text-decoration: none; display: inline-block; margin: 4px 12px 4px 0; font-weight: 600; }
+  section.sheet { background: #fff; border: 2px solid var(--line); border-top: 10px solid var(--c); border-radius: 16px;
+    padding: 20px 28px; margin-bottom: 28px; }
+  section.sheet h2 { margin: 0 0 4px; font-size: 26px; }
+  .meta { color: var(--muted); margin: 0 0 12px; }
+  h3 { font-size: 20px; margin: 20px 0 6px; }
+  .box { position: relative; background: #1f2937; color: #f9fafb; border-radius: 12px; padding: 14px 120px 14px 18px; margin: 8px 0 14px;
+    white-space: pre-wrap; font-family: "Segoe UI", system-ui, sans-serif; font-size: 16px; line-height: 1.55; }
+  .copy { position: absolute; top: 8px; right: 8px; font-size: 14px; padding: 5px 10px; border-radius: 8px; border: 0;
+    background: #fff; color: #1f2937; cursor: pointer; }
+  .write { border: 2px dashed #cbd5e1; border-radius: 12px; min-height: 90px; padding: 8px 12px; color: var(--muted); margin: 8px 0 14px; }
+  .write.tall { min-height: 160px; }
+  table { border-collapse: collapse; width: 100%; margin: 8px 0 14px; font-size: 16px; }
+  th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: #f3f4f6; }
+  .tip { background: #fef9c3; border-radius: 10px; padding: 10px 14px; margin: 10px 0; }
+  ul.check { list-style: none; padding-left: 4px; } ul.check li::before { content: "☐  "; }
+  .s1 { --c: #0ea5e9; } .s2 { --c: #10b981; } .s3 { --c: #f59e0b; } .s4 { --c: #ef4444; }
+  .s5 { --c: #8b5cf6; } .s6 { --c: #14b8a6; } .s7 { --c: #ec4899; }
+  a.back { color: var(--c); }
+  @media print {
+    body { background: #fff; font-size: 14px; }
+    main { max-width: none; padding: 0; }
+    nav.toc, .copy, .noprint { display: none !important; }
+    section.sheet { break-before: page; border: 0; border-top: 8px solid var(--c); border-radius: 0; padding: 10px 0; margin: 0; }
+    .box { background: #f3f4f6; color: #111; border: 1px solid #d1d5db; padding-right: 14px; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <div style="font-size:48px">📄🙋🤖</div>
+  <h1>Phiếu thực hành · Làm việc với AI</h1>
+  <p class="meta">Bấm <b>Sao chép</b> ở ô đen → dán vào ChatGPT hoặc Gemini. In ra giấy: Ctrl + P.</p>
+  <p class="noprint"><a class="back" href="../index.html">← Về bộ slide</a></p>
+</header>
+
+<nav class="toc">
+  <a href="#p1">1. AI là gì</a><a href="#p2">2. Bản đồ AI</a><a href="#p3">3. 5 nguyên tắc</a>
+  <a href="#p4">4. Cách giao việc</a><a href="#p5">5. Tài liệu</a><a href="#p6">6. Tổng kết</a><a href="#p7">7. Bài tập cuối</a>
+</nav>
+
+<!-- 1 -->
+<section class="sheet s1" id="p1">
+  <h2>🧠 Phiếu 1 · Đoán chữ tiếp theo</h2>
+  <p class="meta">3 phút · Hiểu: AI viết bằng cách đoán chữ tiếp theo.</p>
+  <h3>Bước 1: Bạn đoán trước</h3>
+  <p>"Mùa hè, em thích đi ______"</p>
+  <div class="write">Chữ bạn đoán: </div>
+  <h3>Bước 2: Hỏi AI</h3>
+  <div class="box">Hoàn thành câu sau bằng 5 cách khác nhau: "Mùa hè, em thích đi ..."</div>
+  <h3>Bước 3: So sánh</h3>
+  <div class="write">Bạn và AI có đoán giống nhau không? Vì sao? </div>
+  <div class="tip">💡 Nhớ: AI chọn cái <b>nghe hợp lý nhất</b>, không chắc là cái <b>đúng nhất</b>.</div>
+</section>
+
+<!-- 2 -->
+<section class="sheet s2" id="p2">
+  <h2>🗺️ Phiếu 2 · Hỏi 1 câu, 2 AI</h2>
+  <p class="meta">4 phút · Mở ChatGPT (chatgpt.com) và Gemini (gemini.google.com) ở 2 tab.</p>
+  <h3>Chọn 1 câu, dán vào cả 2 AI</h3>
+  <p>Giáo viên:</p>
+  <div class="box">Gợi ý 3 hoạt động khởi động 5 phút cho lớp học tiếng Anh 20 học sinh lớp 6.</div>
+  <div class="box">Gợi ý 3 trò chơi 5 phút giúp học sinh mới học tiếng Trung nhớ 10 từ chỉ màu sắc.</div>
+  <p>Nhân sự:</p>
+  <div class="box">Gợi ý 3 câu hỏi phỏng vấn để biết ứng viên có chịu được áp lực không.</div>
+  <h3>So sánh</h3>
+  <table>
+    <tr><th></th><th>ChatGPT</th><th>Gemini</th></tr>
+    <tr><td>Ngắn hay dài?</td><td></td><td></td></tr>
+    <tr><td>Dùng ngay được không?</td><td></td><td></td></tr>
+    <tr><td>Bạn thích cái nào hơn? Vì sao?</td><td></td><td></td></tr>
+  </table>
+</section>
+
+<!-- 3 -->
+<section class="sheet s3" id="p3">
+  <h2>✋ Phiếu 3 · Viết lại câu trả lời đầu</h2>
+  <p class="meta">5 phút · Nguyên tắc 2: câu trả lời đầu là bản nháp.</p>
+  <h3>Lần 1: hỏi như bình thường</h3>
+  <div class="box">Viết thông báo cho phụ huynh về buổi họp lớp.</div>
+  <p>(Nhân sự thử: <i>Viết thông báo cho nhân viên về buổi khám sức khoẻ định kỳ.</i>)</p>
+  <h3>Tìm 1 điều chưa ưng</h3>
+  <div class="write">Dài quá? Thiếu giờ? Giọng cứng? </div>
+  <h3>Lần 2: gõ 1 câu chỉnh</h3>
+  <div class="box">Ngắn hơn, dưới 60 chữ, thêm giờ họp 19h thứ Sáu, giọng thân thiện.</div>
+  <h3>Những câu chỉnh hay dùng</h3>
+  <div class="box">Ngắn hơn, dưới [số] chữ.</div>
+  <div class="box">Trình bày thành bảng.</div>
+  <div class="box">Bỏ phần [số]. Giữ nguyên phần còn lại.</div>
+  <div class="box">Giọng thân thiện hơn, như nói chuyện với đồng nghiệp.</div>
+  <div class="box">Cho tôi 3 phiên bản khác nhau để chọn.</div>
+  <h3>5 nguyên tắc — tự kiểm tra</h3>
+  <ul class="check">
+    <li>Mình đã đưa đủ bối cảnh chưa? (ai, cho ai, tình huống gì)</li>
+    <li>Mình đã chỉnh ít nhất 1 lần chưa?</li>
+    <li>Việc này có lặp lại không? Có nên lưu thành mẫu không?</li>
+    <li>Việc này cần mình phán đoán / chịu trách nhiệm không?</li>
+    <li>Mình đã kiểm tra số liệu, tên, ngày tháng chưa?</li>
+  </ul>
+</section>
+
+<!-- 4 -->
+<section class="sheet s4" id="p4">
+  <h2>✍️ Phiếu 4 · Viết prompt theo công thức 5 phần</h2>
+  <p class="meta">8 phút · Prompt = câu bạn gõ để giao việc cho AI.</p>
+  <h3>Khung (sao chép rồi điền vào chỗ [ ])</h3>
+  <div class="box">Bạn là [vai trò].
+Bối cảnh: [tôi là ai, làm cho ai, tình huống gì].
+Việc cần làm: [1 việc rõ ràng].
+Kết quả: [dài bao nhiêu, dạng gì (bảng, gạch đầu dòng, email…), giọng gì].
+Nếu thiếu thông tin, hãy hỏi tôi trước khi làm.</div>
+  <h3>Bạn viết ở đây</h3>
+  <div class="write tall">Việc của tôi tuần này: </div>
+  <h3>Ví dụ: giáo viên tiếng Anh</h3>
+  <div class="box">Bạn là giáo viên tiếng Anh. Lớp tôi 25 học sinh lớp 7, trình độ A2. Soạn 10 câu trắc nghiệm về thì quá khứ đơn, chủ đề kỳ nghỉ hè. Trình bày dạng bảng, đáp án để ở cuối. Nếu cần thêm thông tin, hãy hỏi tôi trước.</div>
+  <h3>Ví dụ: giáo viên tiếng Trung</h3>
+  <div class="box">Bạn là giáo viên tiếng Trung cho người Việt mới học (HSK1). Giải thích từ 休息 gồm: pinyin, nghĩa, cách nhớ bằng hình ảnh của từng chữ, và 3 câu ví dụ ngắn có pinyin và nghĩa tiếng Việt.</div>
+  <h3>Ví dụ: nhân sự</h3>
+  <div class="box">Bạn là chuyên viên tuyển dụng. Công ty tôi 50 người, cần tuyển kế toán tổng hợp có 2 năm kinh nghiệm, làm tại Hà Nội. Viết mô tả công việc dưới 250 chữ, gồm 3 phần: công việc, yêu cầu, quyền lợi. Giọng thân thiện. Nếu cần biết mức lương, hãy hỏi tôi.</div>
+  <h3>Chưa biết bắt đầu? Để AI hỏi ngược</h3>
+  <div class="box">Tôi muốn [việc của bạn]. Hãy hỏi tôi từng câu một cho đến khi đủ thông tin, rồi mới làm.</div>
+  <h3>4 năng lực — tự hỏi trước khi gửi kết quả đi</h3>
+  <table>
+    <tr><th>Năng lực</th><th>Câu tự hỏi</th></tr>
+    <tr><td>🧭 Giao việc</td><td>Việc này giao AI có lợi không?</td></tr>
+    <tr><td>🗣️ Mô tả</td><td>Người lạ đọc prompt của mình có hiểu không?</td></tr>
+    <tr><td>🔍 Đánh giá</td><td>Kết quả đúng, đủ chưa? Mình dám gửi đi luôn không?</td></tr>
+    <tr><td>🛡️ Chịu trách nhiệm</td><td>Nếu sai, ai chịu? → mình. Đã xem lại chưa?</td></tr>
+  </table>
+</section>
+
+<!-- 5 -->
+<section class="sheet s5" id="p5">
+  <h2>📁 Phiếu 5 · Cho AI đọc tài liệu</h2>
+  <p class="meta">6 phút · Dùng 1 file thật, đã xoá thông tin riêng tư.</p>
+  <h3>3 cách đưa tài liệu (bản miễn phí)</h3>
+  <table>
+    <tr><th>Cách</th><th>Làm thế nào</th><th>Ghi chú</th></tr>
+    <tr><td>📎 Tải file lên</td><td>Bấm <b>+</b> hoặc 📎 trong ô chat → chọn file</td><td>ChatGPT free giới hạn số file mỗi ngày</td></tr>
+    <tr><td>📋 Dán chữ</td><td>Copy nội dung → dán vào ô chat</td><td>Luôn được</td></tr>
+    <tr><td>🔗 Gemini + Gmail/Drive</td><td>Lần đầu: Cài đặt → Ứng dụng → bật Google Workspace. Sau đó gõ <b>@Gmail</b> hoặc <b>@Google Drive</b></td><td>ChatGPT: kết nối có thể cần bản trả phí → dùng 📎</td></tr>
+  </table>
+  <div class="tip">💡 App đổi giao diện thường xuyên. Không thấy nút → dùng 📎 hoặc 📋.</div>
+  <h3>Câu hỏi mẫu</h3>
+  <div class="box">Tóm tắt file này trong 5 dòng. Mỗi dòng 1 ý chính.</div>
+  <div class="box">@Gmail Tóm tắt các email từ phụ huynh trong tuần này, mỗi email 1 dòng.</div>
+  <div class="box">@Google Drive Tìm file "Quy định nghỉ phép" và cho tôi biết nhân viên được nghỉ mấy ngày/năm.</div>
+  <div class="box">Đây là bảng chấm công tháng 10. Ai đi muộn quá 3 lần? Trình bày dạng bảng: tên, số lần.</div>
+  <h3>Kiểm tra AI</h3>
+  <div class="write">Câu hỏi mình đã biết đáp án: …… · AI trả lời đúng không? ☐ Đúng ☐ Sai</div>
+  <h3>🔒 Không đưa cho AI</h3>
+  <ul class="check">
+    <li>Số CCCD, số tài khoản ngân hàng</li>
+    <li>Lương cụ thể từng người</li>
+    <li>Thông tin sức khoẻ</li>
+    <li>Mật khẩu</li>
+  </ul>
+  <p>Cần dữ liệu thật → đổi tên thành "Nhân viên A", "Học sinh B".</p>
+  <h3>📝 File "yêu cầu cố định" (lưu bằng Notepad: <code>yeu-cau-cua-toi.txt</code>)</h3>
+  <div class="box">Tôi là [nghề], làm việc với [ai].
+Công việc chính: [2–3 việc hay làm].
+Tôi thích kết quả: [ngắn / có bảng / có ví dụ …].
+Giọng: [thân thiện / trang trọng …].
+Không được: [điều cấm].
+Nếu chưa rõ, hãy hỏi tôi trước.</div>
+  <h3>🗄️ "Tủ tài liệu" luôn mở sẵn (bản miễn phí)</h3>
+  <table>
+    <tr><th>App</th><th>Tính năng</th><th>Dùng để</th></tr>
+    <tr><td>ChatGPT</td><td>Projects (Dự án)</td><td>Gom chat + file + hướng dẫn cho 1 việc</td></tr>
+    <tr><td>Gemini</td><td>Gem</td><td>Trợ lý riêng có hướng dẫn cố định, gắn được file</td></tr>
+    <tr><td>Google</td><td>NotebookLM (notebooklm.google.com)</td><td>Tải nhiều tài liệu, hỏi đáp chỉ dựa trên tài liệu đó</td></tr>
+  </table>
+</section>
+
+<!-- 6 -->
+<section class="sheet s6" id="p6">
+  <h2>📌 Phiếu 6 · Cả buổi trong 1 trang</h2>
+  <table>
+    <tr><th>🧠 AI là gì</th><td>Máy đoán chữ tiếp theo. Đoán hay, nhưng có thể sai.</td></tr>
+    <tr><th>✋ 5 nguyên tắc</th><td>1. Bạn mang bối cảnh · 2. Lần đầu là bản nháp · 3. Tủ tài liệu + công thức · 4. Giao việc lặp lại, giữ việc phán đoán · 5. Kiểm tra trước khi tin</td></tr>
+    <tr><th>✍️ Công thức prompt</th><td>Vai trò · Bối cảnh · Việc cần làm · Kết quả trông thế nào · Hỏi lại nếu chưa rõ</td></tr>
+    <tr><th>📁 Tài liệu</th><td>Gom 1 folder · Tải lên / dán / @Drive · File "yêu cầu cố định" · Không đưa thông tin riêng tư</td></tr>
+  </table>
+  <p style="font-size:22px;font-weight:700;text-align:center">AI giỏi đến đâu là do mình giao việc rõ đến đâu.</p>
+  <h3>✅ Làm ngay tuần này</h3>
+  <div class="write">1 việc lặp lại mỗi tuần của tôi: ……… → prompt mẫu đã lưu ở: ………</div>
+</section>
+
+<!-- 7 -->
+<section class="sheet s7" id="p7">
+  <h2>🎯 Phiếu 7 · Bài tập cuối: dạy Gemini trả lời đúng kiểu mình muốn</h2>
+  <p class="meta">20 phút · Xem ví dụ (5') → tự viết (8') → thử và chỉnh (5') → chia sẻ (2'/người)</p>
+
+  <h3>Bước 1: Xem ví dụ thật</h3>
+  <p><b>Lượt 1 — hỏi chung chung</b> → Gemini trả lời rất dài, 3 phần lớn, khó dùng ngay:</p>
+  <div class="box">Tôi là một lập trình viên. Tôi đã viết 1 app để quản lý thời gian sử dụng tablet cho trẻ em, sử dụng cá nhân trong gia đình. Ngoài ra, tôi muốn hướng dẫn trẻ sử dụng AI Gemini. Nhưng lo sợ trẻ sẽ chụp và nhờ AI giải, tôi muốn trẻ dùng AI hướng dẫn cách giải và hướng dẫn cách tư duy, tiếp cận bài toán. Liệu tôi có thể làm gì?
+1 bé 9 tuổi, 1 bé 6 tuổi dùng chung tablet.</div>
+  <p><b>Lượt 2 — nói rõ mình muốn gì</b> (chê thẳng, nói rõ ai dùng, cho ví dụ, đòi khung trả lời cố định):</p>
+  <div class="box">Bạn trả lời quá dài. Tôi muốn format output kết quả trả về cho trẻ. Tất cả các cách trên đều không tốt. Liệu có cách nào ổn hơn không?
+Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuyến khích khả năng tư duy của trẻ, VD, trẻ cung cấp một bài toán mà chưa rõ ràng thì bạn cùng trẻ chia nhỏ và brainstorm ý tưởng. Tôi nhớ là ChatGPT có cho phép format output AI trả về.</div>
+  <p><b>Kết quả</b> — Gemini đưa đoạn hướng dẫn 4 khối, dán vào Cài đặt → Hướng dẫn cho Gemini (hoặc tạo Gem):</p>
+  <div class="box"># VAI TRÒ &amp; ĐỐI TƯỢNG
+Bạn là "Bạn Đồng Hành Tư Duy" dành cho 2 bé: 6 tuổi và 9 tuổi. Luôn hỏi tên hoặc độ tuổi ở câu đầu tiên nếu chưa biết để chỉnh độ khó.
+
+# QUY TẮC CẤM (TUYỆT ĐỐI)
+- KHÔNG BAO GIỜ giải hộ bài tập, không đưa ra đáp án cuối cùng, không làm hộ từ A-Z.
+- KHÔNG viết đoạn văn dài quá 3 câu. Dùng từ ngữ đơn giản, vui vẻ.
+
+# LUỒNG XỬ LÝ KHI BÉ ĐƯA BÀI TOÁN / Ý TƯỞNG CHƯA RÕ RÀNG
+1. Chia nhỏ: Tách vấn đề thành các mảnh nhỏ nhất.
+2. Nghĩ ý tưởng: Đưa ra 2-3 hướng gợi ý mở để bé tự chọn, không áp đặt 1 cách duy nhất.
+
+# KHUNG TRẢ LỜI BẮT BUỘC (MỌI CÂU TRẢ LỜI PHẢI THEO ĐÚNG KHUNG NÀY)
+Mỗi lần phản hồi, chỉ được xuất ra đúng 3 phần ngắn gọn sau:
+
+🔍 Mình hiểu ý bạn là: [Tóm tắt lại đề bài/ý tưởng của bé bằng 1 câu cực dễ hiểu. Nếu đề chưa rõ, chỉ ra điểm còn thiếu].
+
+💡 Cùng nghĩ ý tưởng nhé (Chọn 1 hướng):
+* Cách 1: [Gợi ý hướng A - chỉ nêu ý tưởng, không tính toán]
+* Cách 2: [Gợi ý hướng B - hoặc một ví dụ tương tự ngoài đời thực]
+
+❓ Câu hỏi cho bạn: [Đặt DUY NHẤT 1 câu hỏi nhỏ để bé tự làm bước đầu tiên]</div>
+
+  <h3>Bước 2: Tự viết đoạn hướng dẫn 4 khối</h3>
+  <div class="box"># VAI TRÒ
+Bạn là [ai], giúp [ai], trong việc [gì].
+
+# ĐIỀU CẤM
+- Không [điều 1].
+- Không [điều 2].
+
+# CÁCH LÀM
+1. [bước 1]
+2. [bước 2]
+
+# KHUNG TRẢ LỜI (luôn đúng khung này)
+[biểu tượng] [Tên phần 1]: [nội dung]
+[biểu tượng] [Tên phần 2]: [nội dung]
+[biểu tượng] [Tên phần 3]: [nội dung]</div>
+  <div class="write tall">Việc tôi chọn: </div>
+
+  <h3>Mẫu tham khảo: giáo viên tiếng Anh — "Trợ lý sửa bài viết"</h3>
+  <div class="box"># VAI TRÒ
+Bạn là trợ lý sửa bài viết tiếng Anh cho học sinh lớp 7, trình độ A2.
+
+# ĐIỀU CẤM
+- Không viết lại cả bài hộ học sinh. Không đưa câu đã sửa hoàn chỉnh.
+- Không dùng từ khó hơn trình độ B1.
+- Mỗi giải thích không quá 2 câu, bằng tiếng Việt.
+
+# CÁCH LÀM
+1. Đọc bài, tìm tối đa 5 lỗi quan trọng nhất (ngữ pháp, từ vựng, chính tả).
+2. Với mỗi lỗi: chỉ ra chỗ sai và giải thích ngắn vì sao sai.
+3. Khen 1 điểm học sinh làm tốt.
+
+# KHUNG TRẢ LỜI (luôn đúng 3 phần)
+👍 Điểm em làm tốt: [1 câu]
+✏️ Lỗi cần sửa: [bảng: # | câu có lỗi | loại lỗi | gợi ý, không đưa đáp án]
+❓ Câu hỏi cho em: [1 câu hỏi để em tự sửa lỗi số 1]</div>
+
+  <h3>Mẫu tham khảo: giáo viên tiếng Trung — "Thẻ từ vựng"</h3>
+  <div class="box"># VAI TRÒ
+Bạn là giáo viên tiếng Trung cho người Việt mới học (HSK1–HSK2).
+
+# ĐIỀU CẤM
+- Không giải thích dài. Không dùng thuật ngữ ngôn ngữ học.
+- Câu ví dụ chỉ dùng từ trong HSK1–HSK2.
+
+# CÁCH LÀM
+Tôi gửi 1 hoặc nhiều từ. Mỗi từ làm 1 thẻ theo khung bên dưới.
+
+# KHUNG TRẢ LỜI (mỗi từ 1 thẻ, đúng 5 dòng)
+🀄 Chữ Hán: …
+🔤 Pinyin: …
+🇻🇳 Nghĩa: …
+💡 Mẹo nhớ: [hình ảnh hoặc câu chuyện ngắn về các phần trong chữ]
+📝 Ví dụ: [1 câu ngắn] – [pinyin] – [nghĩa tiếng Việt]</div>
+
+  <h3>Mẫu tham khảo: nhân sự — "Trả lời câu hỏi nhân viên"</h3>
+  <div class="box"># VAI TRÒ
+Bạn là trợ lý phòng nhân sự, trả lời câu hỏi của nhân viên về quy định công ty.
+
+# ĐIỀU CẤM
+- Chỉ trả lời dựa trên quy định tôi dán bên dưới. Không tự bịa.
+- Không chắc chắn → nói: "Phần này bạn cần hỏi phòng nhân sự."
+- Không quá 5 câu.
+
+# CÁCH LÀM
+1. Tìm điều khoản liên quan trong quy định.
+2. Trả lời bằng lời đơn giản, giọng thân thiện.
+
+# KHUNG TRẢ LỜI
+✅ Trả lời: [tối đa 3 câu]
+📖 Căn cứ: [Điều mấy, trích 1 câu]
+➡️ Việc bạn cần làm tiếp: [1 câu, nếu có]
+
+# QUY ĐỊNH CÔNG TY
+[dán quy định vào đây]</div>
+
+  <h3>Bước 3: Thử và chỉnh</h3>
+  <ol>
+    <li>Mở Gemini, tạo cuộc chat mới, dán đoạn hướng dẫn vào đầu rồi gửi.<br>
+      Hoặc tạo Gem (trợ lý riêng, có trên bản miễn phí): menu bên trái → <b>Gem</b> → <b>Gem mới</b> → đặt tên → dán vào ô <b>Hướng dẫn</b> → <b>Lưu</b>.</li>
+    <li>Gửi 2 câu hỏi thử. Ghi lại:</li>
+  </ol>
+  <ul class="check">
+    <li>AI trả lời đúng khung?</li>
+    <li>AI tôn trọng điều cấm?</li>
+    <li>Độ dài vừa ý?</li>
+  </ul>
+  <div class="write">Chưa đúng ở đâu → mình sửa dòng nào trong đoạn hướng dẫn: </div>
+
+  <h3>Bước 4: Chia sẻ (2 phút mỗi người)</h3>
+  <p>Đọc đoạn hướng dẫn + 1 kết quả. Cả nhóm góp 1 ý chỉnh.</p>
+  <div class="tip">🎒 <b>Mang về:</b> lưu đoạn hướng dẫn vào file .txt hoặc tạo Gem. Dùng 1 tuần, mỗi lần chưa ưng → sửa 1 dòng.</div>
+</section>
+
+<p class="noprint" style="text-align:center"><a class="back" href="../index.html">← Về bộ slide</a></p>
+</main>
+
+<script>
+document.querySelectorAll('.box').forEach(function (box) {
+  var b = document.createElement('button');
+  b.className = 'copy'; b.textContent = 'Sao chép';
+  b.onclick = function () {
+    var text = box.firstChild.textContent.trim();
+    var done = function () { b.textContent = 'Đã chép ✓'; setTimeout(function () { b.textContent = 'Sao chép'; }, 1500); };
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done);
+    else { var t = document.createElement('textarea'); t.value = text; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove(); done(); }
+  };
+  box.appendChild(b);
+});
+</script>
+</body>
+</html>
