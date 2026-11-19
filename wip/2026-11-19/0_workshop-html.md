@@ -1,5 +1,10 @@
 # Workshop "Làm việc với AI" cho người không rành kỹ thuật (HTML, public)
 Nhánh: .
+## Handoff
+- 2026-11-19: Xong 6/8 bước (nội dung, slide, phiếu, README, kiểm tra). Dừng ở bước 7: tạo repo public + bật GitHub Pages.
+- Lý do dừng: plan yêu cầu owner xác nhận tên repo + rà thông tin riêng tư trước khi public; worker không được push/deploy.
+- Bước tiếp theo (owner): duyệt nội dung → chạy lệnh ở mục "Việc còn lại" trong `## Kết quả`.
+- File liên quan: [index.html](../../index.html), [handouts/index.html](../../handouts/index.html), [outline/](../../outline/), [sources/](../../sources/), [README.md](../../README.md).
 ## Input
 Owner (2026-11-19): Làm bộ tài liệu workshop 1–2h cho 3 bạn (30+ tuổi, không rành kỹ thuật, dùng ChatGPT/Gemini free, Windows). Slide bằng HTML, đẩy lên GitHub cá nhân public, có trang GitHub Pages để share link. Giao account miichi2.
 ## Context
@@ -44,3 +49,30 @@ Owner (2026-11-19): Làm bộ tài liệu workshop 1–2h cho 3 bạn (30+ tuổ
 - [ ] Tạo repo GitHub public cá nhân + bật GitHub Pages (chỉ làm sau khi owner xác nhận tên repo và rà nội dung không có thông tin riêng tư)
 - [ ] Báo link Pages cho owner
 ## Kết quả
+### Đã đổi
+| File | Nội dung |
+|---|---|
+| [sources/](../../sources/) | Tóm tắt link Gemini mẫu + bảng trạng thái nguồn |
+| [outline/00…07](../../outline/) | Dàn ý 8 phần: lời giải thích lớp 5, ví dụ theo nghề, hình khối, bài thực hành |
+| [index.html](../../index.html) | 61 slide, chạy offline, ◀ ▶ / phím mũi tên / F / Ctrl+P ra PDF 61 trang |
+| [handouts/index.html](../../handouts/index.html) | 7 phiếu thực hành, 28 prompt mẫu có nút "Sao chép", in 15 trang |
+| [README.md](../../README.md) | Giới thiệu, cách mở trên Windows, lịch buổi học |
+
+### Quyết định worker tự đưa ra
+- Chạy liền mạch, không dừng chờ duyệt dàn ý (luật worker). Owner duyệt dàn ý + slide cùng lúc.
+- NotebookLM cần đăng nhập, ch.2/4/6 chưa có file → bù bằng kiến thức chung. "4 năng lực" = khung AI Fluency (Anthropic): giao việc, mô tả, đánh giá, chịu trách nhiệm.
+- Công thức prompt 5 phần: vai trò · bối cảnh · việc cần làm · kết quả trông thế nào · hỏi lại nếu chưa rõ.
+- Slide 1 file `index.html` ở gốc repo → thành trang chủ Pages. Phiếu 1 file HTML (người dùng Windows khó mở `.md`).
+- Đoạn hướng dẫn Gemini của owner: giữ ý, đổi vài từ tiếng Anh sang tiếng Việt (Break down → Chia nhỏ, FORMAT OUTPUT → KHUNG TRẢ LỜI). Prompt lượt 2 sửa chính tả (ouput → output, brainstoming → brainstorm).
+- Thông tin tính năng bản free (Gemini @Gmail/@Drive, Gem, ChatGPT Projects, giới hạn file ChatGPT) ghi kèm câu "app đổi giao diện thường xuyên, không thấy thì dùng 📎/📋".
+
+### Việc còn lại (cần owner)
+1. Duyệt nội dung: mở `index.html`, bấm thử phím ←/→, xem các tên menu Gemini/ChatGPT còn đúng không.
+2. Rà thông tin riêng tư trước khi public. Repo sẽ public cả lịch sử git, gồm: `wip/` (plan có link NotebookLM, tên account), `sources/gemini-mau.md` + slide 54–55 (prompt của owner: nghề, app tự viết, con 6 và 9 tuổi). Không muốn public → xoá/đổi trước khi push, hoặc tạo repo mới chỉ chứa `index.html`, `handouts/`, `outline/`, `README.md`.
+3. Tên repo `danhbuidcn/ai-workshop` đang trống (đã kiểm tra `gh repo view`, 2026-11-19). Tạo repo + bật Pages:
+   ```bash
+   cd ~/Documents/personal/ai-workshop
+   gh repo create danhbuidcn/ai-workshop --public --source=. --remote=origin --push
+   gh api -X POST repos/danhbuidcn/ai-workshop/pages -f 'source[branch]=master' -f 'source[path]=/'
+   ```
+4. Link Pages sau 1–2 phút: https://danhbuidcn.github.io/ai-workshop/ (phiếu: `…/ai-workshop/handouts/`).
