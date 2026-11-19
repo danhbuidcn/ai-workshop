@@ -30,6 +30,11 @@ Owner (2026-11-19), xem slide 12 (nguyên tắc 1–2): đóng vai designer, thi
   - Áp dụng cho mọi bài có tính chất "trước/sau": slide 14, bài công thức prompt (phần 4), bài đưa tài liệu/bối cảnh, bài đặt khung trả lời cuối buổi (trước và sau khi đặt khung). Bài nào chỉ 1 lần chạy thì giữ ① ②.
   - Học viên không phải tự đọc dài: kết quả dài thì cắt gọn ở đầu và có nút "xem hết"; dòng tóm khác biệt (ví dụ "Lần 2: có giờ họp, dưới 60 chữ, giọng thân thiện") do trang tự ghi sẵn dưới 2 cột (ghi cố định, không nhờ AI chấm).
   - Cùng prompt chạy lại có thể ra kết quả khác nhau: ghi 1 câu "AI có thể khác mỗi lần, quan trọng là xu hướng" và có nút "Chạy lại".
+- Owner (slide 23, phần 5 Tài liệu): 2 nội dung khác nhau ("File yêu cầu cố định" và "Project") đặt cạnh nhau nhưng nhìn như 1 khối, lộn xộn. Luật: **mỗi khái niệm = 1 thẻ riêng** để học viên nhìn là biết 2 thứ khác nhau.
+  - Mỗi thẻ: nền/viền màu riêng (khác nhau rõ), 1 biểu tượng lớn, tên thẻ cỡ lớn, 1 câu "nó là gì" bằng hình ảnh đời thường, 1 dòng "dùng khi nào". Chi tiết (cách làm, bảng, prompt mẫu) giấu trong "bấm để mở" của từng thẻ.
+  - Giữa 2 thẻ có chữ nối rõ quan hệ (ví dụ "hoặc" / "cách dễ" vs "cách mạnh hơn") để biết nên chọn cái nào trước.
+  - Slide 23: thẻ 1 "Tờ giấy dán tủ lạnh (file yêu cầu cố định)" — cách dễ, ai cũng làm được; thẻ 2 "Tủ tài liệu (Project/Gem)" — cách mạnh hơn, tuỳ app. Bảng ChatGPT/Gemini/NotebookLM ở trong thẻ 2 khi bấm mở.
+  - Áp dụng luật "mỗi khái niệm một thẻ" cho mọi slide đặt cạnh nhau 2+ ý khác nhau (vd slide 9 bản đồ AI, slide 12–13).
 - Không đổi nội dung/ý nghĩa, không tăng số slide (≤ 30), không đụng `ai.js` logic/key.
 ## Plan
 - [ ] Chụp ảnh toàn bộ slide hiện tại (Chrome headless, 1280×720), xem từng slide, ghi bảng: slide → mắt nhìn đâu trước? → vấn đề → cách sửa
