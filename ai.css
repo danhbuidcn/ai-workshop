@@ -1,0 +1,31 @@
+/* Nút "Chạy thử" + khung kết quả Gemini, dùng chung cho slide và phiếu (xem ai.js). */
+.ai-box { min-height: 84px; }
+.ai-box .run { position: absolute; top: 44px; right: 8px; }
+.prompt.col .run { top: 8px; right: 92px; }
+.run, .ai-more button { font: inherit; font-size: 14px; font-weight: 700; padding: 5px 10px; border-radius: 8px; border: 0;
+  background: #fbbf24; color: #1f2937; cursor: pointer; }
+.run:hover, .ai-more button:hover { background: #f59e0b; }
+.ai-txt { outline: none; cursor: text; }
+.ai-txt:focus { outline: 2px dashed #fbbf24; outline-offset: 4px; border-radius: 4px; }
+.ai-out { background: #fff; color: #1f2937; border: 2px solid var(--c, #6366f1); border-radius: 14px; padding: 10px 14px;
+  margin: 8px 0 14px; font-size: 16px; line-height: 1.5; text-align: left; }
+.ai-ans { white-space: pre-wrap; max-height: 300px; overflow: auto; }
+.ai-ans.err { color: #b91c1c; } .ai-ans.warn { color: #92400e; } .ai-ans.wait { color: #6b7280; }
+.ai-q { color: #6b7280; margin-bottom: 4px; }
+.ai-more { display: flex; gap: 8px; margin-top: 8px; }
+.ai-more input { flex: 1; font: inherit; font-size: 15px; padding: 5px 10px; border: 2px solid #e5e7eb; border-radius: 10px; }
+.ai-note { font-size: 12px; color: #6b7280; margin-top: 6px; }
+/* Khung thử "hướng dẫn cho AI" */
+.ai-lab { display: grid; grid-template-columns: 1.2fr 1fr; gap: 16px; text-align: left; }
+.ai-lab label { display: block; font-weight: 700; font-size: 17px; margin-bottom: 6px; }
+.ai-lab select { font: inherit; font-size: 15px; margin-left: 6px; max-width: 100%; }
+.ai-lab textarea { width: 100%; font: inherit; font-size: 14px; line-height: 1.45; padding: 8px 10px; border: 2px solid #e5e7eb;
+  border-radius: 12px; resize: vertical; }
+.ai-lab .lab-sys { height: 330px; }
+.ai-lab .lab-q { height: 90px; }
+.ai-lab .run { font-size: 16px; padding: 7px 16px; margin-top: 6px; }
+.ai-lab .ai-ans { max-height: 220px; }
+/* Slide có kết quả: cuộn được, không bị cắt mép trên */
+.slide.has-out { justify-content: flex-start; overflow-y: auto; }
+@media (max-width: 700px) { .ai-lab { grid-template-columns: 1fr; } }
+@media print { .run, .ai-out, .ai-lab, .ai-lab-wrap { display: none !important; } }

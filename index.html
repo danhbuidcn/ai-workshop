@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Làm việc với AI – Workshop 1 giờ</title>
+<link rel="stylesheet" href="ai.css">
 <style>
   :root {
     --ink: #1f2937; --muted: #6b7280; --bg: #fffaf3; --line: #e5e7eb;
@@ -310,7 +311,7 @@
   <ol class="steps"><li>Hỏi AI 1 việc thật, ví dụ:</li></ol>
   <div class="prompt">Viết thông báo cho phụ huynh về buổi họp lớp.</div>
   <ol class="steps" start="2"><li>Đọc kết quả. Tìm <b>1 điều</b> chưa ưng.</li><li>Gõ 1 câu chỉnh:</li></ol>
-  <div class="prompt">Ngắn hơn, dưới 60 chữ, thêm giờ họp 19h thứ Sáu, giọng thân thiện.</div>
+  <div class="prompt" data-ai="chain">Ngắn hơn, dưới 60 chữ, thêm giờ họp 19h thứ Sáu, giọng thân thiện.</div>
   <ol class="steps" start="4"><li>So sánh lần 1 và lần 2.</li></ol>
 </section>
 
@@ -423,8 +424,8 @@ Nếu thiếu thông tin, hãy hỏi tôi trước khi làm.</div>
         <li style="font-size:19px">Lần đầu: <b>Cài đặt → Ứng dụng</b> (Apps), bật Google Workspace (Gmail, Drive).</li>
         <li style="font-size:19px">Gõ <b>@Gmail</b> hoặc <b>@Google Drive</b> rồi hỏi:</li>
       </ol>
-      <div class="prompt col">@Gmail Tóm tắt các email từ phụ huynh trong tuần này, mỗi email 1 dòng.</div>
-      <div class="prompt col" style="margin-top:8px">@Google Drive Tìm file "Quy định nghỉ phép" và cho tôi biết nhân viên được nghỉ mấy ngày/năm.</div>
+      <div class="prompt col" data-ai="off">@Gmail Tóm tắt các email từ phụ huynh trong tuần này, mỗi email 1 dòng.</div>
+      <div class="prompt col" data-ai="off" style="margin-top:8px">@Google Drive Tìm file "Quy định nghỉ phép" và cho tôi biết nhân viên được nghỉ mấy ngày/năm.</div>
     </div>
     <div>
       <h2 style="font-size:30px">📊 Excel</h2>
@@ -433,7 +434,7 @@ Nếu thiếu thông tin, hãy hỏi tôi trước khi làm.</div>
         <li style="font-size:19px">File quá lớn → xoá bớt cột không cần, hoặc lưu thành <b>.csv</b> (Excel: Tệp → Lưu thành → chọn CSV).</li>
         <li style="font-size:19px">Luôn tự kiểm tra lại <b>1–2 con số</b> (nguyên tắc 5).</li>
       </ul>
-      <div class="prompt col" style="margin-top:12px">Đây là bảng chấm công tháng 10. Ai đi muộn quá 3 lần? Trình bày dạng bảng: tên, số lần.</div>
+      <div class="prompt col" data-ai="off" style="margin-top:12px">Đây là bảng chấm công tháng 10. Ai đi muộn quá 3 lần? Trình bày dạng bảng: tên, số lần.</div>
     </div>
   </div>
 </section>
@@ -461,7 +462,7 @@ Nếu thiếu thông tin, hãy hỏi tôi trước khi làm.</div>
         <li style="font-size:19px">Mỗi lần chat mới: dán vào đầu, hoặc tải file lên.</li>
         <li style="font-size:19px">Đuôi <b>.md</b> cũng là file chữ, dùng dấu # làm tiêu đề.</li>
       </ul>
-      <div class="prompt col" style="margin-top:10px">Tôi là giáo viên tiếng Anh THCS, dạy lớp 6–7.
+      <div class="prompt col" data-ai="off" style="margin-top:10px">Tôi là giáo viên tiếng Anh THCS, dạy lớp 6–7.
 Học sinh trình độ A1–A2.
 Tôi thích kết quả: ngắn, có bảng, có ví dụ.
 Giọng: thân thiện, dễ hiểu.
@@ -493,6 +494,9 @@ Nếu chưa rõ, hãy hỏi tôi trước.</div>
       <ul><li>1 câu tóm tắt: "Tóm tắt file này trong 5 dòng."</li>
       <li>1 câu <b>mình đã biết đáp án</b> → AI trả lời đúng không?</li></ul></li>
   </ol>
+  <p class="muted" style="font-size:18px">Thử ngay trên trang: bấm vào ô đen, dán 1 đoạn tài liệu (đã xoá thông tin riêng tư), bấm ▶ Chạy thử.</p>
+  <div class="prompt sm">Tóm tắt đoạn sau trong 5 dòng. Mỗi dòng 1 ý chính:
+[dán đoạn tài liệu vào đây]</div>
 </section>
 
 <!-- ===================== 6. TỔNG KẾT ===================== -->
@@ -510,7 +514,7 @@ Nếu chưa rõ, hãy hỏi tôi trước.</div>
 </section>
 
 <!-- ===================== 7. BÀI TẬP CUỐI ===================== -->
-<section class="slide" data-s="7">
+<section class="slide" data-s="7" data-conv="vidu">
   <span class="tag">7 · BÀI TẬP CUỐI · VÍ DỤ THẬT</span>
   <h2>🎯 Lượt 1: hỏi chung chung</h2>
   <div class="prompt sm">Tôi là một lập trình viên. Tôi đã viết 1 app để quản lý thời gian sử dụng tablet cho trẻ em… Tôi muốn hướng dẫn trẻ sử dụng AI Gemini. Nhưng lo sợ trẻ sẽ chụp và nhờ AI giải, tôi muốn trẻ dùng AI hướng dẫn cách giải và cách tư duy. Liệu tôi có thể làm gì? 1 bé 9 tuổi, 1 bé 6 tuổi dùng chung tablet.</div>
@@ -533,10 +537,10 @@ Nếu chưa rõ, hãy hỏi tôi trước.</div>
   <p style="margin-top:10px">😵 Đúng ý, nhưng <b>quá dài</b>, không dùng ngay được.</p>
 </section>
 
-<section class="slide" data-s="7">
+<section class="slide" data-s="7" data-conv="vidu">
   <span class="tag">7 · BÀI TẬP CUỐI · VÍ DỤ THẬT</span>
   <h2>Lượt 2: nói rõ mình muốn gì</h2>
-  <div class="prompt sm">Bạn trả lời quá dài. Tôi muốn format output kết quả trả về cho trẻ. Tất cả các cách trên đều không tốt. Liệu có cách nào ổn hơn không?
+  <div class="prompt sm" data-ai="chain">Bạn trả lời quá dài. Tôi muốn format output kết quả trả về cho trẻ. Tất cả các cách trên đều không tốt. Liệu có cách nào ổn hơn không?
 Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuyến khích khả năng tư duy của trẻ, VD, trẻ cung cấp một bài toán mà chưa rõ ràng thì bạn cùng trẻ chia nhỏ và brainstorm ý tưởng. Tôi nhớ là ChatGPT có cho phép format output AI trả về.</div>
   <div class="row" style="margin-top:16px;flex-wrap:wrap;gap:8px">
     <span class="pill">😤 Chê thẳng: "quá dài"</span><span class="pill">👧 Nói rõ ai dùng: trẻ</span>
@@ -580,6 +584,13 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
   </ol>
 </section>
 
+<section class="slide" data-s="7">
+  <span class="tag">7 · BÀI TẬP CUỐI</span>
+  <span class="practice">🧪 THỬ NGAY TRÊN TRANG</span>
+  <h2 style="margin-bottom:12px">Dạy Gemini trả lời đúng khung <small>Chọn mẫu hoặc tự viết → sửa → Chạy thử → chưa đúng thì sửa 1 dòng, chạy lại</small></h2>
+  <div class="ai-lab"></div>
+</section>
+
 <section class="slide center" data-s="0">
   <div class="emoji">🗣️ 👂 💡</div>
   <h2 style="margin-top:16px">Chia sẻ</h2>
@@ -600,6 +611,7 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
   <a href="handouts/index.html" title="Phiếu thực hành">📄</a>
 </nav>
 
+<script src="ai.js"></script>
 <script>
 (function () {
   var stage = document.getElementById('stage');
@@ -630,6 +642,7 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
     if (!document.fullscreenElement) document.documentElement.requestFullscreen(); else document.exitFullscreen();
   };
   document.addEventListener('keydown', function (e) {
+    if (e.target.closest && e.target.closest('input, textarea, select, [contenteditable]')) return; // đang gõ
     var k = e.key;
     if (k === 'ArrowRight' || k === 'PageDown' || k === ' ') { e.preventDefault(); show(cur + 1); }
     else if (k === 'ArrowLeft' || k === 'PageUp') { e.preventDefault(); show(cur - 1); }
@@ -638,7 +651,9 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
     else if (k === 'f' || k === 'F') document.getElementById('full').onclick();
   });
   var x0 = null;
-  document.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; });
+  document.addEventListener('touchstart', function (e) {
+    x0 = e.target.closest && e.target.closest('input, textarea, select, [contenteditable], .ai-ans') ? null : e.touches[0].clientX;
+  });
   document.addEventListener('touchend', function (e) {
     if (x0 === null) return;
     var dx = e.changedTouches[0].clientX - x0;
@@ -646,13 +661,17 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
     x0 = null;
   });
 
+  // Nút "Chạy thử" (ai.js) + khung thử hướng dẫn cho AI
+  AI.setup('.prompt');
+  AI.lab('.ai-lab');
+
   // Nút "Sao chép" cho mỗi ô prompt
   document.querySelectorAll('.prompt').forEach(function (box) {
     var b = document.createElement('button');
     b.className = 'copy'; b.textContent = 'Sao chép';
     b.onclick = function (e) {
       e.stopPropagation();
-      var text = box.firstChild.textContent.trim();
+      var text = (box.firstChild.innerText || box.firstChild.textContent).trim();
       var done = function () { b.textContent = 'Đã chép ✓'; setTimeout(function () { b.textContent = 'Sao chép'; }, 1500); };
       if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done);
       else { var t = document.createElement('textarea'); t.value = text; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove(); done(); }

@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Phiếu thực hành – Làm việc với AI</title>
+<link rel="stylesheet" href="../ai.css">
 <style>
   :root { --ink: #1f2937; --muted: #6b7280; --line: #e5e7eb; --c: #6366f1; }
   * { box-sizing: border-box; }
@@ -17,6 +18,7 @@
   nav.toc a { color: var(--c); text-decoration: none; padding: 4px 12px; border-radius: 999px; font-weight: 600; }
   nav.toc a.on { background: var(--c); color: #fff; }
   section.sheet:not(.on) { display: none; }
+  section.sheet { scroll-margin-top: 130px; }
   section.sheet { background: #fff; border: 2px solid var(--line); border-top: 10px solid var(--c); border-radius: 16px;
     padding: 20px 28px; margin-bottom: 28px; }
   section.sheet h2 { margin: 0 0 4px; font-size: 26px; }
@@ -52,7 +54,8 @@
 <header>
   <div style="font-size:48px">📄🙋🤖</div>
   <h1>Phiếu thực hành · Làm việc với AI</h1>
-  <p class="meta">Bấm <b>Sao chép</b> ở ô đen → dán vào ChatGPT hoặc Gemini. In ra giấy: Ctrl + P.</p>
+  <p class="meta">Bấm <b>▶ Chạy thử</b> ở ô đen để hỏi Gemini ngay trên trang (bấm vào ô để sửa câu hỏi).<br>Hoặc bấm <b>Sao chép</b> → dán vào ChatGPT, Gemini. In ra giấy: Ctrl + P.</p>
+  <p class="meta noprint" style="font-size:15px">⚠️ Gemini bản miễn phí có thể dùng nội dung bạn gửi để cải thiện sản phẩm. Không dán thông tin riêng tư (tên học sinh, lương, số CCCD…).</p>
   <p class="noprint"><a class="back" href="../index.html">← Về bộ slide</a></p>
 </header>
 
@@ -104,13 +107,13 @@
   <h3>Tìm 1 điều chưa ưng</h3>
   <div class="write">Dài quá? Thiếu giờ? Giọng cứng? </div>
   <h3>Lần 2: gõ 1 câu chỉnh</h3>
-  <div class="box">Ngắn hơn, dưới 60 chữ, thêm giờ họp 19h thứ Sáu, giọng thân thiện.</div>
+  <div class="box" data-ai="chain">Ngắn hơn, dưới 60 chữ, thêm giờ họp 19h thứ Sáu, giọng thân thiện.</div>
   <h3>Những câu chỉnh hay dùng</h3>
-  <div class="box">Ngắn hơn, dưới [số] chữ.</div>
-  <div class="box">Trình bày thành bảng.</div>
-  <div class="box">Bỏ phần [số]. Giữ nguyên phần còn lại.</div>
-  <div class="box">Giọng thân thiện hơn, như nói chuyện với đồng nghiệp.</div>
-  <div class="box">Cho tôi 3 phiên bản khác nhau để chọn.</div>
+  <div class="box" data-ai="chain">Ngắn hơn, dưới [số] chữ.</div>
+  <div class="box" data-ai="chain">Trình bày thành bảng.</div>
+  <div class="box" data-ai="chain">Bỏ phần [số]. Giữ nguyên phần còn lại.</div>
+  <div class="box" data-ai="chain">Giọng thân thiện hơn, như nói chuyện với đồng nghiệp.</div>
+  <div class="box" data-ai="chain">Cho tôi 3 phiên bản khác nhau để chọn.</div>
   <h3>5 nguyên tắc — tự kiểm tra</h3>
   <ul class="check">
     <li>Mình đã đưa đủ bối cảnh chưa? (ai, cho ai, tình huống gì)</li>
@@ -164,10 +167,11 @@ Nếu thiếu thông tin, hãy hỏi tôi trước khi làm.</div>
   </table>
   <div class="tip">💡 App đổi giao diện thường xuyên. Không thấy nút → dùng 📎 hoặc 📋.</div>
   <h3>Câu hỏi mẫu</h3>
-  <div class="box">Tóm tắt file này trong 5 dòng. Mỗi dòng 1 ý chính.</div>
-  <div class="box">@Gmail Tóm tắt các email từ phụ huynh trong tuần này, mỗi email 1 dòng.</div>
-  <div class="box">@Google Drive Tìm file "Quy định nghỉ phép" và cho tôi biết nhân viên được nghỉ mấy ngày/năm.</div>
-  <div class="box">Đây là bảng chấm công tháng 10. Ai đi muộn quá 3 lần? Trình bày dạng bảng: tên, số lần.</div>
+  <div class="box">Tóm tắt đoạn sau trong 5 dòng. Mỗi dòng 1 ý chính:
+[dán đoạn tài liệu vào đây]</div>
+  <div class="box" data-ai="off">@Gmail Tóm tắt các email từ phụ huynh trong tuần này, mỗi email 1 dòng.</div>
+  <div class="box" data-ai="off">@Google Drive Tìm file "Quy định nghỉ phép" và cho tôi biết nhân viên được nghỉ mấy ngày/năm.</div>
+  <div class="box" data-ai="off">Đây là bảng chấm công tháng 10. Ai đi muộn quá 3 lần? Trình bày dạng bảng: tên, số lần.</div>
   <h3>Kiểm tra AI</h3>
   <div class="write">Câu hỏi mình đã biết đáp án: …… · AI trả lời đúng không? ☐ Đúng ☐ Sai</div>
   <h3>🔒 Không đưa cho AI</h3>
@@ -179,7 +183,7 @@ Nếu thiếu thông tin, hãy hỏi tôi trước khi làm.</div>
   </ul>
   <p>Cần dữ liệu thật → đổi tên thành "Nhân viên A", "Học sinh B".</p>
   <h3>📝 File "yêu cầu cố định" (lưu bằng Notepad: <code>yeu-cau-cua-toi.txt</code>)</h3>
-  <div class="box">Tôi là [nghề], làm việc với [ai].
+  <div class="box" data-ai="off">Tôi là [nghề], làm việc với [ai].
 Công việc chính: [2–3 việc hay làm].
 Tôi thích kết quả: [ngắn / có bảng / có ví dụ …].
 Giọng: [thân thiện / trang trọng …].
@@ -218,10 +222,10 @@ Nếu chưa rõ, hãy hỏi tôi trước.</div>
   <div class="box">Tôi là một lập trình viên. Tôi đã viết 1 app để quản lý thời gian sử dụng tablet cho trẻ em, sử dụng cá nhân trong gia đình. Ngoài ra, tôi muốn hướng dẫn trẻ sử dụng AI Gemini. Nhưng lo sợ trẻ sẽ chụp và nhờ AI giải, tôi muốn trẻ dùng AI hướng dẫn cách giải và hướng dẫn cách tư duy, tiếp cận bài toán. Liệu tôi có thể làm gì?
 1 bé 9 tuổi, 1 bé 6 tuổi dùng chung tablet.</div>
   <p><b>Lượt 2 — nói rõ mình muốn gì</b> (chê thẳng, nói rõ ai dùng, cho ví dụ, đòi khung trả lời cố định):</p>
-  <div class="box">Bạn trả lời quá dài. Tôi muốn format output kết quả trả về cho trẻ. Tất cả các cách trên đều không tốt. Liệu có cách nào ổn hơn không?
+  <div class="box" data-ai="chain">Bạn trả lời quá dài. Tôi muốn format output kết quả trả về cho trẻ. Tất cả các cách trên đều không tốt. Liệu có cách nào ổn hơn không?
 Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuyến khích khả năng tư duy của trẻ, VD, trẻ cung cấp một bài toán mà chưa rõ ràng thì bạn cùng trẻ chia nhỏ và brainstorm ý tưởng. Tôi nhớ là ChatGPT có cho phép format output AI trả về.</div>
   <p><b>Kết quả</b> — Gemini đưa đoạn hướng dẫn 4 khối, dán vào Cài đặt → Hướng dẫn cho Gemini (hoặc tạo Gem):</p>
-  <div class="box"># VAI TRÒ &amp; ĐỐI TƯỢNG
+  <div class="box" data-ai="off"># VAI TRÒ &amp; ĐỐI TƯỢNG
 Bạn là "Bạn Đồng Hành Tư Duy" dành cho 2 bé: 6 tuổi và 9 tuổi. Luôn hỏi tên hoặc độ tuổi ở câu đầu tiên nếu chưa biết để chỉnh độ khó.
 
 # QUY TẮC CẤM (TUYỆT ĐỐI)
@@ -244,7 +248,7 @@ Mỗi lần phản hồi, chỉ được xuất ra đúng 3 phần ngắn gọn 
 ❓ Câu hỏi cho bạn: [Đặt DUY NHẤT 1 câu hỏi nhỏ để bé tự làm bước đầu tiên]</div>
 
   <h3>Bước 2: Tự viết đoạn hướng dẫn 4 khối</h3>
-  <div class="box"># VAI TRÒ
+  <div class="box" data-ai="off"># VAI TRÒ
 Bạn là [ai], giúp [ai], trong việc [gì].
 
 # ĐIỀU CẤM
@@ -262,7 +266,7 @@ Bạn là [ai], giúp [ai], trong việc [gì].
   <div class="write tall">Việc tôi chọn: </div>
 
   <h3>Mẫu tham khảo: giáo viên tiếng Anh — "Trợ lý sửa bài viết"</h3>
-  <div class="box"># VAI TRÒ
+  <div class="box" data-ai="off"># VAI TRÒ
 Bạn là trợ lý sửa bài viết tiếng Anh cho học sinh lớp 7, trình độ A2.
 
 # ĐIỀU CẤM
@@ -281,7 +285,7 @@ Bạn là trợ lý sửa bài viết tiếng Anh cho học sinh lớp 7, trình
 ❓ Câu hỏi cho em: [1 câu hỏi để em tự sửa lỗi số 1]</div>
 
   <h3>Mẫu tham khảo: giáo viên tiếng Trung — "Thẻ từ vựng"</h3>
-  <div class="box"># VAI TRÒ
+  <div class="box" data-ai="off"># VAI TRÒ
 Bạn là giáo viên tiếng Trung cho người Việt mới học (HSK1–HSK2).
 
 # ĐIỀU CẤM
@@ -299,7 +303,7 @@ Tôi gửi 1 hoặc nhiều từ. Mỗi từ làm 1 thẻ theo khung bên dướ
 📝 Ví dụ: [1 câu ngắn] – [pinyin] – [nghĩa tiếng Việt]</div>
 
   <h3>Mẫu tham khảo: nhân sự — "Trả lời câu hỏi nhân viên"</h3>
-  <div class="box"># VAI TRÒ
+  <div class="box" data-ai="off"># VAI TRÒ
 Bạn là trợ lý phòng nhân sự, trả lời câu hỏi của nhân viên về quy định công ty.
 
 # ĐIỀU CẤM
@@ -320,6 +324,11 @@ Bạn là trợ lý phòng nhân sự, trả lời câu hỏi của nhân viên 
 [dán quy định vào đây]</div>
 
   <h3>Bước 3: Thử và chỉnh</h3>
+  <div class="noprint ai-lab-wrap">
+    <p><b>Thử ngay trên trang:</b> chọn mẫu hoặc tự viết → sửa → <b>▶ Chạy thử</b> → chưa đúng thì sửa 1 dòng, chạy lại.</p>
+    <div class="ai-lab"></div>
+    <p>Hoặc thử trong Gemini:</p>
+  </div>
   <ol>
     <li>Mở Gemini, tạo cuộc chat mới, dán đoạn hướng dẫn vào đầu rồi gửi.<br>
       Hoặc tạo Gem (trợ lý riêng, có trên bản miễn phí): menu bên trái → <b>Gem</b> → <b>Gem mới</b> → đặt tên → dán vào ô <b>Hướng dẫn</b> → <b>Lưu</b>.</li>
@@ -340,6 +349,7 @@ Bạn là trợ lý phòng nhân sự, trả lời câu hỏi của nhân viên 
 <p class="noprint" style="text-align:center"><a class="back" href="../index.html">← Về bộ slide</a></p>
 </main>
 
+<script src="../ai.js"></script>
 <script>
 // Chia tab: chỉ hiện 1 phiếu. #phieu-n mở thẳng; nhớ phiếu đang xem.
 (function () {
@@ -361,11 +371,14 @@ Bạn là trợ lý phòng nhân sự, trả lời câu hỏi của nhân viên 
   open(location.hash.slice(1) || saved || 'phieu-1');
 })();
 
+AI.setup('.box');
+AI.lab('.ai-lab');
+
 document.querySelectorAll('.box').forEach(function (box) {
   var b = document.createElement('button');
   b.className = 'copy'; b.textContent = 'Sao chép';
   b.onclick = function () {
-    var text = box.firstChild.textContent.trim();
+    var text = (box.firstChild.innerText || box.firstChild.textContent).trim();
     var done = function () { b.textContent = 'Đã chép ✓'; setTimeout(function () { b.textContent = 'Sao chép'; }, 1500); };
     if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done);
     else { var t = document.createElement('textarea'); t.value = text; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove(); done(); }
