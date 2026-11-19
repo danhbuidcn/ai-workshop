@@ -34,7 +34,8 @@
 .ai-row input { flex: 1; font: inherit; font-size: 16px; padding: 5px 10px; border: 2px dashed #3b82f6; border-radius: 10px; background: #eff6ff; }
 .ai-note { font-size: 14px; color: #6b7280; margin-top: 6px; }
 /* Khung thử "hướng dẫn cho AI" */
-.ai-lab { display: grid; grid-template-columns: 1.2fr 1fr; gap: 16px; text-align: left; }
+.ai-lab { text-align: left; }
+.ai-lab .lab-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 16px; }
 .ai-lab .ai-in { margin: 0; }
 .ai-lab label { display: block; font-weight: 700; font-size: 15px; margin-bottom: 6px; }
 .ai-lab select { font: inherit; font-size: 15px; margin-left: 6px; max-width: 100%; }
@@ -79,5 +80,46 @@
 .foldrow > .fold > .fold-b { grid-row: 2; grid-column: 1 / -1; border-top: 3px solid #f59e0b; border-radius: 16px; }
 .fold-hint { font-size: 18px; color: #6b7280; margin: 6px 0 0; }
 @media print { .fold-b { display: block !important; } .foldrow > .fold > .fold-b { grid-row: auto; } .fold-h::after, .fold-hint { display: none !important; } .fold-h { border-color: #d1d5db; } }
-@media (max-width: 700px) { .ai-lab { grid-template-columns: 1fr; } }
-@media print { .run, .ai-foot, .ai-arrow, .ai-out, .ai-head .copy, .ai-lab, .ai-lab-wrap { display: none !important; } }
+/* So sánh 2 cột (xem ai.js compare): trái = Lần 1 (đỏ), phải = Lần 2 (xanh lá) */
+.ai-cmp { text-align: left; }
+.cmp-ask { font-size: 22px; font-weight: 800; margin: 4px 0 8px; }
+.cmp-pick { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+.cmp-pick[hidden] { display: none; }
+.cmp-pick button { font: inherit; font-size: 18px; font-weight: 700; padding: 6px 16px; border-radius: 999px; border: 2px solid #d1d5db;
+  background: #fff; color: #374151; cursor: pointer; }
+.cmp-pick button.on { background: #1f2937; border-color: #1f2937; color: #fff; }
+.cmp-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+.cmp-h { font-size: 20px; font-weight: 800; padding: 6px 14px; border-radius: 12px 12px 0 0; }
+.cmp-col.a .cmp-h { background: #fee2e2; color: #991b1b; } .cmp-col.b .cmp-h { background: #dcfce7; color: #166534; }
+.cmp-col .ai-in { margin: 0; border-top-left-radius: 0; border-top-right-radius: 0; }
+.cmp-col.a .ai-in { border-color: #f87171; } .cmp-col.b .ai-in { border-color: #22c55e; }
+.cmp-go { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 10px 0 0; }
+.cmp-tip { font-size: 15px; color: #6b7280; margin: 6px 0 0; }
+.cmp-go .cmp-tip { margin: 0; }
+.cmp-out { margin: 0; }
+.cmp-out.a { border-color: #f87171; } .cmp-out.b { border-color: #22c55e; }
+.cmp-out .ai-ans { max-height: 220px; overflow: hidden; }
+.cmp-out.clip .ai-ans { -webkit-mask-image: linear-gradient(#000 65%, transparent); mask-image: linear-gradient(#000 65%, transparent); }
+.cmp-out.all .ai-ans { max-height: none; -webkit-mask-image: none; mask-image: none; }
+.cmp-all { font: inherit; font-size: 16px; font-weight: 700; margin-top: 6px; padding: 3px 12px; border-radius: 8px; border: 2px solid #94a3b8;
+  background: #fff; color: #334155; cursor: pointer; }
+.cmp-all[hidden] { display: none; }
+.cmp-sum { margin-top: 10px; background: #dcfce7; border-left: 8px solid #16a34a; border-radius: 12px; padding: 8px 16px; font-size: 18px; font-weight: 700; color: #14532d; }
+.cmp-sum[hidden], .cmp-look[hidden] { display: none; }
+.cmp-look { margin-top: 10px; }
+/* Phần prompt tô màu (cùng màu 5 thẻ "Công thức 5 phần") */
+.pp1 { background: #ede9fe; box-shadow: inset 0 -3px #8b5cf6; } .pp2 { background: #dbeafe; box-shadow: inset 0 -3px #3b82f6; }
+.pp3 { background: #dcfce7; box-shadow: inset 0 -3px #22c55e; } .pp4 { background: #fef3c7; box-shadow: inset 0 -3px #f59e0b; }
+.pp5 { background: #fce7f3; box-shadow: inset 0 -3px #ec4899; }
+.pp-legend { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 6px; }
+.pp-legend[hidden] { display: none; }
+.pp-legend span { font-size: 14px; font-weight: 700; padding: 1px 8px; border-radius: 6px; }
+/* Trên slide: chữ ≥ 18px */
+.slide .cmp-ask { font-size: 26px; } .slide .cmp-h { font-size: 22px; }
+.slide .cmp-tip, .slide .cmp-all, .slide .pp-legend span, .slide .cmp-pick button { font-size: 18px; }
+.slide .cmp-sum { font-size: 22px; }
+.slide .cmp-out .ai-ans { max-height: 200px; font-size: 18px; }
+.slide .cmp-col .ai-txt { font-size: 20px; } .slide .cmp-look .fold-h { font-size: 20px; } .slide .cmp-look .fold-b { font-size: 20px; }
+.cmp-look .foldrow > .fold > .fold-h { border-radius: 14px; }
+@media (max-width: 700px) { .ai-lab .lab-grid, .cmp-row { grid-template-columns: 1fr; } }
+@media print { .run, .ai-foot, .ai-arrow, .ai-out, .ai-head .copy, .ai-lab, .ai-lab-wrap, .cmp-two, .cmp-go, .cmp-pick { display: none !important; } }

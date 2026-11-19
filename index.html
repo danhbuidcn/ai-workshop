@@ -23,9 +23,9 @@
     font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif; color: var(--ink); }
   #stage { position: absolute; left: 50%; top: 50%; width: 1280px; height: 720px; transform-origin: center center; }
   .slide { position: absolute; inset: 0; display: none; flex-direction: column; justify-content: safe center;
-    padding: 52px 70px 52px; background: var(--bg); overflow-x: hidden; overflow-y: auto; --c: var(--s0); }
+    padding: 52px 70px 52px; overflow-x: hidden; overflow-y: auto; --c: var(--s0);
+    background: linear-gradient(90deg, var(--c) 0 12px, var(--bg) 12px); } /* vạch màu phần bên trái, đứng yên khi cuộn */
   .slide.active { display: flex; }
-  .slide::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 12px; background: var(--c); }
   .slide::after { content: "danhbuidcn"; position: absolute; left: 30px; bottom: 12px; font-size: 13px; color: #9ca3af; letter-spacing: .5px; }
   .slide[data-s="1"] { --c: var(--s1); } .slide[data-s="2"] { --c: var(--s2); } .slide[data-s="3"] { --c: var(--s3); }
   .slide[data-s="4"] { --c: var(--s4); } .slide[data-s="5"] { --c: var(--s5); } .slide[data-s="6"] { --c: var(--s6); }
@@ -385,17 +385,27 @@
   <span class="tag">3 · 5 NGUYÊN TẮC</span>
   <span class="practice">✋ THỰC HÀNH</span>
   <h2>Viết lại câu trả lời đầu</h2>
-  <ol class="steps">
-    <li>Lần 1: bấm <b>Gửi cho Gemini</b> ở khung ① dưới đây. Đọc thông báo ở khung ②.</li>
-    <li>Tìm <b>1 điều</b> chưa ưng: dài quá? thiếu giờ? giọng cứng?</li>
+  <ol class="steps sm">
+    <li>Khung ① trái: câu hỏi ngắn. Khung ① phải: viết lại theo công thức (mỗi màu là 1 phần).</li>
+    <li>Bấm nút cam <b>So sánh</b>. Chờ 2 kết quả hiện ở khung ②.</li>
+    <li>Nhìn 2 kết quả khác nhau ở đâu. Bấm 3 ô "nên nhìn" bên dưới để kiểm tra.</li>
   </ol>
-  <div class="prompt">Viết thông báo cho phụ huynh về buổi họp lớp.</div>
-  <ol class="steps" start="3">
-    <li>Lần 2: ở khung ① thứ hai, sửa câu chỉnh theo ý bạn → bấm <b>Gửi cho Gemini</b>.</li>
-    <li>So sánh 2 khung ②: lần 2 có hợp ý hơn không?</li>
-  </ol>
-  <div class="prompt" data-ai="chain">Ngắn hơn, dưới 60 chữ, thêm giờ họp 19h thứ Sáu, giọng thân thiện.</div>
-  <p class="muted app">Làm trên app: gửi câu lần 1 → khi AI trả lời xong, gõ câu chỉnh vào <b>cùng ô chat đó</b> → <b>Enter</b>. Không mở chat mới.</p>
+  <div class="ai-cmp">
+    <div class="cmp-set" data-sum="Lần 2: có giờ họp, dưới 60 chữ, giọng thân thiện.">
+      <div class="cmp-p">Viết thông báo cho phụ huynh về buổi họp lớp.</div>
+      <div class="cmp-p"><span class="pp1">Bạn là giáo viên chủ nhiệm lớp 7A.</span>
+<span class="pp2">Bối cảnh: lớp có 35 học sinh. Họp phụ huynh cuối học kỳ 1, 19h thứ Sáu tuần này, tại phòng 204.</span>
+<span class="pp3">Việc cần làm: viết thông báo mời phụ huynh đi họp.</span>
+<span class="pp4">Kết quả: dưới 60 chữ, giọng thân thiện, có giờ, ngày, phòng họp.</span>
+<span class="pp5">Nếu thiếu thông tin, hãy hỏi tôi trước khi viết.</span></div>
+      <div class="cmp-look"><div class="foldrow" data-one>
+        <div class="fold"><button type="button" class="fold-h">🕖 Có ghi giờ họp?</button><div class="fold-b">Lần 1 thường để trống [giờ], [địa điểm] cho bạn tự điền. Lần 2 có sẵn 19h thứ Sáu, phòng 204.</div></div>
+        <div class="fold"><button type="button" class="fold-h">😊 Đúng giọng?</button><div class="fold-b">Lần 1 hay dùng giọng hành chính ("Kính gửi Quý phụ huynh…"). Lần 2 làm theo yêu cầu "giọng thân thiện".</div></div>
+        <div class="fold"><button type="button" class="fold-h">📏 Dài bao nhiêu?</button><div class="fold-b">Lần 1 thường dài, nhiều mục. Lần 2 dưới 60 chữ, vừa 1 màn hình điện thoại.</div></div>
+      </div></div>
+    </div>
+  </div>
+  <p class="app">Làm trên app: gửi câu lần 1 → đọc → gõ câu lần 2 vào <b>cùng ô chat</b> → <b>Enter</b> → so sánh 2 câu trả lời.</p>
 </section>
 
 <!-- ===================== 4. PROMPT ===================== -->
@@ -436,23 +446,21 @@
 <section class="slide" data-s="4">
   <span class="tag">4 · VÍ DỤ</span>
   <h2>Trước và sau</h2>
-  <div class="grid g3">
-    <div>
-      <b style="font-size:22px">🇬🇧 GV tiếng Anh</b>
-      <div class="card bad mini"><b>❌</b> Soạn bài tập tiếng Anh.</div>
-      <div class="prompt col" style="margin-top:10px">Bạn là giáo viên tiếng Anh. Lớp tôi 25 học sinh lớp 7, trình độ A2. Soạn 10 câu trắc nghiệm về thì quá khứ đơn, chủ đề kỳ nghỉ hè. Trình bày dạng bảng, đáp án để ở cuối. Nếu cần thêm thông tin, hãy hỏi tôi trước.</div>
+  <div class="ai-cmp" data-b="Lần 2: theo công thức 5 phần">
+    <div class="cmp-set" data-name="🇬🇧 GV tiếng Anh" data-sum="Lần 2: đúng lớp 7 trình độ A2, 10 câu về quá khứ đơn, dạng bảng, đáp án ở cuối.">
+      <div class="cmp-p">Soạn bài tập tiếng Anh.</div>
+      <div class="cmp-p"><span class="pp1">Bạn là giáo viên tiếng Anh.</span> <span class="pp2">Lớp tôi 25 học sinh lớp 7, trình độ A2.</span> <span class="pp3">Soạn 10 câu trắc nghiệm về thì quá khứ đơn, chủ đề kỳ nghỉ hè.</span> <span class="pp4">Trình bày dạng bảng, đáp án để ở cuối.</span> <span class="pp5">Nếu cần thêm thông tin, hãy hỏi tôi trước.</span></div>
     </div>
-    <div>
-      <b style="font-size:22px">🇨🇳 GV tiếng Trung</b>
-      <div class="card bad mini"><b>❌</b> Giải thích chữ 休息.</div>
-      <div class="prompt col" style="margin-top:10px">Bạn là giáo viên tiếng Trung cho người Việt mới học (HSK1). Giải thích từ 休息 gồm: pinyin, nghĩa, cách nhớ bằng hình ảnh của từng chữ, và 3 câu ví dụ ngắn có pinyin và nghĩa tiếng Việt.</div>
+    <div class="cmp-set" data-name="🇨🇳 GV tiếng Trung" data-sum="Lần 2: có pinyin, nghĩa, mẹo nhớ từng chữ, 3 câu ví dụ có nghĩa tiếng Việt.">
+      <div class="cmp-p">Giải thích chữ 休息.</div>
+      <div class="cmp-p"><span class="pp1">Bạn là giáo viên tiếng Trung</span> <span class="pp2">cho người Việt mới học (HSK1).</span> <span class="pp3">Giải thích từ 休息</span> <span class="pp4">gồm: pinyin, nghĩa, cách nhớ bằng hình ảnh của từng chữ, và 3 câu ví dụ ngắn có pinyin và nghĩa tiếng Việt.</span></div>
     </div>
-    <div>
-      <b style="font-size:22px">👥 Nhân sự</b>
-      <div class="card bad mini"><b>❌</b> Viết mô tả công việc.</div>
-      <div class="prompt col" style="margin-top:10px">Bạn là chuyên viên tuyển dụng. Công ty tôi 50 người, cần tuyển kế toán tổng hợp có 2 năm kinh nghiệm, làm tại Hà Nội. Viết mô tả công việc dưới 250 chữ, gồm 3 phần: công việc, yêu cầu, quyền lợi. Giọng thân thiện. Nếu cần biết mức lương, hãy hỏi tôi.</div>
+    <div class="cmp-set" data-name="👥 Nhân sự" data-sum="Lần 2: đúng vị trí kế toán ở Hà Nội, dưới 250 chữ, đủ 3 phần, hỏi lại mức lương.">
+      <div class="cmp-p">Viết mô tả công việc.</div>
+      <div class="cmp-p"><span class="pp1">Bạn là chuyên viên tuyển dụng.</span> <span class="pp2">Công ty tôi 50 người, cần tuyển kế toán tổng hợp có 2 năm kinh nghiệm, làm tại Hà Nội.</span> <span class="pp3">Viết mô tả công việc</span> <span class="pp4">dưới 250 chữ, gồm 3 phần: công việc, yêu cầu, quyền lợi. Giọng thân thiện.</span> <span class="pp5">Nếu cần biết mức lương, hãy hỏi tôi.</span></div>
     </div>
   </div>
+  <p class="cap">Bấm tên nghề để đổi ví dụ. Bấm <b>So sánh</b> để Gemini chạy cả 2 câu cùng lúc.</p>
 </section>
 
 <section class="slide" data-s="4">
@@ -471,18 +479,23 @@
   <span class="tag">4 · GIAO VIỆC</span>
   <span class="practice">✋ THỰC HÀNH</span>
   <h2>Viết prompt theo công thức</h2>
-  <ol class="steps">
+  <ol class="steps sm">
     <li>Chọn 1 việc thật tuần này phải làm (vd: thông báo họp, đề kiểm tra, tin tuyển dụng).</li>
-    <li>Bấm vào khung ①. Thay từng chỗ <b>[ ]</b> bằng thông tin của bạn, xoá cả dấu [ ].</li>
-    <li>Bấm <b>Gửi cho Gemini</b>. Đọc kết quả ở khung ②.</li>
-    <li>Chưa ưng → gõ 1 câu chỉnh vào ô <b>"Muốn chỉnh?"</b> trong khung ② → bấm <b>Gửi</b>.</li>
+    <li>Khung ① trái: thay <b>[ ]</b> bằng 1 câu ngắn, như bạn vẫn hỏi.</li>
+    <li>Khung ① phải: thay từng chỗ <b>[ ]</b> bằng thông tin của bạn, xoá cả dấu [ ].</li>
+    <li>Bấm <b>So sánh</b>. Lần 2 hợp ý hơn không? Chưa ưng → sửa 1 phần ở khung phải → <b>Chạy lại</b>.</li>
   </ol>
-  <div class="prompt sm">Bạn là [vai trò].
-Bối cảnh: [tôi là ai, cho ai, tình huống gì].
-Việc cần làm: [1 việc rõ ràng].
-Kết quả: [dài bao nhiêu, dạng gì, giọng gì].
-Nếu thiếu thông tin, hãy hỏi tôi trước khi làm.</div>
-  <p class="muted app">Ví dụ điền sẵn: slide "Trước và sau" và phiếu 4. Làm trên app: điền xong bấm <b>📋 Chép</b> → dán vào ô chat → <b>Enter</b>.</p>
+  <div class="ai-cmp">
+    <div class="cmp-set" data-sum="Lần 2 thường: đúng việc của bạn, đúng độ dài, đúng giọng, ít phải sửa.">
+      <div class="cmp-p">[viết 1 câu ngắn như bạn vẫn hỏi]</div>
+      <div class="cmp-p"><span class="pp1">Bạn là [vai trò].</span>
+<span class="pp2">Bối cảnh: [tôi là ai, cho ai, tình huống gì].</span>
+<span class="pp3">Việc cần làm: [1 việc rõ ràng].</span>
+<span class="pp4">Kết quả: [dài bao nhiêu, dạng gì, giọng gì].</span>
+<span class="pp5">Nếu thiếu thông tin, hãy hỏi tôi trước khi làm.</span></div>
+    </div>
+  </div>
+  <p class="app">Ví dụ điền sẵn: slide "Trước và sau" và phiếu 4. Làm trên app: điền xong bấm <b>📋 Chép</b> → dán vào ô chat → <b>Enter</b>.</p>
 </section>
 
 <!-- ===================== 5. TÀI LIỆU ===================== -->
@@ -578,22 +591,31 @@ Nếu chưa rõ, hãy hỏi tôi trước.</div>
   <span class="tag">5 · TÀI LIỆU</span>
   <span class="practice">✋ THỰC HÀNH</span>
   <h2>Cho AI đọc 1 tài liệu</h2>
-  <p style="font-weight:700;margin:0">Cách A · ngay trên trang (dán chữ)</p>
-  <ol class="steps">
-    <li>Mở file của bạn (giáo án, quy định…, đã xoá thông tin riêng tư). Bôi đen 1 đoạn → <b>Ctrl + C</b>.</li>
-    <li>Ở khung ①: bôi đen dòng <b>[dán đoạn tài liệu vào đây]</b> → <b>Ctrl + V</b>.</li>
-    <li>Bấm <b>Gửi cho Gemini</b>. Đọc 5 dòng tóm tắt ở khung ②.</li>
-    <li>Ô <b>"Muốn chỉnh?"</b>: hỏi 1 câu <b>mình đã biết đáp án</b> → AI trả lời đúng không?</li>
+  <ol class="steps sm">
+    <li>Bấm <b>So sánh</b>: lần 1 AI phải đoán, lần 2 AI đọc quy định rồi mới trả lời.</li>
+    <li>Thử với tài liệu của bạn: ở khung ① phải, bôi đen đoạn "Quy định" → dán 1 đoạn tài liệu của bạn (<b>Ctrl + V</b>, đã xoá thông tin riêng tư) → sửa câu hỏi.</li>
+    <li>Hỏi 1 câu <b>mình đã biết đáp án</b> → <b>Chạy lại</b> → AI trả lời đúng không?</li>
   </ol>
-  <div class="prompt sm">Tóm tắt đoạn sau trong 5 dòng. Mỗi dòng 1 ý chính:
-[dán đoạn tài liệu vào đây]</div>
-  <p style="font-weight:700;margin:6px 0 0">Cách B · tải cả file lên app (ChatGPT hoặc Gemini)</p>
-  <ol class="steps">
-    <li>Mở <b>chatgpt.com</b> hoặc <b>gemini.google.com</b>. Bấm nút <b>+</b> ở đầu ô chat.</li>
-    <li>ChatGPT: chọn <b>Thêm ảnh và tệp</b>. Gemini: chọn <b>Tải tệp lên</b>. Chọn file trên máy → <b>Open</b>.</li>
-    <li>Gõ "Tóm tắt file này trong 5 dòng." → <b>Enter</b>. Rồi hỏi 1 câu mình đã biết đáp án.</li>
-  </ol>
-  <p class="muted app">Cách C · file trong Google Drive: chỉ Gemini làm được, xem các bước ở slide 21 hoặc phiếu 5.</p>
+  <div class="ai-cmp" data-a="Lần 1: không đưa tài liệu" data-b="Lần 2: dán tài liệu vào">
+    <div class="cmp-set" data-sum="Lần 2: đúng 14 ngày, báo trước 3 ngày, theo quy định. Lần 1 chỉ đoán theo luật chung.">
+      <div class="cmp-p">Nhân viên công ty tôi được nghỉ phép mấy ngày mỗi năm? Muốn nghỉ thì báo trước mấy ngày?</div>
+      <div class="cmp-p"><span class="pp3">Dựa vào quy định dưới đây, trả lời: nhân viên được nghỉ phép mấy ngày mỗi năm? Muốn nghỉ thì báo trước mấy ngày?</span>
+<span class="pp2">Quy định:
+Điều 5. Nhân viên chính thức được nghỉ phép 14 ngày/năm.
+Điều 6. Muốn nghỉ phép phải gửi đơn cho trưởng phòng trước ít nhất 3 ngày làm việc.</span></div>
+    </div>
+  </div>
+  <div class="fold" style="margin-top:12px">
+    <button type="button" class="fold-h">📎 Cách B · tải cả file lên app (ChatGPT hoặc Gemini)</button>
+    <div class="fold-b">
+      <ol class="steps sm">
+        <li>Mở <b>chatgpt.com</b> hoặc <b>gemini.google.com</b>. Bấm nút <b>+</b> ở đầu ô chat.</li>
+        <li>ChatGPT: chọn <b>Thêm ảnh và tệp</b>. Gemini: chọn <b>Tải tệp lên</b>. Chọn file trên máy → <b>Open</b>.</li>
+        <li>Gõ "Tóm tắt file này trong 5 dòng." → <b>Enter</b>. Rồi hỏi 1 câu mình đã biết đáp án.</li>
+      </ol>
+    </div>
+  </div>
+  <p class="app">Cách C · file trong Google Drive: chỉ Gemini làm được, xem các bước ở slide 21 hoặc phiếu 5.</p>
 </section>
 
 <!-- ===================== 6. TỔNG KẾT ===================== -->
@@ -670,8 +692,8 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
   <ol class="steps sm">
     <li>Ô <b>Chọn mẫu</b>: chọn GV tiếng Anh (sửa bài viết), GV tiếng Trung (thẻ từ vựng), Nhân sự (trả lời nhân viên), hoặc "Tự viết".</li>
     <li>Phần A: sửa từng dòng cho đúng việc của bạn. Giữ đủ 4 khối: vai trò, điều cấm, cách làm, khung trả lời.</li>
-    <li>Phần B: gõ 1 câu hỏi thử → bấm <b>Gửi cho Gemini</b>.</li>
-    <li>Xem khung ②: AI có đúng khung không? Chưa đúng → sửa 1 dòng ở Phần A → gửi lại. <b>(Nguyên tắc 2!)</b></li>
+    <li>Phần B: gõ 1 câu hỏi thử → bấm <b>So sánh</b> (gửi 2 lần: không có và có Phần A).</li>
+    <li>Xem 2 khung ②: bên phải có đúng khung không? Chưa đúng → sửa 1 dòng ở Phần A → <b>Chạy lại</b>. <b>(Nguyên tắc 2!)</b></li>
     <li>Ưng rồi → mang về app: Gemini → menu trái <b>Gem</b> (hoặc <b>Khám phá Gem</b>) → <b>Gem mới</b> → dán Phần A vào ô <b>Hướng dẫn</b> → <b>Lưu</b>.</li>
   </ol>
   <div class="ai-lab"></div>
@@ -752,6 +774,7 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
   // Bài thực hành: khung ① Bạn nhập / ② Gemini trả lời + nút Sao chép (ai.js), khung thử hướng dẫn cho AI
   AI.setup('.prompt');
   AI.lab('.ai-lab');
+  AI.compare('.ai-cmp');
   AI.folds();
 
   // Slide dài (bài thực hành): nhắc "cuộn xuống" khi còn nội dung bên dưới
