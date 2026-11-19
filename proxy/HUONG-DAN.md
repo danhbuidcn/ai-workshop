@@ -1,6 +1,6 @@
 # Máy trung gian Gemini (Google Apps Script)
 
-Trang workshop có nút **▶ Chạy thử**. Nút này gửi câu hỏi tới máy trung gian. Máy trung gian giữ key Gemini chung và gọi Gemini. Học viên không thấy key.
+Trang workshop có nút **Gửi cho Gemini**. Nút này gửi câu hỏi tới máy trung gian. Máy trung gian giữ key Gemini chung và gọi Gemini. Học viên không thấy key.
 
 ## File
 
@@ -58,7 +58,7 @@ Cách khác (không dùng `deploy.sh`): dán key vào **Cài đặt dự án →
 ## 4. Đổi key / tắt
 
 - Đổi key: sửa `~/.config/ai-workshop/gemini.key` → chạy lại `bash proxy/deploy.sh`.
-- Tắt nút chạy thử: để `var AI_PROXY_URL = '';` trong [../ai.js](../ai.js). Trang tự quay về "Sao chép rồi dán vào Gemini".
+- Tắt nút chạy thử: để `var AI_PROXY_URL = '';` trong [../ai.js](../ai.js). Trang báo học viên bấm "Chép" rồi dán vào Gemini.
 - Tắt hẳn: vào trình soạn Apps Script → **Triển khai → Quản lý bản triển khai** → lưu trữ bản triển khai.
 
 ## Kiểm tra không lộ key

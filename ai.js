@@ -29,7 +29,7 @@ var AI_PROXY_URL = 'https://script.google.com/macros/s/AKfycbwRPQ7UxwLXRd9xLawb4
   }
 
   function ask(prompt, system, history) {
-    if (!AI_PROXY_URL) return Promise.resolve({ ok: false, error: 'Chưa bật chạy thử trên trang. Bấm "Sao chép" rồi dán vào gemini.google.com.' });
+    if (!AI_PROXY_URL) return Promise.resolve({ ok: false, error: 'Chưa bật chạy thử trên trang. Bấm "📋 Chép" rồi dán vào gemini.google.com.' });
     var ctl = window.AbortController ? new AbortController() : null;
     var timer = setTimeout(function () { if (ctl) ctl.abort(); }, 90000);
     // Gửi dạng chữ thường (text/plain) để trình duyệt không hỏi trước (Apps Script không hỗ trợ).
@@ -40,7 +40,7 @@ var AI_PROXY_URL = 'https://script.google.com/macros/s/AKfycbwRPQ7UxwLXRd9xLawb4
       .catch(function (e) {
         if (e && e.name === 'AbortError') return { ok: false, error: 'Gemini trả lời lâu quá. Thử lại.' };
         if (!navigator.onLine) return { ok: false, error: 'Mất mạng. Kiểm tra Wi-Fi rồi thử lại.' };
-        return { ok: false, error: 'Không kết nối được máy trung gian. Kiểm tra mạng rồi thử lại, hoặc bấm "Sao chép" rồi dán vào gemini.google.com.' };
+        return { ok: false, error: 'Không kết nối được máy trung gian. Kiểm tra mạng rồi thử lại, hoặc bấm "📋 Chép" rồi dán vào gemini.google.com.' };
       })
       .then(function (res) { clearTimeout(timer); return res; });
   }
@@ -50,11 +50,33 @@ var AI_PROXY_URL = 'https://script.google.com/macros/s/AKfycbwRPQ7UxwLXRd9xLawb4
     return esc(s).replace(/\*\*([^*\n]+)\*\*/g, '<b>$1</b>').replace(/^#{1,6} *(.+)$/gm, '<b>$1</b>').replace(/^(\s*)[*-] /gm, '$1• ');
   }
 
-  // Khung kết quả: câu trả lời + ô "Hỏi tiếp" (cùng cuộc trò chuyện).
+  var EMPTY = 'Kết quả sẽ hiện ở đây. Bấm nút vàng <b>Gửi cho Gemini</b> ở khung ① phía trên.';
+
+  // Chép chữ vào bộ nhớ tạm (để dán sang ChatGPT, Gemini).
+  function copyBtn(label, getText) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'copy'; b.textContent = label;
+    b.title = 'Chép câu này để dán sang ChatGPT hoặc Gemini';
+    b.onclick = function (e) {
+      e.stopPropagation();
+      var text = getText().trim();
+      var done = function () { b.textContent = 'Đã chép ✓'; setTimeout(function () { b.textContent = label; }, 1500); };
+      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done);
+      else { var t = document.createElement('textarea'); t.value = text; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove(); done(); }
+    };
+    return b;
+  }
+
+  // Khung ② "Gemini trả lời": câu trả lời + ô "Muốn chỉnh?" (cùng cuộc trò chuyện, hiện sau lần trả lời đầu).
   function makeOut(after, convKey, getSystem) {
+    var arrow = document.createElement('div');
+    arrow.className = 'ai-arrow';
+    arrow.textContent = '⬇ Gemini trả lời';
     var out = document.createElement('div');
     out.className = 'ai-out';
-    out.innerHTML = '<div class="ai-ans"></div><div class="ai-more"><input type="text" placeholder="Hỏi tiếp / chỉnh: vd &quot;ngắn hơn, dưới 60 chữ&quot;"><button type="button">Gửi</button></div><div class="ai-note"></div>';
+    out.innerHTML = '<div class="ai-lbl">② Gemini trả lời</div><div class="ai-ans empty">' + EMPTY + '</div>' +
+      '<div class="ai-more" hidden><label>✏️ Muốn chỉnh? Gõ thêm ở đây rồi bấm Gửi:</label>' +
+      '<div class="ai-row"><input type="text" placeholder="vd: ngắn hơn, dưới 60 chữ"><button type="button">Gửi</button></div></div><div class="ai-note"></div>';
     out.querySelector('.ai-note').textContent = NOTE;
     var input = out.querySelector('input'), send = out.querySelector('.ai-more button');
     var go = function () {
@@ -66,6 +88,7 @@ var AI_PROXY_URL = 'https://script.google.com/macros/s/AKfycbwRPQ7UxwLXRd9xLawb4
     send.onclick = go;
     input.onkeydown = function (e) { e.stopPropagation(); if (e.key === 'Enter') go(); };
     after.parentNode.insertBefore(out, after.nextSibling);
+    after.parentNode.insertBefore(arrow, out);
     return out;
   }
 
@@ -73,73 +96,90 @@ var AI_PROXY_URL = 'https://script.google.com/macros/s/AKfycbwRPQ7UxwLXRd9xLawb4
     var ans = out.querySelector('.ai-ans');
     ans.className = 'ai-ans' + (cls ? ' ' + cls : '');
     ans.innerHTML = html;
-    var slide = out.closest('.slide');
-    if (slide) slide.classList.add('has-out');
   }
 
   function run(prompt, out, convKey, getSystem, chain) {
     if (/\[[^\]\n]{1,60}\]/.test(prompt)) {
-      show(out, 'Bấm vào ô chữ, thay các chỗ <b>[ ]</b> bằng thông tin của bạn, rồi bấm Chạy thử.', 'warn');
+      show(out, 'Chưa gửi. Bấm vào khung ①, thay các chỗ <b>[ ]</b> bằng thông tin của bạn (xoá cả dấu [ ]), rồi bấm lại <b>Gửi cho Gemini</b>.', 'warn');
       return;
     }
     var conv = convs.get(convKey) || [];
     var showQ = chain && out.dataset.q;
-    if (chain && !conv.length) { show(out, 'Hãy bấm <b>▶ Chạy thử</b> ở ô phía trên trước.', 'warn'); return; }
+    if (chain && !conv.length) { show(out, 'Chưa gửi. Hãy bấm <b>Gửi cho Gemini</b> ở khung ① phía trên trước, rồi quay lại đây.', 'warn'); return; }
     var history = chain ? conv : [];
-    show(out, '⏳ Gemini đang trả lời…', 'wait');
+    show(out, '⏳ Gemini đang nghĩ… (thường 5–20 giây)', 'wait');
     ask(prompt, getSystem ? getSystem() : '', history).then(function (res) {
       if (!res || !res.ok) { show(out, '❌ ' + esc((res && res.error) || 'Có lỗi. Thử lại.'), 'err'); return; }
       convs.set(convKey, history.concat([{ q: prompt, a: res.text }]).slice(-4));
-      show(out, (showQ ? '<div class="ai-q">🙋 ' + esc(prompt) + '</div>' : '') + md(res.text));
+      show(out, (showQ ? '<div class="ai-q">🙋 Bạn: ' + esc(prompt) + '</div>' : '') + md(res.text));
+      out.querySelector('.ai-more').hidden = false;
     });
     out.dataset.q = '1';
   }
 
-  // Gắn nút "Chạy thử" vào các ô prompt. data-ai="off": không gắn; data-ai="chain": nối tiếp ô trước.
+  // Biến mỗi ô prompt thành khung ① "Bạn nhập" (sửa được, nút Gửi) + khung ② "Gemini trả lời".
+  // data-ai="off": chỉ để xem + nút Sao chép (bài phải làm trong app); data-ai="chain": nối tiếp cuộc trò chuyện ô trước.
   function setup(selector) {
     document.querySelectorAll(selector).forEach(function (box) {
-      if (box.dataset.ai === 'off') return;
+      if (box.dataset.ai === 'off') {
+        box.appendChild(copyBtn('Sao chép', function () { return box.firstChild.textContent; }));
+        return;
+      }
+      var chain = box.dataset.ai === 'chain';
+      box.style.fontSize = getComputedStyle(box).fontSize; // giữ cỡ chữ của ô cũ (.sm, .col)
       var txt = document.createElement('div');
       txt.className = 'ai-txt';
-      txt.title = 'Bấm vào để sửa câu hỏi';
+      txt.title = 'Bấm vào để sửa';
       txt.spellcheck = false;
       try { txt.contentEditable = 'plaintext-only'; } catch (e) {}
       if (txt.contentEditable !== 'plaintext-only') txt.contentEditable = 'true';
       while (box.firstChild) txt.appendChild(box.firstChild);
-      box.appendChild(txt);
-      box.classList.add('ai-box');
+      box.className = 'ai-in';
+      var head = document.createElement('div');
+      head.className = 'ai-head';
+      head.innerHTML = '<span class="ai-lbl">① Bạn nhập' + (chain ? ' (câu chỉnh, gửi tiếp cuộc trò chuyện trên)' : '') +
+        ' <small>bấm vào khung để sửa</small></span>';
+      head.appendChild(copyBtn('📋 Chép', function () { return txt.innerText; }));
+      var foot = document.createElement('div');
+      foot.className = 'ai-foot';
       var b = document.createElement('button');
-      b.type = 'button'; b.className = 'run'; b.textContent = '▶ Chạy thử';
+      b.type = 'button'; b.className = 'run'; b.textContent = 'Gửi cho Gemini ➜';
+      foot.appendChild(b);
+      box.appendChild(head); box.appendChild(txt); box.appendChild(foot);
       var c = box.closest('[data-conv]');
       var convKey = c ? (named[c.dataset.conv] = named[c.dataset.conv] || {}) : (box.closest('section') || document.body);
-      var out = null;
+      var out = makeOut(box, convKey, null);
+      var slide = box.closest('.slide');
+      if (slide) slide.classList.add('has-out');
       b.onclick = function (e) {
         e.stopPropagation();
-        out = out || makeOut(box, convKey, null);
         out.dataset.q = '';
-        run(txt.innerText.trim(), out, convKey, null, box.dataset.ai === 'chain');
+        run(txt.innerText.trim(), out, convKey, null, chain);
       };
-      box.appendChild(b);
     });
   }
 
   // Khung thử "hướng dẫn cho AI": chọn mẫu → sửa → hỏi → xem kết quả.
   function lab(el) {
-    el.innerHTML = '<div class="lab-l"><label>1. Hướng dẫn cho AI <select></select></label><textarea class="lab-sys" spellcheck="false"></textarea></div>' +
-      '<div class="lab-r"><label>2. Câu hỏi thử</label><textarea class="lab-q" spellcheck="false"></textarea><button type="button" class="run">▶ Chạy thử</button></div>';
+    el.innerHTML = '<div class="lab-l ai-in"><div class="ai-lbl">① Bạn nhập · Phần A: hướng dẫn cho AI</div>' +
+      '<label>Chọn mẫu: <select></select></label><textarea class="lab-sys" spellcheck="false"></textarea></div>' +
+      '<div class="lab-r"><div class="ai-in"><div class="ai-lbl">① Bạn nhập · Phần B: câu hỏi thử</div><textarea class="lab-q" spellcheck="false"></textarea>' +
+      '<div class="ai-foot"><button type="button" class="run">Gửi cho Gemini ➜</button></div></div></div>';
     var sel = el.querySelector('select'), sys = el.querySelector('.lab-sys'), q = el.querySelector('.lab-q');
     SAMPLES.forEach(function (s, i) { var o = document.createElement('option'); o.value = i; o.textContent = s.name; sel.appendChild(o); });
     var pick = function () { var s = SAMPLES[sel.value]; sys.value = s.sys; q.value = s.q; };
     sel.value = 1; pick();
     sel.onchange = pick;
     [sys, q].forEach(function (t) { t.onkeydown = function (e) { e.stopPropagation(); }; });
-    var convKey = {}, out = null, btn = el.querySelector('.lab-r .run');
+    var convKey = {}, btn = el.querySelector('.lab-r .run');
     var getSys = function () { return sys.value.trim(); };
+    var out = makeOut(el.querySelector('.lab-r .ai-in'), convKey, getSys);
+    var slide = el.closest('.slide');
+    if (slide) slide.classList.add('has-out');
     btn.onclick = function () {
-      if (/\[(ai|gì|điều \d|bước \d)\]/.test(sys.value)) { out = out || makeOut(btn, convKey, getSys); show(out, 'Thay các chỗ <b>[ ]</b> trong hướng dẫn bằng việc của bạn trước.', 'warn'); return; }
+      if (/\[(ai|gì|điều \d|bước \d)\]/.test(sys.value)) { show(out, 'Chưa gửi. Thay các chỗ <b>[ ]</b> trong Phần A bằng việc của bạn trước.', 'warn'); return; }
       var text = q.value.trim();
-      out = out || makeOut(btn, convKey, getSys);
-      if (!text) { show(out, 'Bạn chưa nhập câu hỏi thử.', 'warn'); return; }
+      if (!text) { show(out, 'Chưa gửi. Bạn chưa nhập câu hỏi thử ở Phần B.', 'warn'); return; }
       out.dataset.q = '';
       run(text, out, convKey, getSys, false);
     };

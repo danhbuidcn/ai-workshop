@@ -14,10 +14,15 @@ Biết 4 cái tên hay gặp, mỗi cái mạnh ở đâu. Không cần dùng h�
 |---|---|---|---|---|
 | ChatGPT | OpenAI | "Điện thoại phổ biến nhất" | Đa năng, nhiều người dùng, nhiều hướng dẫn trên mạng | Có, giới hạn số lượt mỗi ngày |
 | Gemini | Google | "Đi kèm nhà Google" | Gắn với Gmail, Drive, YouTube, Google Maps | Có |
-| Claude | Anthropic | "Người viết cẩn thận" | Viết lách tự nhiên, đọc tài liệu dài | Có, giới hạn lượt |
+| Claude | Anthropic | "Người viết cẩn thận" | Viết lách tự nhiên, đọc tài liệu dài, mạnh cả lập trình | Có, giới hạn lượt |
 | Perplexity | Perplexity | "Thủ thư" | Tìm thông tin trên mạng, ghi rõ nguồn | Có |
 
 Hình: 4 thẻ màu, mỗi thẻ 1 biểu tượng (💬 🔵 ✍️ 🔎).
+
+## Ý 2b: Trò chuyện khác công cụ lập trình (nói lướt, 30 giây)
+- **ChatGPT** (trò chuyện) khác **Codex**: cùng của OpenAI; Codex là công cụ giúp lập trình viên viết và sửa phần mềm.
+- **Claude** (trò chuyện) khác **Claude Code**: cùng của Anthropic; Claude Code là công cụ lập trình, làm việc thẳng trên máy tính của lập trình viên (có cả bản app, web).
+- Buổi này chỉ dùng phần trò chuyện. Không hướng dẫn cài.
 
 ## Ý 3: Chọn cái nào khi nào
 | Việc | Gợi ý |

@@ -64,6 +64,8 @@
   .practice { display: inline-block; background: var(--c); color: #fff; font-weight: 800; font-size: 18px; padding: 5px 16px;
     border-radius: 999px; margin-bottom: 10px; align-self: flex-start; }
   ol.steps { padding-left: 34px; margin: 6px 0; } ol.steps li { font-size: 22px; margin: 4px 0; }
+  ol.steps.sm li { font-size: 18px; margin: 2px 0; }
+  p.app { font-size: 17px; margin-top: 2px; }
   /* bulbs */
   .bulbs { display: flex; gap: 10px; justify-content: center; margin: 10px 0; }
   .bulb { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
@@ -217,11 +219,13 @@
   <span class="practice">✋ THỰC HÀNH</span>
   <h2>Đoán chữ tiếp theo</h2>
   <ol class="steps">
-    <li>Mỗi người viết ra giấy 1 chữ: "Mùa hè, em thích đi <span class="blank">&nbsp;</span>"</li>
-    <li>Dán câu này vào ChatGPT hoặc Gemini:</li>
+    <li>Viết ra giấy 1 chữ bạn đoán: "Mùa hè, em thích đi <span class="blank">&nbsp;</span>"</li>
+    <li>Bấm nút vàng <b>Gửi cho Gemini</b> ở khung ① (câu đã điền sẵn, không cần sửa).</li>
+    <li>Chờ vài giây. Đọc 5 câu Gemini viết ở khung ②.</li>
+    <li>So sánh: chữ bạn đoán có trong 5 câu đó không?</li>
   </ol>
   <div class="prompt">Hoàn thành câu sau bằng 5 cách khác nhau: "Mùa hè, em thích đi ..."</div>
-  <ol class="steps" start="3"><li>So sánh: người và AI có đoán giống nhau không?</li></ol>
+  <p class="muted app">Làm trên app: bấm <b>📋 Chép</b> → mở <b>chatgpt.com</b> hoặc <b>gemini.google.com</b> → bấm vào ô chat → <b>Ctrl + V</b> → <b>Enter</b>.</p>
 </section>
 
 <!-- ===================== 2. BẢN ĐỒ AI ===================== -->
@@ -231,21 +235,29 @@
   <div class="grid g4">
     <div class="card c"><span class="ic">💬</span><b class="t">ChatGPT</b><span class="muted">OpenAI</span><br>Phổ biến nhất, đa năng.<div class="card mini">Dùng khi: hỏi nhanh, viết thư, soạn bài</div></div>
     <div class="card c"><span class="ic">🔵</span><b class="t">Gemini</b><span class="muted">Google</span><br>Gắn với Gmail, Drive, YouTube.<div class="card mini">Dùng khi: làm việc với Gmail, Google Drive</div></div>
-    <div class="card c"><span class="ic">✍️</span><b class="t">Claude</b><span class="muted">Anthropic</span><br>Viết tự nhiên, đọc tài liệu dài.<div class="card mini">Dùng khi: viết văn bản dài, giọng tự nhiên</div></div>
+    <div class="card c"><span class="ic">✍️</span><b class="t">Claude</b><span class="muted">Anthropic</span><br>Viết tự nhiên, đọc tài liệu dài, <b>mạnh cả lập trình</b>.<div class="card mini">Dùng khi: viết văn bản dài, giọng tự nhiên</div></div>
     <div class="card c"><span class="ic">🔎</span><b class="t">Perplexity</b><span class="muted">Perplexity</span><br>Tìm trên mạng, ghi rõ nguồn.<div class="card mini">Dùng khi: cần thông tin mới, cần biết nguồn</div></div>
   </div>
-  <p class="muted" style="margin-top:14px">Cả 4 đều có bản miễn phí (giới hạn số lượt mỗi ngày).</p>
-  <p class="big sm" style="margin-top:14px"><em>Cách hỏi</em> quan trọng hơn <em>chọn app</em>.<br><span style="font-weight:500;font-size:22px">Chọn 1–2 cái, dùng cho quen tay.</span></p>
+  <p class="muted" style="margin:8px 0 0;font-size:18px">Cả 4 đều có bản miễn phí (giới hạn số lượt mỗi ngày).</p>
+  <div class="grid g2" style="margin-top:10px;gap:12px">
+    <div class="card mini c" style="margin:0"><b>💬 ChatGPT</b> khác <b>🛠️ Codex</b> (cùng của OpenAI)<br>ChatGPT để <b>trò chuyện</b>. Codex là công cụ giúp lập trình viên <b>viết và sửa phần mềm</b>.</div>
+    <div class="card mini c" style="margin:0"><b>✍️ Claude</b> khác <b>🛠️ Claude Code</b> (cùng của Anthropic)<br>Claude để <b>trò chuyện</b>. Claude Code là công cụ <b>lập trình</b>, làm việc thẳng trên máy tính của lập trình viên.</div>
+  </div>
+  <p class="big sm" style="margin-top:10px"><em>Cách hỏi</em> quan trọng hơn <em>chọn app</em>. <span style="font-weight:500;font-size:22px">Buổi này chỉ dùng phần trò chuyện. Chọn 1–2 cái, dùng cho quen tay.</span></p>
 </section>
 
 <section class="slide" data-s="2">
   <span class="tag">2 · BẢN ĐỒ AI</span>
   <span class="practice">✋ THỰC HÀNH</span>
   <h2>Hỏi 1 câu, 2 AI</h2>
-  <ol class="steps"><li>Mở ChatGPT và Gemini ở 2 tab.</li><li>Dán cùng 1 câu vào cả 2:</li></ol>
+  <ol class="steps">
+    <li>Bấm nút nhỏ <b>📋 Chép</b> ở góc phải khung ①. <span class="muted">(Nhân sự: sửa câu thành "Gợi ý 3 câu hỏi phỏng vấn để biết ứng viên có chịu được áp lực không." rồi mới chép.)</span></li>
+    <li>Mở tab mới, vào <b>chatgpt.com</b>. Bấm vào ô <b>"Hỏi bất kỳ điều gì"</b> → <b>Ctrl + V</b> → <b>Enter</b>.</li>
+    <li>Mở thêm 1 tab, vào <b>gemini.google.com</b>. Bấm vào ô <b>"Hỏi Gemini"</b> → <b>Ctrl + V</b> → <b>Enter</b>.</li>
+    <li>Chưa đăng nhập được Gemini? Bấm <b>Gửi cho Gemini</b> ngay ở đây, xem khung ②.</li>
+    <li>So sánh 2 câu trả lời: cái nào ngắn hơn? dễ dùng hơn? Bạn thích cái nào?</li>
+  </ol>
   <div class="prompt">Gợi ý 3 hoạt động khởi động 5 phút cho lớp học tiếng Anh 20 học sinh lớp 6.</div>
-  <p class="muted" style="font-size:19px">Nhân sự thử: "Gợi ý 3 câu hỏi phỏng vấn để biết ứng viên có chịu được áp lực không."</p>
-  <ol class="steps" start="3"><li>So sánh: cái nào ngắn hơn? dễ dùng hơn? Bạn thích cái nào?</li></ol>
 </section>
 
 <!-- ===================== 3. 5 NGUYÊN TẮC ===================== -->
@@ -308,11 +320,17 @@
   <span class="tag">3 · 5 NGUYÊN TẮC</span>
   <span class="practice">✋ THỰC HÀNH</span>
   <h2>Viết lại câu trả lời đầu</h2>
-  <ol class="steps"><li>Hỏi AI 1 việc thật, ví dụ:</li></ol>
+  <ol class="steps">
+    <li>Lần 1: bấm <b>Gửi cho Gemini</b> ở khung ① dưới đây. Đọc thông báo ở khung ②.</li>
+    <li>Tìm <b>1 điều</b> chưa ưng: dài quá? thiếu giờ? giọng cứng?</li>
+  </ol>
   <div class="prompt">Viết thông báo cho phụ huynh về buổi họp lớp.</div>
-  <ol class="steps" start="2"><li>Đọc kết quả. Tìm <b>1 điều</b> chưa ưng.</li><li>Gõ 1 câu chỉnh:</li></ol>
+  <ol class="steps" start="3">
+    <li>Lần 2: ở khung ① thứ hai, sửa câu chỉnh theo ý bạn → bấm <b>Gửi cho Gemini</b>.</li>
+    <li>So sánh 2 khung ②: lần 2 có hợp ý hơn không?</li>
+  </ol>
   <div class="prompt" data-ai="chain">Ngắn hơn, dưới 60 chữ, thêm giờ họp 19h thứ Sáu, giọng thân thiện.</div>
-  <ol class="steps" start="4"><li>So sánh lần 1 và lần 2.</li></ol>
+  <p class="muted app">Làm trên app: gửi câu lần 1 → khi AI trả lời xong, gõ câu chỉnh vào <b>cùng ô chat đó</b> → <b>Enter</b>. Không mở chat mới.</p>
 </section>
 
 <!-- ===================== 4. PROMPT ===================== -->
@@ -388,13 +406,18 @@
   <span class="tag">4 · GIAO VIỆC</span>
   <span class="practice">✋ THỰC HÀNH</span>
   <h2>Viết prompt theo công thức</h2>
-  <ol class="steps"><li>Chọn 1 việc thật tuần này phải làm.</li><li>Điền đủ 5 phần (có khung trong phiếu thực hành):</li></ol>
+  <ol class="steps">
+    <li>Chọn 1 việc thật tuần này phải làm (vd: thông báo họp, đề kiểm tra, tin tuyển dụng).</li>
+    <li>Bấm vào khung ①. Thay từng chỗ <b>[ ]</b> bằng thông tin của bạn, xoá cả dấu [ ].</li>
+    <li>Bấm <b>Gửi cho Gemini</b>. Đọc kết quả ở khung ②.</li>
+    <li>Chưa ưng → gõ 1 câu chỉnh vào ô <b>"Muốn chỉnh?"</b> trong khung ② → bấm <b>Gửi</b>.</li>
+  </ol>
   <div class="prompt sm">Bạn là [vai trò].
 Bối cảnh: [tôi là ai, cho ai, tình huống gì].
 Việc cần làm: [1 việc rõ ràng].
 Kết quả: [dài bao nhiêu, dạng gì, giọng gì].
 Nếu thiếu thông tin, hãy hỏi tôi trước khi làm.</div>
-  <ol class="steps" start="3"><li>Gửi cho AI, chỉnh thêm 1 lần.</li></ol>
+  <p class="muted app">Ví dụ điền sẵn: slide "Trước và sau" và phiếu 4. Làm trên app: điền xong bấm <b>📋 Chép</b> → dán vào ô chat → <b>Enter</b>.</p>
 </section>
 
 <!-- ===================== 5. TÀI LIỆU ===================== -->
@@ -409,7 +432,7 @@ Nếu thiếu thông tin, hãy hỏi tôi trước khi làm.</div>
   <div class="grid g3">
     <div class="card c"><span class="ic">📎</span><b class="t">Tải file lên</b>Bấm <b>+</b> hoặc 📎 trong ô chat, chọn file Word, PDF, Excel, ảnh.<br><span class="muted">Free: có (ChatGPT giới hạn số file/ngày)</span></div>
     <div class="card c"><span class="ic">📋</span><b class="t">Dán chữ</b>Copy nội dung, dán vào ô chat.<br><span class="muted">Free: luôn được</span></div>
-    <div class="card c"><span class="ic">🔗</span><b class="t">Kết nối Drive, Gmail</b>Gemini: gõ <b>@</b> rồi chọn Gmail hoặc Google Drive.<br><span class="muted">Free: Gemini có. ChatGPT có thể cần trả phí.</span></div>
+    <div class="card c"><span class="ic">🔗</span><b class="t">Kết nối Drive, Gmail</b>Gemini: gõ <b>@</b> rồi chọn Gmail hoặc Google Drive.<br><span class="muted">Free: Gemini có. ChatGPT free không có.</span></div>
   </div>
   <p class="muted" style="margin-top:12px;font-size:18px">App đổi giao diện thường xuyên. Không thấy nút → dùng 📎 hoặc 📋. Hai cách này luôn được.</p>
 </section>
@@ -418,14 +441,16 @@ Nếu thiếu thông tin, hãy hỏi tôi trước khi làm.</div>
   <span class="tag">5 · TÀI LIỆU</span>
   <div class="grid g2">
     <div>
-      <h2 style="font-size:30px">🔗 Gemini + Gmail / Drive</h2>
-      <ol class="steps" style="padding-left:28px">
-        <li style="font-size:19px">Mở <b>gemini.google.com</b>, đăng nhập Gmail cá nhân.</li>
-        <li style="font-size:19px">Lần đầu: <b>Cài đặt → Ứng dụng</b> (Apps), bật Google Workspace (Gmail, Drive).</li>
-        <li style="font-size:19px">Gõ <b>@Gmail</b> hoặc <b>@Google Drive</b> rồi hỏi:</li>
+      <h2 style="font-size:30px;margin-bottom:8px">🔗 Gemini + Gmail / Drive <small>Làm trong app Gemini (cần quyền vào Gmail, không chạy trên trang này)</small></h2>
+      <ol class="steps" style="padding-left:28px;margin-top:0">
+        <li style="font-size:18px">Mở <b>gemini.google.com</b>, đăng nhập Gmail cá nhân.</li>
+        <li style="font-size:18px">Lần đầu: menu trái → <b>Customize</b> (Tuỳ chỉnh) → <b>Connectors</b> → dòng Google Workspace bấm <b>Add</b> → đồng ý. <span class="muted">Không thấy: ⚙️ Cài đặt → <b>Connected Apps</b> (Ứng dụng đã kết nối).</span></li>
+        <li style="font-size:18px">Trong ô chat gõ <b>@</b> → chọn <b>Gmail</b> hoặc <b>Google Drive</b> → gõ tiếp câu hỏi → <b>Enter</b>.</li>
+        <li style="font-size:18px">Gemini hỏi cho phép → bấm đồng ý. Bị báo cần bật "Hoạt động" (Keep Activity) → bật theo hướng dẫn trên màn hình.</li>
       </ol>
       <div class="prompt col" data-ai="off">@Gmail Tóm tắt các email từ phụ huynh trong tuần này, mỗi email 1 dòng.</div>
       <div class="prompt col" data-ai="off" style="margin-top:8px">@Google Drive Tìm file "Quy định nghỉ phép" và cho tôi biết nhân viên được nghỉ mấy ngày/năm.</div>
+      <p class="muted" style="font-size:16px;margin-top:6px">ChatGPT bản free không kết nối Gmail/Drive. Tài khoản công ty/trường có thể bị khoá. → Tải file lên (📎) hoặc dán chữ.</p>
     </div>
     <div>
       <h2 style="font-size:30px">📊 Excel</h2>
@@ -434,7 +459,8 @@ Nếu thiếu thông tin, hãy hỏi tôi trước khi làm.</div>
         <li style="font-size:19px">File quá lớn → xoá bớt cột không cần, hoặc lưu thành <b>.csv</b> (Excel: Tệp → Lưu thành → chọn CSV).</li>
         <li style="font-size:19px">Luôn tự kiểm tra lại <b>1–2 con số</b> (nguyên tắc 5).</li>
       </ul>
-      <div class="prompt col" data-ai="off" style="margin-top:12px">Đây là bảng chấm công tháng 10. Ai đi muộn quá 3 lần? Trình bày dạng bảng: tên, số lần.</div>
+      <p class="muted" style="font-size:16px;margin:12px 0 0">Làm trong app (cần tải file Excel lên):</p>
+      <div class="prompt col" data-ai="off" style="margin-top:4px">Đây là bảng chấm công tháng 10. Ai đi muộn quá 3 lần? Trình bày dạng bảng: tên, số lần.</div>
     </div>
   </div>
 </section>
@@ -487,16 +513,22 @@ Nếu chưa rõ, hãy hỏi tôi trước.</div>
   <span class="tag">5 · TÀI LIỆU</span>
   <span class="practice">✋ THỰC HÀNH</span>
   <h2>Cho AI đọc 1 tài liệu</h2>
+  <p style="font-weight:700;margin:0">Cách A · ngay trên trang (dán chữ)</p>
   <ol class="steps">
-    <li>Chọn 1 file thật: giáo án, danh sách lớp (đã đổi tên), quy định nghỉ phép…</li>
-    <li>Tải lên ChatGPT hoặc Gemini (hoặc thử <b>@Google Drive</b> trên Gemini).</li>
-    <li>Hỏi 2 câu:
-      <ul><li>1 câu tóm tắt: "Tóm tắt file này trong 5 dòng."</li>
-      <li>1 câu <b>mình đã biết đáp án</b> → AI trả lời đúng không?</li></ul></li>
+    <li>Mở file của bạn (giáo án, quy định…, đã xoá thông tin riêng tư). Bôi đen 1 đoạn → <b>Ctrl + C</b>.</li>
+    <li>Ở khung ①: bôi đen dòng <b>[dán đoạn tài liệu vào đây]</b> → <b>Ctrl + V</b>.</li>
+    <li>Bấm <b>Gửi cho Gemini</b>. Đọc 5 dòng tóm tắt ở khung ②.</li>
+    <li>Ô <b>"Muốn chỉnh?"</b>: hỏi 1 câu <b>mình đã biết đáp án</b> → AI trả lời đúng không?</li>
   </ol>
-  <p class="muted" style="font-size:18px">Thử ngay trên trang: bấm vào ô đen, dán 1 đoạn tài liệu (đã xoá thông tin riêng tư), bấm ▶ Chạy thử.</p>
   <div class="prompt sm">Tóm tắt đoạn sau trong 5 dòng. Mỗi dòng 1 ý chính:
 [dán đoạn tài liệu vào đây]</div>
+  <p style="font-weight:700;margin:6px 0 0">Cách B · tải cả file lên app (ChatGPT hoặc Gemini)</p>
+  <ol class="steps">
+    <li>Mở <b>chatgpt.com</b> hoặc <b>gemini.google.com</b>. Bấm nút <b>+</b> ở đầu ô chat.</li>
+    <li>ChatGPT: chọn <b>Thêm ảnh và tệp</b>. Gemini: chọn <b>Tải tệp lên</b>. Chọn file trên máy → <b>Open</b>.</li>
+    <li>Gõ "Tóm tắt file này trong 5 dòng." → <b>Enter</b>. Rồi hỏi 1 câu mình đã biết đáp án.</li>
+  </ol>
+  <p class="muted app">Cách C · file trong Google Drive: chỉ Gemini làm được, xem các bước ở slide 21 hoặc phiếu 5.</p>
 </section>
 
 <!-- ===================== 6. TỔNG KẾT ===================== -->
@@ -568,26 +600,15 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
 
 <section class="slide" data-s="7">
   <span class="tag">7 · BÀI TẬP CUỐI</span>
-  <span class="practice">✋ ĐẾN LƯỢT BẠN</span>
-  <h2>Viết đoạn hướng dẫn 4 khối cho việc của bạn</h2>
-  <div class="grid g3">
-    <div class="card c"><b class="t">🇬🇧 GV tiếng Anh</b>"Trợ lý sửa bài viết": không viết lại hộ, chỉ gạch lỗi + giải thích ngắn + 1 câu hỏi để học sinh tự sửa.</div>
-    <div class="card c"><b class="t">🇨🇳 GV tiếng Trung</b>"Thẻ từ vựng": mỗi từ trả về đúng khung: chữ Hán · pinyin · nghĩa · mẹo nhớ · 1 câu ví dụ.</div>
-    <div class="card c"><b class="t">👥 Nhân sự</b>"Trả lời câu hỏi nhân viên": dựa trên quy định đã dán, ≤ 5 câu, ghi rõ điều mấy, không chắc thì nói "hỏi phòng nhân sự".</div>
-  </div>
-  <p class="muted" style="font-size:17px;margin-top:8px">Khung điền sẵn + đoạn mẫu có trong phiếu thực hành.</p>
-  <p style="font-weight:700;margin-top:10px">Thử và chỉnh</p>
-  <ol class="steps" style="margin-top:0">
-    <li>Mở Gemini, tạo cuộc chat mới. Dán đoạn hướng dẫn vào đầu.<br><span class="muted" style="font-size:18px">Hoặc tạo Gem: menu trái → <b>Gem</b> → <b>Gem mới</b> → dán vào ô <b>Hướng dẫn</b> → Lưu.</span></li>
-    <li>Gửi 2 câu hỏi thử. AI có theo đúng khung không?</li>
-    <li>Chưa đúng → sửa đoạn hướng dẫn → thử lại. <b>(Nguyên tắc 2!)</b></li>
+  <span class="practice">✋ ĐẾN LƯỢT BẠN · THỬ NGAY TRÊN TRANG</span>
+  <h2 style="margin-bottom:6px">Viết đoạn hướng dẫn 4 khối cho việc của bạn</h2>
+  <ol class="steps sm">
+    <li>Ô <b>Chọn mẫu</b>: chọn GV tiếng Anh (sửa bài viết), GV tiếng Trung (thẻ từ vựng), Nhân sự (trả lời nhân viên), hoặc "Tự viết".</li>
+    <li>Phần A: sửa từng dòng cho đúng việc của bạn. Giữ đủ 4 khối: vai trò, điều cấm, cách làm, khung trả lời.</li>
+    <li>Phần B: gõ 1 câu hỏi thử → bấm <b>Gửi cho Gemini</b>.</li>
+    <li>Xem khung ②: AI có đúng khung không? Chưa đúng → sửa 1 dòng ở Phần A → gửi lại. <b>(Nguyên tắc 2!)</b></li>
+    <li>Ưng rồi → mang về app: Gemini → menu trái <b>Gem</b> (hoặc <b>Khám phá Gem</b>) → <b>Gem mới</b> → dán Phần A vào ô <b>Hướng dẫn</b> → <b>Lưu</b>.</li>
   </ol>
-</section>
-
-<section class="slide" data-s="7">
-  <span class="tag">7 · BÀI TẬP CUỐI</span>
-  <span class="practice">🧪 THỬ NGAY TRÊN TRANG</span>
-  <h2 style="margin-bottom:12px">Dạy Gemini trả lời đúng khung <small>Chọn mẫu hoặc tự viết → sửa → Chạy thử → chưa đúng thì sửa 1 dòng, chạy lại</small></h2>
   <div class="ai-lab"></div>
 </section>
 
@@ -661,23 +682,9 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
     x0 = null;
   });
 
-  // Nút "Chạy thử" (ai.js) + khung thử hướng dẫn cho AI
+  // Bài thực hành: khung ① Bạn nhập / ② Gemini trả lời + nút Sao chép (ai.js), khung thử hướng dẫn cho AI
   AI.setup('.prompt');
   AI.lab('.ai-lab');
-
-  // Nút "Sao chép" cho mỗi ô prompt
-  document.querySelectorAll('.prompt').forEach(function (box) {
-    var b = document.createElement('button');
-    b.className = 'copy'; b.textContent = 'Sao chép';
-    b.onclick = function (e) {
-      e.stopPropagation();
-      var text = (box.firstChild.innerText || box.firstChild.textContent).trim();
-      var done = function () { b.textContent = 'Đã chép ✓'; setTimeout(function () { b.textContent = 'Sao chép'; }, 1500); };
-      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done);
-      else { var t = document.createElement('textarea'); t.value = text; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove(); done(); }
-    };
-    box.appendChild(b);
-  });
 
   window.addEventListener('resize', fit);
   window.addEventListener('hashchange', fromHash);

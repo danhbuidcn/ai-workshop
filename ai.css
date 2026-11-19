@@ -1,31 +1,49 @@
-/* Nút "Chạy thử" + khung kết quả Gemini, dùng chung cho slide và phiếu (xem ai.js). */
-.ai-box { min-height: 84px; }
-.ai-box .run { position: absolute; top: 44px; right: 8px; }
-.prompt.col .run { top: 8px; right: 92px; }
-.run, .ai-more button { font: inherit; font-size: 14px; font-weight: 700; padding: 5px 10px; border-radius: 8px; border: 0;
-  background: #fbbf24; color: #1f2937; cursor: pointer; }
+/* Bài thực hành: khung ① "Bạn nhập" + khung ② "Gemini trả lời", dùng chung cho slide và phiếu (xem ai.js). */
+/* ① Bạn nhập: nền sáng, viền nét đứt, bấm vào để sửa */
+.ai-in { position: relative; background: #fffef5; color: #1f2937; border: 3px dashed #f59e0b; border-radius: 14px;
+  padding: 8px 14px 10px; margin: 8px 0 0; line-height: 1.45; white-space: normal; text-align: left;
+  font-family: "Segoe UI", system-ui, sans-serif; }
+.ai-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 4px; }
+.ai-lbl { font-size: 16px; font-weight: 800; color: #b45309; }
+.ai-lbl small { font-weight: 500; color: #6b7280; font-size: 13px; margin-left: 4px; }
+.ai-head .copy { position: static; font-size: 13px; padding: 3px 8px; border-radius: 8px; border: 1px solid #d1d5db;
+  background: #fff; color: #4b5563; cursor: pointer; }
+.ai-txt { white-space: pre-wrap; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 6px 10px;
+  outline: none; cursor: text; }
+.ai-txt:focus { border-color: #f59e0b; box-shadow: 0 0 0 3px #fde68a; }
+.ai-foot { text-align: right; margin-top: 8px; }
+.run, .ai-more button { font: inherit; font-size: 16px; font-weight: 800; padding: 6px 16px; border-radius: 10px; border: 0;
+  background: #fbbf24; color: #1f2937; cursor: pointer; box-shadow: 0 2px 0 #d97706; }
 .run:hover, .ai-more button:hover { background: #f59e0b; }
-.ai-txt { outline: none; cursor: text; }
-.ai-txt:focus { outline: 2px dashed #fbbf24; outline-offset: 4px; border-radius: 4px; }
-.ai-out { background: #fff; color: #1f2937; border: 2px solid var(--c, #6366f1); border-radius: 14px; padding: 10px 14px;
-  margin: 8px 0 14px; font-size: 16px; line-height: 1.5; text-align: left; }
-.ai-ans { white-space: pre-wrap; max-height: 300px; overflow: auto; }
-.ai-ans.err { color: #b91c1c; } .ai-ans.warn { color: #92400e; } .ai-ans.wait { color: #6b7280; }
+/* Mũi tên giữa 2 khung */
+.ai-arrow { text-align: center; font-size: 15px; font-weight: 700; color: #4f46e5; margin: 2px 0; }
+/* ② Gemini trả lời: nền xanh nhạt, viền liền */
+.ai-out { background: #eef2ff; color: #1f2937; border: 3px solid #6366f1; border-radius: 14px; padding: 8px 14px 10px;
+  margin: 0 0 14px; font-size: 16px; line-height: 1.5; text-align: left; }
+.ai-out .ai-lbl { color: #4338ca; margin-bottom: 4px; }
+.ai-ans { white-space: pre-wrap; max-height: 300px; overflow: auto; background: #fff; border-radius: 8px; padding: 6px 10px; }
+.ai-ans.empty { color: #6b7280; font-style: italic; white-space: normal; }
+.ai-ans.err { color: #b91c1c; } .ai-ans.warn { color: #92400e; white-space: normal; } .ai-ans.wait { color: #4b5563; }
 .ai-q { color: #6b7280; margin-bottom: 4px; }
-.ai-more { display: flex; gap: 8px; margin-top: 8px; }
-.ai-more input { flex: 1; font: inherit; font-size: 15px; padding: 5px 10px; border: 2px solid #e5e7eb; border-radius: 10px; }
+.ai-more { margin-top: 8px; }
+.ai-more[hidden] { display: none; }
+.ai-more label { display: block; font-size: 15px; font-weight: 700; color: #4338ca; margin-bottom: 4px; }
+.ai-row { display: flex; gap: 8px; }
+.ai-row input { flex: 1; font: inherit; font-size: 15px; padding: 5px 10px; border: 2px solid #c7d2fe; border-radius: 10px; }
 .ai-note { font-size: 12px; color: #6b7280; margin-top: 6px; }
 /* Khung thử "hướng dẫn cho AI" */
 .ai-lab { display: grid; grid-template-columns: 1.2fr 1fr; gap: 16px; text-align: left; }
-.ai-lab label { display: block; font-weight: 700; font-size: 17px; margin-bottom: 6px; }
+.ai-lab .ai-in { margin: 0; }
+.ai-lab label { display: block; font-weight: 700; font-size: 15px; margin-bottom: 6px; }
 .ai-lab select { font: inherit; font-size: 15px; margin-left: 6px; max-width: 100%; }
-.ai-lab textarea { width: 100%; font: inherit; font-size: 14px; line-height: 1.45; padding: 8px 10px; border: 2px solid #e5e7eb;
-  border-radius: 12px; resize: vertical; }
-.ai-lab .lab-sys { height: 330px; }
-.ai-lab .lab-q { height: 90px; }
-.ai-lab .run { font-size: 16px; padding: 7px 16px; margin-top: 6px; }
-.ai-lab .ai-ans { max-height: 220px; }
-/* Slide có kết quả: cuộn được, không bị cắt mép trên */
+.ai-lab textarea { width: 100%; font: inherit; font-size: 14px; line-height: 1.45; padding: 8px 10px; border: 1px solid #e5e7eb;
+  border-radius: 8px; resize: vertical; background: #fff; }
+.ai-lab textarea:focus { outline: none; border-color: #f59e0b; box-shadow: 0 0 0 3px #fde68a; }
+.ai-lab .lab-sys { height: 300px; }
+.ai-lab .lab-q { height: 80px; }
+.slide .ai-lab .lab-sys { height: 250px; }
+.ai-lab .ai-ans { max-height: 200px; }
+/* Slide có bài thực hành: cuộn được, không bị cắt mép trên */
 .slide.has-out { justify-content: flex-start; overflow-y: auto; }
 @media (max-width: 700px) { .ai-lab { grid-template-columns: 1fr; } }
-@media print { .run, .ai-out, .ai-lab, .ai-lab-wrap { display: none !important; } }
+@media print { .run, .ai-foot, .ai-arrow, .ai-out, .ai-head .copy, .ai-lab, .ai-lab-wrap { display: none !important; } }

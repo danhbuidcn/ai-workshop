@@ -15,7 +15,7 @@ Biết 3 cách đưa tài liệu cho AI trên bản free, và cách lưu "yêu c
 |---|---|---|
 | 📎 Tải file lên | Bấm dấu **+** hoặc 📎 trong ô chat, chọn file (Word, PDF, Excel, ảnh) | Có (ChatGPT free giới hạn số file mỗi ngày) |
 | 📋 Dán chữ | Copy nội dung, dán vào ô chat | Có, luôn được |
-| 🔗 Kết nối Drive/Gmail | Gemini: gõ **@Gmail** hoặc **@Google Drive** trong ô chat (lần đầu bật ở Cài đặt → Ứng dụng) | Gemini: có. ChatGPT: kết nối có thể cần bản trả phí → dùng cách tải file |
+| 🔗 Kết nối Drive/Gmail | Gemini: gõ **@Gmail** hoặc **@Google Drive** trong ô chat (lần đầu: menu trái → Customize → Connectors → Add Google Workspace; giao diện cũ: Cài đặt → Connected Apps) | Gemini: có. ChatGPT bản free: không có kết nối → dùng cách tải file |
 
 Lưu ý: tính năng các app đổi thường xuyên. Không thấy nút → dùng cách 📎 hoặc 📋.
 

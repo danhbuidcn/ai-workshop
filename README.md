@@ -1,6 +1,6 @@
 # Làm việc với AI — workshop 1 giờ
 
-Tài liệu cho buổi học 1 giờ (31 slide) dành cho người không rành kỹ thuật, dùng ChatGPT hoặc Gemini bản miễn phí.
+Tài liệu cho buổi học 1 giờ (30 slide) dành cho người không rành kỹ thuật, dùng ChatGPT hoặc Gemini bản miễn phí.
 
 Học xong, mỗi người biết:
 
@@ -15,11 +15,11 @@ Học xong, mỗi người biết:
 | Cái gì | File | Ghi chú |
 |---|---|---|
 | Bộ slide | [index.html](index.html) | Nút ◀ ▶ hoặc phím mũi tên · F: toàn màn hình · Ctrl + P: lưu PDF |
-| Phiếu thực hành | [handouts/index.html](handouts/index.html) | Mỗi phiếu 1 tab · nút "Sao chép" ở mỗi prompt mẫu · in được |
-| Máy trung gian Gemini | [proxy/HUONG-DAN.md](proxy/HUONG-DAN.md) | Cho nút "▶ Chạy thử" hỏi Gemini ngay trên trang, key không lộ |
+| Phiếu thực hành | [handouts/index.html](handouts/index.html) | Mỗi phiếu 1 tab · khung ① Bạn nhập → khung ② Gemini trả lời · nút "Chép" để dán sang app · in được |
+| Máy trung gian Gemini | [proxy/HUONG-DAN.md](proxy/HUONG-DAN.md) | Cho nút "Gửi cho Gemini" hỏi Gemini ngay trên trang, key không lộ |
 | Dàn ý cho người dẫn | [outline/](outline/) | Lời giải thích, ví dụ, bài thực hành từng phần |
 
-Cách mở trên máy (Windows): tải repo về (nút **Code → Download ZIP**), giải nén, bấm đúp `index.html`. Không cần cài gì, không cần mạng. Nút "▶ Chạy thử" chỉ chạy trên trang `danhbuidcn.github.io` (cần mạng); mở từ máy thì dùng "Sao chép".
+Cách mở trên máy (Windows): tải repo về (nút **Code → Download ZIP**), giải nén, bấm đúp `index.html`. Không cần cài gì, không cần mạng. Nút "Gửi cho Gemini" chỉ chạy trên trang `danhbuidcn.github.io` (cần mạng); mở từ máy thì dùng nút "Chép" rồi dán sang ChatGPT, Gemini.
 
 ## Lịch buổi học
 
@@ -32,7 +32,7 @@ Cách mở trên máy (Windows): tải repo về (nút **Code → Download ZIP**
 | 4 | Cách giao việc (prompt) | 15–19 | 12 |
 | 5 | Cho AI đọc tài liệu | 20–24 | 10 |
 | 6 | Tổng kết | 25 | 2 |
-| 7 | Bài tập cuối | 26–31 | 11 |
+| 7 | Bài tập cuối | 26–30 | 11 |
 
 Số phút chỉ ghi ở đây và trong `outline/`, không ghi trên slide.
 
