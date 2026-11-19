@@ -1,11 +1,6 @@
 # Slide kiểu PowerPoint có điểm nhấn + sửa menu Gemini theo giao diện thật
 Nhánh: .
 Phụ thuộc: 4_design-pass.md
-## Handoff (2026-11-19 17:45)
-- **Đang ở đâu:** xong đợt 1b (góp ý của owner cho slide 1–10). DỪNG chờ owner duyệt. Slide 11–30 vẫn kiểu cũ, trang chạy bình thường.
-- **Owner xem:** ảnh mới `img/5_slide-02, 03, 05, 07, 09.png`, hoặc mở `index.html#2` …; thử bấm "x / 30" góc phải dưới, gõ số + Enter. Chi tiết: mục "Đợt 1b" trong `## Kết quả`.
-- **Bước tiếp (sau khi duyệt, `spawn --resume`):** thêm class `pp` + sắp layout cho slide 11–30, theo luật "nhiều ý → danh sách căn trái" (bước 3) → sửa menu Gemini (bước 4) → máy trung gian 20 lượt/5 phút (bước 5) → kiểm tra (bước 6).
-- **File:** `index.html` (CSS mục "Kiểu PowerPoint", `ul.dot`/`.ls`, ô `#goto` + slide 1–10).
 ## Input
 Owner (2026-11-19):
 1. Thiết kế slide "như PowerPoint" (các slide mẫu owner gửi, từ slide 4 của mẫu trở đi), vì chữ/khối hiện tại không tạo được điểm nhấn. Tham khảo thêm thư mục mẫu: https://drive.google.com/drive/folders/1T6xAyeMAyJ42Oaj2-FvZOQV9eLaPngXq
@@ -55,7 +50,7 @@ Thử mở thư mục Drive bằng WebFetch; không đọc được thì chỉ d
   - Không thêm slide (đang đúng 30). Theo lệnh owner "làm trước 10 slide": kiểu mới chỉ bật ở slide có class `pp` (slide 1–10), slide 11–30 giữ nguyên kiểu cũ.
   - Slide 1–10: "Mở phần" cho slide 1 (tiêu đề) + slide 6 (ý chính + hình lớn); "Mục lục đánh số" cho slide 3; "Số lớn" cho slide 4; "Lưới vòng tròn biểu tượng" cho slide 7, 9; slide 2, 5, 8, 10 theo nền + chữ mới. Để sau duyệt: "Trung tâm + 4 ý" (slide 18), "Bảng" (slide 23), "Mục lục" cho tổng kết (slide 25), "Chốt" (slide 30).
   - Ảnh 10 slide: `wip/2026-11-19/img/5_slide-01.png … 5_slide-10.png`. Xong thì ghi Handoff + DỪNG.
-- [ ] Áp bộ mẫu cho toàn bộ slide từ slide 4 trở đi (gồm 12–14, 23), giữ nội dung + tương tác
+- [x] Áp bộ mẫu cho toàn bộ slide từ slide 4 trở đi (gồm 12–14, 23), giữ nội dung + tương tác — xong (2026-11-19 18:40): cả 30 slide có class `pp`. Thêm CSS "Đợt 2" (ngón tay, thẻ khái niệm, Trung tâm + 4 ý `.hub`, vòng tròn "đừng đưa", mục lục tổng kết). Tràn dọc 0 ở slide 11–13, 15, 18, 20–23, 25, 28, 30; slide thực hành/có khung ①② vẫn cuộn như trước. Chi tiết ở "Đợt 2" trong `## Kết quả`.
 - [ ] Sửa menu Gemini theo mục C ở slide, phiếu, outline, README
 - [ ] Máy trung gian: 20 lượt / 5 phút / người + trần chung; deploy, thử gọi thật, sửa `proxy/HUONG-DAN.md` (để sau khi owner duyệt 10 slide)
 - [ ] Kiểm tra: không tràn chữ, "nheo mắt", đọc được ở 1280×720 và laptop nhỏ, in PDF ≤ 30 trang, không lỗi JS, không lộ key, không có ảnh mẫu/ảnh Gemini trong repo (`git ls-files`), commit (không push)

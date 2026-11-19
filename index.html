@@ -275,6 +275,56 @@
   .pp th { background: var(--pp-pink); color: #a63a24; font-family: var(--serif); text-align: center; }
   .pp td { border-bottom: 2px solid var(--pp-pink); }
   .pp td:first-child { background: var(--pp-green); color: #fff; font-weight: 700; font-family: var(--serif); }
+  /* Đợt 2 (slide 11–30) */
+  /* 5 ngón tay: thẻ trắng, số có chân màu xanh */
+  .pp .finger { border: 0; box-shadow: 0 8px 0 #f0e4cc; border-top: 10px solid var(--pp-green); }
+  .pp .finger:nth-child(3) { border-top-color: var(--pp-coral); }
+  .pp .finger b { font-family: var(--serif); color: var(--pp-green); font-size: 48px; }
+  .pp .finger:nth-child(3) b { color: #a63a24; }
+  /* Thẻ khái niệm: thẻ trắng, số tròn xanh, biểu tượng trong vòng tròn, tên có chân màu xanh */
+  .pp .concept { background: #fff; border: 0; border-radius: 28px; box-shadow: 0 8px 0 #f0e4cc; padding: 18px 24px; }
+  .pp .concept .no { position: relative; background: var(--pp-green); font-family: var(--serif); }
+  .pp .concept .big-ic { width: 84px; height: 84px; border-radius: 50%; background: var(--pp-pink); display: flex; align-items: center;
+    justify-content: center; font-size: 46px; flex: none; }
+  .pp .concept.kB .big-ic, .pp .concept.kC .big-ic { background: var(--pp-green-bg); }
+  .pp .concept h3 { font-size: 34px; color: var(--pp-green); line-height: 1.25; }
+  .pp .concept .lvl { color: var(--pp-green); }
+  .pp .concept.kB .lvl { color: #a63a24; }
+  .pp .concept ul.dot { margin: 2px 0 0; }
+  .pp .joint { font-family: var(--serif); color: var(--pp-coral); }
+  .pp .fold-h .fno { font-family: var(--serif); color: var(--pp-coral); }
+  .pp .fold-h .fs { font-size: 21px; }
+  /* Công thức 5 phần: giữ 5 màu (khớp màu tô trong câu mẫu), thêm vạch màu trên */
+  .pp .card.p1 { border-top: 8px solid #8b5cf6; } .pp .card.p2 { border-top: 8px solid #3b82f6; } .pp .card.p3 { border-top: 8px solid #22c55e; }
+  .pp .card.p4 { border-top: 8px solid #f59e0b; } .pp .card.p5 { border-top: 8px solid #ec4899; }
+  .pp .card b.t { font-family: var(--serif); }
+  .pp .card.p1, .pp .card.p2, .pp .card.p3, .pp .card.p4, .pp .card.p5 { text-align: center; }
+  /* Trung tâm + 4 ý: vòng tròn giữa, 2 ý mỗi bên nối bằng đường mảnh */
+  .hub { display: grid; grid-template-columns: 1fr 280px 1fr; align-items: center; gap: 0 48px; }
+  .hub .col { display: flex; flex-direction: column; gap: 34px; }
+  .hub .it { position: relative; display: flex; align-items: center; gap: 16px; }
+  .hub .col.r .it { flex-direction: row-reverse; text-align: right; }
+  .hub .it::after { content: ""; position: absolute; top: 50%; width: 48px; border-top: 3px solid var(--pp-green); }
+  .hub .col.l .it::after { right: -48px; } .hub .col.r .it::after { left: -48px; }
+  .hub .it .icn { margin: 0; }
+  .hub b.t { display: block; font: 700 30px/1.15 var(--serif); color: var(--pp-green); }
+  .hub .it.goal b.t { color: #a63a24; } .hub .it.goal .icn { background: var(--pp-coral); box-shadow: 0 0 0 6px var(--pp-pink); }
+  .hub .it p { margin: 2px 0 0; font-size: 21px; line-height: 1.3; }
+  .hub .it p.q { color: #4b5563; font-style: italic; }
+  .hub .mid { width: 280px; height: 280px; border-radius: 50%; background: var(--pp-pink); display: flex; flex-direction: column; align-items: center;
+    justify-content: center; text-align: center; box-shadow: 0 0 0 14px var(--pp-bg), 0 0 0 17px var(--pp-green); }
+  .hub .mid span { font-size: 84px; line-height: 1; }
+  .hub .mid b { font: 800 30px/1.2 var(--serif); margin-top: 8px; }
+  /* Biểu tượng "đừng đưa": vòng tròn hồng viền đỏ */
+  .pp .icn.no { background: var(--bad-bg); box-shadow: 0 0 0 8px #fecaca; }
+  .icgrid .it b.l { display: block; font-size: 25px; line-height: 1.3; }
+  /* Tổng kết: mục lục có danh sách 2 cột */
+  .toc.sum { gap: 18px 40px; padding: 0 10px; align-items: start; }
+  .toc.sum .it { align-items: flex-start; }
+  .toc.sum ul.dot { columns: 2; column-gap: 20px; margin-top: 4px; }
+  .toc.sum ul.dot > li { font-size: 20px; margin: 0 0 4px; break-inside: avoid; }
+  .pp .act { border: 0; border-left: 10px solid var(--pp-green); box-shadow: 0 6px 0 #f0e4cc; margin-top: 14px; }
+  .pp .pill { background: #fff; border-color: var(--pp-green); color: var(--pp-ink); }
   /* Đo trước khi in: ẩn phần chỉ dùng trên màn hình, mở hết ô bấm để mở (giống @media print) */
   body.pmode .ai-out, body.pmode .ai-arrow, body.pmode .ai-foot, body.pmode .cmp-two, body.pmode .cmp-go, body.pmode .cmp-pick,
   body.pmode .copy, body.pmode .fold-hint, body.pmode .ai-lab { display: none !important; }
@@ -487,7 +537,7 @@
 </section>
 
 <!-- ===================== 3. 5 NGUYÊN TẮC ===================== -->
-<section class="slide" data-s="3">
+<section class="slide pp" data-s="3">
   <span class="tag">3 · 5 NGUYÊN TẮC</span>
   <h2>✋ 5 nguyên tắc = 5 ngón tay</h2>
   <div class="hand">
@@ -500,13 +550,16 @@
   <p class="cap" style="text-align:center;margin-top:14px">Nguồn: khoá Claude 101 (Anthropic). Dùng được cho mọi AI.</p>
 </section>
 
-<section class="slide" data-s="3">
+<section class="slide pp" data-s="3">
   <span class="tag">3 · NGUYÊN TẮC 1–2</span>
   <div class="concepts">
     <div class="concept kA">
       <div class="top"><span class="no">1</span><span class="big-ic">👨‍🍳</span></div>
       <h3>AI mang trí tuệ,<br><span class="key">bạn mang bối cảnh</span></h3>
-      <p class="what">AI như <b>đầu bếp giỏi chưa vào bếp nhà bạn</b>. Không nói nhà có gì, ai ăn, ăn cay không → nấu đại.</p>
+      <ul class="dot">
+        <li>AI như <b>đầu bếp giỏi chưa vào bếp nhà bạn</b></li>
+        <li>Không nói nhà có gì, ai ăn, ăn cay không → nấu đại</li>
+      </ul>
       <div class="fold push">
         <button type="button" class="fold-h">Xem ví dụ: hỏi trống ↔ có bối cảnh</button>
         <div class="fold-b">
@@ -518,7 +571,10 @@
     <div class="concept kB">
       <div class="top"><span class="no">2</span><span class="big-ic">💇</span></div>
       <h3>Câu trả lời đầu<br>là <span class="key">bản nháp</span></h3>
-      <p class="what">Như đi <b>cắt tóc</b>: cắt xong soi gương, nói "ngắn thêm chút".</p>
+      <ul class="dot">
+        <li>Như đi <b>cắt tóc</b>: cắt xong soi gương</li>
+        <li>Chưa ưng thì nói "ngắn thêm chút"</li>
+      </ul>
       <div class="flow sm">
         <div class="st"><span class="ic">📝</span>Nháp</div><span class="to">➜</span>
         <div class="st"><span class="ic">✂️</span>Chỉnh</div><span class="to">➜</span>
@@ -536,39 +592,45 @@
   <div class="chot">Hỏi trống → <em>trả lời trống</em>. Chưa ưng → <em>nói thẳng</em> để chỉnh.</div>
 </section>
 
-<section class="slide" data-s="3">
+<section class="slide pp" data-s="3">
   <span class="tag">3 · NGUYÊN TẮC 3–5</span>
   <h2>3 nguyên tắc còn lại</h2>
   <div class="foldrow" data-one>
     <div class="fold cardf">
       <button type="button" class="fold-h"><span class="fno">③</span><span class="fic">🗄️</span><b class="ft">Tủ tài liệu + công thức</b><span class="fs">Lưu 1 lần, dùng mãi.</span></button>
       <div class="fold-b">
-        <p>🗄️ <b>Tủ tài liệu (Project)</b>: giáo trình, quy định công ty, mẫu cũ.</p>
-        <p>📋 <b>Công thức (Skill)</b>: cách làm 1 việc lặp lại, từng bước. Ghi 1 lần, không giải thích lại.</p>
-        <p class="cap">Bản miễn phí: ChatGPT Projects, Gemini Gem, NotebookLM, hoặc 1 file ghi chú (phần 5).</p>
+        <ul class="dot">
+          <li>🗄️ <b>Tủ tài liệu (Project)</b>: giáo trình, quy định công ty, mẫu cũ</li>
+          <li>📋 <b>Công thức (Skill)</b>: cách làm 1 việc lặp lại, từng bước. Ghi 1 lần, không giải thích lại</li>
+          <li>Bản miễn phí: ChatGPT Projects, Gemini Gem, NotebookLM, hoặc 1 file ghi chú (phần 5)</li>
+        </ul>
       </div>
     </div>
     <div class="fold cardf">
       <button type="button" class="fold-h"><span class="fno">④</span><span class="fic">🧑‍🍳</span><b class="ft">Giao việc lặp lại, giữ việc phán đoán</b><span class="fs">AI làm phụ bếp, bạn nêm nếm.</span></button>
       <div class="fold-b">
-        <p>AI thái rau, rửa bát. Nêm nếm, quyết món nào ra bàn là <b>bạn</b>.</p>
-        <p>🤖 <b>Giao AI:</b> soạn nháp, tóm tắt, đổi định dạng, nghĩ ý tưởng, sửa chính tả.</p>
-        <p>🙋 <b>Bạn giữ:</b> chấm điểm, quyết định tuyển ai, nói chuyện khó với phụ huynh, nhân viên.</p>
+        <ul class="dot">
+          <li>AI thái rau, rửa bát. Nêm nếm, quyết món nào ra bàn là <b>bạn</b></li>
+          <li>🤖 <b>Giao AI:</b> soạn nháp, tóm tắt, đổi định dạng, nghĩ ý tưởng, sửa chính tả</li>
+          <li>🙋 <b>Bạn giữ:</b> chấm điểm, quyết định tuyển ai, nói chuyện khó với phụ huynh, nhân viên</li>
+        </ul>
       </div>
     </div>
     <div class="fold cardf">
       <button type="button" class="fold-h"><span class="fno">⑤</span><span class="fic">🔍</span><b class="ft">Kiểm tra trước khi tin</b><span class="fs">AI nói rất tự tin, kể cả khi sai.</span></button>
       <div class="fold-b">
-        <p>AI như <b>người bạn nói chuyện rất tự tin</b>.</p>
-        <ul><li>Thử với việc <b>mình đã làm rồi</b>, biết đáp án → so sánh.</li>
-          <li>Số liệu, tên người, luật, trích dẫn → <b>luôn kiểm tra lại</b>.</li></ul>
+        <ul class="dot">
+          <li>AI như <b>người bạn nói chuyện rất tự tin</b></li>
+          <li>Thử với việc <b>mình đã làm rồi</b>, biết đáp án → so sánh</li>
+          <li>Số liệu, tên người, luật, trích dẫn → <b>luôn kiểm tra lại</b></li>
+        </ul>
       </div>
     </div>
   </div>
   <div class="chot">Việc mình chịu trách nhiệm → <em>mình xem lại</em>. Tự tin <em>khác</em> đúng.</div>
 </section>
 
-<section class="slide" data-s="3">
+<section class="slide pp prac" data-s="3">
   <span class="tag">3 · 5 NGUYÊN TẮC</span>
   <span class="practice">✋ THỰC HÀNH</span>
   <h2>Viết lại câu trả lời đầu</h2>
@@ -596,7 +658,7 @@
 </section>
 
 <!-- ===================== 4. PROMPT ===================== -->
-<section class="slide" data-s="4">
+<section class="slide pp" data-s="4">
   <span class="tag">4 · GIAO VIỆC</span>
   <h2>✍️ 2 từ cần biết</h2>
   <div class="concepts">
@@ -605,17 +667,18 @@
     <div class="concept kB"><div class="top"><span class="big-ic">🎒</span><h3>Bối cảnh <span class="muted" style="font-size:22px;font-weight:500">(context)</span></h3></div>
       <p class="what">Những gì AI <b>cần biết</b> để làm đúng: bạn là ai, cho ai, tình huống gì.</p></div>
   </div>
-  <div class="row" style="align-items:center;margin-top:22px">
-    <div class="emoji">🧑‍🏫</div>
+  <div class="row" style="align-items:center;margin-top:18px;gap:26px">
+    <div class="icn pink" style="margin:8px">🧑‍🏫</div>
     <div>
-      <p style="font-size:28px;font-weight:700;margin:0">Giao việc cho AI như giao cho <span class="key">người mới</span></p>
-      <p>Nhờ cô trợ giảng mới vào làm hôm đầu, bạn sẽ nói:<br><b>lớp nào · bài nào · cần gì · mẫu ra sao · nộp lúc nào</b>.</p>
+      <p style="font:700 30px var(--serif);margin:0">Giao việc cho AI như giao cho <span class="key">người mới</span></p>
+      <p style="margin:4px 0 0">Nhờ cô trợ giảng mới vào làm hôm đầu, bạn sẽ nói:</p>
+      <ul class="dot" style="display:flex;flex-wrap:wrap;gap:0 34px"><li>lớp nào</li><li>bài nào</li><li>cần gì</li><li>mẫu ra sao</li><li>nộp lúc nào</li></ul>
     </div>
   </div>
   <div class="chot">AI cần <em>đúng những thứ đó</em>.</div>
 </section>
 
-<section class="slide" data-s="4">
+<section class="slide pp" data-s="4">
   <span class="tag">4 · GIAO VIỆC</span>
   <h2>Công thức 5 phần <small>Đếm trên 5 ngón tay</small></h2>
   <div class="grid g5">
@@ -626,14 +689,14 @@
     <div class="card p5"><span class="ic">❓</span><b class="t">5. Hỏi lại</b>"Thiếu thông tin thì hỏi tôi"</div>
   </div>
   <p class="cap">5 màu này cũng tô trong các câu mẫu ở slide 14, 17, 19.</p>
-  <div class="row" style="align-items:center;margin-top:24px">
-    <div class="emoji" style="font-size:60px">🩺</div>
+  <div class="row" style="align-items:center;margin-top:16px">
+    <div class="icn sm pink" style="margin:6px">🩺</div>
     <p style="margin:0">Chưa biết bắt đầu? <b>Để AI hỏi ngược</b> — giống đi khám: bác sĩ hỏi trước, kê đơn sau.</p>
   </div>
   <div class="prompt" style="margin-top:12px">Tôi muốn [việc của bạn]. Hãy hỏi tôi từng câu một cho đến khi đủ thông tin, rồi mới làm.</div>
 </section>
 
-<section class="slide" data-s="4">
+<section class="slide pp" data-s="4">
   <span class="tag">4 · VÍ DỤ</span>
   <h2>Trước và sau</h2>
   <div class="ai-cmp" data-b="Lần 2: theo công thức 5 phần">
@@ -653,19 +716,24 @@
   <p class="cap">Bấm tên nghề để đổi ví dụ. Bấm <b>So sánh</b> để Gemini chạy cả 2 câu cùng lúc.</p>
 </section>
 
-<section class="slide" data-s="4">
+<section class="slide pp" data-s="4">
   <span class="tag">4 · GIAO VIỆC</span>
   <h2>4 năng lực khi làm việc với AI</h2>
-  <div class="grid g4">
-    <div class="card c"><span class="ic">🧭</span><b class="t">Giao việc</b>Chọn việc nào giao AI.<br><span class="muted">"Việc này AI làm có lợi không?"</span></div>
-    <div class="card c"><span class="ic">🗣️</span><b class="t">Mô tả</b>Nói rõ cho AI hiểu.<br><span class="muted">"Người lạ đọc có hiểu không?"</span></div>
-    <div class="card c"><span class="ic">🔍</span><b class="t">Đánh giá</b>Xem kết quả đúng, đủ chưa.<br><span class="muted">"Mình dám gửi đi luôn không?"</span></div>
-    <div class="card fill"><span class="ic">🛡️</span><b class="t">Chịu trách nhiệm</b>Mình ký tên cuối cùng.<br><span class="muted">"Nếu sai, ai chịu?" → <b style="color:var(--hi-ink)">mình</b></span></div>
+  <div class="hub">
+    <div class="col l">
+      <div class="it"><div class="icn sm">🧭</div><div><b class="t">Giao việc</b><p>Chọn việc nào giao AI</p><p class="q">"Việc này AI làm có lợi không?"</p></div></div>
+      <div class="it"><div class="icn sm">🗣️</div><div><b class="t">Mô tả</b><p>Nói rõ cho AI hiểu</p><p class="q">"Người lạ đọc có hiểu không?"</p></div></div>
+    </div>
+    <div class="mid"><span>🤝</span><b>Bạn<br>làm việc với AI</b></div>
+    <div class="col r">
+      <div class="it"><div class="icn sm">🔍</div><div><b class="t">Đánh giá</b><p>Xem kết quả đúng, đủ chưa</p><p class="q">"Mình dám gửi đi luôn không?"</p></div></div>
+      <div class="it goal"><div class="icn sm">🛡️</div><div><b class="t">Chịu trách nhiệm</b><p>Mình ký tên cuối cùng</p><p class="q">"Nếu sai, ai chịu?" → <b>mình</b></p></div></div>
+    </div>
   </div>
-  <p class="cap" style="margin-top:16px">Nguồn: khung AI Fluency (Anthropic).</p>
+  <p class="cap" style="margin-top:22px;text-align:center">Nguồn: khung AI Fluency (Anthropic).</p>
 </section>
 
-<section class="slide" data-s="4">
+<section class="slide pp prac" data-s="4">
   <span class="tag">4 · GIAO VIỆC</span>
   <span class="practice">✋ THỰC HÀNH</span>
   <h2>Viết prompt theo công thức</h2>
@@ -689,15 +757,19 @@
 </section>
 
 <!-- ===================== 5. TÀI LIỆU ===================== -->
-<section class="slide" data-s="5">
+<section class="slide pp" data-s="5">
   <span class="tag">5 · TÀI LIỆU</span>
   <h2>📁 Cho AI đọc tài liệu</h2>
-  <div class="row" style="align-items:center">
-    <span class="no-badge">1</span>
-    <div style="font-size:44px;white-space:nowrap">📄📄📄 ➜ 📁</div>
-    <p style="margin:0"><b>Gom vào 1 folder.</b> AI chỉ biết những gì mình đưa. Ví dụ: <span class="pill">AI - Lớp 7A</span><span class="pill">AI - Tuyển dụng</span> gồm giáo trình, đề mẫu, quy định, mẫu email cũ.</p>
+  <div class="row" style="align-items:center;gap:22px">
+    <span class="num">1</span>
+    <div class="icn sm pink" style="margin:6px">📁</div>
+    <div><b style="font:700 30px var(--serif);color:var(--pp-green)">Gom vào 1 folder</b>
+      <ul class="dot" style="margin-top:2px">
+        <li>AI chỉ biết những gì mình đưa</li>
+        <li>Ví dụ: <span class="pill">AI - Lớp 7A</span><span class="pill">AI - Tuyển dụng</span> gồm giáo trình, đề mẫu, quy định, mẫu email cũ</li>
+      </ul></div>
   </div>
-  <p style="font-weight:800;margin:20px 0 10px"><span class="no-badge">2</span> Đưa cho AI bằng 1 trong 3 cách</p>
+  <div class="row" style="align-items:center;gap:22px;margin:16px 0 12px"><span class="num">2</span><b style="font:700 30px var(--serif);color:var(--pp-green)">Đưa cho AI bằng 1 trong 3 cách</b></div>
   <div class="foldrow" data-one>
     <div class="fold cardf"><button type="button" class="fold-h"><span class="fic">📎</span><b class="ft">Tải file lên</b><span class="fs">Free: có (ChatGPT giới hạn số file/ngày)</span></button>
       <div class="fold-b"><p>Bấm <b>+</b> hoặc 📎 trong ô chat, chọn file Word, PDF, Excel, ảnh.</p></div></div>
@@ -709,19 +781,22 @@
   <p class="cap">App đổi giao diện thường xuyên. Không thấy nút → dùng 📎 hoặc 📋. Hai cách này luôn được.</p>
 </section>
 
-<section class="slide" data-s="5">
+<section class="slide pp" data-s="5">
   <span class="tag">5 · TÀI LIỆU</span>
   <div class="concepts">
     <div class="concept kA">
       <div class="top"><span class="big-ic">🔗</span><h3>Gemini + Gmail / Drive</h3></div>
-      <p class="what">Trong ô chat Gemini gõ <b>@Gmail</b> hoặc <b>@Google Drive</b> rồi hỏi.</p>
-      <p class="when"><b>Dùng khi:</b> tài liệu nằm sẵn trong Gmail, Drive. Làm trong app Gemini (cần quyền vào Gmail, không chạy trên trang này).</p>
+      <ul class="dot">
+        <li>Trong ô chat Gemini gõ <b>@Gmail</b> hoặc <b>@Google Drive</b> rồi hỏi</li>
+        <li><b>Dùng khi:</b> tài liệu nằm sẵn trong Gmail, Drive</li>
+        <li>Làm trong app Gemini (cần quyền vào Gmail, không chạy trên trang này)</li>
+      </ul>
       <div class="fold push">
         <button type="button" class="fold-h">4 bước kết nối lần đầu</button>
         <div class="fold-b">
           <ol class="steps sm">
             <li>Mở <b>gemini.google.com</b>, đăng nhập Gmail cá nhân.</li>
-            <li>Menu trái → <b>Customize</b> (Tuỳ chỉnh) → <b>Connectors</b> → dòng Google Workspace bấm <b>Add</b> → đồng ý. <span class="muted">Không thấy: ⚙️ Cài đặt → <b>Connected Apps</b> (Ứng dụng đã kết nối).</span></li>
+            <li>Thanh trái → <b>Tuỳ chỉnh</b> → tab <b>Trình kết nối</b> → <b>Google Workspace</b> → bấm <b>+</b> → đồng ý. <span class="muted">Hoặc: ⚙️ cạnh tên → <b>Trí thông minh cá nhân</b> → <b>Các ứng dụng có thể kết nối</b>. Không thấy: tìm chữ "Trình kết nối" / "Connectors".</span></li>
             <li>Trong ô chat gõ <b>@</b> → chọn <b>Gmail</b> hoặc <b>Google Drive</b> → gõ tiếp câu hỏi → <b>Enter</b>.</li>
             <li>Gemini hỏi cho phép → bấm đồng ý. Bị báo cần bật "Hoạt động" (Keep Activity) → bật theo hướng dẫn trên màn hình.</li>
           </ol>
@@ -738,8 +813,11 @@
     </div>
     <div class="concept kC">
       <div class="top"><span class="big-ic">📊</span><h3>Excel</h3></div>
-      <p class="what">Tải file <b>.xlsx</b> lên ChatGPT hoặc Gemini, rồi hỏi bằng lời thường.</p>
-      <p class="when"><b>Nhớ:</b> luôn tự kiểm tra lại <b>1–2 con số</b> (nguyên tắc 5).</p>
+      <ul class="dot">
+        <li>Tải file <b>.xlsx</b> lên ChatGPT hoặc Gemini</li>
+        <li>Hỏi bằng lời thường</li>
+        <li><b>Nhớ:</b> tự kiểm tra lại <b>1–2 con số</b> (nguyên tắc 5)</li>
+      </ul>
       <div class="fold push">
         <button type="button" class="fold-h">File quá lớn?</button>
         <div class="fold-b"><p>Xoá bớt cột không cần, hoặc lưu thành <b>.csv</b> (Excel: Tệp → Lưu thành → chọn CSV).</p></div>
@@ -755,19 +833,19 @@
   </div>
 </section>
 
-<section class="slide" data-s="5">
+<section class="slide pp" data-s="5">
   <span class="tag">5 · TÀI LIỆU</span>
   <h2>🔒 Đừng đưa cho AI</h2>
-  <div class="grid g4" style="font-size:24px">
-    <div class="card bad"><span class="ic">🪪</span>Số CCCD, số tài khoản</div>
-    <div class="card bad"><span class="ic">💰</span>Lương cụ thể từng người</div>
-    <div class="card bad"><span class="ic">🏥</span>Thông tin sức khoẻ</div>
-    <div class="card bad"><span class="ic">🔑</span>Mật khẩu</div>
+  <div class="icgrid" style="--n:4;margin-top:10px">
+    <div class="it"><div class="icn no">🪪</div><b class="l">Số CCCD, số tài khoản</b></div>
+    <div class="it"><div class="icn no">💰</div><b class="l">Lương cụ thể từng người</b></div>
+    <div class="it"><div class="icn no">🏥</div><b class="l">Thông tin sức khoẻ</b></div>
+    <div class="it"><div class="icn no">🔑</div><b class="l">Mật khẩu</b></div>
   </div>
   <div class="chot">Cần dữ liệu thật → đổi tên thành <em>"Nhân viên A"</em>, <em>"Học sinh B"</em>.</div>
 </section>
 
-<section class="slide" data-s="5">
+<section class="slide pp" data-s="5">
   <span class="tag">5 · TÀI LIỆU</span>
   <h2>Để AI luôn nhớ yêu cầu của bạn</h2>
   <div class="concepts">
@@ -779,7 +857,7 @@
       <div class="fold push">
         <button type="button" class="fold-h">Cách làm + file mẫu</button>
         <div class="fold-b">
-          <ul>
+          <ul class="dot">
             <li>Mở <b>Notepad</b>, lưu thành <b>yeu-cau-cua-toi.txt</b>.</li>
             <li>Mỗi lần chat mới: dán vào đầu, hoặc tải file lên.</li>
             <li>Đuôi <b>.md</b> cũng là file chữ, dùng dấu # làm tiêu đề.</li>
@@ -806,6 +884,7 @@ Nếu chưa rõ, hãy hỏi tôi trước.</div>
             <tr><th>Bản free</th><th>Tính năng</th><th>Dùng để</th></tr>
             <tr><td>ChatGPT</td><td>Projects</td><td>Gom chat + file + hướng dẫn cho 1 việc</td></tr>
             <tr><td>Gemini</td><td>Gem</td><td>Trợ lý riêng, có hướng dẫn cố định, gắn được file</td></tr>
+            <tr><td>Gemini</td><td>Chỉ dẫn cho Gemini</td><td>Dặn cách trả lời cố định cho mọi cuộc chat (⚙️ → Trí thông minh cá nhân)</td></tr>
             <tr><td>Google</td><td>NotebookLM</td><td>Hỏi đáp chỉ dựa trên tài liệu mình tải lên</td></tr>
           </table>
         </div>
@@ -815,7 +894,7 @@ Nếu chưa rõ, hãy hỏi tôi trước.</div>
   <p class="cap">Không thấy tính năng → dùng file "yêu cầu cố định". Cách này luôn được.</p>
 </section>
 
-<section class="slide" data-s="5">
+<section class="slide pp prac" data-s="5">
   <span class="tag">5 · TÀI LIỆU</span>
   <span class="practice">✋ THỰC HÀNH</span>
   <h2>Cho AI đọc 1 tài liệu</h2>
@@ -847,21 +926,25 @@ Nếu chưa rõ, hãy hỏi tôi trước.</div>
 </section>
 
 <!-- ===================== 6. TỔNG KẾT ===================== -->
-<section class="slide" data-s="6">
+<section class="slide pp" data-s="6">
   <span class="tag">6 · TỔNG KẾT</span>
   <h2>📌 Cả buổi trong 1 trang</h2>
-  <div class="grid g2">
-    <div class="card c"><b class="t">🧠 AI là gì</b>Máy đoán chữ tiếp theo. Đoán hay, nhưng có thể sai.</div>
-    <div class="card c"><b class="t">✋ 5 nguyên tắc</b>Bạn mang bối cảnh · Lần đầu là nháp · Tủ tài liệu + công thức · Giao việc lặp lại, giữ việc phán đoán · Kiểm tra trước khi tin</div>
-    <div class="card c"><b class="t">✍️ Công thức prompt</b>Vai trò · Bối cảnh · Việc cần làm · Kết quả trông thế nào · Hỏi lại nếu chưa rõ</div>
-    <div class="card c"><b class="t">📁 Tài liệu</b>Gom 1 folder · Tải lên / dán / @Drive · File "yêu cầu cố định" · Không đưa thông tin riêng tư</div>
+  <div class="toc sum">
+    <div class="it"><span class="num">01</span><div><b>🧠 AI là gì</b>
+      <ul class="dot"><li>Máy đoán chữ tiếp theo</li><li>Đoán hay, nhưng có thể sai</li></ul></div></div>
+    <div class="it"><span class="num">02</span><div><b>✋ 5 nguyên tắc</b>
+      <ul class="dot"><li>Bạn mang bối cảnh</li><li>Lần đầu là nháp</li><li>Tủ tài liệu + công thức</li><li>Giao lặp lại, giữ phán đoán</li><li>Kiểm tra trước khi tin</li></ul></div></div>
+    <div class="it"><span class="num">03</span><div><b>✍️ Công thức prompt</b>
+      <ul class="dot"><li>Vai trò</li><li>Bối cảnh</li><li>Việc cần làm</li><li>Kết quả trông thế nào</li><li>Hỏi lại nếu chưa rõ</li></ul></div></div>
+    <div class="it"><span class="num">04</span><div><b>📁 Tài liệu</b>
+      <ul class="dot"><li>Gom 1 folder</li><li>Tải lên / dán / @Drive</li><li>File "yêu cầu cố định"</li><li>Không đưa thông tin riêng tư</li></ul></div></div>
   </div>
   <div class="chot">AI giỏi đến đâu là do mình <em>giao việc rõ</em> đến đâu.</div>
   <div class="act"><b>✅ Làm ngay tuần này:</b> chọn 1 việc lặp lại mỗi tuần → viết 1 prompt mẫu → lưu vào file .txt.</div>
 </section>
 
 <!-- ===================== 7. BÀI TẬP CUỐI ===================== -->
-<section class="slide" data-s="7" data-conv="vidu">
+<section class="slide pp" data-s="7" data-conv="vidu">
   <span class="tag">7 · BÀI TẬP CUỐI · VÍ DỤ THẬT</span>
   <h2>🎯 Lượt 1: hỏi chung chung</h2>
   <div class="prompt sm">Tôi là một lập trình viên. Tôi đã viết 1 app để quản lý thời gian sử dụng tablet cho trẻ em… Tôi muốn hướng dẫn trẻ sử dụng AI Gemini. Nhưng lo sợ trẻ sẽ chụp và nhờ AI giải, tôi muốn trẻ dùng AI hướng dẫn cách giải và cách tư duy. Liệu tôi có thể làm gì? 1 bé 9 tuổi, 1 bé 6 tuổi dùng chung tablet.</div>
@@ -884,56 +967,73 @@ Nếu chưa rõ, hãy hỏi tôi trước.</div>
   <div class="chot">😵 Đúng ý, nhưng <em>quá dài</em>, không dùng ngay được.</div>
 </section>
 
-<section class="slide" data-s="7" data-conv="vidu">
+<section class="slide pp" data-s="7" data-conv="vidu">
   <span class="tag">7 · BÀI TẬP CUỐI · VÍ DỤ THẬT</span>
   <h2>Lượt 2: nói rõ mình muốn gì</h2>
   <div class="prompt sm" data-ai="chain">Bạn trả lời quá dài. Tôi muốn format output kết quả trả về cho trẻ. Tất cả các cách trên đều không tốt. Liệu có cách nào ổn hơn không?
 Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuyến khích khả năng tư duy của trẻ, VD, trẻ cung cấp một bài toán mà chưa rõ ràng thì bạn cùng trẻ chia nhỏ và brainstorm ý tưởng. Tôi nhớ là ChatGPT có cho phép format output AI trả về.</div>
-  <div class="row" style="margin-top:16px;flex-wrap:wrap;gap:8px">
-    <span class="pill">😤 Chê thẳng: "quá dài"</span><span class="pill">👧 Nói rõ ai dùng: trẻ</span>
-    <span class="pill">🧩 Ví dụ cụ thể: bài toán chưa rõ</span><span class="pill">📐 Muốn khung trả lời cố định</span>
-  </div>
+  <ul class="dot big" style="margin-top:16px;columns:2;column-gap:40px">
+    <li>😤 Chê thẳng: "quá dài"</li><li>👧 Nói rõ ai dùng: trẻ</li>
+    <li>🧩 Ví dụ cụ thể: bài toán chưa rõ</li><li>📐 Muốn khung trả lời cố định</li>
+  </ul>
 </section>
 
-<section class="slide" data-s="7">
+<section class="slide pp" data-s="7">
   <span class="tag">7 · BÀI TẬP CUỐI · KẾT QUẢ</span>
   <h2>Gemini đưa 1 đoạn hướng dẫn <span class="key">4 khối</span></h2>
-  <div class="grid g4">
-    <div class="card c"><span class="ic">🎭</span><b class="t">Vai trò</b>"Bạn là Bạn Đồng Hành Tư Duy cho bé 6 và 9 tuổi."</div>
-    <div class="card c"><span class="ic">🚫</span><b class="t">Điều cấm</b>"Không giải hộ. Không quá 3 câu."</div>
-    <div class="card c"><span class="ic">🧩</span><b class="t">Cách làm</b>"Chia nhỏ bài, đưa 2–3 hướng cho bé chọn."</div>
-    <div class="card fill"><span class="ic">📐</span><b class="t">Khung trả lời</b>Mọi câu trả lời theo đúng 3 phần cố định ↓</div>
+  <div class="icgrid" style="--n:4;gap:10px 24px">
+    <div class="it"><div class="icn sm" style="margin:6px auto 8px">🎭</div><b class="t">Vai trò</b><p>"Bạn Đồng Hành Tư Duy cho bé 6 và 9 tuổi."</p></div>
+    <div class="it"><div class="icn sm" style="margin:6px auto 8px">🚫</div><b class="t">Điều cấm</b><p>"Không giải hộ. Không quá 3 câu."</p></div>
+    <div class="it"><div class="icn sm" style="margin:6px auto 8px">🧩</div><b class="t">Cách làm</b><p>"Chia nhỏ bài, đưa 2–3 hướng cho bé chọn."</p></div>
+    <div class="it"><div class="icn sm" style="margin:6px auto 8px;background:var(--pp-coral)">📐</div><b class="t" style="color:#a63a24">Khung trả lời</b><p>Mọi câu trả lời theo đúng 3 phần ↓</p></div>
   </div>
-  <div class="grid g3" style="margin-top:14px">
+  <div class="grid g3" style="margin-top:10px">
     <div class="card mini"><b>🔍 Mình hiểu ý bạn là…</b><br>Tóm tắt đề bằng 1 câu. Đề chưa rõ thì chỉ ra chỗ thiếu.</div>
     <div class="card mini"><b>💡 Cùng nghĩ ý tưởng nhé</b><br>Cách 1 · Cách 2 — chỉ nêu hướng, không tính hộ.</div>
     <div class="card mini"><b>❓ Câu hỏi cho bạn</b><br>Đúng 1 câu hỏi nhỏ để bé tự làm bước đầu.</div>
   </div>
-  <p style="margin-top:14px">Dán vào <b>Gemini → Cài đặt → Hướng dẫn cho Gemini</b> <span class="muted">(Instructions for Gemini)</span>, hoặc tạo 1 <b>Gem</b> riêng.</p>
+  <ul class="dot" style="margin-top:12px">
+    <li>Dán vào Gemini: ⚙️ cạnh tên mình → <b>Trí thông minh cá nhân</b> → <b>Chỉ dẫn cho Gemini</b> (áp cho mọi cuộc chat)</li>
+    <li>Cách khác: ⚙️ → <b>Gem</b> → tạo 1 Gem riêng cho việc này</li>
+  </ul>
   <div class="chot">Nói rõ <em>kết quả trông thế nào</em> → AI làm đúng.</div>
 </section>
 
-<section class="slide" data-s="7">
+<section class="slide pp prac" data-s="7">
   <span class="tag">7 · BÀI TẬP CUỐI</span>
   <span class="practice">✋ ĐẾN LƯỢT BẠN · THỬ NGAY TRÊN TRANG</span>
-  <h2 style="margin-bottom:6px">Viết đoạn hướng dẫn 4 khối cho việc của bạn</h2>
+  <h2 style="margin-bottom:6px">Hướng dẫn 4 khối cho việc của bạn</h2>
   <ol class="steps sm">
     <li>Ô <b>Chọn mẫu</b>: chọn GV tiếng Anh (sửa bài viết), GV tiếng Trung (thẻ từ vựng), Nhân sự (trả lời nhân viên), hoặc "Tự viết".</li>
     <li>Phần A: sửa từng dòng cho đúng việc của bạn. Giữ đủ 4 khối: vai trò, điều cấm, cách làm, khung trả lời.</li>
     <li>Phần B: gõ 1 câu hỏi thử → bấm <b>So sánh</b> (gửi 2 lần: không có và có Phần A).</li>
     <li>Xem 2 khung ②: bên phải có đúng khung không? Chưa đúng → sửa 1 dòng ở Phần A → <b>Chạy lại</b>. <b>(Nguyên tắc 2!)</b></li>
-    <li>Ưng rồi → mang về app: Gemini → menu trái <b>Gem</b> (hoặc <b>Khám phá Gem</b>) → <b>Gem mới</b> → dán Phần A vào ô <b>Hướng dẫn</b> → <b>Lưu</b>.</li>
+    <li>Ưng rồi → mang về app Gemini: bấm ⚙️ cạnh tên mình (góc dưới trái) → <b>Trí thông minh cá nhân</b> → <b>Chỉ dẫn cho Gemini</b> → dán Phần A → <b>Lưu</b>. <span class="muted">Cách khác: ⚙️ → <b>Gem</b> → tạo Gem mới → dán vào ô <b>Hướng dẫn</b> → <b>Lưu</b>.</span></li>
   </ol>
   <div class="ai-lab"></div>
 </section>
 
-<section class="slide center" data-s="0">
-  <div class="emoji">🗣️ 👂 💡</div>
-  <h2 style="margin-top:16px">Chia sẻ</h2>
-  <p>Đọc đoạn hướng dẫn + 1 kết quả. Cả nhóm góp <b>1 ý chỉnh</b>.</p>
-  <div class="card c" style="margin-top:14px;text-align:left;max-width:900px"><b class="t">🎒 Mang về</b>Lưu đoạn hướng dẫn vào file .txt hoặc tạo Gem. Dùng 1 tuần, mỗi lần chưa ưng → sửa 1 dòng.</div>
-  <h1 style="margin-top:30px;font-size:48px">🙏 Cảm ơn mọi người!</h1>
-  <p>Phiếu thực hành + prompt mẫu (bấm để sao chép): <a href="handouts/index.html" style="color:var(--c);font-weight:700">handouts/index.html</a></p>
+<section class="slide pp" data-s="0">
+  <div class="opener">
+    <div>
+      <h1 style="font-size:84px">Cảm ơn<br>mọi người!</h1>
+      <b style="font:700 30px var(--serif);color:var(--pp-green)">🗣️ Chia sẻ</b>
+      <ul class="dot big">
+        <li>Đọc đoạn hướng dẫn + 1 kết quả</li>
+        <li>Cả nhóm góp <b>1 ý chỉnh</b></li>
+      </ul>
+      <b style="display:block;margin-top:14px;font:700 30px var(--serif);color:var(--pp-green)">🎒 Mang về</b>
+      <ul class="dot big">
+        <li>Lưu đoạn hướng dẫn vào file .txt, Chỉ dẫn cho Gemini hoặc Gem</li>
+        <li>Dùng 1 tuần, chưa ưng → sửa 1 dòng</li>
+        <li>Phiếu + prompt mẫu: <a href="handouts/index.html" style="color:var(--pp-green);font-weight:700">handouts/index.html</a></li>
+      </ul>
+    </div>
+    <div class="hero" aria-hidden="true" style="width:380px;height:380px">
+      <span class="ring"></span>
+      <span class="b b1" style="font-size:150px">🙏</span><span class="b b2">🗣️</span><span class="b b3">💡</span>
+    </div>
+  </div>
 </section>
 
 </div>
