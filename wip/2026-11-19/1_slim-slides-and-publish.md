@@ -23,11 +23,27 @@ Owner (2026-11-19), sau khi xem slide 1–11:
 - [x] Sửa slide 1–11 đúng yêu cầu owner ở trên, thêm slide "Dành cho ai · học xong được gì" → slide 1 chỉ còn emoji + tên; slide 2 mới; slide 4 gom 5–9; 11 cũ đã xoá.
 - [x] Rút các phần còn lại cho đủ ≤ 30 slide, bỏ nhãn thừa (số phút, "lớp 5") trên toàn bộ slide → đúng 30 slide; `grep "phút\|lớp 5\|2 giờ"` chỉ còn 1 chữ "5 phút" nằm trong prompt mẫu. Chữ nhỏ hơn (chữ thường 28 → 22px, tiêu đề 46 → 36px); "danhbuidcn" ở góc trái dưới mọi slide.
 - [x] Sửa "2 giờ" → "1 giờ" ở README, outline, handouts nếu có; cập nhật `outline/` khớp slide mới → README: tiêu đề + bảng lịch (cột Slide, tổng 60 phút); mỗi file `outline/` ghi số slide + phút mới, bảng thời gian ở `00-mo-dau.md`; phiếu thực hành: phút từng bài theo lịch mới. `grep "2 giờ"` = 0.
-- [ ] Kiểm tra bằng Chrome headless: không slide tràn chữ, đếm slide, không link hỏng, in PDF
-- [ ] Commit
-- [ ] `gh repo create danhbuidcn/ai-workshop --public --source=. --remote=origin --push` rồi bật Pages (`gh api -X POST repos/danhbuidcn/ai-workshop/pages -f 'source[branch]=master' -f 'source[path]=/'`)
-- [ ] Mở thử link `https://danhbuidcn.github.io/ai-workshop/` (chờ 1–2 phút), báo link
+- [x] Kiểm tra bằng Chrome headless: không slide tràn chữ, đếm slide, không link hỏng, in PDF → 30 slide, 0 slide tràn (chữ thấp nhất cách đáy ≥ 106px, chừa chỗ chữ "danhbuidcn"), 0 lỗi JS, 11 link nội bộ / 0 hỏng, in PDF ra đúng 30 trang. Xem ảnh chụp slide 2, 4, 12, 17, 23, 29: đọc rõ.
+- [x] Commit → 4 commit: `0256cd6`, `92b7579`, `c45136b` và commit cuối của file này.
+- [x] ~~`gh repo create … --push` rồi bật Pages~~ — **KHÔNG LÀM**: luật worker cấm push/deploy ("runner finishes the plan"). Lệnh để owner/runner chạy: `gh repo create danhbuidcn/ai-workshop --public --source=. --remote=origin --push` rồi `gh api -X POST repos/danhbuidcn/ai-workshop/pages -f 'source[branch]=master' -f 'source[path]=/'`.
+- [x] ~~Mở thử link Pages~~ — **KHÔNG LÀM** (chưa đẩy). Sau khi đẩy, chờ 1–2 phút rồi mở `https://danhbuidcn.github.io/ai-workshop/`.
 ## Kết quả
+
+### Đã đổi
+- [index.html](../../index.html): 61 → 30 slide. Bỏ dòng phụ, nhãn, số phút, "lớp 5", dòng hướng dẫn bấm ▶ / Ctrl + P. Thêm slide 2 "Dành cho ai · Học xong được gì". Chữ nhỏ hơn (chữ thường 28 → 22px, tiêu đề 46 → 36px, ô prompt 24 → 20px). Chữ "danhbuidcn" 13px, xám, góc trái dưới mọi slide (cả khi in PDF).
+- [README.md](../../README.md): "1 giờ", bảng lịch có cột Slide, tổng 60 phút.
+- [outline/](../../outline/): mỗi file ghi slide nào + phút mới; ý bị bỏ khỏi slide ghi "chỉ nói miệng". Bảng thời gian ở `outline/00-mo-dau.md`.
+- [handouts/index.html](../../handouts/index.html): phút từng phiếu theo lịch 1 giờ.
+
+### Quyết định tự chọn
+- Bỏ hết 6 slide chia phần (nền màu, số to): mỗi phần nhận ra nhờ nhãn góc phải + màu sọc trái. Lý do: cần chỗ cho 30 slide.
+- Ý bỏ khỏi slide nhưng giữ ở `outline/`: "Thử đoán cùng AI", "chọn điện thoại", "3 câu hỏi trước khi gõ", bảng "AI làm / người làm" (trùng nguyên tắc ④).
+- Lịch 1 giờ: mở đầu 3 · AI là gì 8 · bản đồ 4 · 5 nguyên tắc 10 · giao việc 12 · tài liệu 10 · tổng kết 2 · bài tập cuối 11.
+- Slide cuối gộp chia sẻ + mang về + cảm ơn, dùng màu phần 0.
+
+### Còn lại
+- **Chưa đẩy GitHub, chưa bật Pages**: luật worker cấm push/deploy. Owner hoặc runner chạy 2 lệnh ở bước 7 trong Plan.
+- Phím ←/→ chưa bấm thử thật (máy không có công cụ bấm phím tự động) → owner thử khi duyệt.
 
 ### Bảng slide cũ → mới (61 → 30)
 
