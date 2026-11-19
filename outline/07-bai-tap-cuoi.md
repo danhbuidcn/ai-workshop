@@ -1,6 +1,6 @@
 # 7. Bài tập cuối: dạy Gemini trả lời đúng kiểu mình muốn (11 phút)
 
-Slide 26–30: 26 lượt 1 · 27 lượt 2 · 28 đoạn hướng dẫn 4 khối + khung 3 phần · 29 tự viết + thử và chỉnh · 30 chia sẻ, mang về, cảm ơn.
+Slide 26–31: 26 lượt 1 · 27 lượt 2 · 28 đoạn hướng dẫn 4 khối + khung 3 phần · 29 tự viết + thử và chỉnh · 30 thử ngay trên trang (chọn mẫu → sửa → ▶ Chạy thử) · 31 chia sẻ, mang về, cảm ơn.
 
 ## Mục tiêu
 Mỗi người viết 1 đoạn "hướng dẫn cố định" cho AI, thử, chỉnh, và mang về dùng.

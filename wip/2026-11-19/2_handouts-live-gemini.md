@@ -1,4 +1,11 @@
 # Phiếu thực hành: chia tab + chạy Gemini ngay trên trang
+## Handoff
+- Đang ở: code xong, đã commit, đã triển khai Apps Script (dự án `ai-workshop-gemini`, tài khoản `danhbuidcn@gmail.com`). Địa chỉ đã ghi trong `ai.js`. Gọi thật còn HTTP 403 vì Google bắt chủ tài khoản cấp quyền 1 lần.
+- Bước tiếp (owner, 2 phút):
+  1. Mở https://script.google.com/d/1m5bqqruHdwnJxhXE_zCwgYE88ucOBVHF7NTyKQf-Lg7cqmXxTqVWsI5G/edit → chọn hàm `kiemTra` → **Chạy** → **Nâng cao** → **Đi tới ai-workshop-gemini** → **Cho phép**. Nhật ký hiện `OK: ...`.
+  2. Chạy `bash proxy/deploy.sh` → dòng "Thử gọi thật" phải in `{"ok":true,...}`.
+  3. Push lên GitHub, mở https://danhbuidcn.github.io/ai-workshop/#8 → bấm ▶ Chạy thử.
+- File: [proxy/HUONG-DAN.md](../../proxy/HUONG-DAN.md), [ai.js](../../ai.js), [proxy/Code.gs](../../proxy/Code.gs).
 Nhánh: .
 Phụ thuộc: 1_slim-slides-and-publish.md
 ## Input
@@ -32,6 +39,30 @@ Owner (2026-11-19), xem `handouts/index.html`:
 - [x] (bỏ nếu dùng trung gian) Thêm khung "Gemini key" — bỏ, vì dùng máy trung gian.
 - [x] Thêm nút "Chạy thử" cho các ô prompt, hiện kết quả, xử lý lỗi bằng tiếng Việt — xong: ô prompt sửa được (bấm vào để sửa); còn chỗ `[ ]` thì nhắc sửa, không gửi; khung kết quả có ô "Hỏi tiếp" (cùng cuộc trò chuyện) + nhắc không dán thông tin riêng tư; câu chỉnh (`data-ai="chain"`) gửi kèm lượt trước (slide 14, 26→27, phiếu 3, 7). Lỗi: mất mạng, quá lâu, không kết nối, hết lượt, key sai — tiếng Việt. Gõ phím trong ô không chuyển slide.
 - [x] Bài tập cuối: khung thử chỉnh hướng dẫn cho AI — xong: slide mới 30/31 "Dạy Gemini trả lời đúng khung" + khung ở phiếu 7 bước 3: chọn 5 mẫu (khung trống, Bạn Đồng Hành, sửa bài tiếng Anh, thẻ từ tiếng Trung, nhân sự) → sửa → câu hỏi thử → kết quả.
-- [ ] Kiểm tra: `grep` toàn repo không có chuỗi giống key (`AIza`); thử bằng 1 key thật nếu owner đưa vào biến môi trường `GEMINI_API_KEY` (không ghi ra file), nếu không thì kiểm tra bằng giả lập lỗi
-- [ ] Commit, push lên `danhbuidcn/ai-workshop`, kiểm tra Pages cập nhật
+- [x] Kiểm tra: `grep` toàn repo không có chuỗi giống key (`AIza`); thử bằng 1 key thật nếu owner đưa vào biến môi trường `GEMINI_API_KEY` (không ghi ra file), nếu không thì kiểm tra bằng giả lập lỗi — xong (2026-11-19 16:10):
+  - Key: so khớp đúng chuỗi key + mẫu `AQ\.Ab8R|AIza…` trên toàn file và `git log -p --all` → 0 chỗ.
+  - `node proxy/test-proxy.js` → qua hết (giới hạn lượt, chặn trang lạ, độ dài, đổi model khi 503, lỗi 429/400, thiếu key).
+  - Key thật gọi thẳng Gemini (curl, không in key): `gemini-3.5-flash-lite` trả lời OK.
+  - Trình duyệt (Playwright + Chrome, máy trung gian giả lập): slide 8, 14 (nối tiếp), 19 (nhắc sửa `[ ]`), 21 (không có nút), 26→27, slide thử 30; phiếu: tab, nhớ tab, chạy + nối tiếp phiếu 3, khung thử phiếu 7, chế độ in hiện đủ 7 phiếu và ẩn nút. Không lỗi JS.
+  - Gọi máy trung gian thật: HTTP 403 → chờ owner cấp quyền (Handoff).
+  - README + `outline/00`, `outline/07` đổi 30 → 31 slide.
+- [x] Commit, push lên `danhbuidcn/ai-workshop`, kiểm tra Pages cập nhật — đã commit; KHÔNG push (lệnh worker cấm push/merge, runner làm sau khi worker thoát).
 ## Kết quả
+Đã đổi (2026-11-19 16:15):
+- `handouts/index.html`: mỗi phiếu 1 tab (`#phieu-1`…`#phieu-7`, nhớ tab), in vẫn đủ 7 phiếu; nút ▶ Chạy thử; khung thử ở phiếu 7.
+- `index.html`: nút ▶ Chạy thử dưới mỗi prompt; slide mới 30 "Dạy Gemini trả lời đúng khung"; slide 24 thêm ô tóm tắt tài liệu; gõ phím trong ô không chuyển slide. Tổng 31 slide.
+- `ai.js` + `ai.css` (mới, dùng chung): gọi máy trung gian, hiện kết quả, "Hỏi tiếp", lỗi tiếng Việt, nhắc không dán thông tin riêng tư.
+- `proxy/` (mới): `Code.gs`, `appsscript.json`, `deploy.sh`, `test-proxy.js`, `HUONG-DAN.md`. Không chứa key.
+- README, `outline/00-mo-dau.md`, `outline/07-bai-tap-cuoi.md`: 31 slide, thêm dòng máy trung gian.
+
+Quyết định worker tự chọn:
+- Dùng Apps Script (theo mục "Triển khai Apps Script"); bỏ khung dán key cá nhân.
+- Model: `gemini-3.5-flash-lite`, dự phòng `gemini-3.1-flash-lite` (2.5-flash báo 404, 3.5-flash quá tải lúc thử). Sửa ở đầu `proxy/Code.gs`.
+- Giới hạn: 20 lượt/phút cả lớp, 5 lượt/phút mỗi trình duyệt, câu hỏi ≤ 3000 ký tự, hướng dẫn ≤ 4000 ký tự.
+- "Chỉ nhận từ danhbuidcn.github.io": Apps Script không đọc được địa chỉ trang gọi thật → trang tự gửi tên trang, máy trung gian kiểm tra (rào nhẹ, giả mạo được); rào chính là giới hạn lượt. Cho thêm `localhost` để thử trên máy. Mở file trực tiếp (file://) → báo dùng "Sao chép".
+- Địa chỉ máy trung gian để 1 chỗ: `AI_PROXY_URL` trong `ai.js` (thay vì ghi vào 2 file html).
+- Key chèn vào bản tạm lúc đẩy (theo plan); cũng đọc được từ Thuộc tính tập lệnh `GEMINI_KEY` nếu owner muốn dán tay.
+- `scriptId`/`deploymentId` lưu ngoài repo: `~/.config/ai-workshop/clasp-state.json` → địa chỉ giữ nguyên khi triển khai lại.
+- Ô prompt sửa được; còn chỗ `[ ]` thì nhắc sửa trước khi gửi. Ô cần Gmail/Drive/file và các đoạn "hướng dẫn 4 khối" không có nút (thử ở khung riêng).
+
+Còn lại: owner cấp quyền Apps Script 1 lần + gọi thử thật + push (xem Handoff).
