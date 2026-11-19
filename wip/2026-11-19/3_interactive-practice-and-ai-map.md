@@ -32,7 +32,7 @@ Owner (2026-11-19), xem slide 8 và 9 trên trang thật:
 - [x] Rà mọi bài thực hành: prompt mẫu điền sẵn trong ô nhập, kết quả hiện đúng chỗ; bài nào không hợp để chạy (vd Drive/Gmail cần quyền) thì ghi rõ làm ở app nào — xong: 11 ô ① trên slide, khung ② ngay dưới mỗi ô (Chrome, máy trung gian giả lập: slide 8, 14, 29 ra kết quả đúng khung ②). Ô không chạy (@Gmail, @Drive, Excel, file yêu cầu cố định, mẫu 4 khối) giữ khung đen + ghi "Làm trong app …". Phiếu 3: 5 câu chỉnh hay dùng → khung đen để chép vào ô "Muốn chỉnh?".
 - [x] Sửa slide 9 (bản đồ AI) + thêm phần chat vs Codex, Claude chat vs Claude Code; giữ ≤ 30 slide — xong: thẻ Claude thêm "mạnh cả lập trình"; thêm 2 thẻ nhỏ "ChatGPT khác Codex", "Claude khác Claude Code" + "Buổi này chỉ dùng phần trò chuyện". Gộp slide 29 vào slide khung thử → 30 slide. Sửa README, `outline/00`, `02`, `05`, `07`, `proxy/HUONG-DAN.md` (tên nút mới, 30 slide).
 - [x] Đóng vai học viên: đi hết slide + phiếu, ghi bảng lỗi, sửa — xong (2026-11-19 17:20): Chrome 1366×768, chụp 30 slide + 7 phiếu, bấm thật; bảng lỗi ở `## Kết quả`, đã sửa hết.
-- [ ] Kiểm tra: không tràn chữ, không lỗi JS, `grep` không lộ key (`AQ.`), commit (không push)
+- [x] Kiểm tra: không tràn chữ, không lỗi JS, `grep` không lộ key (`AQ.`), commit (không push) — xong (2026-11-19 17:30): 30 slide không slide nào bị cắt (slide dài cuộn được, có nhãn nhắc); chữ tràn ngang chỉ có thẻ "Gemini trả lời dài" ở slide 26 (cố ý làm mờ, có từ trước). Lỗi JS: 0. So khớp đúng chuỗi key + mẫu `AQ\.Ab8R|AIza…` trên file và `git log -p --all` → 0 chỗ. `node proxy/test-proxy.js` → qua hết. Đã commit, không push.
 ## Kết quả
 ## Kết quả
 ### Bảng lỗi khi đóng vai học viên (người 30+, không rành kỹ thuật)
@@ -52,3 +52,21 @@ Owner (2026-11-19), xem slide 8 và 9 trên trang thật:
 - Slide 19: còn `[ ]` → nhắc sửa, không gửi. Phiếu 7: khung trống còn `[ ]` → nhắc; mẫu Bạn Đồng Hành → có kết quả.
 - Nút 📋 Chép → "Đã chép ✓". Chế độ in phiếu: hiện đủ 7 phiếu, ẩn nút Gửi và khung ②.
 - Gọi thật: slide 8 → Gemini trả lời 5 câu "Mùa hè, em thích đi…"; slide 29 → trả lời đúng khung "🔍 Mình hiểu ý bạn là…". Không lỗi JS.
+
+### Đã đổi (2026-11-19 17:30)
+- `ai.js` + `ai.css`: bố cục chung ① "Bạn nhập" (viền vàng nét đứt, sửa được, nút "Gửi cho Gemini ➜", nút nhỏ "📋 Chép") → "⬇ Gemini trả lời" → ② "Gemini trả lời" (viền tím, "Kết quả sẽ hiện ở đây", "Gemini đang nghĩ…", ô "✏️ Muốn chỉnh?"). Khung thử: ① Phần A / Phần B → ②. Nút Sao chép gom vào `ai.js`.
+- `index.html`: bước đánh số chi tiết ở slide 8, 10, 14, 19, 24, 29; slide 21 thêm 4 bước kết nối Gmail/Drive trong Gemini; slide 9 thêm "Claude mạnh cả lập trình", "ChatGPT khác Codex", "Claude khác Claude Code"; gộp slide "Đến lượt bạn" vào slide khung thử → 30 slide; nhãn "Cuộn xuống xem tiếp".
+- `handouts/index.html`: bước chi tiết phiếu 1, 2, 3, 4, 5 (Cách A dán chữ / B tải file / C Gmail-Drive), 5 (file yêu cầu cố định), 7; đầu trang giải thích khung ①, ②, khung đen.
+- README, `outline/00`, `02`, `05`, `07`, `proxy/HUONG-DAN.md`: 30 slide, tên nút mới, Codex / Claude Code, đường kết nối Gemini mới.
+
+### Quyết định worker tự chọn
+- Giữ ≤ 30 slide bằng cách gộp slide 29 "Đến lượt bạn" vào slide khung thử (khung thử đã có sẵn 3 mẫu theo nghề); slide 1–28 giữ số cũ.
+- Khung ② hiện sẵn từ đầu; ô "Muốn chỉnh?" chỉ hiện sau câu trả lời đầu (đỡ rối).
+- Phiếu 3 "Những câu chỉnh hay dùng": thành khung đen để chép vào ô "Muốn chỉnh?", không mỗi câu 1 cặp ①②.
+- Ô ① vẫn là khung bấm-vào-sửa (tự cao theo chữ), không dùng ô nhập cố định chiều cao.
+- Bài chỉ làm được trong app (@Gmail, @Drive, Excel, file yêu cầu cố định, mẫu 4 khối) giữ khung đen + ghi rõ "Làm trong app …".
+- Tên menu lấy từ hướng dẫn trên mạng 2026-11 (không có trang trợ giúp chính thức của Google xác nhận "Customize → Connectors"): ghi cả đường mới và đường cũ (Connected Apps), kèm cách luôn được (@, tải file, dán chữ). Nguồn: promptoptimizer.tools/blog/how-to-connect-apps-to-gemini, zapier.com/blog/gemini-connected-apps, dragapp.com/blog/connect-gmail-to-chatgpt (ChatGPT free không có kết nối Gmail/Drive).
+
+### Còn lại
+- Owner bấm thử trên app thật 1 lần: Gemini → Customize → Connectors (tên tiếng Việt của menu có thể khác: "Tùy chỉnh"), nút **+** → "Tải tệp lên" / ChatGPT "Thêm ảnh và tệp", Gem → "Gem mới". Sai tên thì sửa ở slide 21, 24, 29 và phiếu 5, 7.
+- Runner push lên GitHub → mở https://danhbuidcn.github.io/ai-workshop/#8 kiểm tra.
