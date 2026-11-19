@@ -1,11 +1,4 @@
 # Phiếu thực hành: chia tab + chạy Gemini ngay trên trang
-## Handoff
-- Đang ở: code xong, đã commit, đã triển khai Apps Script (dự án `ai-workshop-gemini`, tài khoản `danhbuidcn@gmail.com`). Địa chỉ đã ghi trong `ai.js`. Gọi thật còn HTTP 403 vì Google bắt chủ tài khoản cấp quyền 1 lần.
-- Bước tiếp (owner, 2 phút):
-  1. Mở https://script.google.com/d/1m5bqqruHdwnJxhXE_zCwgYE88ucOBVHF7NTyKQf-Lg7cqmXxTqVWsI5G/edit → chọn hàm `kiemTra` → **Chạy** → **Nâng cao** → **Đi tới ai-workshop-gemini** → **Cho phép**. Nhật ký hiện `OK: ...`.
-  2. Chạy `bash proxy/deploy.sh` → dòng "Thử gọi thật" phải in `{"ok":true,...}`.
-  3. Push lên GitHub, mở https://danhbuidcn.github.io/ai-workshop/#8 → bấm ▶ Chạy thử.
-- File: [proxy/HUONG-DAN.md](../../proxy/HUONG-DAN.md), [ai.js](../../ai.js), [proxy/Code.gs](../../proxy/Code.gs).
 Nhánh: .
 Phụ thuộc: 1_slim-slides-and-publish.md
 ## Input
@@ -65,11 +58,13 @@ Quyết định worker tự chọn:
 - `scriptId`/`deploymentId` lưu ngoài repo: `~/.config/ai-workshop/clasp-state.json` → địa chỉ giữ nguyên khi triển khai lại.
 - Ô prompt sửa được; còn chỗ `[ ]` thì nhắc sửa trước khi gửi. Ô cần Gmail/Drive/file và các đoạn "hướng dẫn 4 khối" không có nút (thử ở khung riêng).
 
-Còn lại: owner cấp quyền Apps Script 1 lần + gọi thử thật + push (xem Handoff).
+Còn lại: push (runner làm). Cấp quyền + gọi thật đã xong (xem "Việc tiếp" bên dưới).
 
 ## Việc tiếp (2026-11-19 15:58, từ coordinator)
 Owner chạy `bash proxy/deploy.sh` → proxy trả "chưa có key Gemini". Nguyên nhân nghi: `deploy.sh` dùng `s.replace("__GEMINI_KEY__", ...)` thay chỗ đầu tiên, mà chỗ đầu tiên là dòng chú thích 3 của `proxy/Code.gs`, nên `var KEY_IN_CODE = '__GEMINI_KEY__'` vẫn là chỗ trống.
 - [x] Sửa để chỉ thay đúng `'__GEMINI_KEY__'` có dấu nháy ở dòng `var KEY_IN_CODE` (và bỏ chuỗi này khỏi chú thích) — xong: `deploy.sh` thay đúng dòng `var KEY_IN_CODE = '__GEMINI_KEY__';` (regex), báo lỗi nếu thiếu dòng hoặc còn sót chỗ trống; chú thích `Code.gs` + `HUONG-DAN.md` bỏ chuỗi. Thử key giả → dòng 7 thành `"FAKEKEY123"`; `node proxy/test-proxy.js` qua hết.
 - [x] Chạy lại `bash proxy/deploy.sh` (đã đăng nhập clasp, đã cấp quyền), kiểm tra in `{"ok":true,...}`. Không in key — xong: bản @4, in `{"ok":true,"text":"Chào bạn! Tôi có thể giúp gì cho bạn?","model":"gemini-3.5-flash-lite"}`. Địa chỉ không đổi → `ai.js` không đổi.
-- [ ] Thử thật trên slide #8 bằng Chrome (nút ▶ Chạy thử ra câu trả lời)
-- [ ] `grep -r` + `git log -p` không thấy key; commit (không push)
+- [x] Thử thật trên slide #8 bằng Chrome (nút ▶ Chạy thử ra câu trả lời) — xong: `http://localhost/index.html#8` (Playwright + Chrome headless, máy trung gian thật) → Gemini trả lời "Để hoàn thành câu *Mùa hè, em thích đi...*… 1. … biển…", không lỗi JS.
+- [x] `grep -r` + `git log -p` không thấy key; commit (không push) — xong: so khớp đúng chuỗi key + mẫu `AQ\.Ab8R|AIza…` trên file và `git log -p --all` → 0 chỗ. Đã commit, không push.
+
+Kết quả việc tiếp (2026-11-19 16:05): máy trung gian chạy thật. Còn lại: runner push lên GitHub → mở https://danhbuidcn.github.io/ai-workshop/#8 bấm ▶ Chạy thử.
