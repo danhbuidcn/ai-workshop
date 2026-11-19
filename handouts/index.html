@@ -16,32 +16,34 @@
   header h1 { font-size: 34px; margin: 8px 0; }
   nav.toc { position: sticky; top: 0; z-index: 5; background: #fff; border: 2px solid var(--line); border-radius: 16px;
     padding: 10px 14px; margin-bottom: 28px; display: flex; flex-wrap: wrap; gap: 6px; }
-  nav.toc a { color: var(--c); text-decoration: none; padding: 4px 12px; border-radius: 999px; font-weight: 600; }
-  nav.toc a.on { background: var(--c); color: #fff; }
+  nav.toc a { color: #1f2937; text-decoration: none; padding: 4px 12px; border-radius: 999px; font-weight: 600; border: 2px solid transparent; }
+  nav.toc a:hover { border-color: #f59e0b; }
+  nav.toc a.on { background: #1f2937; color: #fff; }
+  /* Thứ bậc: tên phiếu (to) → mục h3 (vừa, có vạch màu phần) → ghi chú (nhỏ, xám). Màu có nghĩa như slide: cam = nhấn/hành động, xanh dương = bạn nhập, xám = phụ. */
   section.sheet:not(.on) { display: none; }
   section.sheet { scroll-margin-top: 130px; }
   section.sheet { background: #fff; border: 2px solid var(--line); border-top: 10px solid var(--c); border-radius: 16px;
     padding: 20px 28px; margin-bottom: 28px; }
-  section.sheet h2 { margin: 0 0 4px; font-size: 26px; }
+  section.sheet h2 { margin: 0 0 4px; font-size: 28px; line-height: 1.25; }
   .meta { color: var(--muted); margin: 0 0 12px; }
-  h3 { font-size: 20px; margin: 20px 0 6px; }
+  h3 { font-size: 21px; margin: 26px 0 8px; padding-left: 10px; border-left: 5px solid var(--c); }
   .box { position: relative; background: #1f2937; color: #f9fafb; border-radius: 12px; padding: 14px 120px 14px 18px; margin: 8px 0 14px;
     white-space: pre-wrap; font-family: "Segoe UI", system-ui, sans-serif; font-size: 16px; line-height: 1.55; }
   .copy { position: absolute; top: 8px; right: 8px; font-size: 14px; padding: 5px 10px; border-radius: 8px; border: 0;
     background: #fff; color: #1f2937; cursor: pointer; }
-  .write { border: 2px dashed #cbd5e1; border-radius: 12px; min-height: 90px; padding: 8px 12px; color: var(--muted); margin: 8px 0 14px; }
+  .write { border: 2px dashed #93c5fd; background: #f8fbff; border-radius: 12px; min-height: 90px; padding: 8px 12px; color: var(--muted); margin: 8px 0 14px; }
   .write.tall { min-height: 160px; }
   table { border-collapse: collapse; width: 100%; margin: 8px 0 14px; font-size: 16px; }
   th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
   th { background: #f3f4f6; }
-  .tip { background: #fef9c3; border-radius: 10px; padding: 10px 14px; margin: 10px 0; }
+  .tip { background: #fef3c7; border-left: 8px solid #f59e0b; border-radius: 10px; padding: 10px 14px; margin: 12px 0; font-weight: 600; }
   ul.check { list-style: none; padding-left: 4px; } ul.check li::before { content: "☐  "; }
   ol.do { margin: 6px 0 10px; padding-left: 28px; } ol.do li { margin: 3px 0; }
   .app { color: var(--muted); font-size: 16px; margin: 0 0 12px; }
   .muted { color: var(--muted); }
-  .s1 { --c: #0ea5e9; } .s2 { --c: #10b981; } .s3 { --c: #f59e0b; } .s4 { --c: #ef4444; }
+  .s1 { --c: #0ea5e9; } .s2 { --c: #10b981; } .s3 { --c: #f59e0b; } .s4 { --c: #ef4444; } /* màu phần: chỉ để nhận ra phiếu */
   .s5 { --c: #8b5cf6; } .s6 { --c: #14b8a6; } .s7 { --c: #ec4899; }
-  a.back { color: var(--c); }
+  a.back { color: #1d4ed8; font-weight: 600; }
   @media print {
     body { background: #fff; font-size: 14px; }
     main { max-width: none; padding: 0; }
@@ -58,7 +60,7 @@
 <header>
   <div style="font-size:48px">📄🙋🤖</div>
   <h1>Phiếu thực hành · Làm việc với AI</h1>
-  <p class="meta">Khung xanh dương, viền nét đứt <b>① Bạn nhập</b>: câu mẫu đã điền sẵn, bấm vào để sửa → bấm <b>Gửi cho Gemini</b>.<br>Khung xám <b>② Gemini trả lời</b>: kết quả hiện ngay bên dưới. Khung đen: chép sang app để làm.<br>In ra giấy: Ctrl + P.</p>
+  <p class="meta">Khung xanh dương, viền nét đứt <b>① Bạn nhập</b>: câu mẫu đã điền sẵn, bấm vào để sửa → bấm <b>Gửi cho Gemini</b>.<br>Khung xám <b>② Gemini trả lời</b>: kết quả hiện ngay bên dưới. Khung so sánh: trái ❌ lần 1, phải ✅ lần 2, nút <b>So sánh</b> chạy cả 2. Khung đen: chép sang app để làm.<br>In ra giấy: Ctrl + P.</p>
   <p class="meta noprint" style="font-size:15px">⚠️ Gemini bản miễn phí có thể dùng nội dung bạn gửi để cải thiện sản phẩm. Không dán thông tin riêng tư (tên học sinh, lương, số CCCD…).</p>
   <p class="noprint"><a class="back" href="../index.html">← Về bộ slide</a></p>
 </header>
@@ -157,18 +159,23 @@
   <h3>Các bước</h3>
   <ol class="do">
     <li>Chọn 1 việc thật tuần này phải làm (vd: thông báo họp, đề kiểm tra, tin tuyển dụng).</li>
-    <li>Bấm vào khung ① ngay dưới. Thay từng chỗ <b>[ ]</b> bằng thông tin của bạn, xoá cả dấu [ ].</li>
-    <li>Bấm <b>Gửi cho Gemini</b>. Đọc kết quả ở khung ②.</li>
-    <li>Chưa ưng → gõ 1 câu chỉnh vào ô <b>"Muốn chỉnh?"</b> trong khung ② → bấm <b>Gửi</b>.</li>
+    <li>Khung ① trái: thay <b>[ ]</b> bằng 1 câu ngắn, như bạn vẫn hỏi.</li>
+    <li>Khung ① phải: thay từng chỗ <b>[ ]</b> bằng thông tin của bạn, xoá cả dấu [ ]. Mỗi màu là 1 phần của công thức.</li>
+    <li>Bấm <b>So sánh</b>. Lần 2 hợp ý hơn không? Chưa ưng → sửa 1 phần ở khung phải → <b>Chạy lại</b>.</li>
     <li>Chưa nghĩ ra? Xem 3 ví dụ điền sẵn bên dưới, bấm <b>Gửi cho Gemini</b> để xem kết quả.</li>
   </ol>
-  <p class="app">Làm trên app: điền xong bấm <b>📋 Chép</b> → dán vào ô chat ChatGPT/Gemini → <b>Enter</b>.</p>
-  <h3>Khung 5 phần (điền vào chỗ [ ])</h3>
-  <div class="box">Bạn là [vai trò].
-Bối cảnh: [tôi là ai, làm cho ai, tình huống gì].
-Việc cần làm: [1 việc rõ ràng].
-Kết quả: [dài bao nhiêu, dạng gì (bảng, gạch đầu dòng, email…), giọng gì].
-Nếu thiếu thông tin, hãy hỏi tôi trước khi làm.</div>
+  <p class="app">Làm trên app: điền xong bấm <b>📋 Chép</b> ở khung phải → dán vào ô chat ChatGPT/Gemini → <b>Enter</b>.</p>
+  <h3>So sánh: câu ngắn ↔ khung 5 phần (điền vào chỗ [ ])</h3>
+  <div class="ai-cmp">
+    <div class="cmp-set" data-sum="Lần 2 thường: đúng việc của bạn, đúng độ dài, đúng giọng, ít phải sửa.">
+      <div class="cmp-p">[viết 1 câu ngắn như bạn vẫn hỏi]</div>
+      <div class="cmp-p"><span class="pp1">Bạn là [vai trò].</span>
+<span class="pp2">Bối cảnh: [tôi là ai, làm cho ai, tình huống gì].</span>
+<span class="pp3">Việc cần làm: [1 việc rõ ràng].</span>
+<span class="pp4">Kết quả: [dài bao nhiêu, dạng gì (bảng, gạch đầu dòng, email…), giọng gì].</span>
+<span class="pp5">Nếu thiếu thông tin, hãy hỏi tôi trước khi làm.</span></div>
+    </div>
+  </div>
   <h3>Ghi lại prompt bạn ưng (để dùng lại)</h3>
   <div class="write tall">Việc của tôi tuần này: </div>
   <h3>Ví dụ: giáo viên tiếng Anh</h3>
@@ -461,6 +468,8 @@ Bạn là trợ lý phòng nhân sự, trả lời câu hỏi của nhân viên 
 // Bài thực hành: khung ① Bạn nhập / ② Gemini trả lời + nút Sao chép (ai.js), khung thử hướng dẫn cho AI
 AI.setup('.box');
 AI.lab('.ai-lab');
+AI.compare('.ai-cmp');
+AI.folds();
 </script>
 </body>
 </html>
