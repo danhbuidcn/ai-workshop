@@ -37,12 +37,45 @@ Owner (2026-11-19), xem slide 12 (nguyên tắc 1–2): đóng vai designer, thi
   - Áp dụng luật "mỗi khái niệm một thẻ" cho mọi slide đặt cạnh nhau 2+ ý khác nhau (vd slide 9 bản đồ AI, slide 12–13).
 - Không đổi nội dung/ý nghĩa, không tăng số slide (≤ 30), không đụng `ai.js` logic/key.
 ## Plan
-- [ ] Chụp ảnh toàn bộ slide hiện tại (Chrome headless, 1280×720), xem từng slide, ghi bảng: slide → mắt nhìn đâu trước? → vấn đề → cách sửa
-- [ ] Làm thành phần "bấm để mở" dùng chung (CSS + vài dòng JS); áp cho slide 13 trước, rồi mọi slide nhiều chữ
-- [ ] Làm thành phần "so sánh 2 cột" dùng chung, áp cho slide 14 và các bài trước/sau
+- [x] Chụp ảnh toàn bộ slide hiện tại (Chrome headless, 1280×720), xem từng slide, ghi bảng: slide → mắt nhìn đâu trước? → vấn đề → cách sửa — xong (2026-11-19 16:45): ảnh ở `/tmp/aw4/before/`, bảng ở mục "Bảng rà slide" bên dưới. Đổi thứ tự: làm hệ thống thiết kế trước (2 thành phần dùng nó).
 - [ ] Thiết lập hệ thống thiết kế chung (cỡ chữ 3 mức, bảng màu có nghĩa, khoảng cách, khung chốt) trong CSS, dùng chung
+- [ ] Làm thành phần "bấm để mở" dùng chung (CSS trong `ai.css` + JS trong `ai.js`); áp cho slide 13 trước, rồi mọi slide nhiều chữ
+- [ ] Làm thành phần "so sánh 2 cột" dùng chung, áp cho slide 14 và các bài trước/sau (17, 19, 24, 29)
 - [ ] Thiết kế lại từng slide theo 10 nguyên tắc; làm slide 12 trước làm mẫu rồi áp các slide còn lại
 - [ ] Làm tương tự phần phiếu (`handouts/index.html`) ở mức vừa đủ (thứ bậc + màu có nghĩa)
 - [ ] Kiểm tra: chụp lại, bài "nheo mắt" (làm mờ ảnh: ý chính còn đọc được không), không tràn chữ, in PDF ≤ 30 trang, không lỗi JS, commit (không push)
 - [ ] Ghi bảng trước/sau vào Kết quả, kèm ảnh slide 12 trước/sau trong `wip/2026-11-19/img/`
+### Bảng rà slide (trước khi sửa, 2026-11-19 16:45)
+Lỗi chung: chữ phụ 12–17px (nhãn ①②, ghi chú, thẻ "Dùng khi"); màu phần (đỏ phần 4, hồng phần 7) dùng tô thẻ chính → đỏ bị hiểu là "tránh"; chữ trắng trên vàng/cam không đủ tương phản; dấu "≠" hiện "=/" (slide 6, 13); câu chốt cùng cỡ với chữ thường.
+| Slide | Mắt nhìn đâu trước | Vấn đề | Cách sửa |
+|---|---|---|---|
+| 1 | Tiêu đề | Ổn | Giữ |
+| 2 | 2 thẻ bằng nhau | Chữ nhỏ 19px, khung trống nửa dưới | Thẻ "Học xong, bạn biết" chính (rộng), "Dành cho ai" phụ; câu chốt thành dải |
+| 3 | 7 thẻ nhỏ | 7 thẻ + 3 thẻ cùng trọng lượng | 7 phần thành dải quy trình có số; 3 lời dặn thành hàng nhỏ; chốt thành dải |
+| 4 | 4 thẻ bằng nhau | Thẻ ý chính (AI nhớ chữ nào đi sau chữ nào) không nổi hơn | 3 thẻ nhỏ đánh số có mũi tên → thẻ đích nổi |
+| 5 | Câu "Con mèo…" | Chữ giải thích nhỏ, chốt chìm | Tăng cỡ; câu "máy đoán chữ" thành dải chốt |
+| 6 | Con vẹt | "≠" lỗi, thẻ nhỏ, xanh/đỏ sai nghĩa | Thẻ to, xám → cam; chữ "khác"; chốt dải |
+| 7 | Thẻ xanh | 2 thẻ bằng nhau | Thẻ "AI tạo nội dung" chính (rộng, viền cam), thẻ kia phụ xám |
+| 8, 10 | Các bước | Nhãn ①② 16px, ghi chú 12px | Hệ thống chung: ① xanh dương, nút Gửi cam nổi nhất, chữ ≥18px |
+| 9 | 4 thẻ app | Chữ 17px, 2 thẻ Codex/Claude Code chen ngang | Thẻ app: tên to + "dùng khi"; chi tiết bấm để mở; Codex/Claude Code thành 1 ô phụ bấm để mở; chốt dải |
+| 11 | Bàn tay | Chữ ngón tay 16–19px | Tăng cỡ |
+| 12 | 2 cột bằng nhau | Như owner tả | Mẫu: 2 thẻ có số ①②, màu riêng, hình + 1 câu; ví dụ và câu chỉnh bấm để mở; dải chốt |
+| 13 | 3 khối chữ dày | Quá nhiều chữ | 3 thẻ đầu mục, chi tiết bấm để mở; dải chốt |
+| 14 | Các bước | Kết quả 2 lần nằm trên-dưới, phải cuộn | So sánh 2 cột (owner tả) |
+| 15 | 2 thẻ | Ổn, chữ nhỏ | Tăng cỡ, thẻ màu riêng, dải chốt |
+| 16 | Thẻ đỏ "Hỏi lại" | Đỏ sai nghĩa | 5 thẻ màu theo 5 phần (dùng lại ở prompt tô màu slide 14, 19); không tô đỏ |
+| 17 | 3 cột ① ② | 3 bộ ①② nhỏ, phải cuộn | So sánh 2 cột + 3 nút chọn nghề |
+| 18 | Thẻ đỏ | Đỏ sai nghĩa | Thẻ thường, thẻ "Chịu trách nhiệm" viền cam |
+| 19 | Các bước | Chỉ 1 lần chạy | So sánh: câu ngắn của bạn ↔ công thức tô màu |
+| 20 | 3 thẻ | Bước 1/Bước 2 lẫn | 2 bước có số; 3 cách: tên + "Free", cách làm bấm để mở |
+| 21 | 2 cột chữ dày | Rất nhiều chữ | 2 thẻ (Gmail/Drive, Excel), chi tiết bấm để mở |
+| 22 | 4 thẻ đỏ | Ổn (đỏ = tránh) | Tăng cỡ; chốt dải |
+| 23 | 2 cột | Như owner tả | 2 thẻ "Tờ giấy dán tủ lạnh" / "Tủ tài liệu" + chữ nối |
+| 24 | Các bước | Dài, phải cuộn | So sánh: không đưa tài liệu ↔ có dán tài liệu; cách B, C bấm để mở |
+| 25 | 4 thẻ | Chốt chìm | Tăng cỡ, dải chốt, dải hành động cam |
+| 26–27 | Khung ① | Ổn | Theo hệ thống chung |
+| 28 | Thẻ hồng | Màu phần làm nhấn | Thẻ "Khung trả lời" cam; dải chốt |
+| 29 | Khung thử | Chỉ 1 kết quả | Kết quả 2 cột: không có hướng dẫn ↔ có hướng dẫn Phần A |
+| 30 | Tiêu đề | Ổn | Tăng cỡ |
+
 ## Kết quả
