@@ -29,10 +29,11 @@ Owner (2026-11-19): Làm bộ tài liệu workshop 1–2h cho 3 bạn (30+ tuổ
 | 6 | Tổng kết 1 trang | 5 | — |
 | 7 | Bài tập cuối: chỉnh Gemini trả đúng kiểu mình muốn. Xem prompt mẫu của owner trước, rồi học viên tự làm | 20 | Làm tại chỗ + chia sẻ |
 ## Plan
-- [ ] Đọc nội dung từ link NotebookLM và link Gemini (WebFetch), lưu bản tóm tắt vào `sources/`. Không đọc được → ghi vào Handoff, hỏi owner
-- [ ] Viết dàn ý chi tiết từng phần: `outline/NN-ten.md` (lời giải thích lớp 5, ví dụ đời thường, mô tả hình khối, bài thực hành). DỪNG, chờ owner duyệt dàn ý
-- [ ] Làm bộ slide HTML (1 file/ nhiều file, không cần cài đặt, chạy offline, xem được trên Windows; có nút chuyển slide, phím mũi tên, in ra PDF)
-- [ ] Làm phiếu thực hành từng phần + đề bài tập cuối + prompt mẫu copy được (`handouts/`)
+- [x] Đọc nội dung từ link NotebookLM và link Gemini (WebFetch), lưu bản tóm tắt vào `sources/`. Không đọc được → ghi vào Handoff, hỏi owner
+  - Gemini: đọc được (2 lượt) → [sources/gemini-mau.md](../../sources/gemini-mau.md). NotebookLM: cần đăng nhập, không đọc được; ch.2/4/6 chưa có → ghi ở [sources/README.md](../../sources/README.md), bù bằng kiến thức chung, owner xem lại khi duyệt.
+- [ ] Viết dàn ý chi tiết từng phần: `outline/NN-ten.md` (lời giải thích lớp 5, ví dụ đời thường, mô tả hình khối, bài thực hành). ~~DỪNG, chờ owner duyệt dàn ý~~ (worker chạy liền mạch; owner duyệt dàn ý + slide cùng lúc ở bước cuối)
+- [ ] Làm bộ slide HTML: 1 file `index.html` ở gốc repo (thành trang chủ GitHub Pages), CSS/JS viết sẵn trong file, không cần mạng; nút chuyển slide, phím mũi tên, `#số` để nhảy slide, in ra PDF (mỗi slide 1 trang)
+- [ ] Làm phiếu thực hành từng phần + đề bài tập cuối + prompt mẫu có nút "Sao chép": 1 file `handouts/index.html` (in được)
 - [ ] `README.md` giới thiệu ngắn + cách mở
 - [ ] Kiểm tra: đọc lại với góc nhìn người non-tech (không thuật ngữ, câu ngắn), mở thử trong trình duyệt, kiểm tra link
 - [ ] Tạo repo GitHub public cá nhân + bật GitHub Pages (chỉ làm sau khi owner xác nhận tên repo và rà nội dung không có thông tin riêng tư)
