@@ -187,5 +187,30 @@ var AI_PROXY_URL = 'https://script.google.com/macros/s/AKfycbwRPQ7UxwLXRd9xLawb4
     };
   }
 
-  window.AI = { setup: setup, lab: function (sel) { document.querySelectorAll(sel).forEach(lab); } };
+  // Ô "bấm để mở": .fold > .fold-h (nút, luôn hiện) + .fold-b (chi tiết, ẩn tới khi bấm). Bấm lần nữa để đóng.
+  // Khung cha có data-one: mở 1 ô thì các ô khác trong khung đó thu lại. Khi in: CSS mở hết.
+  var foldN = 0;
+  function folds(root) {
+    (root || document).querySelectorAll('.fold').forEach(function (f) {
+      var h = f.querySelector('.fold-h'), b = f.querySelector('.fold-b');
+      if (!h || !b || h.dataset.ready) return;
+      h.dataset.ready = '1';
+      b.id = b.id || 'fold-' + (++foldN);
+      h.setAttribute('aria-controls', b.id);
+      var set = function (el, open) {
+        el.classList.toggle('open', open);
+        el.querySelector('.fold-h').setAttribute('aria-expanded', open ? 'true' : 'false');
+      };
+      set(f, f.classList.contains('open'));
+      h.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var open = !f.classList.contains('open');
+        var grp = f.parentElement && f.parentElement.closest('[data-one]');
+        if (open && grp) grp.querySelectorAll('.fold.open').forEach(function (o) { if (o !== f) set(o, false); });
+        set(f, open);
+      });
+    });
+  }
+
+  window.AI = { setup: setup, lab: function (sel) { document.querySelectorAll(sel).forEach(lab); }, folds: folds };
 })();

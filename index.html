@@ -111,6 +111,13 @@
   .concept .when b { color: var(--ink); }
   .joint { flex: none; align-self: center; text-align: center; font-size: 20px; font-weight: 800; color: #4b5563; width: 110px; line-height: 1.25; }
   .joint span { display: block; font-size: 30px; }
+  /* Thẻ bấm để mở trên slide (ô .fold.cardf, xem ai.css) */
+  .fold-h .fno { font-size: 30px; font-weight: 800; color: var(--hi-ink); line-height: 1; }
+  .fold-h .fic { font-size: 50px; line-height: 1.1; }
+  .fold-h .ft { font-size: 28px; line-height: 1.2; }
+  .fold-h .fs { font-size: 22px; color: #374151; }
+  .fold-b p, .fold-b li { font-size: 22px; }
+  .slide .fold-hint { font-size: 18px; }
   /* bulbs */
   .bulbs { display: flex; gap: 10px; justify-content: center; margin: 10px 0; }
   .bulb { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
@@ -344,21 +351,34 @@
 
 <section class="slide" data-s="3">
   <span class="tag">3 · NGUYÊN TẮC 3–5</span>
-  <div class="grid g3">
-    <div class="card c"><b class="t">③ <span class="key">Tủ tài liệu</span> + <span class="key">công thức</span></b>
-      <p style="font-size:19px">🗄️ <b>Tủ tài liệu (Project)</b>: giáo trình, quy định công ty, mẫu cũ. Lưu 1 lần, dùng mãi.</p>
-      <p style="font-size:19px">📋 <b>Công thức (Skill)</b>: cách làm 1 việc lặp lại, từng bước. Ghi 1 lần, không giải thích lại.</p>
-      <p class="muted" style="font-size:16px">Bản miễn phí: ChatGPT Projects, Gemini Gem, NotebookLM, hoặc 1 file ghi chú (phần 5).</p></div>
-    <div class="card c"><b class="t">④ Giao việc lặp lại, <span class="key">giữ việc phán đoán</span></b>
-      <p style="font-size:19px">AI làm <b>phụ bếp</b>: thái rau, rửa bát. Nêm nếm, quyết món nào ra bàn là <b>bạn</b>.</p>
-      <p style="font-size:19px">🤖 <b>Giao AI:</b> soạn nháp, tóm tắt, đổi định dạng, nghĩ ý tưởng, sửa chính tả.</p>
-      <p style="font-size:19px">🙋 <b>Bạn giữ:</b> chấm điểm, quyết định tuyển ai, nói chuyện khó với phụ huynh, nhân viên.</p></div>
-    <div class="card c"><b class="t">⑤ <span class="key">Kiểm tra</span> trước khi tin</b>
-      <p style="font-size:19px">🔍 AI như <b>người bạn nói chuyện rất tự tin</b> — kể cả khi sai.</p>
-      <ul><li>Thử với việc <b>mình đã làm rồi</b>, biết đáp án → so sánh.</li>
-        <li>Số liệu, tên người, luật, trích dẫn → <b>luôn kiểm tra lại</b>.</li></ul></div>
+  <h2>3 nguyên tắc còn lại</h2>
+  <div class="foldrow" data-one>
+    <div class="fold cardf">
+      <button type="button" class="fold-h"><span class="fno">③</span><span class="fic">🗄️</span><b class="ft">Tủ tài liệu + công thức</b><span class="fs">Lưu 1 lần, dùng mãi.</span></button>
+      <div class="fold-b">
+        <p>🗄️ <b>Tủ tài liệu (Project)</b>: giáo trình, quy định công ty, mẫu cũ.</p>
+        <p>📋 <b>Công thức (Skill)</b>: cách làm 1 việc lặp lại, từng bước. Ghi 1 lần, không giải thích lại.</p>
+        <p class="cap">Bản miễn phí: ChatGPT Projects, Gemini Gem, NotebookLM, hoặc 1 file ghi chú (phần 5).</p>
+      </div>
+    </div>
+    <div class="fold cardf">
+      <button type="button" class="fold-h"><span class="fno">④</span><span class="fic">🧑‍🍳</span><b class="ft">Giao việc lặp lại, giữ việc phán đoán</b><span class="fs">AI làm phụ bếp, bạn nêm nếm.</span></button>
+      <div class="fold-b">
+        <p>AI thái rau, rửa bát. Nêm nếm, quyết món nào ra bàn là <b>bạn</b>.</p>
+        <p>🤖 <b>Giao AI:</b> soạn nháp, tóm tắt, đổi định dạng, nghĩ ý tưởng, sửa chính tả.</p>
+        <p>🙋 <b>Bạn giữ:</b> chấm điểm, quyết định tuyển ai, nói chuyện khó với phụ huynh, nhân viên.</p>
+      </div>
+    </div>
+    <div class="fold cardf">
+      <button type="button" class="fold-h"><span class="fno">⑤</span><span class="fic">🔍</span><b class="ft">Kiểm tra trước khi tin</b><span class="fs">AI nói rất tự tin, kể cả khi sai.</span></button>
+      <div class="fold-b">
+        <p>AI như <b>người bạn nói chuyện rất tự tin</b>.</p>
+        <ul><li>Thử với việc <b>mình đã làm rồi</b>, biết đáp án → so sánh.</li>
+          <li>Số liệu, tên người, luật, trích dẫn → <b>luôn kiểm tra lại</b>.</li></ul>
+      </div>
+    </div>
   </div>
-  <p class="big sm" style="margin-top:20px">Việc mình chịu trách nhiệm → <em>mình xem lại</em>. Tự tin <em>≠</em> đúng.</p>
+  <div class="chot">Việc mình chịu trách nhiệm → <em>mình xem lại</em>. Tự tin <em>khác</em> đúng.</div>
 </section>
 
 <section class="slide" data-s="3">
@@ -711,6 +731,7 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
   document.addEventListener('keydown', function (e) {
     if (e.target.closest && e.target.closest('input, textarea, select, [contenteditable]')) return; // đang gõ
     var k = e.key;
+    if ((k === ' ' || k === 'Enter') && e.target.closest && e.target.closest('button')) return; // đang bấm nút (ô bấm để mở, Gửi)
     if (k === 'ArrowRight' || k === 'PageDown' || k === ' ') { e.preventDefault(); show(cur + 1); }
     else if (k === 'ArrowLeft' || k === 'PageUp') { e.preventDefault(); show(cur - 1); }
     else if (k === 'Home') show(0);
@@ -731,6 +752,7 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
   // Bài thực hành: khung ① Bạn nhập / ② Gemini trả lời + nút Sao chép (ai.js), khung thử hướng dẫn cho AI
   AI.setup('.prompt');
   AI.lab('.ai-lab');
+  AI.folds();
 
   // Slide dài (bài thực hành): nhắc "cuộn xuống" khi còn nội dung bên dưới
   var more = document.getElementById('more');
