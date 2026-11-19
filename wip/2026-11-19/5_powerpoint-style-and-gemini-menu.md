@@ -32,12 +32,35 @@ Thử mở thư mục Drive bằng WebFetch; không đọc được thì chỉ d
 - Việc: sửa mọi chỗ "Customize → Connectors" thành `Tuỳ chỉnh → Trình kết nối → Google Workspace → +` (đường phụ: `Trí thông minh cá nhân → Các ứng dụng có thể kết nối`). Bài tập cuối: thêm `Trí thông minh cá nhân → Chỉ dẫn cho Gemini` là chỗ dán khung trả lời cố định; Gem là cách khác. Thêm câu "không thấy thì tìm chữ 'Trình kết nối' hoặc 'Connectors'".
 - Ảnh chụp có tên + lịch sử chat riêng của owner: KHÔNG đưa vào repo.
 ## Plan
+- **Nhắc lại của owner:** 10 slide đầu phải làm GIỐNG POWERPOINT NHƯ CÁC ẢNH MẪU (`mau-17…21.png`): nền kem có trang trí góc, tiêu đề to đậm, mục lục số trong vòng tròn, vòng tròn biểu tượng, số lớn, hình minh hoạ lớn, bảng màu. Không phải giao diện web/thẻ chữ như hiện tại. Nhìn ảnh mẫu bên cạnh slide mình làm để so (chụp cạnh nhau, ghi vào Kết quả: giống ở đâu, khác ở đâu).
 - **Owner (2026-11-19): làm trước 10 slide đầu để duyệt.** Chỉ làm bộ mẫu + slide 1–10 theo phong cách mới, chạy được trên trang thật (file `index.html`), chụp ảnh 10 slide vào `wip/2026-11-19/img/5_slide-01.png … 5_slide-10.png`, commit, rồi **DỪNG** (ghi Handoff: đã làm gì, bước tiếp, ảnh ở đâu). KHÔNG áp cho slide 11 trở đi, KHÔNG sửa menu Gemini (mục C) và KHÔNG nâng giới hạn lượt ở bước này: để sau khi owner duyệt. Slide 11–30 để nguyên kiểu cũ trong lúc chờ, trang vẫn chạy bình thường.
 - Chỉ sau khi owner duyệt mới làm phần còn lại (owner ra lệnh nối tiếp bằng `spawn --resume`).
 - Owner chốt thêm: nâng giới hạn máy trung gian lên **20 lượt / 5 phút** (hiện 5 lượt/phút toàn bộ; nút So sánh tốn 2 lượt). Sửa trong `proxy/Code.gs`, chạy lại `bash proxy/deploy.sh` (đã đăng nhập clasp), thử gọi thật, vẫn không in key. Chú ý: giới hạn này tính theo từng người (cid) hay toàn bộ? Giữ theo người, thêm trần chung hợp lý để không cạn hạn mức miễn phí của Google (ghi con số chọn vào Kết quả).
-- [ ] Đọc 5 ảnh mẫu + thử Drive; ghi bảng "layout học được" vào Kết quả
+- [x] Đọc 5 ảnh mẫu + thử Drive; ghi bảng "layout học được" vào Kết quả — xong (2026-11-19 17:10): Drive chỉ đọc được danh sách 50 file .pptx (Slidesgo…), không có ảnh xem trước → chỉ dùng 5 ảnh. Bảng ở `## Kết quả`. 4 ảnh menu Gemini khớp mục C (menu tài khoản mở từ nút ⚙ cạnh tên ở góc dưới trái).
 - [ ] Làm bộ mẫu layout (CSS chung) + vài hình SVG/biểu tượng; làm 3 slide mẫu (mở phần, mục lục đánh số, lưới 3 ý), chụp ảnh lưu `wip/2026-11-19/img/` cho owner xem
+  - Không thêm slide (đang đúng 30). Theo lệnh owner "làm trước 10 slide": kiểu mới chỉ bật ở slide có class `pp` (slide 1–10), slide 11–30 giữ nguyên kiểu cũ.
+  - Slide 1–10: "Mở phần" cho slide 1 (tiêu đề) + slide 6 (ý chính + hình lớn); "Mục lục đánh số" cho slide 3; "Số lớn" cho slide 4; "Lưới vòng tròn biểu tượng" cho slide 7, 9; slide 2, 5, 8, 10 theo nền + chữ mới. Để sau duyệt: "Trung tâm + 4 ý" (slide 18), "Bảng" (slide 23), "Mục lục" cho tổng kết (slide 25), "Chốt" (slide 30).
+  - Ảnh 10 slide: `wip/2026-11-19/img/5_slide-01.png … 5_slide-10.png`. Xong thì ghi Handoff + DỪNG.
 - [ ] Áp bộ mẫu cho toàn bộ slide từ slide 4 trở đi (gồm 12–14, 23), giữ nội dung + tương tác
 - [ ] Sửa menu Gemini theo mục C ở slide, phiếu, outline, README
+- [ ] Máy trung gian: 20 lượt / 5 phút / người + trần chung; deploy, thử gọi thật, sửa `proxy/HUONG-DAN.md` (để sau khi owner duyệt 10 slide)
 - [ ] Kiểm tra: không tràn chữ, "nheo mắt", đọc được ở 1280×720 và laptop nhỏ, in PDF ≤ 30 trang, không lỗi JS, không lộ key, không có ảnh mẫu/ảnh Gemini trong repo (`git ls-files`), commit (không push)
 ## Kết quả
+### Layout học được (5 ảnh mẫu, 2026-11-19)
+| Ảnh | Kiểu | Học được | Dùng cho |
+|---|---|---|---|
+| mau-17 | Mục lục đánh số | 4 ô lưới 2×2; vòng tròn xanh đậm có số 01–04 + chấm cam ở góc; tên mục màu xanh, serif đậm; 1 dòng mô tả; tiêu đề giữa, rất to | Slide 3 (bản đồ buổi học) |
+| mau-18 | Mở phần | Số "01" xanh rất to → tên phần đen 2 dòng, cực to → 1 câu phụ; hình lớn bên phải; trang trí góc (tam giác hồng, vòng vàng, nét lượn) | Slide 1 (bìa), slide 6 (hình lớn + ý chính) |
+| mau-19 | Lưới ý vòng tròn biểu tượng | 3×2; hình trong vòng tròn xanh, tên màu xanh, 2 dòng mô tả căn giữa; nhiều khoảng thở | Slide 2, 4, 7 |
+| mau-20 | Bảng | Hàng tiêu đề hồng chữ cam; cột đầu xanh đậm chữ trắng; số to, đậm, căn giữa | Kiểu `.pp table` (dùng ở đợt 2) |
+| mau-21 | Trung tâm + 4 ý | Cụm vòng tròn biểu tượng hồng ở giữa; 4 ý hai bên, nối bằng đường mảnh có chấm; bên trái căn phải, bên phải căn trái | Slide 9 (4 cái tên AI) |
+| Chung | — | Nền kem; tiêu đề serif đậm xanh đen; thân bài sans; 4 màu: xanh lá đậm, cam san hô, hồng nhạt, vàng; trang trí chỉ ở góc, không che chữ | Mọi slide `.pp` |
+### Layout học được (5 ảnh mẫu `mau-17…21`)
+| Ảnh | Layout | Cái tạo điểm nhấn | Dùng ở slide |
+|---|---|---|---|
+| 17 | Mục lục 2×2 | Vòng tròn xanh đậm có số 01–04 + chấm cam ở góc; tiêu đề màu xanh + 1 dòng mô tả | 3, 25 |
+| 18 | Mở phần | Số "01" rất to màu xanh, tên phần to đậm có chân, hình minh hoạ lớn bên phải | 1, 6 |
+| 19 | Lưới 3×2 | Vòng tròn có hình ở mỗi ý, tiêu đề màu, 1–2 dòng chữ, căn giữa | 9, 13, 22 |
+| 20 | Bảng | Hàng đầu hồng chữ cam, cột đầu xanh đậm chữ trắng, số to đậm | 23 |
+| 21 | Trung tâm + 4 ý | Cụm vòng tròn giữa, 4 ý 2 bên nối bằng đường mảnh | 18 |
+Chung: nền kem, trang trí góc (tam giác, vòng cung, chấm, nét lượn) không che chữ; tiêu đề có chân rất to; nhiều khoảng trống.
