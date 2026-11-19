@@ -32,6 +32,8 @@ Thử mở thư mục Drive bằng WebFetch; không đọc được thì chỉ d
 - Việc: sửa mọi chỗ "Customize → Connectors" thành `Tuỳ chỉnh → Trình kết nối → Google Workspace → +` (đường phụ: `Trí thông minh cá nhân → Các ứng dụng có thể kết nối`). Bài tập cuối: thêm `Trí thông minh cá nhân → Chỉ dẫn cho Gemini` là chỗ dán khung trả lời cố định; Gem là cách khác. Thêm câu "không thấy thì tìm chữ 'Trình kết nối' hoặc 'Connectors'".
 - Ảnh chụp có tên + lịch sử chat riêng của owner: KHÔNG đưa vào repo.
 ## Plan
+- **Owner (2026-11-19): làm trước 10 slide đầu để duyệt.** Chỉ làm bộ mẫu + slide 1–10 theo phong cách mới, chạy được trên trang thật (file `index.html`), chụp ảnh 10 slide vào `wip/2026-11-19/img/5_slide-01.png … 5_slide-10.png`, commit, rồi **DỪNG** (ghi Handoff: đã làm gì, bước tiếp, ảnh ở đâu). KHÔNG áp cho slide 11 trở đi, KHÔNG sửa menu Gemini (mục C) và KHÔNG nâng giới hạn lượt ở bước này: để sau khi owner duyệt. Slide 11–30 để nguyên kiểu cũ trong lúc chờ, trang vẫn chạy bình thường.
+- Chỉ sau khi owner duyệt mới làm phần còn lại (owner ra lệnh nối tiếp bằng `spawn --resume`).
 - Owner chốt thêm: nâng giới hạn máy trung gian lên **20 lượt / 5 phút** (hiện 5 lượt/phút toàn bộ; nút So sánh tốn 2 lượt). Sửa trong `proxy/Code.gs`, chạy lại `bash proxy/deploy.sh` (đã đăng nhập clasp), thử gọi thật, vẫn không in key. Chú ý: giới hạn này tính theo từng người (cid) hay toàn bộ? Giữ theo người, thêm trần chung hợp lý để không cạn hạn mức miễn phí của Google (ghi con số chọn vào Kết quả).
 - [ ] Đọc 5 ảnh mẫu + thử Drive; ghi bảng "layout học được" vào Kết quả
 - [ ] Làm bộ mẫu layout (CSS chung) + vài hình SVG/biểu tượng; làm 3 slide mẫu (mở phần, mục lục đánh số, lưới 3 ý), chụp ảnh lưu `wip/2026-11-19/img/` cho owner xem

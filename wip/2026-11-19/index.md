@@ -1,7 +1,7 @@
 # wip 2026-11-19
 | File | Trạng thái |
 |---|---|
-| [5_powerpoint-style-and-gemini-menu](5_powerpoint-style-and-gemini-menu.md) | 🔄 worker (chờ id) |
+| [5_powerpoint-style-and-gemini-menu](5_powerpoint-style-and-gemini-menu.md) | 🔄 worker aw-2026-11-19-5-powerpoint-style-and-gemini-menu |
 | [4_design-pass](4_design-pass.md) | ⏸ xong, chờ owner push |
 | [3_interactive-practice-and-ai-map](3_interactive-practice-and-ai-map.md) | ⏸ xong, chờ owner push |
 | [2_handouts-live-gemini](2_handouts-live-gemini.md) | ⏸ xong, chờ owner push |
