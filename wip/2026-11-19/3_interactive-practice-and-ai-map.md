@@ -31,6 +31,24 @@ Owner (2026-11-19), xem slide 8 và 9 trên trang thật:
 - [x] Viết bước hướng dẫn chi tiết cho từng bài thực hành (slide + phiếu); bài Drive/Gmail: từng bước kết nối trên app thật (kèm cách làm khác nếu bản free không có) — xong: slide 8, 10, 14, 19, 24, 29 + phiếu 1, 2, 3, 4, 5 (Cách A dán chữ / B tải file / C Gmail-Drive 6 bước), 7 (ví dụ, tự viết, khung thử, Gem). Slide 21 thêm 4 bước kết nối Gemini (Customize → Connectors → Add; cũ: Connected Apps; gõ @) + "ChatGPT free không kết nối Gmail/Drive → 📎 / dán chữ".
 - [x] Rà mọi bài thực hành: prompt mẫu điền sẵn trong ô nhập, kết quả hiện đúng chỗ; bài nào không hợp để chạy (vd Drive/Gmail cần quyền) thì ghi rõ làm ở app nào — xong: 11 ô ① trên slide, khung ② ngay dưới mỗi ô (Chrome, máy trung gian giả lập: slide 8, 14, 29 ra kết quả đúng khung ②). Ô không chạy (@Gmail, @Drive, Excel, file yêu cầu cố định, mẫu 4 khối) giữ khung đen + ghi "Làm trong app …". Phiếu 3: 5 câu chỉnh hay dùng → khung đen để chép vào ô "Muốn chỉnh?".
 - [x] Sửa slide 9 (bản đồ AI) + thêm phần chat vs Codex, Claude chat vs Claude Code; giữ ≤ 30 slide — xong: thẻ Claude thêm "mạnh cả lập trình"; thêm 2 thẻ nhỏ "ChatGPT khác Codex", "Claude khác Claude Code" + "Buổi này chỉ dùng phần trò chuyện". Gộp slide 29 vào slide khung thử → 30 slide. Sửa README, `outline/00`, `02`, `05`, `07`, `proxy/HUONG-DAN.md` (tên nút mới, 30 slide).
-- [ ] Đóng vai học viên: đi hết slide + phiếu, ghi bảng lỗi, sửa
+- [x] Đóng vai học viên: đi hết slide + phiếu, ghi bảng lỗi, sửa — xong (2026-11-19 17:20): Chrome 1366×768, chụp 30 slide + 7 phiếu, bấm thật; bảng lỗi ở `## Kết quả`, đã sửa hết.
 - [ ] Kiểm tra: không tràn chữ, không lỗi JS, `grep` không lộ key (`AQ.`), commit (không push)
 ## Kết quả
+## Kết quả
+### Bảng lỗi khi đóng vai học viên (người 30+, không rành kỹ thuật)
+| # | Chỗ | Học viên gặp gì | Đã sửa |
+|---|---|---|---|
+| 1 | Khung ② (mọi chỗ) | Câu trả lời có dấu `*` thừa (Gemini viết chữ nghiêng kiểu `*...*`) | `md()` trong `ai.js` đổi `*...*` thành chữ nghiêng |
+| 2 | Slide 8, 14, 24… | Bấm Gửi xong, kết quả nằm dưới mép màn hình, không thấy | Bấm Gửi → tự cuộn tới khung ② |
+| 3 | Slide 14, 16, 17, 19, 24, 29 | Không biết slide còn phần bên dưới | Nhãn "⬇ Cuộn xuống xem tiếp" hiện khi còn nội dung |
+| 4 | Khung ② trên slide | Chữ kết quả 16px, nhìn máy chiếu hơi nhỏ | Trên slide tăng lên 18px |
+| 5 | Câu chỉnh (slide 14, 27, phiếu 3, 7) | Nhãn "(câu chỉnh, gửi tiếp cuộc trò chuyện trên)" dài, khó hiểu | Đổi thành "① Bạn nhập · câu chỉnh (Gemini sửa tiếp bản trên)" |
+| 6 | Bảng điều khiển trình duyệt | Lỗi 404 thiếu biểu tượng trang (favicon) | Thêm `<link rel="icon" href="data:,">` ở 2 trang |
+| 7 | Slide 29 (khung thử) | Khung thử bị cắt mép trên, không cuộn được | `lab()` gắn class cuộn cho slide; ô hướng dẫn cao 250px trên slide |
+| 8 | Slide 9 | Dấu "≠" cạnh biểu tượng hiện thành "=/" | Ghi chữ "khác" |
+
+Đã thử bằng Chrome (Playwright, máy trung gian giả lập + 2 lần gọi thật):
+- Slide 14: bấm câu chỉnh trước → nhắc "bấm khung ① phía trên trước"; lần 1 → lần 2 gửi kèm 1 lượt trước → "Muốn chỉnh?" gửi kèm 2 lượt; ô "Muốn chỉnh?" chỉ hiện sau lần trả lời đầu.
+- Slide 19: còn `[ ]` → nhắc sửa, không gửi. Phiếu 7: khung trống còn `[ ]` → nhắc; mẫu Bạn Đồng Hành → có kết quả.
+- Nút 📋 Chép → "Đã chép ✓". Chế độ in phiếu: hiện đủ 7 phiếu, ẩn nút Gửi và khung ②.
+- Gọi thật: slide 8 → Gemini trả lời 5 câu "Mùa hè, em thích đi…"; slide 29 → trả lời đúng khung "🔍 Mình hiểu ý bạn là…". Không lỗi JS.

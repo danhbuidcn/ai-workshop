@@ -46,8 +46,9 @@ var AI_PROXY_URL = 'https://script.google.com/macros/s/AKfycbwRPQ7UxwLXRd9xLawb4
   }
 
   function esc(s) { return s.replace(/[&<>]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]; }); }
-  function md(s) { // vài dấu markdown hay gặp → chữ đậm, gạch đầu dòng
-    return esc(s).replace(/\*\*([^*\n]+)\*\*/g, '<b>$1</b>').replace(/^#{1,6} *(.+)$/gm, '<b>$1</b>').replace(/^(\s*)[*-] /gm, '$1• ');
+  function md(s) { // vài dấu markdown hay gặp → chữ đậm, gạch đầu dòng, chữ nghiêng
+    return esc(s).replace(/\*\*([^*\n]+)\*\*/g, '<b>$1</b>').replace(/^#{1,6} *(.+)$/gm, '<b>$1</b>').replace(/^(\s*)[*-] /gm, '$1• ')
+      .replace(/\*([^*\n]+)\*/g, '<i>$1</i>');
   }
 
   var EMPTY = 'Kết quả sẽ hiện ở đây. Bấm nút vàng <b>Gửi cho Gemini</b> ở khung ① phía trên.';
@@ -108,6 +109,7 @@ var AI_PROXY_URL = 'https://script.google.com/macros/s/AKfycbwRPQ7UxwLXRd9xLawb4
     if (chain && !conv.length) { show(out, 'Chưa gửi. Hãy bấm <b>Gửi cho Gemini</b> ở khung ① phía trên trước, rồi quay lại đây.', 'warn'); return; }
     var history = chain ? conv : [];
     show(out, '⏳ Gemini đang nghĩ… (thường 5–20 giây)', 'wait');
+    if (out.scrollIntoView) out.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); // cho thấy khung ②
     ask(prompt, getSystem ? getSystem() : '', history).then(function (res) {
       if (!res || !res.ok) { show(out, '❌ ' + esc((res && res.error) || 'Có lỗi. Thử lại.'), 'err'); return; }
       convs.set(convKey, history.concat([{ q: prompt, a: res.text }]).slice(-4));
@@ -137,7 +139,7 @@ var AI_PROXY_URL = 'https://script.google.com/macros/s/AKfycbwRPQ7UxwLXRd9xLawb4
       box.className = 'ai-in';
       var head = document.createElement('div');
       head.className = 'ai-head';
-      head.innerHTML = '<span class="ai-lbl">① Bạn nhập' + (chain ? ' (câu chỉnh, gửi tiếp cuộc trò chuyện trên)' : '') +
+      head.innerHTML = '<span class="ai-lbl">① Bạn nhập' + (chain ? ' · câu chỉnh (Gemini sửa tiếp bản trên)' : '') +
         ' <small>bấm vào khung để sửa</small></span>';
       head.appendChild(copyBtn('📋 Chép', function () { return txt.innerText; }));
       var foot = document.createElement('div');
