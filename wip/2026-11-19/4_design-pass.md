@@ -38,7 +38,7 @@ Owner (2026-11-19), xem slide 12 (nguyên tắc 1–2): đóng vai designer, thi
 - Không đổi nội dung/ý nghĩa, không tăng số slide (≤ 30), không đụng `ai.js` logic/key.
 ## Plan
 - [x] Chụp ảnh toàn bộ slide hiện tại (Chrome headless, 1280×720), xem từng slide, ghi bảng: slide → mắt nhìn đâu trước? → vấn đề → cách sửa — xong (2026-11-19 16:45): ảnh ở `/tmp/aw4/before/`, bảng ở mục "Bảng rà slide" bên dưới. Đổi thứ tự: làm hệ thống thiết kế trước (2 thành phần dùng nó).
-- [ ] Thiết lập hệ thống thiết kế chung (cỡ chữ 3 mức, bảng màu có nghĩa, khoảng cách, khung chốt) trong CSS, dùng chung
+- [x] Thiết lập hệ thống thiết kế chung (cỡ chữ 3 mức, bảng màu có nghĩa, khoảng cách, khung chốt) trong CSS, dùng chung — xong (2026-11-19 17:05): `index.html` `<style>` có ghi chú đầu: 3 mức (h2 40px / nội dung 22–24px / chú thích `.cap` 18px), biến màu `--hi` cam, `--good`, `--bad`, `--you` xanh dương; màu phần chỉ còn ở vạch trái + chấm nhãn; `.chot` (dải chốt), `.act` (dải hành động), `.flow` (quy trình có số), `.concepts/.concept kA/kB/kC` (mỗi khái niệm 1 thẻ), `.card.side` (thẻ phụ). Slide cuộn được khi dài (`justify-content: safe center`). `ai.css`: ① xanh dương nét đứt, nút Gửi cam to nhất, ② xám; chữ trên slide ≥ 18px.
 - [ ] Làm thành phần "bấm để mở" dùng chung (CSS trong `ai.css` + JS trong `ai.js`); áp cho slide 13 trước, rồi mọi slide nhiều chữ
 - [ ] Làm thành phần "so sánh 2 cột" dùng chung, áp cho slide 14 và các bài trước/sau (17, 19, 24, 29)
 - [ ] Thiết kế lại từng slide theo 10 nguyên tắc; làm slide 12 trước làm mẫu rồi áp các slide còn lại

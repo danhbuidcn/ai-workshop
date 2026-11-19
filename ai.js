@@ -51,7 +51,7 @@ var AI_PROXY_URL = 'https://script.google.com/macros/s/AKfycbwRPQ7UxwLXRd9xLawb4
       .replace(/\*([^*\n]+)\*/g, '<i>$1</i>');
   }
 
-  var EMPTY = 'Kết quả sẽ hiện ở đây. Bấm nút vàng <b>Gửi cho Gemini</b> ở khung ① phía trên.';
+  var EMPTY = 'Kết quả sẽ hiện ở đây. Bấm nút cam <b>Gửi cho Gemini</b> ở khung ① phía trên.';
 
   // Chép chữ vào bộ nhớ tạm (để dán sang ChatGPT, Gemini).
   function copyBtn(label, getText) {
