@@ -25,6 +25,7 @@ Owner (2026-11-19), xem `handouts/index.html`:
 - Nhắc học viên: bản free của Google có thể dùng nội dung để cải thiện sản phẩm → không dán thông tin nhạy cảm (tên học sinh, lương...).
 - Hướng dẫn lấy key (cho trang + cho owner): vào https://aistudio.google.com/apikey → đăng nhập Gmail → "Create API key" → copy → dán vào trang.
 ## Plan
+- [x] Đọc code, chỉnh lại các bước (2026-11-19 16:00). Kết quả: dùng Apps Script (bỏ khung dán key, bước 4 bỏ); model thử thật: `gemini-3.5-flash-lite` chạy (4 s), `gemini-3.1-flash-lite` chạy, `gemini-3.5-flash` báo quá tải 503, `gemini-2.5-flash` 404 → proxy thử lần lượt danh sách model. `~/.clasprc.json` chưa có → bước triển khai ghi Handoff. Lệnh worker cấm push → không push.
 - [ ] Chia `handouts/index.html` thành tab/mục: menu trên cùng, bấm mục nào hiện phiếu đó (nhớ mục đang xem, `#phieu-n` mở thẳng); in PDF vẫn in đủ
 - [ ] Viết code máy trung gian + hướng dẫn từng bước cho owner triển khai và dán key (file `proxy/` + `proxy/HUONG-DAN.md`, không chứa key)
 - [ ] Thêm nút chạy trực tiếp trên slide thực hành và phiếu (thay cho khung dán key; dùng địa chỉ trung gian ở 1 biến cấu hình)
