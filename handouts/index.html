@@ -234,16 +234,16 @@
   <h3>Cách C · Gemini đọc Gmail, Google Drive (chỉ làm trong app Gemini)</h3>
   <ol class="do">
     <li>Mở <b>gemini.google.com</b>, đăng nhập bằng Gmail cá nhân. (Tài khoản công ty/trường có thể bị khoá tính năng này.)</li>
-    <li>Lần đầu: ở menu bên trái bấm <b>Customize</b> (Tuỳ chỉnh). Không thấy thì bấm <b>More</b> (Thêm) trước.</li>
-    <li>Bấm thẻ <b>Connectors</b> ở trên cùng → dòng <b>Google Workspace</b> bấm <b>Add</b> → đăng nhập, bấm đồng ý.<br>
-      <span class="muted">Giao diện cũ: ⚙️ <b>Cài đặt và trợ giúp</b> → <b>Connected Apps</b> (Ứng dụng đã kết nối) → bật Google Workspace.</span></li>
+    <li>Lần đầu: ở thanh bên trái bấm <b>Tuỳ chỉnh</b> (nằm dưới Thư viện, Đã lên lịch).</li>
+    <li>Bấm tab <b>Trình kết nối</b> ở trên cùng (cạnh Khám phá, Kỹ năng) → dòng <b>Google Workspace</b> (Gmail, Drive, Docs…) bấm <b>+</b> → đăng nhập, bấm đồng ý.<br>
+      <span class="muted">Đường khác: bấm ⚙️ cạnh tên mình (góc dưới trái) → <b>Trí thông minh cá nhân</b> → <b>Các ứng dụng có thể kết nối</b>. Không thấy thì tìm chữ "Trình kết nối" hoặc "Connectors" (giao diện tiếng Anh).</span></li>
     <li>Quay lại ô chat. Gõ <b>@</b> → chọn <b>Gmail</b> hoặc <b>Google Drive</b> trong danh sách.</li>
     <li>Gõ tiếp câu hỏi (chép từ khung dưới) → <b>Enter</b>.</li>
     <li>Bị báo cần bật "Hoạt động" (Keep Activity) → bấm bật theo hướng dẫn trên màn hình, rồi hỏi lại.</li>
   </ol>
   <div class="box" data-ai="off">@Gmail Tóm tắt các email từ phụ huynh trong tuần này, mỗi email 1 dòng.</div>
   <div class="box" data-ai="off">@Google Drive Tìm file "Quy định nghỉ phép" và cho tôi biết nhân viên được nghỉ mấy ngày/năm.</div>
-  <p class="app">Không thấy Customize, Connected Apps, hay @Gmail? Dùng Cách B: tải file xuống máy rồi tải lên, hoặc dán chữ (Cách A).</p>
+  <p class="app">Không thấy Tuỳ chỉnh, Trình kết nối, hay @Gmail? Dùng Cách B: tải file xuống máy rồi tải lên, hoặc dán chữ (Cách A).</p>
   <h3>Kiểm tra AI</h3>
   <div class="write">Câu hỏi mình đã biết đáp án: …… · AI trả lời đúng không? ☐ Đúng ☐ Sai</div>
   <h3>🔒 Không đưa cho AI</h3>
@@ -306,7 +306,7 @@ Nếu chưa rõ, hãy hỏi tôi trước.</div>
   <p><b>Lượt 2 — nói rõ mình muốn gì</b> (chê thẳng, nói rõ ai dùng, cho ví dụ, đòi khung trả lời cố định):</p>
   <div class="box" data-ai="chain">Bạn trả lời quá dài. Tôi muốn format output kết quả trả về cho trẻ. Tất cả các cách trên đều không tốt. Liệu có cách nào ổn hơn không?
 Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuyến khích khả năng tư duy của trẻ, VD, trẻ cung cấp một bài toán mà chưa rõ ràng thì bạn cùng trẻ chia nhỏ và brainstorm ý tưởng. Tôi nhớ là ChatGPT có cho phép format output AI trả về.</div>
-  <p><b>Kết quả</b> — Gemini đưa đoạn hướng dẫn 4 khối, dán vào Cài đặt → Hướng dẫn cho Gemini (hoặc tạo Gem):</p>
+  <p><b>Kết quả</b> — Gemini đưa đoạn hướng dẫn 4 khối, dán vào ⚙️ → Trí thông minh cá nhân → Chỉ dẫn cho Gemini (hoặc tạo Gem):</p>
   <div class="box" data-ai="off"># VAI TRÒ &amp; ĐỐI TƯỢNG
 Bạn là "Bạn Đồng Hành Tư Duy" dành cho 2 bé: 6 tuổi và 9 tuổi. Luôn hỏi tên hoặc độ tuổi ở câu đầu tiên nếu chưa biết để chỉnh độ khó.
 
@@ -425,7 +425,8 @@ Bạn là trợ lý phòng nhân sự, trả lời câu hỏi của nhân viên 
   </div>
   <ol class="do">
     <li>Mở <b>gemini.google.com</b>, bấm <b>Cuộc trò chuyện mới</b> (New chat). Dán đoạn hướng dẫn vào ô chat → <b>Enter</b>.</li>
-    <li>Hoặc tạo Gem (trợ lý riêng, có trên bản miễn phí): menu bên trái → <b>Gem</b> (hoặc <b>Khám phá Gem</b>) → <b>Gem mới</b> → đặt tên → dán vào ô <b>Hướng dẫn</b> → <b>Lưu</b>.</li>
+    <li>Để Gemini luôn trả lời theo khung, không cần dán lại: bấm ⚙️ cạnh tên mình (góc dưới trái) → <b>Trí thông minh cá nhân</b> → <b>Chỉ dẫn cho Gemini</b> → dán đoạn hướng dẫn → <b>Lưu</b>. Áp cho mọi cuộc chat.</li>
+    <li>Hoặc tạo Gem (trợ lý riêng, chỉ dùng cho việc này): ⚙️ → <b>Gem</b> → tạo Gem mới → đặt tên → dán vào ô <b>Hướng dẫn</b> → <b>Lưu</b>.</li>
     <li>Gửi 2 câu hỏi thử. Ghi lại:</li>
   </ol>
   <ul class="check">

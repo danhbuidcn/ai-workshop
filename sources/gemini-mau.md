@@ -21,7 +21,7 @@ Prompt:
 Gemini trả lời ngắn, cụ thể:
 
 1. Dùng công cụ **Guided Learning** (học có hướng dẫn: AI hỏi gợi mở thay vì đưa đáp án) khi tạo **Gem** (trợ lý riêng, tạo được trên bản free).
-2. Dán đoạn hướng dẫn cố định vào **Cài đặt → Instructions for Gemini** (áp dụng cho mọi cuộc chat). Đoạn mẫu:
+2. Dán đoạn hướng dẫn cố định vào **Instructions for Gemini** (áp dụng cho mọi cuộc chat; giao diện tiếng Việt: ⚙️ cạnh tên → **Trí thông minh cá nhân** → **Chỉ dẫn cho Gemini**). Đoạn mẫu:
 
 ```text
 # VAI TRÒ & ĐỐI TƯỢNG

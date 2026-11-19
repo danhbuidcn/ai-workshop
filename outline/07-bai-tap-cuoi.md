@@ -22,7 +22,7 @@ Nguồn: [sources/gemini-mau.md](../sources/gemini-mau.md).
 - Nhân sự: "Trả lời câu hỏi nhân viên" — dựa trên quy định đã dán, trả lời ≤ 5 câu, ghi rõ điều mấy, không chắc thì nói "cần hỏi phòng nhân sự".
 
 ## Bước 3: Thử và chỉnh (3 phút)
-1. Dán đoạn hướng dẫn vào đầu cuộc chat mới (hoặc tạo Gem: Gemini → Gem → Gem mới → dán vào ô Hướng dẫn).
+1. Dán đoạn hướng dẫn vào đầu cuộc chat mới. Dùng lâu dài: ⚙️ cạnh tên (góc dưới trái) → **Trí thông minh cá nhân** → **Chỉ dẫn cho Gemini** → dán → Lưu (áp cho mọi cuộc chat). Cách khác: ⚙️ → **Gem** → tạo Gem mới → dán vào ô Hướng dẫn.
 2. Gửi 2 câu hỏi thử. AI có theo khung không?
 3. Chưa đúng → sửa đoạn hướng dẫn, thử lại.
 
@@ -30,5 +30,5 @@ Nguồn: [sources/gemini-mau.md](../sources/gemini-mau.md).
 Mỗi người đọc: đoạn hướng dẫn + 1 kết quả. Cả nhóm góp 1 ý chỉnh.
 
 ## Mang về
-- Lưu đoạn hướng dẫn vào file `.txt` hoặc tạo Gem.
+- Lưu đoạn hướng dẫn vào file `.txt`, Chỉ dẫn cho Gemini, hoặc Gem.
 - Dùng 1 tuần, mỗi lần thấy chưa ưng → sửa 1 dòng.

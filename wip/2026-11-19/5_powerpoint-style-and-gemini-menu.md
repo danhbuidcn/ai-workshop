@@ -51,7 +51,7 @@ Thử mở thư mục Drive bằng WebFetch; không đọc được thì chỉ d
   - Slide 1–10: "Mở phần" cho slide 1 (tiêu đề) + slide 6 (ý chính + hình lớn); "Mục lục đánh số" cho slide 3; "Số lớn" cho slide 4; "Lưới vòng tròn biểu tượng" cho slide 7, 9; slide 2, 5, 8, 10 theo nền + chữ mới. Để sau duyệt: "Trung tâm + 4 ý" (slide 18), "Bảng" (slide 23), "Mục lục" cho tổng kết (slide 25), "Chốt" (slide 30).
   - Ảnh 10 slide: `wip/2026-11-19/img/5_slide-01.png … 5_slide-10.png`. Xong thì ghi Handoff + DỪNG.
 - [x] Áp bộ mẫu cho toàn bộ slide từ slide 4 trở đi (gồm 12–14, 23), giữ nội dung + tương tác — xong (2026-11-19 18:40): cả 30 slide có class `pp`. Thêm CSS "Đợt 2" (ngón tay, thẻ khái niệm, Trung tâm + 4 ý `.hub`, vòng tròn "đừng đưa", mục lục tổng kết). Tràn dọc 0 ở slide 11–13, 15, 18, 20–23, 25, 28, 30; slide thực hành/có khung ①② vẫn cuộn như trước. Chi tiết ở "Đợt 2" trong `## Kết quả`.
-- [ ] Sửa menu Gemini theo mục C ở slide, phiếu, outline, README
+- [x] Sửa menu Gemini theo mục C ở slide, phiếu, outline, README — xong (2026-11-19 18:55): slide 21 (4 bước), 23 (bảng thêm dòng "Chỉ dẫn cho Gemini"), 28, 29, 30; phiếu 5 (Cách C) + phiếu 7; `outline/05`, `outline/07`; `sources/gemini-mau.md`. README không có chỗ nói menu → không sửa. `grep` "Customize / Connected Apps / Hướng dẫn cho Gemini / Khám phá Gem" ngoài `wip/`: 0 chỗ cũ.
 - [ ] Máy trung gian: 20 lượt / 5 phút / người + trần chung; deploy, thử gọi thật, sửa `proxy/HUONG-DAN.md` (để sau khi owner duyệt 10 slide)
 - [ ] Kiểm tra: không tràn chữ, "nheo mắt", đọc được ở 1280×720 và laptop nhỏ, in PDF ≤ 30 trang, không lỗi JS, không lộ key, không có ảnh mẫu/ảnh Gemini trong repo (`git ls-files`), commit (không push)
 ## Kết quả
