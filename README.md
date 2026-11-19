@@ -1,6 +1,6 @@
-# Làm việc với AI — workshop 2 giờ
+# Làm việc với AI — workshop 1 giờ
 
-Tài liệu cho buổi học 1–2 giờ dành cho người không rành kỹ thuật, dùng ChatGPT hoặc Gemini bản miễn phí.
+Tài liệu cho buổi học 1 giờ (30 slide) dành cho người không rành kỹ thuật, dùng ChatGPT hoặc Gemini bản miễn phí.
 
 Học xong, mỗi người biết:
 
@@ -22,16 +22,18 @@ Cách mở trên máy (Windows): tải repo về (nút **Code → Download ZIP**
 
 ## Lịch buổi học
 
-| # | Phần | Phút |
-|---|---|---|
-| 0 | Mở đầu | 5 |
-| 1 | AI là gì | 15 |
-| 2 | Bản đồ AI | 10 |
-| 3 | 5 nguyên tắc | 15 |
-| 4 | Cách giao việc (prompt) | 25 |
-| 5 | Cho AI đọc tài liệu | 20 |
-| 6 | Tổng kết | 5 |
-| 7 | Bài tập cuối | 20 |
+| # | Phần | Slide | Phút |
+|---|---|---|---|
+| 0 | Mở đầu | 1–3 | 3 |
+| 1 | AI là gì | 4–8 | 8 |
+| 2 | Bản đồ AI | 9–10 | 4 |
+| 3 | 5 nguyên tắc | 11–14 | 10 |
+| 4 | Cách giao việc (prompt) | 15–19 | 12 |
+| 5 | Cho AI đọc tài liệu | 20–24 | 10 |
+| 6 | Tổng kết | 25 | 2 |
+| 7 | Bài tập cuối | 26–30 | 11 |
+
+Số phút chỉ ghi ở đây và trong `outline/`, không ghi trên slide.
 
 ## Nguồn
 

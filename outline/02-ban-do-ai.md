@@ -1,4 +1,6 @@
-# 2. Bản đồ AI (10 phút)
+# 2. Bản đồ AI (4 phút)
+
+Slide 9–10. Ý 2 + Ý 3 gộp trong slide 9 (mỗi thẻ có dòng "Dùng khi"). Ý 1 "chọn điện thoại" chỉ nói miệng.
 
 ## Mục tiêu
 Biết 4 cái tên hay gặp, mỗi cái mạnh ở đâu. Không cần dùng hết: chọn 1–2 cái quen tay.
@@ -27,7 +29,7 @@ Hình: 4 thẻ màu, mỗi thẻ 1 biểu tượng (💬 🔵 ✍️ 🔎).
 
 Câu chốt: "Cách hỏi quan trọng hơn chọn app. Hỏi tốt thì app nào cũng tốt."
 
-## Thực hành: "Hỏi 1 câu, 2 AI" (4 phút)
+## Thực hành: "Hỏi 1 câu, 2 AI" (2 phút)
 1. Mở ChatGPT và Gemini ở 2 tab.
 2. Dán cùng 1 câu, ví dụ: `Gợi ý 3 hoạt động khởi động 5 phút cho lớp học tiếng Anh 20 học sinh lớp 6.` (nhân sự: `Gợi ý 3 câu hỏi phỏng vấn để biết ứng viên có chịu được áp lực không.`)
 3. So sánh: cái nào ngắn hơn? dễ dùng hơn? Cái nào mình thích hơn?

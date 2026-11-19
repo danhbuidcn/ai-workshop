@@ -1,4 +1,6 @@
-# 3. 5 nguyên tắc cốt lõi (15 phút)
+# 3. 5 nguyên tắc cốt lõi (10 phút)
+
+Slide 11–14: slide 11 bàn tay 5 ngón · slide 12 nguyên tắc 1–2 · slide 13 nguyên tắc 3–5 · slide 14 thực hành.
 
 Nguồn: chương 1 Claude 101 (Anthropic). Dùng được cho mọi AI, không riêng Claude.
 Hình chung: bàn tay 5 ngón ✋, mỗi ngón 1 nguyên tắc.
@@ -33,7 +35,7 @@ Hình chung: bàn tay 5 ngón ✋, mỗi ngón 1 nguyên tắc.
 - Câu chốt: **Tự tin ≠ đúng.**
 - Hình: kính lúp 🔍 trên tờ giấy.
 
-## Thực hành: "Viết lại câu trả lời đầu" (5 phút)
+## Thực hành: "Viết lại câu trả lời đầu" (3 phút)
 1. Hỏi AI 1 câu thật của mình (vd: `Viết thông báo cho phụ huynh về buổi họp lớp`).
 2. Đọc, tìm 1 điều chưa ưng.
 3. Gõ 1 câu chỉnh: `Ngắn hơn, dưới 60 chữ, thêm giờ họp 19h thứ 6, giọng thân thiện`.

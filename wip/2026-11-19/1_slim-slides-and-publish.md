@@ -22,7 +22,7 @@ Owner (2026-11-19), sau khi xem slide 1–11:
 - [x] Đọc lại `index.html`, lập bảng: slide cũ → giữ / gom / xoá. Ghi vào Kết quả → bảng 61 → 30 ở `## Kết quả`. Bỏ hết slide chia phần (divider); phần mới bắt đầu bằng nhãn góc phải.
 - [x] Sửa slide 1–11 đúng yêu cầu owner ở trên, thêm slide "Dành cho ai · học xong được gì" → slide 1 chỉ còn emoji + tên; slide 2 mới; slide 4 gom 5–9; 11 cũ đã xoá.
 - [x] Rút các phần còn lại cho đủ ≤ 30 slide, bỏ nhãn thừa (số phút, "lớp 5") trên toàn bộ slide → đúng 30 slide; `grep "phút\|lớp 5\|2 giờ"` chỉ còn 1 chữ "5 phút" nằm trong prompt mẫu. Chữ nhỏ hơn (chữ thường 28 → 22px, tiêu đề 46 → 36px); "danhbuidcn" ở góc trái dưới mọi slide.
-- [ ] Sửa "2 giờ" → "1 giờ" ở README, outline, handouts nếu có; cập nhật `outline/` khớp slide mới
+- [x] Sửa "2 giờ" → "1 giờ" ở README, outline, handouts nếu có; cập nhật `outline/` khớp slide mới → README: tiêu đề + bảng lịch (cột Slide, tổng 60 phút); mỗi file `outline/` ghi số slide + phút mới, bảng thời gian ở `00-mo-dau.md`; phiếu thực hành: phút từng bài theo lịch mới. `grep "2 giờ"` = 0.
 - [ ] Kiểm tra bằng Chrome headless: không slide tràn chữ, đếm slide, không link hỏng, in PDF
 - [ ] Commit
 - [ ] `gh repo create danhbuidcn/ai-workshop --public --source=. --remote=origin --push` rồi bật Pages (`gh api -X POST repos/danhbuidcn/ai-workshop/pages -f 'source[branch]=master' -f 'source[path]=/'`)

@@ -1,4 +1,6 @@
-# 6. Tổng kết 1 trang (5 phút)
+# 6. Tổng kết 1 trang (2 phút)
+
+Slide 25 (4 ô + câu chốt + việc làm ngay, gộp 1 slide).
 
 Hình: 1 trang chia 4 ô.
 

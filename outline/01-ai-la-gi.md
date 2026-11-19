@@ -1,4 +1,6 @@
-# 1. AI là gì (15 phút)
+# 1. AI là gì (8 phút)
+
+Slide 4–8. Ý 1 + Ý 2 gộp trong slide 4. Ví dụ "Good morning / 你好" (Ý 3) chỉ nói miệng, không có slide.
 
 ## Mục tiêu
 Hiểu 1 câu: **AI tạo chữ bằng cách đoán chữ tiếp theo.** Vì đoán, nên có lúc sai.
@@ -30,7 +32,7 @@ Hiểu 1 câu: **AI tạo chữ bằng cách đoán chữ tiếp theo.** Vì đo
 | Gmail lọc thư rác, YouTube gợi ý video, dự báo thời tiết | ChatGPT viết thư, Gemini soạn giáo án, vẽ tranh |
 | Đã có từ lâu, chạy ngầm | Mới nổi từ 2022, mình nói chuyện trực tiếp |
 
-## Thực hành: "Đoán chữ tiếp theo" (3 phút)
+## Thực hành: "Đoán chữ tiếp theo" (2 phút)
 1. Cả nhóm đoán: "Mùa hè, em thích đi ___". Mỗi người viết 1 chữ.
 2. Gõ vào AI: `Hoàn thành câu sau bằng 5 cách khác nhau: "Mùa hè, em thích đi ..."`
 3. So sánh: người và AI đoán giống nhau không? → AI đoán theo "cái hay gặp nhất".

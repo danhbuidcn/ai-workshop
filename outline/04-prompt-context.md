@@ -1,4 +1,6 @@
-# 4. Cách giao việc cho AI (25 phút)
+# 4. Cách giao việc cho AI (12 phút)
+
+Slide 15–19: slide 15 = 2 từ + Ý 1 · slide 16 = Ý 3 + Ý 5 · slide 17 = Ý 4 · slide 18 = Ý 6 · slide 19 thực hành. Ý 2 và Ý 7 chỉ nói miệng (Ý 7 trùng nguyên tắc 4).
 
 "Prompt" = câu mình gõ để giao việc cho AI. "Bối cảnh" (context) = những gì AI cần biết để làm đúng.
 
@@ -49,7 +51,7 @@ Khung "4 năng lực" (Anthropic, AI Fluency), nói bằng lời thường:
 | Tóm tắt, đổi định dạng | Kiểm tra đúng sai |
 | Sửa chính tả, dịch nháp | Giữ giọng, giữ quan hệ con người |
 
-## Thực hành: "Viết prompt theo công thức" (8 phút)
+## Thực hành: "Viết prompt theo công thức" (5 phút)
 1. Chọn 1 việc thật tuần này phải làm.
 2. Viết prompt đủ 5 phần (phiếu có khung điền sẵn).
 3. Gửi cho AI. Chỉnh thêm 1 lần.
