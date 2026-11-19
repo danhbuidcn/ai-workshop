@@ -20,8 +20,8 @@ Owner (2026-11-19), sau khi xem slide 1–11:
 - Đẩy GitHub: tài khoản `danhbuidcn`, repo `ai-workshop` public (đã kiểm tra trống). Bật Pages nhánh `master`, thư mục `/`.
 ## Plan
 - [x] Đọc lại `index.html`, lập bảng: slide cũ → giữ / gom / xoá. Ghi vào Kết quả → bảng 61 → 30 ở `## Kết quả`. Bỏ hết slide chia phần (divider); phần mới bắt đầu bằng nhãn góc phải.
-- [ ] Sửa slide 1–11 đúng yêu cầu owner ở trên, thêm slide "Dành cho ai · học xong được gì"
-- [ ] Rút các phần còn lại cho đủ ≤ 30 slide, bỏ nhãn thừa (số phút, "lớp 5") trên toàn bộ slide
+- [x] Sửa slide 1–11 đúng yêu cầu owner ở trên, thêm slide "Dành cho ai · học xong được gì" → slide 1 chỉ còn emoji + tên; slide 2 mới; slide 4 gom 5–9; 11 cũ đã xoá.
+- [x] Rút các phần còn lại cho đủ ≤ 30 slide, bỏ nhãn thừa (số phút, "lớp 5") trên toàn bộ slide → đúng 30 slide; `grep "phút\|lớp 5\|2 giờ"` chỉ còn 1 chữ "5 phút" nằm trong prompt mẫu. Chữ nhỏ hơn (chữ thường 28 → 22px, tiêu đề 46 → 36px); "danhbuidcn" ở góc trái dưới mọi slide.
 - [ ] Sửa "2 giờ" → "1 giờ" ở README, outline, handouts nếu có; cập nhật `outline/` khớp slide mới
 - [ ] Kiểm tra bằng Chrome headless: không slide tràn chữ, đếm slide, không link hỏng, in PDF
 - [ ] Commit
