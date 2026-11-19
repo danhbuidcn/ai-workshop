@@ -33,7 +33,8 @@ Owner (2026-11-19): Làm bộ tài liệu workshop 1–2h cho 3 bạn (30+ tuổ
   - Gemini: đọc được (2 lượt) → [sources/gemini-mau.md](../../sources/gemini-mau.md). NotebookLM: cần đăng nhập, không đọc được; ch.2/4/6 chưa có → ghi ở [sources/README.md](../../sources/README.md), bù bằng kiến thức chung, owner xem lại khi duyệt.
 - [x] Viết dàn ý chi tiết từng phần: `outline/NN-ten.md` (lời giải thích lớp 5, ví dụ đời thường, mô tả hình khối, bài thực hành). ~~DỪNG, chờ owner duyệt dàn ý~~ (worker chạy liền mạch; owner duyệt dàn ý + slide cùng lúc ở bước cuối)
   - 8 file [outline/00-mo-dau.md](../../outline/00-mo-dau.md) … [07-bai-tap-cuoi.md](../../outline/07-bai-tap-cuoi.md). "4 năng lực" = khung AI Fluency của Anthropic (giao việc – mô tả – đánh giá – chịu trách nhiệm); công thức prompt 5 phần.
-- [ ] Làm bộ slide HTML: 1 file `index.html` ở gốc repo (thành trang chủ GitHub Pages), CSS/JS viết sẵn trong file, không cần mạng; nút chuyển slide, phím mũi tên, `#số` để nhảy slide, in ra PDF (mỗi slide 1 trang)
+- [x] Làm bộ slide HTML: 1 file `index.html` ở gốc repo (thành trang chủ GitHub Pages), CSS/JS viết sẵn trong file, không cần mạng; nút chuyển slide, phím mũi tên, `#số` để nhảy slide, in ra PDF (mỗi slide 1 trang)
+  - [index.html](../../index.html): 61 slide, khung 1280×720 tự co theo màn hình; ◀ ▶, phím ←/→/Space/Home/End, F toàn màn hình, vuốt trên điện thoại, nút "Sao chép" ở mọi ô prompt. Chrome headless: 0 slide tràn chữ, in PDF ra đúng 61 trang.
 - [ ] Làm phiếu thực hành từng phần + đề bài tập cuối + prompt mẫu có nút "Sao chép": 1 file `handouts/index.html` (in được)
 - [ ] `README.md` giới thiệu ngắn + cách mở
 - [ ] Kiểm tra: đọc lại với góc nhìn người non-tech (không thuật ngữ, câu ngắn), mở thử trong trình duyệt, kiểm tra link
