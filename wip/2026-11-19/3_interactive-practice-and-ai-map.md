@@ -21,6 +21,12 @@ Owner (2026-11-19), xem slide 8 và 9 trên trang thật:
 - Đóng vai học viên: mở trang bằng Chrome (kích thước laptop), đi lần lượt từng slide và từng phiếu như người chưa biết gì. Mỗi chỗ tự hỏi: "mình có biết bấm đâu không? từ nào lạ? chữ đủ to không?". Ghi bảng lỗi + cách sửa vào `## Kết quả`, sửa luôn. Thử thật các nút Gửi (không in key).
 ## Plan
 - Owner chốt: bài cần Drive/Gmail làm trên app Gemini/ChatGPT thật, và MỌI bài thực hành phải có các bước hướng dẫn chi tiết (đánh số 1, 2, 3…, mỗi bước 1 việc: bấm vào đâu, gõ gì, thấy gì thì đúng; chữ trên nút/menu ghi đúng như app hiện hành). Kiểm tra tên menu/nút Gemini và ChatGPT bản free trước khi ghi.
+- [x] Đọc code, chỉnh lại các bước (2026-11-19 16:30). Kết quả:
+  - Hiện 31 slide (file 2 thêm slide 30) → gộp slide 6 "Vì đoán, nên có thể sai" vào slide 5 để còn 30; sửa README + outline theo số slide mới.
+  - `ai.js` làm luôn nút "Sao chép" (bỏ đoạn chép lặp ở 2 trang). Ô ① vẫn là khung bấm-vào-sửa (tự cao theo chữ), đổi sang nền sáng, viền nét đứt.
+  - Khung ② hiện sẵn từ đầu ("Kết quả sẽ hiện ở đây"); ô "Muốn chỉnh?" chỉ hiện sau câu trả lời đầu (đỡ rối).
+  - Phiếu 3 "Những câu chỉnh hay dùng": thành câu mẫu để chép vào ô "Muốn chỉnh?" (không mỗi câu 1 cặp ①②).
+  - Tên menu kiểm tra trên mạng (2026-11): Gemini: menu trái **Customize → Connectors → Add** (giao diện cũ: Cài đặt → Connected Apps), gõ **@** trong ô chat để chọn Gmail/Drive; ChatGPT bản free KHÔNG kết nối Gmail/Drive → tải file (nút **+**) hoặc dán chữ. Codex = công cụ lập trình của OpenAI (dòng lệnh, app máy tính, chạy trên mây); Claude Code = công cụ lập trình của Anthropic (dòng lệnh, app, web).
 - [ ] Làm bố cục ① nhập / ② kết quả dùng chung (`ai.js` + CSS), áp cho mọi slide thực hành và phiếu
 - [ ] Viết bước hướng dẫn chi tiết cho từng bài thực hành (slide + phiếu); bài Drive/Gmail: từng bước kết nối trên app thật (kèm cách làm khác nếu bản free không có)
 - [ ] Rà mọi bài thực hành: prompt mẫu điền sẵn trong ô nhập, kết quả hiện đúng chỗ; bài nào không hợp để chạy (vd Drive/Gmail cần quyền) thì ghi rõ làm ở app nào
