@@ -39,7 +39,8 @@ Owner (2026-11-19): Làm bộ tài liệu workshop 1–2h cho 3 bạn (30+ tuổ
   - [handouts/index.html](../../handouts/index.html): 7 phiếu, 28 ô prompt có nút "Sao chép", ô trống để viết tay; bài tập cuối có ví dụ Gemini của owner + khung 4 khối + 3 mẫu (GV Anh, GV Trung, nhân sự). In PDF: 15 trang, mỗi phiếu sang trang mới.
 - [x] `README.md` giới thiệu ngắn + cách mở
   - [README.md](../../README.md): học xong biết gì, bảng file + cách mở trên Windows, lịch buổi học, nguồn.
-- [ ] Kiểm tra: đọc lại với góc nhìn người non-tech (không thuật ngữ, câu ngắn), mở thử trong trình duyệt, kiểm tra link
+- [x] Kiểm tra: đọc lại với góc nhìn người non-tech (không thuật ngữ, câu ngắn), mở thử trong trình duyệt, kiểm tra link
+  - Link: 16 file .md/.html, 0 link nội bộ hỏng. Từ tiếng Anh còn lại đều có giải thích ngay bên cạnh (context, LLM, Skill, Workspace, CSV) hoặc nằm trong câu trích nguyên văn của owner (format, output, brainstorm). Chrome headless: 0 slide tràn, không lỗi JS; nhảy slide bằng `#số` đúng. Phím ←/→ chưa bấm thử thật (máy không có công cụ tự bấm phím) → owner thử khi duyệt.
 - [ ] Tạo repo GitHub public cá nhân + bật GitHub Pages (chỉ làm sau khi owner xác nhận tên repo và rà nội dung không có thông tin riêng tư)
 - [ ] Báo link Pages cho owner
 ## Kết quả
