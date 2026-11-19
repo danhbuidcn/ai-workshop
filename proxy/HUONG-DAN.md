@@ -13,7 +13,8 @@ Trang workshop có nút **Gửi cho Gemini**. Nút này gửi câu hỏi tới m
 
 ## Giới hạn có sẵn (sửa ở đầu `Code.gs`)
 
-- Cả lớp: tối đa 20 lượt/phút. Mỗi trình duyệt: 5 lượt/phút.
+- Mỗi trình duyệt: tối đa 20 lượt / 5 phút (nút **So sánh** tốn 2 lượt). Cả lớp: trần chung 100 lượt / 5 phút (trung bình 20 lượt/phút), để không cạn hạn mức miễn phí của Gemini.
+- Đếm theo khung 5 phút cố định. Hết lượt: báo "Chờ N phút" tới khung sau. Gemini báo hết hạn mức (lỗi 429) thì trang cũng báo bằng tiếng Việt.
 - Câu hỏi tối đa 3000 ký tự, hướng dẫn cho AI tối đa 4000 ký tự.
 - Chỉ nhận yêu cầu ghi trang gửi là `danhbuidcn.github.io` (hoặc `localhost` để thử trên máy).
   Lưu ý: Apps Script không đọc được địa chỉ trang gọi thật, nên đây là rào nhẹ; giới hạn lượt mới là rào chính.

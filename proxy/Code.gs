@@ -6,8 +6,9 @@
 var MODELS = ['gemini-3.5-flash-lite', 'gemini-3.1-flash-lite']; // thử lần lượt; đổi model ở đây
 var KEY_IN_CODE = '__GEMINI_KEY__';
 var SITES = ['danhbuidcn.github.io', 'localhost', '127.0.0.1']; // trang được phép gọi
-var LIMIT_ALL_PER_MIN = 20;  // tổng số lượt / phút, mọi người cộng lại
-var LIMIT_ONE_PER_MIN = 5;   // số lượt / phút cho 1 trình duyệt
+var WINDOW_MIN = 5;          // đếm lượt theo từng khung 5 phút
+var LIMIT_ONE = 20;          // số lượt / 5 phút cho 1 trình duyệt (nút So sánh tốn 2 lượt)
+var LIMIT_ALL = 100;         // trần chung: tổng số lượt / 5 phút, mọi người cộng lại (trung bình 20 lượt/phút)
 var MAX_PROMPT = 3000;       // ký tự câu hỏi
 var MAX_SYSTEM = 4000;       // ký tự "hướng dẫn cho AI"
 var MAX_HISTORY = 4;         // số lượt hỏi-đáp trước được gửi kèm
@@ -54,19 +55,20 @@ function handle_(req) {
   return askGemini_(contents, system);
 }
 
-// Đếm lượt theo từng phút. Trả về câu báo lỗi nếu quá giới hạn, rỗng nếu được chạy.
+// Đếm lượt theo từng khung WINDOW_MIN phút. Trả về câu báo lỗi nếu quá giới hạn, rỗng nếu được chạy.
 function takeTurn_(cid) {
   var lock = LockService.getScriptLock();
   if (!lock.tryLock(5000)) return 'Đang đông người dùng. Thử lại sau vài giây.';
   try {
     var cache = CacheService.getScriptCache();
-    var minute = Math.floor(Date.now() / 60000);
-    var kAll = 'all:' + minute, kOne = 'one:' + cid + ':' + minute;
+    var ms = WINDOW_MIN * 60000, win = Math.floor(Date.now() / ms);
+    var wait = Math.max(1, Math.ceil(((win + 1) * ms - Date.now()) / 60000)); // số phút tới khung sau
+    var kAll = 'all:' + win, kOne = 'one:' + cid + ':' + win;
     var all = Number(cache.get(kAll) || 0), one = Number(cache.get(kOne) || 0);
-    if (all >= LIMIT_ALL_PER_MIN) return 'Cả lớp đang hỏi nhiều quá (tối đa ' + LIMIT_ALL_PER_MIN + ' lượt/phút). Chờ 1 phút rồi thử lại.';
-    if (one >= LIMIT_ONE_PER_MIN) return 'Bạn đã hỏi ' + LIMIT_ONE_PER_MIN + ' lần trong 1 phút. Chờ 1 phút rồi thử lại.';
-    cache.put(kAll, String(all + 1), 120);
-    cache.put(kOne, String(one + 1), 120);
+    if (all >= LIMIT_ALL) return 'Cả lớp đang hỏi nhiều quá (tối đa ' + LIMIT_ALL + ' lượt/' + WINDOW_MIN + ' phút). Chờ ' + wait + ' phút rồi thử lại.';
+    if (one >= LIMIT_ONE) return 'Bạn đã hỏi ' + LIMIT_ONE + ' lần trong ' + WINDOW_MIN + ' phút. Chờ ' + wait + ' phút rồi thử lại.';
+    cache.put(kAll, String(all + 1), WINDOW_MIN * 120);
+    cache.put(kOne, String(one + 1), WINDOW_MIN * 120);
     return '';
   } finally {
     lock.releaseLock();

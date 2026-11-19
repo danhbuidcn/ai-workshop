@@ -18,7 +18,8 @@ function load(fetchPlan, key = 'test-key') {
       }
     },
     ContentService: { MimeType: { JSON: 'json' }, createTextOutput: s => ({ setMimeType: () => s }) },
-    Logger: { log() {} }
+    Logger: { log() {} },
+    Date // dùng chung Date để test chỉnh được giờ
   };
   vm.createContext(ctx);
   vm.runInContext(fs.readFileSync(__dirname + '/Code.gs', 'utf8'), ctx);
@@ -46,13 +47,21 @@ assert.match(load(() => [200, okBody('x')]).post({ ...good, prompt: 'a'.repeat(3
 t = load(() => [200, okBody('x')]);
 assert.match(JSON.parse(t.ctx.doPost({ postData: { contents: '{hỏng' } })).error, /không hợp lệ/);
 
-// Giới hạn 5 lượt/phút/người, 20 lượt/phút tổng
+// Giới hạn 20 lượt/5 phút/người, trần chung 100 lượt/5 phút
+// (đếm theo khung 5 phút: cố định giờ ở đầu khung để 2 lượt gọi không rơi vào 2 khung khác nhau)
+const realNow = Date.now;
+Date.now = () => 1_800_000_000_000 - (1_800_000_000_000 % 300000) + 1000;
 t = load(() => [200, okBody('x')]);
-for (let i = 0; i < 5; i++) assert.ok(t.post(good).ok);
-assert.match(t.post(good).error, /5 lần trong 1 phút/);
+for (let i = 0; i < 20; i++) assert.ok(t.post(good).ok);
+assert.match(t.post(good).error, /20 lần trong 5 phút\. Chờ 5 phút/);
+assert.ok(t.post({ ...good, cid: 'b' }).ok); // người khác vẫn hỏi được
+Date.now = () => 1_800_000_000_000 - (1_800_000_000_000 % 300000) + 300000 + 1000;
+assert.ok(t.post(good).ok); // sang khung 5 phút mới: hỏi lại được
+Date.now = () => 1_800_000_000_000 - (1_800_000_000_000 % 300000) + 1000;
 t = load(() => [200, okBody('x')]);
-for (let i = 0; i < 20; i++) assert.ok(t.post({ ...good, cid: 'c' + i }).ok);
-assert.match(t.post({ ...good, cid: 'moi' }).error, /Cả lớp/);
+for (let i = 0; i < 100; i++) assert.ok(t.post({ ...good, cid: 'c' + (i % 10) }).ok);
+assert.match(t.post({ ...good, cid: 'moi' }).error, /Cả lớp .*100 lượt\/5 phút/);
+Date.now = realNow;
 
 // Model đầu quá tải → thử model sau
 t = load(n => (n === 1 ? [503, {}] : [200, okBody('Từ model 2')]));
