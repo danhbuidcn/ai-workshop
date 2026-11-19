@@ -53,6 +53,6 @@ Khung "4 năng lực" (Anthropic, AI Fluency), nói bằng lời thường:
 
 ## Thực hành: "Viết prompt theo công thức" (5 phút)
 1. Chọn 1 việc thật tuần này phải làm.
-2. Viết prompt đủ 5 phần (phiếu có khung điền sẵn).
-3. Gửi cho AI. Chỉnh thêm 1 lần.
+2. Khung so sánh (slide 19, phiếu 4): trái viết 1 câu ngắn như vẫn hỏi; phải điền đủ 5 phần (mỗi phần 1 màu).
+3. Bấm **So sánh** → xem 2 kết quả cạnh nhau. Chưa ưng → sửa 1 phần ở khung phải → **Chạy lại**.
 4. 1–2 người đọc to prompt + kết quả.

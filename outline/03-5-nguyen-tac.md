@@ -36,7 +36,7 @@ Hình chung: bàn tay 5 ngón ✋, mỗi ngón 1 nguyên tắc.
 - Hình: kính lúp 🔍 trên tờ giấy.
 
 ## Thực hành: "Viết lại câu trả lời đầu" (3 phút)
-1. Hỏi AI 1 câu thật của mình (vd: `Viết thông báo cho phụ huynh về buổi họp lớp`).
-2. Đọc, tìm 1 điều chưa ưng.
-3. Gõ 1 câu chỉnh: `Ngắn hơn, dưới 60 chữ, thêm giờ họp 19h thứ 6, giọng thân thiện`.
-4. So sánh lần 1 và lần 2.
+1. Slide 14 có khung so sánh 2 cột: trái `Viết thông báo cho phụ huynh về buổi họp lớp.`, phải cùng việc viết theo công thức 5 phần (mỗi phần 1 màu).
+2. Bấm **So sánh**: Gemini chạy cả 2 câu cùng lúc, 2 kết quả nằm cạnh nhau.
+3. Hỏi lớp: "2 kết quả khác nhau ở đâu?" → bấm 3 ô "nên nhìn" (giờ họp, giọng, độ dài).
+4. Nhắc: AI có thể khác mỗi lần, quan trọng là xu hướng. Phiếu 3: thử thêm cách gõ câu chỉnh trong cùng cuộc trò chuyện.
