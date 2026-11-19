@@ -105,7 +105,7 @@
   .concept .no { flex: none; width: 46px; height: 46px; border-radius: 50%; color: #fff; font-size: 26px; font-weight: 800;
     display: flex; align-items: center; justify-content: center; }
   .concept .big-ic { font-size: 60px; line-height: 1; }
-  .concept h3 { font-size: 32px; margin: 0; line-height: 1.2; }
+  .concept h3 { font-size: 32px; margin: 0; line-height: 1.4; }
   .concept .what { font-size: 24px; margin: 4px 0 0; }
   .concept .when { font-size: 20px; color: #374151; margin: 0; }
   .concept .when b { color: var(--ink); }
@@ -118,6 +118,18 @@
   .fold-h .fs { font-size: 22px; color: #374151; }
   .fold-b p, .fold-b li { font-size: 22px; }
   .slide .fold-hint { font-size: 18px; }
+  .concept .push { margin-top: auto; padding-top: 6px; }
+  .slide .fold-h { font-size: 22px; font-weight: 700; }
+  .flow.sm { margin: 4px 0; } .flow.sm .st { font-size: 20px; padding: 6px 8px; } .flow.sm .st .ic { font-size: 30px; } .flow.sm .to { font-size: 24px; }
+  .lvl { align-self: flex-start; font-size: 18px; font-weight: 800; padding: 3px 12px; border-radius: 999px; background: #fff; border: 2px solid currentColor; }
+  .concept.kA .lvl { color: #1d4ed8; } .concept.kB .lvl { color: #6d28d9; } .concept.kC .lvl { color: #0f766e; }
+  .no-badge { display: inline-flex; width: 40px; height: 40px; border-radius: 50%; background: #1f2937; color: #fff; font-size: 24px; font-weight: 800;
+    align-items: center; justify-content: center; flex: none; margin-right: 6px; vertical-align: middle; }
+  /* 5 phần công thức: cùng màu với phần tô màu trong prompt (ai.css .pp1…pp5) */
+  .card.p1 { border-color: #8b5cf6; background: #f5f3ff; } .card.p2 { border-color: #3b82f6; background: #eff6ff; }
+  .card.p3 { border-color: #22c55e; background: #f0fdf4; } .card.p4 { border-color: #f59e0b; background: #fffbeb; }
+  .card.p5 { border-color: #ec4899; background: #fdf2f8; }
+  .st .bulbs { gap: 6px; } .st .bulb { width: 32px; height: 32px; font-size: 18px; }
   /* bulbs */
   .bulbs { display: flex; gap: 10px; justify-content: center; margin: 10px 0; }
   .bulb { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
@@ -328,25 +340,38 @@
 
 <section class="slide" data-s="3">
   <span class="tag">3 · NGUYÊN TẮC 1–2</span>
-  <div class="grid g2">
-    <div>
-      <h2 style="font-size:26px">① AI mang trí tuệ, <span class="key">bạn mang bối cảnh</span></h2>
-      <p>AI như <b>đầu bếp giỏi chưa vào bếp nhà bạn</b>. Không nói nhà có gì, ai ăn, ăn cay không → nấu đại.</p>
-      <div class="card bad mini"><b>❌ Hỏi trống:</b> Viết email xin nghỉ.</div>
-      <div class="card good mini"><b>✅ Có bối cảnh:</b> Viết email xin nghỉ 2 ngày (20–21/11) gửi trưởng phòng, lý do việc gia đình, giọng lịch sự, dưới 80 chữ.</div>
-      <p class="big sm" style="margin-top:14px">Hỏi trống → <em>trả lời trống</em>.</p>
-    </div>
-    <div>
-      <h2 style="font-size:26px">② Câu trả lời đầu là <span class="key">bản nháp</span></h2>
-      <p>Như đi <b>cắt tóc</b>: cắt xong soi gương, nói "ngắn thêm chút". Không ai bỏ tiệm vì lần đầu chưa ưng.</p>
-      <div class="row mid" style="margin-top:12px;gap:10px">
-        <div class="card c" style="text-align:center;padding:10px 14px"><span class="ic">📝</span>Nháp</div><div class="arrow" style="font-size:34px">➜</div>
-        <div class="card c" style="text-align:center;padding:10px 14px"><span class="ic">✂️</span>Chỉnh</div><div class="arrow" style="font-size:34px">➜</div>
-        <div class="card fill" style="text-align:center;padding:10px 14px"><span class="ic">😊</span>Ưng ý</div>
+  <div class="concepts">
+    <div class="concept kA">
+      <div class="top"><span class="no">1</span><span class="big-ic">👨‍🍳</span></div>
+      <h3>AI mang trí tuệ,<br><span class="key">bạn mang bối cảnh</span></h3>
+      <p class="what">AI như <b>đầu bếp giỏi chưa vào bếp nhà bạn</b>. Không nói nhà có gì, ai ăn, ăn cay không → nấu đại.</p>
+      <div class="fold push">
+        <button type="button" class="fold-h">Xem ví dụ: hỏi trống ↔ có bối cảnh</button>
+        <div class="fold-b">
+          <div class="card bad mini" style="margin-top:0"><b>❌ Hỏi trống:</b> Viết email xin nghỉ.</div>
+          <div class="card good mini"><b>✅ Có bối cảnh:</b> Viết email xin nghỉ 2 ngày (20–21/11) gửi trưởng phòng, lý do việc gia đình, giọng lịch sự, dưới 80 chữ.</div>
+        </div>
       </div>
-      <p style="margin-top:12px">Nói thẳng: <span class="pill">ngắn hơn</span><span class="pill">bỏ phần 2</span><span class="pill">giọng vui hơn</span><span class="pill">làm thành bảng</span></p>
+    </div>
+    <div class="concept kB">
+      <div class="top"><span class="no">2</span><span class="big-ic">💇</span></div>
+      <h3>Câu trả lời đầu<br>là <span class="key">bản nháp</span></h3>
+      <p class="what">Như đi <b>cắt tóc</b>: cắt xong soi gương, nói "ngắn thêm chút".</p>
+      <div class="flow sm">
+        <div class="st"><span class="ic">📝</span>Nháp</div><span class="to">➜</span>
+        <div class="st"><span class="ic">✂️</span>Chỉnh</div><span class="to">➜</span>
+        <div class="st goal"><span class="ic">😊</span>Ưng ý</div>
+      </div>
+      <div class="fold push">
+        <button type="button" class="fold-h">Câu chỉnh hay dùng</button>
+        <div class="fold-b">
+          <p>Nói thẳng: <span class="pill">ngắn hơn</span><span class="pill">bỏ phần 2</span><span class="pill">giọng vui hơn</span><span class="pill">làm thành bảng</span></p>
+          <p class="cap">Không ai bỏ tiệm vì lần đầu chưa ưng.</p>
+        </div>
+      </div>
     </div>
   </div>
+  <div class="chot">Hỏi trống → <em>trả lời trống</em>. Chưa ưng → <em>nói thẳng</em> để chỉnh.</div>
 </section>
 
 <section class="slide" data-s="3">
