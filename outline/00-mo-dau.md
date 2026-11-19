@@ -15,7 +15,7 @@ Học viên biết hôm nay học gì, học xong làm được gì.
 
 ## Hình khối
 - 1 hình: người (🙋) → mũi tên → trợ lý (🤖) → mũi tên → kết quả (📄).
-- Bản đồ buổi học (slide 3): 7 ô vuông xếp hàng, mỗi ô 1 biểu tượng + tên phần (không ghi số phút).
+- Bản đồ buổi học (slide 3): mục lục 7 phần, số 01–07 trong vòng tròn, mỗi phần 1 tên + 1 dòng mô tả (không ghi số phút).
 
 | Ô | Biểu tượng | Tên |
 |---|---|---|

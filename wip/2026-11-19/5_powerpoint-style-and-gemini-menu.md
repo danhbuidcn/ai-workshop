@@ -1,6 +1,11 @@
 # Slide kiểu PowerPoint có điểm nhấn + sửa menu Gemini theo giao diện thật
 Nhánh: .
 Phụ thuộc: 4_design-pass.md
+## Handoff (2026-11-19 17:55)
+- **Đang ở đâu:** xong đợt 1 theo lệnh owner: bộ mẫu CSS kiểu PowerPoint + slide 1–10. DỪNG chờ owner duyệt. Slide 11–30 vẫn kiểu cũ, trang chạy bình thường.
+- **Owner xem:** ảnh `img/5_slide-01.png … 5_slide-10.png`, hoặc mở `index.html#1` … `#10`. So sánh với mẫu: mục "So với ảnh mẫu" trong `## Kết quả`.
+- **Bước tiếp (sau khi duyệt, `spawn --resume`):** sửa theo góp ý → thêm class `pp` + sắp layout cho slide 11–30 (bước 3) → sửa menu Gemini (bước 4) → máy trung gian 20 lượt/5 phút (bước 5) → kiểm tra (bước 6).
+- **File:** `index.html` (CSS mục "Kiểu PowerPoint" + slide 1–10), `outline/00-mo-dau.md` (dòng slide 3).
 ## Input
 Owner (2026-11-19):
 1. Thiết kế slide "như PowerPoint" (các slide mẫu owner gửi, từ slide 4 của mẫu trở đi), vì chữ/khối hiện tại không tạo được điểm nhấn. Tham khảo thêm thư mục mẫu: https://drive.google.com/drive/folders/1T6xAyeMAyJ42Oaj2-FvZOQV9eLaPngXq
@@ -37,7 +42,7 @@ Thử mở thư mục Drive bằng WebFetch; không đọc được thì chỉ d
 - Chỉ sau khi owner duyệt mới làm phần còn lại (owner ra lệnh nối tiếp bằng `spawn --resume`).
 - Owner chốt thêm: nâng giới hạn máy trung gian lên **20 lượt / 5 phút** (hiện 5 lượt/phút toàn bộ; nút So sánh tốn 2 lượt). Sửa trong `proxy/Code.gs`, chạy lại `bash proxy/deploy.sh` (đã đăng nhập clasp), thử gọi thật, vẫn không in key. Chú ý: giới hạn này tính theo từng người (cid) hay toàn bộ? Giữ theo người, thêm trần chung hợp lý để không cạn hạn mức miễn phí của Google (ghi con số chọn vào Kết quả).
 - [x] Đọc 5 ảnh mẫu + thử Drive; ghi bảng "layout học được" vào Kết quả — xong (2026-11-19 17:10): Drive chỉ đọc được danh sách 50 file .pptx (Slidesgo…), không có ảnh xem trước → chỉ dùng 5 ảnh. Bảng ở `## Kết quả`. 4 ảnh menu Gemini khớp mục C (menu tài khoản mở từ nút ⚙ cạnh tên ở góc dưới trái).
-- [ ] Làm bộ mẫu layout (CSS chung) + vài hình SVG/biểu tượng; làm 3 slide mẫu (mở phần, mục lục đánh số, lưới 3 ý), chụp ảnh lưu `wip/2026-11-19/img/` cho owner xem
+- [x] Làm bộ mẫu layout (CSS chung) + vài hình SVG/biểu tượng; làm 3 slide mẫu (mở phần, mục lục đánh số, lưới 3 ý), chụp ảnh lưu `wip/2026-11-19/img/` cho owner xem — xong (2026-11-19 17:55): CSS "Kiểu PowerPoint" trong `index.html`, chỉ bật ở slide có class `pp` (slide 1–10). Đã làm 10 slide (không chỉ 3), ảnh `img/5_slide-01…10.png`. Kiểm: tràn dọc 0 ở slide 1–7, 9; slide thực hành 8, 10 cuộn như trước (94px, 115px); chữ < 18px: 0; lỗi JS: 0; in PDF 30 trang; bấm ô slide 9 vẫn mở/đóng; laptop 1024×600 vẫn vừa (tự thu nhỏ). Chi tiết ở `## Kết quả`.
   - Không thêm slide (đang đúng 30). Theo lệnh owner "làm trước 10 slide": kiểu mới chỉ bật ở slide có class `pp` (slide 1–10), slide 11–30 giữ nguyên kiểu cũ.
   - Slide 1–10: "Mở phần" cho slide 1 (tiêu đề) + slide 6 (ý chính + hình lớn); "Mục lục đánh số" cho slide 3; "Số lớn" cho slide 4; "Lưới vòng tròn biểu tượng" cho slide 7, 9; slide 2, 5, 8, 10 theo nền + chữ mới. Để sau duyệt: "Trung tâm + 4 ý" (slide 18), "Bảng" (slide 23), "Mục lục" cho tổng kết (slide 25), "Chốt" (slide 30).
   - Ảnh 10 slide: `wip/2026-11-19/img/5_slide-01.png … 5_slide-10.png`. Xong thì ghi Handoff + DỪNG.
@@ -55,3 +60,34 @@ Thử mở thư mục Drive bằng WebFetch; không đọc được thì chỉ d
 | 20 | Bảng | Hàng đầu hồng chữ cam, cột đầu xanh đậm chữ trắng, số to đậm | 23 |
 | 21 | Trung tâm + 4 ý | Cụm vòng tròn giữa, 4 ý 2 bên nối bằng đường mảnh | 18 |
 Chung: nền kem, trang trí góc (tam giác, vòng cung, chấm, nét lượn) không che chữ; tiêu đề có chân rất to; nhiều khoảng trống.
+
+### Đợt 1: bộ mẫu + slide 1–10 (2026-11-19 17:55)
+| Slide | Trước | Sau (mẫu dùng) | Ảnh |
+|---|---|---|---|
+| 1 | Emoji + tiêu đề giữa | Mở phần: tiêu đề có chân 96px bên trái + 1 câu phụ; cụm vòng tròn 🤖🙋🤝 bên phải | [5_slide-01](img/5_slide-01.png) |
+| 2 | 2 thẻ chữ + quy trình hộp | Thẻ trắng có 5 ý đánh số trong vòng tròn (ý 5 = đích, san hô); "Dành cho ai" có vòng tròn biểu tượng; quy trình là 3 vòng tròn nối mũi tên | [5_slide-02](img/5_slide-02.png) |
+| 3 | 7 hộp xếp hàng | Mục lục: số 01–07 trong vòng tròn xanh + chấm san hô, tên phần màu, 1 dòng mô tả; 07 (bài tập cuối) màu san hô | [5_slide-03](img/5_slide-03.png) |
+| 4 | 3 hộp + thẻ vàng | 3 bước có số tròn, không khung; số khổng lồ "Hàng tỉ" (120px) + vòng tròn 📚 | [5_slide-04](img/5_slide-04.png) |
+| 5 | Câu + cột | Câu "Con mèo…" chữ có chân 40px, cột "cá" san hô | [5_slide-05](img/5_slide-05.png) |
+| 6 | Emoji + 2 thẻ | Mở phần: tiêu đề 64px bên trái + "AI chọn … khác … Không chắc là …"; cụm vòng tròn 🦜💬❓ bên phải | [5_slide-06](img/5_slide-06.png) |
+| 7 | 2 thẻ | Lưới vòng tròn biểu tượng: "AI dự đoán" phụ (nhỏ, không khung), "AI tạo nội dung" chính (vòng tròn 150px, thẻ trắng) | [5_slide-07](img/5_slide-07.png) |
+| 8, 10 | Bài thực hành | Nền + tiêu đề mới, các bước có số trong vòng tròn xanh; khung ① ② giữ nguyên | [08](img/5_slide-08.png), [10](img/5_slide-10.png) |
+| 9 | 4 thẻ bấm để mở | Lưới vòng tròn biểu tượng trong thẻ trắng (vẫn bấm để mở, viền san hô khi mở) | [5_slide-09](img/5_slide-09.png) |
+
+### So với ảnh mẫu (chụp cạnh nhau ở `/tmp/aw5/side.png`, không đưa ảnh mẫu vào repo)
+- **Giống:** nền kem; trang trí góc (tam giác góc trái trên, vòng hồng, vòng vàng, dấu ✕ xanh/san hô, nét lượn vàng, vòng cung xanh góc phải dưới, nửa tròn hồng góc trái dưới); tiêu đề có chân rất to, căn giữa; số trong vòng tròn xanh đậm có chấm san hô (giống mau-17); mở phần chữ to trái + hình lớn phải (mau-18); vòng tròn biểu tượng + tên màu xanh có chân (mau-19).
+- **Khác:** hình minh hoạ là emoji trong cụm vòng tròn (không có hình vẽ người như mẫu; không dùng ảnh có bản quyền, không cần mạng). Tam giác góc trái lấy màu từng phần (để biết đang ở phần nào), mẫu dùng xanh đen. Slide nhiều chữ hơn mẫu vì giữ nội dung cũ; dải chốt và thẻ bấm để mở vẫn có khung (để học viên biết bấm được). Slide thực hành 8, 10 vẫn là khung nhập/kết quả.
+- Bài "nheo mắt" (làm mờ 3px, `/tmp/aw5/blur.png`): vẫn thấy rõ tiêu đề slide 1, 6; số 01–07 slide 3; "Hàng tỉ" slide 4; cột san hô slide 5; thẻ chính slide 7; 4 vòng tròn slide 9; nút Gửi cam slide 8, 10.
+
+### Quyết định worker tự chọn (đợt 1)
+- Kiểu mới chỉ bật bằng class `pp` trên từng `<section>`, để slide 11–30 giữ nguyên khi chờ duyệt. Đợt 2 chỉ cần thêm `pp` + sắp layout.
+- Font tiêu đề: `Cambria, Georgia, "Noto Serif", "Liberation Serif", "DejaVu Serif"` (có sẵn trên Windows/Mac, đủ dấu tiếng Việt, không tải ngoài). Ảnh chụp trên máy Linux nên hiện bằng Noto Serif; trên Windows sẽ là Cambria.
+- Màu xanh lá đậm `#2f7d63` chỉ làm khung (số, tên mục); "nên làm" vẫn là xanh lá tươi + ✅ ở các khung so sánh. San hô `#f0745a` = chấm nhấn, đích (thay vai trò cam ở slide `pp`); nút Gửi vẫn cam.
+- Trang trí góc vẽ bằng 1 SVG nhúng trong CSS (không có file ảnh, không cần mạng); chữ ký "danhbuidcn" dời sang phải 50px để không đè nửa tròn hồng.
+- Slide 1 thêm 1 câu phụ "Học cách giao việc cho trợ lý AI." (lấy từ câu chốt slide 2). Slide 3: mô tả 1 dòng cho 7 phần lấy từ nội dung các phần; 3 lời dặn thành hàng 3 cột.
+- Đã viết sẵn CSS bảng kiểu mẫu (`.pp table`) để dùng ở đợt 2 (slide 23); "Trung tâm + 4 ý" làm ở đợt 2.
+- Có 2 worker cùng id chạy song song lúc đầu (pid 549174 và 550070); đã nhắn nhau, worker sau dừng, không sửa code.
+
+### Còn lại (chờ owner duyệt)
+- Bước 3–6 ở `## Plan`: áp cho slide 11–30, sửa menu Gemini, máy trung gian 20 lượt/5 phút, kiểm tra toàn bộ.
+- Nhãn "⬇ Cuộn xuống xem tiếp" có thể hiện thoáng qua khi vừa chuyển slide (có từ trước).

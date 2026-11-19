@@ -160,6 +160,111 @@
   #bar { position: fixed; left: 0; bottom: 0; height: 5px; background: #fbbf24; z-index: 11; transition: width .2s; }
   #more { position: fixed; left: 50%; bottom: 14px; transform: translateX(-50%); z-index: 10; display: none; pointer-events: none;
     background: #1f2937; color: #fff; font-size: 16px; font-weight: 700; padding: 6px 16px; border-radius: 999px; box-shadow: 0 2px 8px rgba(0,0,0,.3); }
+  /* ===== Kiểu PowerPoint (wip/2026-11-19/5_powerpoint-style-and-gemini-menu.md) — chỉ bật ở slide có class "pp" =====
+     Nền kem + trang trí góc (không che chữ) · tiêu đề có chân, rất to (≥ 56px) · thân bài sans ≥ 20px.
+     Mẫu dùng chung: .opener (mở phần: chữ to + hình lớn) · .toc (mục lục số trong vòng tròn) · .icgrid (lưới vòng tròn biểu tượng)
+     · .bignum (1 số khổng lồ + chú thích) · .num (số trong vòng tròn) · .icn (biểu tượng trong vòng tròn) · .pp table (bảng).
+     Màu: xanh lá đậm = khung/tiêu đề mục · san hô = chấm nhấn, đích · hồng/vàng = trang trí. Ý nghĩa nên/tránh/bạn nhập giữ như trên. */
+  .slide.pp { --serif: Cambria, Georgia, "Noto Serif", "Liberation Serif", "DejaVu Serif", serif;
+    --pp-ink: #23283b; --pp-bg: #fff8ea; --pp-green: #2f7d63; --pp-green-bg: #dcefe6; --pp-coral: #f0745a; --pp-pink: #fbd3d9; --pp-yellow: #f5c542;
+    color: var(--pp-ink);
+    background:
+      linear-gradient(135deg, var(--c) 0 50%, transparent 50.5%) 0 0 / 104px 104px no-repeat,
+      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='1280' height='720' viewBox='0 0 1280 720'><circle cx='200' cy='-6' r='58' fill='none' stroke='%23fbd3d9' stroke-width='20'/><g fill='%23fff' opacity='.75'><circle cx='14' cy='14' r='2.5'/><circle cx='26' cy='14' r='2.5'/><circle cx='38' cy='14' r='2.5'/><circle cx='50' cy='14' r='2.5'/><circle cx='14' cy='26' r='2.5'/><circle cx='26' cy='26' r='2.5'/><circle cx='38' cy='26' r='2.5'/><circle cx='14' cy='38' r='2.5'/><circle cx='26' cy='38' r='2.5'/><circle cx='14' cy='50' r='2.5'/></g><g stroke-width='5' stroke-linecap='round'><path d='M30 170l14 14M44 170l-14 14' stroke='%232f7d63'/><path d='M1238 330l14 14M1252 330l-14 14' stroke='%232f7d63'/><path d='M28 520l14 14M42 520l-14 14' stroke='%23f0745a'/></g><circle cx='640' cy='-10' r='30' fill='none' stroke='%23f5c542' stroke-width='9'/><path d='M1226 212c8-10 14 10 22 0s14 10 22 0' fill='none' stroke='%23f5c542' stroke-width='6' stroke-linecap='round'/><circle cx='1248' cy='118' r='7' fill='none' stroke='%23f0745a' stroke-width='4'/><g fill='none' stroke='%232f7d63' stroke-width='2.5'><circle cx='1232' cy='742' r='36'/><circle cx='1232' cy='742' r='52'/><circle cx='1232' cy='742' r='68'/></g><circle cx='0' cy='720' r='64' fill='%23fbd3d9'/></svg>") 0 0 / 1280px 720px no-repeat,
+      var(--pp-bg); }
+  .slide.pp::after { color: #6b7280; left: 80px; }
+  .pp h1, .pp h2, .pp h3 { font-family: var(--serif); color: var(--pp-ink); letter-spacing: -.3px; }
+  .pp h2 { font-size: 56px; line-height: 1.12; margin: 0 0 20px; }
+  .pp:not(.prac) > h2 { text-align: center; }
+  .pp .cap, .pp p.cap, .pp p.app, .pp .fold-hint { font-size: 20px; }
+  .pp .practice { background: var(--pp-coral); color: #23283b; }
+  .pp .chot { margin-top: 20px; font-family: var(--serif); background: #fde8e4; border-left-color: var(--pp-coral); }
+  .pp .chot em { color: #a63a24; }
+  .pp .chot small { font-family: "Segoe UI", system-ui, sans-serif; }
+  .pp .card { border: 0; box-shadow: 0 6px 0 #f0e4cc; }
+  /* Số trong vòng tròn (+ chấm san hô ở góc) */
+  .pp .num { position: relative; display: inline-block; flex: none; width: 76px; height: 76px; border-radius: 50%; background: var(--pp-green); color: #fff;
+    font: 800 32px/76px var(--serif); text-align: center; }
+  .pp .num::before { content: ""; position: absolute; left: -3px; top: -3px; width: 24px; height: 24px; border-radius: 50%; background: var(--pp-coral); }
+  .pp .num.sm { width: 44px; height: 44px; font-size: 22px; line-height: 44px; } .pp .num.sm::before { width: 16px; height: 16px; }
+  .pp .num.goal { background: var(--pp-coral); color: #23283b; } .pp .num.goal::before { background: var(--pp-green); }
+  /* Biểu tượng trong vòng tròn */
+  .pp .icn { flex: none; width: 112px; height: 112px; border-radius: 50%; background: var(--pp-green); display: flex; align-items: center;
+    justify-content: center; font-size: 58px; line-height: 1; box-shadow: 0 0 0 8px var(--pp-green-bg); margin: 8px auto 12px; }
+  .pp .icn.pink { background: var(--pp-pink); box-shadow: 0 0 0 8px #fdebee; }
+  .pp .icn.sm { width: 84px; height: 84px; font-size: 44px; box-shadow: 0 0 0 6px var(--pp-green-bg); }
+  .pp .icn.lg { width: 150px; height: 150px; font-size: 80px; }
+  /* Mở phần: chữ rất to bên trái + hình lớn (cụm vòng tròn) bên phải */
+  .opener { display: grid; grid-template-columns: 1.15fr .85fr; align-items: center; gap: 30px; }
+  .opener h1 { font-size: 96px; line-height: 1.04; margin: 0 0 18px; }
+  .opener h2 { font-size: 64px; text-align: left; }
+  .opener .sub { font-size: 28px; color: #4b5563; margin: 0; }
+  .hero { position: relative; width: 420px; height: 420px; justify-self: center; }
+  .hero .b { position: absolute; border-radius: 50%; display: flex; align-items: center; justify-content: center; line-height: 1; }
+  .hero .b1 { inset: 40px; background: var(--pp-pink); font-size: 150px; }
+  .hero .b2 { width: 130px; height: 130px; left: -6px; top: 6px; background: var(--pp-green); font-size: 66px; box-shadow: 0 0 0 10px var(--pp-bg); }
+  .hero .b3 { width: 120px; height: 120px; right: -4px; bottom: 14px; background: var(--pp-yellow); font-size: 62px; box-shadow: 0 0 0 10px var(--pp-bg); }
+  .hero .ring { position: absolute; inset: 4px; border-radius: 50%; border: 3px dashed var(--pp-coral); opacity: .7; }
+  /* Mục lục: số trong vòng tròn + tên mục màu + 1 dòng mô tả */
+  .toc { display: grid; grid-template-columns: repeat(var(--cols, 2), 1fr); gap: 18px 56px; padding: 0 40px; }
+  .toc .it { display: flex; align-items: center; gap: 20px; }
+  .toc b { display: block; font: 700 30px/1.15 var(--serif); color: var(--pp-green); }
+  .toc .it.goal b { color: #a63a24; }
+  .toc span.d { display: block; font-size: 21px; color: #374151; line-height: 1.3; }
+  /* Lưới vòng tròn biểu tượng: mỗi ý = vòng tròn + tên màu + 1–2 dòng */
+  .icgrid { display: grid; grid-template-columns: repeat(var(--n, 3), 1fr); gap: 20px 36px; text-align: center; }
+  .icgrid .it b.t { display: block; font: 700 30px/1.2 var(--serif); color: var(--pp-green); margin-bottom: 6px; }
+  .icgrid .it p { margin: 4px 0; font-size: 22px; }
+  /* Số khổng lồ làm điểm nhấn */
+  .bignum { display: flex; align-items: center; gap: 34px; justify-content: center; }
+  .bignum .n { font: 800 120px/1 var(--serif); color: var(--pp-green); white-space: nowrap; }
+  .bignum .n small { display: block; font: 700 26px/1.3 "Segoe UI", system-ui, sans-serif; color: var(--pp-ink); margin-top: 6px; }
+  .bignum p { font-size: 26px; max-width: 460px; margin: 0; }
+  /* Chi tiết từng slide pp */
+  .pp .learn > div { display: flex; align-items: center; gap: 14px; font-size: 23px; line-height: 1.3; margin: 5px 0; }
+  .pp .tips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; text-align: center; font-size: 20px; color: #374151; margin: 18px 0 0; }
+  .pp .tips b { display: block; font: 700 22px var(--serif); color: var(--pp-ink); }
+  .pp .flow.inl .st { flex-direction: row; gap: 12px; text-align: left; justify-content: flex-start; }
+  .pp .flow.inl .st .ic { margin: 0; flex: none; width: 70px; height: 70px; font-size: 36px; }
+  .pp .bar.top span.b { background: var(--pp-coral); }
+  /* Các bước thực hành: số trong vòng tròn xanh */
+  .pp ol.steps { list-style: none; counter-reset: st; padding-left: 0; }
+  .pp ol.steps > li { counter-increment: st; position: relative; padding-left: 50px; }
+  .pp ol.steps > li::before { content: counter(st); position: absolute; left: 0; top: 1px; width: 36px; height: 36px; border-radius: 50%;
+    background: var(--pp-green); color: #fff; font: 800 19px/36px var(--serif); text-align: center; }
+  .pp .vs p { font-size: 28px; margin: 0; }
+  .pp .vs .lb { font: 700 24px var(--serif); color: #4b5563; }
+  .pp .vs .k { font: 800 24px var(--serif); color: var(--pp-coral); margin: 6px 0 6px 30px; }
+  .pp .vs .hi { background: #fff; border-left: 8px solid var(--pp-coral); border-radius: 12px; padding: 8px 16px; display: inline-block; }
+  .icgrid.duo { grid-template-columns: 1fr 1.5fr; align-items: center; }
+  .icgrid.duo .side { color: #374151; }
+  .icgrid.duo .main { background: #fff; border-radius: 28px; padding: 20px 26px; box-shadow: 0 8px 0 #f0e4cc; }
+  .icgrid.duo .main b.t { font-size: 40px; }
+  /* Bước có số (không khung): số tròn → tên → hình → 1 câu */
+  .steps3 { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 10px; align-items: start; text-align: center; }
+  .steps3 .to { align-self: center; font-size: 44px; color: var(--pp-coral); font-weight: 800; }
+  .steps3 .num { display: block; margin: 0 auto 8px; }
+  .steps3 b.t { display: block; font: 700 25px/1.25 var(--serif); color: var(--pp-green); margin-bottom: 6px; }
+  .steps3 .bulbs { gap: 6px; margin: 6px 0; } .steps3 .bulb { width: 32px; height: 32px; font-size: 18px; }
+  /* Quy trình trên slide pp: vòng tròn biểu tượng nối mũi tên, không khung */
+  .pp .flow .st { background: none; border: 0; font-size: 22px; padding: 4px; }
+  .pp .flow .st .ic { width: 84px; height: 84px; border-radius: 50%; background: var(--pp-green-bg); display: flex; align-items: center; justify-content: center;
+    font-size: 44px; margin-bottom: 6px; }
+  .pp .flow .st.goal { background: none; border: 0; font-weight: 800; }
+  .pp .flow .st.goal .ic { background: var(--pp-coral); }
+  .pp .flow .to { color: var(--pp-coral); font-weight: 800; }
+  /* Thẻ bấm để mở trên slide pp: biểu tượng trong vòng tròn, căn giữa */
+  .pp .fold.cardf > .fold-h { align-items: center; text-align: center; border-color: transparent; box-shadow: 0 6px 0 #f0e4cc; padding-top: 18px; }
+  .pp .fold.cardf > .fold-h:hover { border-color: var(--pp-coral); }
+  .pp .fold-h .fic { width: 96px; height: 96px; border-radius: 50%; background: var(--pp-green); display: flex; align-items: center; justify-content: center;
+    font-size: 50px; box-shadow: 0 0 0 7px var(--pp-green-bg); margin-bottom: 8px; }
+  .pp .fold-h .ft { font-family: var(--serif); color: var(--pp-green); font-size: 30px; }
+  .pp .foldrow > .fold.open > .fold-h { background: #fff; border-color: var(--pp-coral); box-shadow: 0 6px 0 var(--pp-pink); }
+  /* Bảng kiểu mẫu: hàng đầu hồng chữ san hô đậm, cột đầu xanh đậm chữ trắng */
+  .pp table { border-collapse: separate; border-spacing: 0; border-radius: 0; background: #fff; }
+  .pp th { background: var(--pp-pink); color: #a63a24; font-family: var(--serif); text-align: center; }
+  .pp td { border-bottom: 2px solid var(--pp-pink); }
+  .pp td:first-child { background: var(--pp-green); color: #fff; font-weight: 700; font-family: var(--serif); }
   /* Đo trước khi in: ẩn phần chỉ dùng trên màn hình, mở hết ô bấm để mở (giống @media print) */
   body.pmode .ai-out, body.pmode .ai-arrow, body.pmode .ai-foot, body.pmode .cmp-two, body.pmode .cmp-go, body.pmode .cmp-pick,
   body.pmode .copy, body.pmode .fold-hint, body.pmode .ai-lab { display: none !important; }
@@ -179,33 +284,37 @@
 <div id="stage">
 
 <!-- ===================== 0. MỞ ĐẦU ===================== -->
-<section class="slide center" data-s="0">
-  <div class="emoji" style="font-size:96px">🙋 🤝 🤖</div>
-  <h1 style="margin-top:28px">Làm việc với AI</h1>
-</section>
-
-<section class="slide" data-s="0">
-  <span class="tag">MỞ ĐẦU</span>
-  <h2>Dành cho ai · Học xong được gì</h2>
-  <div class="row">
-    <div class="card fill" style="flex:1.8"><b class="t">🎯 Học xong, bạn biết</b>
-      <ul>
-        <li>AI là gì, vì sao có lúc sai.</li>
-        <li>5 nguyên tắc làm việc với AI.</li>
-        <li>Công thức 5 phần để giao việc cho AI.</li>
-        <li>Cách cho AI đọc tài liệu của mình.</li>
-        <li>Mang về 1 đoạn hướng dẫn để AI luôn trả lời đúng kiểu mình muốn.</li>
-      </ul>
+<section class="slide pp" data-s="0">
+  <div class="opener">
+    <div>
+      <h1>Làm việc<br>với AI</h1>
+      <p class="sub">Học cách giao việc cho trợ lý AI.</p>
     </div>
-    <div class="card side" style="flex:1"><b class="t">🙋 Dành cho ai</b>
-      <ul>
-        <li>Người bận rộn, không rành kỹ thuật.</li>
-        <li>Giáo viên, nhân sự, nhân viên văn phòng.</li>
-        <li>Dùng ChatGPT hoặc Gemini bản miễn phí.</li>
-      </ul>
+    <div class="hero" aria-hidden="true">
+      <span class="ring"></span>
+      <span class="b b1">🤖</span><span class="b b2">🙋</span><span class="b b3">🤝</span>
     </div>
   </div>
-  <div class="flow" style="margin-top:20px">
+</section>
+
+<section class="slide pp" data-s="0">
+  <span class="tag">MỞ ĐẦU</span>
+  <h2>Dành cho ai · Học xong được gì</h2>
+  <div class="row" style="gap:28px;align-items:center">
+    <div class="card" style="flex:1.8;padding:18px 26px"><b class="t" style="font-family:var(--serif);color:var(--pp-green);font-size:30px">🎯 Học xong, bạn biết</b>
+      <div class="learn">
+        <div><span class="num sm">1</span>AI là gì, vì sao có lúc sai.</div>
+        <div><span class="num sm">2</span>5 nguyên tắc làm việc với AI.</div>
+        <div><span class="num sm">3</span>Công thức 5 phần để giao việc cho AI.</div>
+        <div><span class="num sm">4</span>Cách cho AI đọc tài liệu của mình.</div>
+        <div><span class="num sm goal">5</span>Mang về 1 đoạn hướng dẫn để AI luôn trả lời đúng kiểu mình muốn.</div>
+      </div>
+    </div>
+    <div style="flex:1;text-align:center"><div class="icn sm pink">🙋</div><b style="font:700 30px var(--serif);color:var(--pp-green)">Dành cho ai</b>
+      <p style="font-size:22px;margin:6px 0 0">Người bận rộn, không rành kỹ thuật.<br>Giáo viên, nhân sự, nhân viên văn phòng.<br>Dùng ChatGPT hoặc Gemini bản miễn phí.</p>
+    </div>
+  </div>
+  <div class="flow inl" style="margin-top:20px">
     <div class="st"><span class="ic">🙋</span>Bạn biết việc</div><span class="to">➜</span>
     <div class="st"><span class="ic">🤖</span>AI giỏi nhưng chưa biết gì về bạn</div><span class="to">➜</span>
     <div class="st goal"><span class="ic">📄</span>Kết quả đúng ý</div>
@@ -213,49 +322,52 @@
   <div class="chot">Học cách <em>giao việc</em> cho trợ lý AI.</div>
 </section>
 
-<section class="slide" data-s="0">
+<section class="slide pp" data-s="0">
   <span class="tag">MỞ ĐẦU</span>
   <h2>Bản đồ buổi học</h2>
-  <div class="flow">
-    <div class="st"><span class="n">1</span><span class="ic">🧠</span>AI là gì</div><span class="to">›</span>
-    <div class="st"><span class="n">2</span><span class="ic">🗺️</span>Bản đồ AI</div><span class="to">›</span>
-    <div class="st"><span class="n">3</span><span class="ic">✋</span>5 nguyên tắc</div><span class="to">›</span>
-    <div class="st"><span class="n">4</span><span class="ic">✍️</span>Cách giao việc</div><span class="to">›</span>
-    <div class="st"><span class="n">5</span><span class="ic">📁</span>Cho AI đọc tài liệu</div><span class="to">›</span>
-    <div class="st"><span class="n">6</span><span class="ic">📌</span>Tổng kết</div><span class="to">›</span>
-    <div class="st goal"><span class="n">7</span><span class="ic">🎯</span>Bài tập cuối</div>
+  <div class="toc">
+    <div class="it"><span class="num">01</span><div><b>🧠 AI là gì</b><span class="d">Máy đoán chữ, vì sao có lúc sai</span></div></div>
+    <div class="it"><span class="num">05</span><div><b>📁 Cho AI đọc tài liệu</b><span class="d">Tải file, dán chữ, nối Drive</span></div></div>
+    <div class="it"><span class="num">02</span><div><b>🗺️ Bản đồ AI</b><span class="d">4 cái tên hay gặp</span></div></div>
+    <div class="it"><span class="num">06</span><div><b>📌 Tổng kết</b><span class="d">Cả buổi trong 1 trang</span></div></div>
+    <div class="it"><span class="num">03</span><div><b>✋ 5 nguyên tắc</b><span class="d">5 ngón tay khi làm việc với AI</span></div></div>
+    <div class="it goal"><span class="num goal">07</span><div><b>🎯 Bài tập cuối</b><span class="d">Đoạn hướng dẫn mang về dùng</span></div></div>
+    <div class="it"><span class="num">04</span><div><b>✍️ Cách giao việc</b><span class="d">Công thức 5 phần</span></div></div>
   </div>
-  <div class="grid g3" style="margin-top:22px">
-    <div class="card side"><b>💻 Mở sẵn AI</b><br>ChatGPT hoặc Gemini, bản miễn phí.</div>
-    <div class="card side"><b>🙋 Hỏi thoải mái</b><br>Không có câu hỏi ngớ ngẩn.</div>
-    <div class="card side"><b>🛠️ Làm thật</b><br>Dùng việc thật của mình để thực hành.</div>
+  <div class="tips">
+    <div><b>💻 Mở sẵn AI</b>ChatGPT hoặc Gemini, bản miễn phí.</div>
+    <div><b>🙋 Hỏi thoải mái</b>Không có câu hỏi ngớ ngẩn.</div>
+    <div><b>🛠️ Làm thật</b>Dùng việc thật của mình để thực hành.</div>
   </div>
   <div class="chot">Mỗi phần có <em>1 bài thực hành nhỏ</em>.</div>
 </section>
 
 <!-- ===================== 1. AI LÀ GÌ ===================== -->
-<section class="slide" data-s="1">
+<section class="slide pp" data-s="1">
   <span class="tag">1 · AI LÀ GÌ</span>
   <h2>🧠 AI là gì?</h2>
-  <div class="flow">
-    <div class="st"><span class="n">1</span><b>Máy tính chỉ hiểu <span class="key">bật</span> và <span class="key">tắt</span></b>
+  <div class="steps3">
+    <div><span class="num">1</span><b class="t">Máy tính chỉ hiểu <span class="key">bật</span> và <span class="key">tắt</span></b>
       <div class="bulbs"><div class="bulb on">1</div><div class="bulb">0</div><div class="bulb on">1</div><div class="bulb on">1</div><div class="bulb">0</div><div class="bulb">0</div><div class="bulb on">1</div><div class="bulb">0</div></div>
-      <span style="font-weight:500">Giống công tắc đèn. Bật = <b>1</b>. Tắt = <b>0</b>.</span></div><span class="to">➜</span>
-    <div class="st"><span class="n">2</span><b>Mỗi chữ cái có 1 con số</b>
-      <div style="font-size:30px;font-weight:800;margin:6px 0">A ➜ 65 ➜ <span style="font-family:Consolas,monospace">01000001</span></div>
-      <span class="cap" style="margin:0">Bảng tra "chữ ↔ số" tên là ASCII. Chỉ cần nhớ: mỗi chữ có 1 số.</span></div><span class="to">➜</span>
-    <div class="st"><span class="n">3</span><div style="font-size:40px">📝 🖼️ 🎵</div>
-      <span style="font-weight:500">Chữ, ảnh, nhạc… trong máy đều là <b>một dãy số</b>: <span style="font-family:Consolas,monospace">0101…</span></span></div>
+      <p style="font-size:21px;margin:0">Giống công tắc đèn. Bật = <b>1</b>. Tắt = <b>0</b>.</p></div><span class="to">›</span>
+    <div><span class="num">2</span><b class="t">Mỗi chữ cái có 1 con số</b>
+      <div style="font-size:28px;font-weight:800;margin:6px 0">A ➜ 65 ➜ <span style="font-family:Consolas,monospace">01000001</span></div>
+      <p class="cap" style="margin:0">Bảng tra "chữ ↔ số" tên là ASCII. Chỉ cần nhớ: mỗi chữ có 1 số.</p></div><span class="to">›</span>
+    <div><span class="num">3</span><b class="t">Chữ, ảnh, nhạc… đều là số</b>
+      <div style="font-size:38px;margin:2px 0">📝 🖼️ 🎵</div>
+      <p style="font-size:21px;margin:0">Trong máy đều là <b>một dãy số</b>: <span style="font-family:Consolas,monospace">0101…</span></p></div>
   </div>
-  <div class="card fill center" style="margin-top:22px;font-size:26px;display:flex;gap:24px;align-items:center;text-align:left">
-    <div style="font-size:50px;white-space:nowrap">📚📚📚 ➜ 🤖</div>
-    <div>AI đã đọc hàng tỉ trang chữ. Nó không <i>hiểu</i> như người, nhưng nhớ rất giỏi: <b>chữ nào hay đi sau chữ nào</b>.</div></div>
+  <div class="bignum" style="margin-top:26px">
+    <div class="icn lg pink" style="margin:0">📚</div>
+    <div class="n">Hàng tỉ<small>trang chữ AI đã đọc</small></div>
+    <p>Nó không <i>hiểu</i> như người, nhưng nhớ rất giỏi: <b>chữ nào hay đi sau chữ nào</b>.</p>
+  </div>
 </section>
 
-<section class="slide" data-s="1">
+<section class="slide pp" data-s="1">
   <span class="tag">1 · AI LÀ GÌ</span>
   <h2>AI chơi trò "đoán chữ tiếp theo"</h2>
-  <p style="font-size:36px;font-weight:700;margin:0 0 6px">Con mèo đang ăn <span class="blank">&nbsp;</span></p>
+  <p style="font:700 40px var(--serif);margin:0 0 10px">Con mèo đang ăn <span class="blank">&nbsp;</span></p>
   <div class="bar top"><span class="l">cá</span><span class="b" style="width:600px">60%</span></div>
   <div class="bar"><span class="l">cơm</span><span class="b" style="width:250px">25%</span></div>
   <div class="bar"><span class="l">chuột</span><span class="b" style="width:100px">10%</span></div>
@@ -264,31 +376,40 @@
   <div class="chot">Nhớ đơn giản: AI là <em>máy đoán chữ</em>.<small>Tên gọi: "mô hình ngôn ngữ lớn" (tiếng Anh: LLM).</small></div>
 </section>
 
-<section class="slide center" data-s="1">
+<section class="slide pp" data-s="1">
   <span class="tag">1 · AI LÀ GÌ</span>
-  <div class="emoji" style="font-size:90px">🦜</div>
-  <h2 style="margin-top:16px">Vì đoán, nên có thể sai</h2>
-  <div class="row mid">
-    <div class="card side" style="width:420px;font-size:26px"><b class="t">AI chọn</b>cái <b>nghe hợp lý nhất</b></div>
-    <div class="arrow" style="font-size:30px;font-weight:800">khác</div>
-    <div class="card fill" style="width:420px;font-size:26px"><b class="t">Không chắc là</b>cái <b>đúng nhất</b></div>
+  <div class="opener">
+    <div>
+      <h2>Vì đoán,<br>nên có thể sai</h2>
+      <div class="vs">
+        <p><span class="lb">AI chọn</span> cái <b>nghe hợp lý nhất</b></p>
+        <p class="k">khác</p>
+        <p class="hi"><span class="lb">Không chắc là</span> cái <b>đúng nhất</b></p>
+      </div>
+    </div>
+    <div class="hero" aria-hidden="true" style="width:380px;height:380px">
+      <span class="ring"></span>
+      <span class="b b1" style="font-size:170px">🦜</span><span class="b b2">💬</span><span class="b b3">❓</span>
+    </div>
   </div>
-  <div class="chot" style="align-self:stretch">Giống con vẹt nói rất trôi chảy — nhưng <em>không tự kiểm tra lại</em>.</div>
+  <div class="chot">Giống con vẹt nói rất trôi chảy — nhưng <em>không tự kiểm tra lại</em>.</div>
 </section>
 
-<section class="slide" data-s="1">
+<section class="slide pp" data-s="1">
   <span class="tag">1 · AI LÀ GÌ</span>
   <h2>2 loại AI</h2>
-  <div class="row">
-    <div class="card side" style="flex:1"><span class="ic">🔮</span><b class="t">AI dự đoán</b>Đoán điều sắp xảy ra, phân loại.
+  <div class="icgrid duo" style="--n:2">
+    <div class="it side"><div class="icn sm pink">🔮</div><b class="t">AI dự đoán</b>
+      <p>Đoán điều sắp xảy ra, phân loại.</p>
       <p class="cap">Gmail lọc thư rác · YouTube gợi ý video · Dự báo thời tiết</p><p class="cap">Có từ lâu, chạy ngầm.</p></div>
-    <div class="card fill" style="flex:1.6;font-size:26px"><span class="ic" style="font-size:56px">✨</span><b class="t" style="font-size:34px">AI tạo nội dung</b>Viết, vẽ, nói ra thứ mới.
-      <p class="muted" style="font-size:22px">ChatGPT viết thư · Gemini soạn giáo án · Vẽ tranh</p>
-      <p style="font-weight:700;margin-bottom:0">Mới nổi từ 2022. Mình trò chuyện trực tiếp.</p></div>
+    <div class="it main"><div class="icn lg">✨</div><b class="t">AI tạo nội dung</b>
+      <p style="font-size:26px">Viết, vẽ, nói ra thứ mới.</p>
+      <p class="muted">ChatGPT viết thư · Gemini soạn giáo án · Vẽ tranh</p>
+      <p style="font-weight:700;font-size:26px">Mới nổi từ 2022. Mình trò chuyện trực tiếp.</p></div>
   </div>
 </section>
 
-<section class="slide" data-s="1">
+<section class="slide pp prac" data-s="1">
   <span class="tag">1 · AI LÀ GÌ</span>
   <span class="practice">✋ THỰC HÀNH</span>
   <h2>Đoán chữ tiếp theo</h2>
@@ -303,7 +424,7 @@
 </section>
 
 <!-- ===================== 2. BẢN ĐỒ AI ===================== -->
-<section class="slide" data-s="2">
+<section class="slide pp" data-s="2">
   <span class="tag">2 · BẢN ĐỒ AI</span>
   <h2>🗺️ 4 cái tên hay gặp</h2>
   <div class="foldrow" data-one style="--n:4">
@@ -327,7 +448,7 @@
   <div class="chot"><em>Cách hỏi</em> quan trọng hơn <em>chọn app</em>.<small>Buổi này chỉ dùng phần trò chuyện. Chọn 1–2 cái, dùng cho quen tay.</small></div>
 </section>
 
-<section class="slide" data-s="2">
+<section class="slide pp prac" data-s="2">
   <span class="tag">2 · BẢN ĐỒ AI</span>
   <span class="practice">✋ THỰC HÀNH</span>
   <h2>Hỏi 1 câu, 2 AI</h2>
