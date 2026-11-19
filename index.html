@@ -242,6 +242,8 @@
   .pp ol.steps > li { counter-increment: st; position: relative; padding-left: 50px; }
   .pp ol.steps > li::before { content: counter(st); position: absolute; left: 0; top: 1px; width: 36px; height: 36px; border-radius: 50%;
     background: var(--pp-green); color: #fff; font: 800 19px/36px var(--serif); text-align: center; }
+  .pp ol.steps.sm > li { padding-left: 44px; margin: 4px 0; }
+  .pp ol.steps.sm > li::before { width: 30px; height: 30px; font-size: 18px; line-height: 30px; }
   .pp .vs p { font-size: 28px; margin: 0; }
   .pp .vs .lb { font: 700 24px var(--serif); color: #4b5563; }
   .pp .vs .k { font: 800 24px var(--serif); color: var(--pp-coral); margin: 6px 0 6px 30px; }

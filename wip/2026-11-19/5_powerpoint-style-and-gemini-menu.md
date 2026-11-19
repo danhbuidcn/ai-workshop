@@ -53,7 +53,7 @@ Thử mở thư mục Drive bằng WebFetch; không đọc được thì chỉ d
 - [x] Áp bộ mẫu cho toàn bộ slide từ slide 4 trở đi (gồm 12–14, 23), giữ nội dung + tương tác — xong (2026-11-19 18:40): cả 30 slide có class `pp`. Thêm CSS "Đợt 2" (ngón tay, thẻ khái niệm, Trung tâm + 4 ý `.hub`, vòng tròn "đừng đưa", mục lục tổng kết). Tràn dọc 0 ở slide 11–13, 15, 18, 20–23, 25, 28, 30; slide thực hành/có khung ①② vẫn cuộn như trước. Chi tiết ở "Đợt 2" trong `## Kết quả`.
 - [x] Sửa menu Gemini theo mục C ở slide, phiếu, outline, README — xong (2026-11-19 18:55): slide 21 (4 bước), 23 (bảng thêm dòng "Chỉ dẫn cho Gemini"), 28, 29, 30; phiếu 5 (Cách C) + phiếu 7; `outline/05`, `outline/07`; `sources/gemini-mau.md`. README không có chỗ nói menu → không sửa. `grep` "Customize / Connected Apps / Hướng dẫn cho Gemini / Khám phá Gem" ngoài `wip/`: 0 chỗ cũ.
 - [x] Máy trung gian: 20 lượt / 5 phút / người + trần chung; deploy, thử gọi thật, sửa `proxy/HUONG-DAN.md` (để sau khi owner duyệt 10 slide) — xong (2026-11-19 17:57): `proxy/Code.gs` đếm theo khung 5 phút: 20 lượt/người (theo cid), trần chung 100 lượt/5 phút (= trung bình 20/phút như cũ). `node proxy/test-proxy.js` qua. `bash proxy/deploy.sh` → bản @5, gọi thử `{"ok":true,...}`. Thử thật 21 lượt cùng 1 người trong 1 khung: lượt 21 báo "Bạn đã hỏi 20 lần trong 5 phút. Chờ 3 phút rồi thử lại." Quét key trong repo + lịch sử git: 0.
-- [ ] Kiểm tra: không tràn chữ, "nheo mắt", đọc được ở 1280×720 và laptop nhỏ, in PDF ≤ 30 trang, không lỗi JS, không lộ key, không có ảnh mẫu/ảnh Gemini trong repo (`git ls-files`), commit (không push)
+- [x] Kiểm tra: không tràn chữ, "nheo mắt", đọc được ở 1280×720 và laptop nhỏ, in PDF ≤ 30 trang, không lỗi JS, không lộ key, không có ảnh mẫu/ảnh Gemini trong repo (`git ls-files`), commit (không push) — xong (2026-11-19 18:10): số liệu ở "Kiểm tra cuối" trong `## Kết quả`. Không push.
 ## Kết quả
 ### Layout học được (5 ảnh mẫu `mau-17…21`)
 | Ảnh | Layout | Cái tạo điểm nhấn | Dùng ở slide |
@@ -106,6 +106,44 @@ Chung: nền kem, trang trí góc (tam giác, vòng cung, chấm, nét lượn) 
 - Quyết định tự chọn: owner ghi "slide 2" cho 3 ý cần bỏ, nhưng 3 ý đó chỉ có ở slide 3 → bỏ ở slide 3. Kiểu danh sách chung: `ul.dot` (và `.ls` để dùng trong nút bấm). Vòng tròn biểu tượng ở slide 9 nhỏ lại 96 → 80px để thẻ không tràn. Slide 9 giữ tên "4 cái tên" vì có đúng 4 thẻ.
 - Còn lệch: ở slide 9, khi bấm mở 1 thẻ, slide dài thêm 80px và phải cuộn (trước là 39px), vì thẻ giờ có 2 dòng danh sách. Nhãn "⬇ Cuộn xuống xem tiếp" hiện như cũ.
 
-### Còn lại (chờ owner duyệt)
-- Bước 3–6 ở `## Plan`: áp cho slide 11–30, sửa menu Gemini, máy trung gian 20 lượt/5 phút, kiểm tra toàn bộ.
+### Đợt 2: slide 11–30 + menu Gemini + máy trung gian (2026-11-19 18:10)
+| Slide | Sau (mẫu dùng) | Ảnh |
+|---|---|---|
+| 11 | 5 ngón tay thành thẻ trắng, số có chân màu xanh; ngón 3 (giữa) màu san hô | [11](img/5_slide-11.png) |
+| 12, 15, 21, 23 | Thẻ khái niệm trắng: số tròn xanh, biểu tượng trong vòng tròn hồng/xanh nhạt, tên có chân màu xanh; câu mô tả → danh sách chấm san hô | [12](img/5_slide-12.png) [15](img/5_slide-15.png) [21](img/5_slide-21.png) [23](img/5_slide-23.png) |
+| 13 | Thẻ bấm để mở kiểu slide 9; chi tiết khi mở → danh sách | [13](img/5_slide-13.png) |
+| 14, 19, 24, 29 | Bài thực hành: nền + tiêu đề mới, số bước trong vòng tròn xanh (cỡ nhỏ 30px cho `steps sm`) | [14](img/5_slide-14.png) [19](img/5_slide-19.png) [24](img/5_slide-24.png) [29](img/5_slide-29.png) |
+| 16 | 5 thẻ giữ 5 màu (khớp màu tô câu mẫu), thêm vạch màu trên; 🩺 trong vòng tròn | [16](img/5_slide-16.png) |
+| 17, 26, 27 | Nền + tiêu đề mới; slide 27: 4 bài học → danh sách 2 cột | [17](img/5_slide-17.png) [26](img/5_slide-26.png) [27](img/5_slide-27.png) |
+| 18 | **Trung tâm + 4 ý** (mẫu 21): vòng tròn hồng 🤝 giữa, 2 ý mỗi bên nối đường mảnh; "Chịu trách nhiệm" san hô | [18](img/5_slide-18.png) |
+| 20 | Số 1, 2 trong vòng tròn xanh; "Gom vào 1 folder" → danh sách | [20](img/5_slide-20.png) |
+| 22 | 4 vòng tròn viền đỏ nhạt (🪪💰🏥🔑) + tên, không còn thẻ | [22](img/5_slide-22.png) |
+| 25 | **Mục lục** (mẫu 17): 01–04 trong vòng tròn xanh, mỗi phần là danh sách 2 cột | [25](img/5_slide-25.png) |
+| 28 | 4 khối = 4 vòng tròn biểu tượng (khung trả lời san hô); chỗ dán → danh sách 2 dòng | [28](img/5_slide-28.png) |
+| 30 | **Chốt** kiểu mở phần: "Cảm ơn mọi người!" 84px trái + cụm vòng tròn 🙏🗣️💡 phải; Chia sẻ / Mang về là danh sách | [30](img/5_slide-30.png) |
+
+- **Menu Gemini (mục C):** `Tuỳ chỉnh → Trình kết nối → Google Workspace → +`, đường phụ `⚙️ → Trí thông minh cá nhân → Các ứng dụng có thể kết nối`, câu "không thấy thì tìm chữ 'Trình kết nối' / 'Connectors'". Bài tập cuối: `⚙️ → Trí thông minh cá nhân → Chỉ dẫn cho Gemini`; Gem là cách khác. Sửa ở slide 21, 23, 28, 29, 30, phiếu 5 + 7 (`handouts/index.html`), `outline/05`, `outline/07`, `sources/gemini-mau.md`.
+- **Máy trung gian:** 20 lượt / 5 phút / người (theo `cid` = từng trình duyệt), trần chung **100 lượt / 5 phút** cả lớp. Đã deploy (bản @5), thử thật: lượt 21 bị chặn đúng câu báo.
+
+### Kiểm tra cuối (Chrome headless, 1280×720)
+- Lỗi JS: 0 (trang slide và trang phiếu). Chữ < 18px: 0. Tràn ngang: chỉ slide 26 (khối trả lời mẫu chia 2 cột, có từ trước).
+- Tràn dọc 0 ở slide 1–7, 9, 11–13, 15, 18, 20–23, 25, 28, 30. Các slide có khung ① ② vẫn cuộn như trước: 8 (94px), 10 (115), 14 (463), 16 (267), 17 (195), 19 (375), 24 (492), 26 (167), 27 (50), 29 (317).
+- Bấm mở thẻ: slide 13 vừa khung; slide 20 dài thêm 75px; slide 21 (4 bước) 343px, slide 23 (bảng) 511px. Trước đợt 2 là 0 / 246 / 299: dài hơn vì chữ có chân + thêm dòng "Chỉ dẫn cho Gemini".
+- In PDF: 30 trang. Slide dài tự thu nhỏ; nhỏ nhất slide 21 (0,53, trước 0,57) và 23 (0,59, trước 0,66).
+- Laptop 1024×600: slide 18, 25 vừa khung (tự thu nhỏ).
+- "Nheo mắt" (làm mờ 3px, `/tmp/aw5/blur2.png`): thấy tiêu đề mọi slide; điểm nhấn: 5 ngón (11), 2 thẻ (12), vòng tròn giữa (18), 4 vòng tròn đỏ (22), số 01–04 (25), 4 vòng tròn (28), cụm 🙏 (30).
+- Quét key trong repo + lịch sử git: 0. `git ls-files`: không có ảnh mẫu `mau-*` hay ảnh chụp Gemini (chỉ ảnh slide của mình trong `img/`).
+
+### Quyết định worker tự chọn (đợt 2)
+- Trần chung 100 lượt / 5 phút: giữ mức trung bình cũ (20 lượt/phút) nhưng cho dồn lượt trong 5 phút. Nếu trần chung là 20/phút thì 1 người dùng hết 20 lượt đã chặn cả lớp. Gemini báo hết hạn mức (429) thì trang báo bằng tiếng Việt như cũ. Không thêm trần theo ngày (giữ đơn giản).
+- Đếm theo khung 5 phút cố định (không trượt): đơn giản, đủ dùng.
+- Slide 23: thêm 1 dòng bảng "Gemini · Chỉ dẫn cho Gemini" (hợp ý "để AI luôn nhớ"); `outline/05` thêm dòng tương ứng.
+- Slide 29: rút tiêu đề còn "Hướng dẫn 4 khối cho việc của bạn" để vừa 1 dòng ở cỡ 56px.
+- Slide 30: thêm "Chỉ dẫn cho Gemini" vào dòng Mang về.
+- Slide 16 giữ 5 màu riêng (không đổi sang bảng màu mẫu) vì 5 màu này khớp màu tô trong câu mẫu ở slide 14, 17, 19.
+- `sources/gemini-mau.md`: giữ tên tiếng Anh "Instructions for Gemini" (là lời Gemini nói), thêm đường đi tiếng Việt.
+
+### Còn lại
 - Nhãn "⬇ Cuộn xuống xem tiếp" có thể hiện thoáng qua khi vừa chuyển slide (có từ trước).
+- Bảng ở slide 23 và 4 bước ở slide 21 khi mở khá dài (phải cuộn); muốn gọn hơn thì cắt chữ.
+- Chưa push/merge (runner làm).
