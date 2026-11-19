@@ -66,3 +66,10 @@ Quyết định worker tự chọn:
 - Ô prompt sửa được; còn chỗ `[ ]` thì nhắc sửa trước khi gửi. Ô cần Gmail/Drive/file và các đoạn "hướng dẫn 4 khối" không có nút (thử ở khung riêng).
 
 Còn lại: owner cấp quyền Apps Script 1 lần + gọi thử thật + push (xem Handoff).
+
+## Việc tiếp (2026-11-19 15:58, từ coordinator)
+Owner chạy `bash proxy/deploy.sh` → proxy trả "chưa có key Gemini". Nguyên nhân nghi: `deploy.sh` dùng `s.replace("__GEMINI_KEY__", ...)` thay chỗ đầu tiên, mà chỗ đầu tiên là dòng chú thích 3 của `proxy/Code.gs`, nên `var KEY_IN_CODE = '__GEMINI_KEY__'` vẫn là chỗ trống.
+- [ ] Sửa để chỉ thay đúng `'__GEMINI_KEY__'` có dấu nháy ở dòng `var KEY_IN_CODE` (và bỏ chuỗi này khỏi chú thích)
+- [ ] Chạy lại `bash proxy/deploy.sh` (đã đăng nhập clasp, đã cấp quyền), kiểm tra in `{"ok":true,...}`. Không in key
+- [ ] Thử thật trên slide #8 bằng Chrome (nút ▶ Chạy thử ra câu trả lời)
+- [ ] `grep -r` + `git log -p` không thấy key; commit (không push)
