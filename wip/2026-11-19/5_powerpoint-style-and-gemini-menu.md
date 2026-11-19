@@ -1,0 +1,41 @@
+# Slide kiểu PowerPoint có điểm nhấn + sửa menu Gemini theo giao diện thật
+Nhánh: .
+Phụ thuộc: 4_design-pass.md
+## Input
+Owner (2026-11-19):
+1. Thiết kế slide "như PowerPoint" (các slide mẫu owner gửi, từ slide 4 của mẫu trở đi), vì chữ/khối hiện tại không tạo được điểm nhấn. Tham khảo thêm thư mục mẫu: https://drive.google.com/drive/folders/1T6xAyeMAyJ42Oaj2-FvZOQV9eLaPngXq
+2. Sửa hướng dẫn nối Gmail/Drive cho đúng giao diện Gemini tiếng Việt thật (owner gửi ảnh).
+## Context
+### A. Ảnh mẫu (để NGOÀI repo, không commit)
+`~/.config/ai-workshop/design-ref/mau-17.png … mau-21.png` (mẫu Google Slides chủ đề "Sports and Physical Activity"). Đọc từng ảnh bằng Read. Không chép ảnh/mẫu vào repo, không dùng chữ/hình gốc; chỉ học **cách bố cục**.
+Điểm chung cần học:
+- Nền kem ấm, trang trí góc (vòng tròn, chấm, nét lượn, mảng màu) tạo khung, không che chữ.
+- Tiêu đề rất to, đậm (font có chân/serif đậm cho tiêu đề + font gọn cho thân bài; chỉ dùng font có sẵn trên Windows/web, không tải ngoài nếu làm chậm).
+- **Mục lục đánh số**: vòng tròn xanh đậm có số 01/02/03/04, cạnh đó tiêu đề màu + 1 dòng mô tả.
+- **Số lớn làm điểm nhấn**: 1 con số khổng lồ, caption nhỏ.
+- **Vòng tròn biểu tượng** (icon trong hình tròn) trên mỗi ý, tiêu đề màu + 1–2 dòng chữ; lưới 3×2 đều.
+- **Vòng tròn trung tâm** + 4 ý xung quanh nối bằng đường mảnh.
+- Bảng: hàng tiêu đề màu hồng, cột đầu xanh đậm chữ trắng, số to đậm.
+- Slide mở phần: số rất lớn + tên phần + hình minh hoạ lớn bên phải.
+- Palette: xanh lá đậm, cam san hô, hồng nhạt, vàng, xanh đen cho chữ, nền kem. Ít chữ, chữ lớn, nhiều khoảng thở.
+Thử mở thư mục Drive bằng WebFetch; không đọc được thì chỉ dùng 5 ảnh, ghi vào Kết quả.
+### B. Việc thiết kế
+- Bộ "mẫu slide" HTML/CSS dùng chung: Mở phần (số lớn + tên + hình), Mục lục đánh số, Ý chính + số lớn, Lưới 3 ý (vòng tròn biểu tượng), Sơ đồ trung tâm + 4 ý, So sánh 2 thẻ (từ plan 4), Bảng, Thực hành ①② (đã có), Chốt (câu cần nhớ).
+- Hình minh hoạ tự vẽ bằng SVG/emoji lớn trong vòng tròn (nhất quán, không cần mạng, không dùng ảnh có bản quyền). Mỗi slide ≥1 hình khối phục vụ ý chính.
+- Mỗi slide 1 điểm nhấn duy nhất. Kiểm bằng "nheo mắt": làm mờ ảnh chụp, thấy ý chính trước.
+- Giữ tương tác từ plan 4 (bấm để mở, so sánh 2 cột), chữ chân "danhbuidcn", ≤ 30 slide. Chữ thân ≥ 20px, tiêu đề ≥ 56px trên khung 1280×720.
+### C. Sửa menu Gemini (giao diện tiếng Việt thật của owner; ảnh `~/.config/ai-workshop/design-ref/gemini-menu-*.png`, đọc để xác nhận)
+- Thanh trái: Cuộc trò chuyện mới, Thư viện, Đã lên lịch, **Tuỳ chỉnh**, Video, Sổ ghi chú.
+- Menu tài khoản: **Trí thông minh cá nhân**, **Kỹ năng**, **Gem**, Giao diện, ...
+- **Tuỳ chỉnh** có 3 tab: **Khám phá | Trình kết nối | Kỹ năng**. Tab **Trình kết nối** (gemini.google.com/customize/connectors) có **Google Workspace** (Gmail, Drive, Docs…), nút **+** để bật; ngoài ra Google Photos, YouTube, Danh bạ, YouTube Music.
+- **Trí thông minh cá nhân**: Bộ nhớ (công tắc), **Các ứng dụng có thể kết nối**, **Chỉ dẫn cho Gemini** (dặn cách trả lời cố định, hợp bài tập cuối), Tóm tắt bộ nhớ.
+- Việc: sửa mọi chỗ "Customize → Connectors" thành `Tuỳ chỉnh → Trình kết nối → Google Workspace → +` (đường phụ: `Trí thông minh cá nhân → Các ứng dụng có thể kết nối`). Bài tập cuối: thêm `Trí thông minh cá nhân → Chỉ dẫn cho Gemini` là chỗ dán khung trả lời cố định; Gem là cách khác. Thêm câu "không thấy thì tìm chữ 'Trình kết nối' hoặc 'Connectors'".
+- Ảnh chụp có tên + lịch sử chat riêng của owner: KHÔNG đưa vào repo.
+## Plan
+- Owner chốt thêm: nâng giới hạn máy trung gian lên **20 lượt / 5 phút** (hiện 5 lượt/phút toàn bộ; nút So sánh tốn 2 lượt). Sửa trong `proxy/Code.gs`, chạy lại `bash proxy/deploy.sh` (đã đăng nhập clasp), thử gọi thật, vẫn không in key. Chú ý: giới hạn này tính theo từng người (cid) hay toàn bộ? Giữ theo người, thêm trần chung hợp lý để không cạn hạn mức miễn phí của Google (ghi con số chọn vào Kết quả).
+- [ ] Đọc 5 ảnh mẫu + thử Drive; ghi bảng "layout học được" vào Kết quả
+- [ ] Làm bộ mẫu layout (CSS chung) + vài hình SVG/biểu tượng; làm 3 slide mẫu (mở phần, mục lục đánh số, lưới 3 ý), chụp ảnh lưu `wip/2026-11-19/img/` cho owner xem
+- [ ] Áp bộ mẫu cho toàn bộ slide từ slide 4 trở đi (gồm 12–14, 23), giữ nội dung + tương tác
+- [ ] Sửa menu Gemini theo mục C ở slide, phiếu, outline, README
+- [ ] Kiểm tra: không tràn chữ, "nheo mắt", đọc được ở 1280×720 và laptop nhỏ, in PDF ≤ 30 trang, không lỗi JS, không lộ key, không có ảnh mẫu/ảnh Gemini trong repo (`git ls-files`), commit (không push)
+## Kết quả
