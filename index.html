@@ -157,6 +157,9 @@
     background: rgba(0,0,0,.55); padding: 6px 10px; border-radius: 999px; color: #fff; font-size: 15px; }
   #nav button { background: transparent; border: 0; color: #fff; font-size: 20px; cursor: pointer; padding: 2px 10px; }
   #nav a { color: #fff; text-decoration: none; padding: 0 6px; }
+  #nav #count { font-size: 15px; padding: 2px 6px; text-decoration: underline dotted; text-underline-offset: 4px; }
+  #goto { width: 64px; font: 700 15px "Segoe UI", system-ui, sans-serif; text-align: center; border: 2px solid #fbbf24; border-radius: 8px; padding: 2px 4px; }
+  #goto.bad { border-color: #f87171; background: #fee2e2; }
   #bar { position: fixed; left: 0; bottom: 0; height: 5px; background: #fbbf24; z-index: 11; transition: width .2s; }
   #more { position: fixed; left: 50%; bottom: 14px; transform: translateX(-50%); z-index: 10; display: none; pointer-events: none;
     background: #1f2937; color: #fff; font-size: 16px; font-weight: 700; padding: 6px 16px; border-radius: 999px; box-shadow: 0 2px 8px rgba(0,0,0,.3); }
@@ -222,8 +225,15 @@
   .bignum p { font-size: 26px; max-width: 460px; margin: 0; }
   /* Chi tiết từng slide pp */
   .pp .learn > div { display: flex; align-items: center; gap: 14px; font-size: 23px; line-height: 1.3; margin: 5px 0; }
-  .pp .tips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; text-align: center; font-size: 20px; color: #374151; margin: 18px 0 0; }
-  .pp .tips b { display: block; font: 700 22px var(--serif); color: var(--pp-ink); }
+  /* Luật chung: nhiều ý → danh sách căn trái, mỗi dòng 1 ý ngắn (chấm san hô). Chỉ tiêu đề + câu chốt căn giữa.
+     ul.dot = danh sách thường · .ls > span = cùng kiểu nhưng đặt được trong nút (thẻ bấm để mở) */
+  .pp ul.dot, .pp .ls { display: block; list-style: none; padding: 0; margin: 6px 0 0; text-align: left; }
+  .pp ul.dot > li, .pp .ls > span { display: block; position: relative; padding-left: 26px; font-size: 22px; line-height: 1.35; margin: 5px 0; font-weight: 500; }
+  .pp ul.dot > li::before, .pp .ls > span::before { content: ""; position: absolute; left: 3px; top: calc(.675em - 6px); width: 12px; height: 12px;
+    border-radius: 50%; background: var(--pp-coral); }
+  .pp ul.dot.big > li { font-size: 25px; }
+  .pp .icgrid ul.dot { display: inline-block; }
+  .pp .foldrow .fold-b ul.dot { display: flex; flex-wrap: wrap; gap: 0 44px; margin: 0; } /* chi tiết thẻ: các ý nằm 1 hàng cho đỡ dài */
   .pp .flow.inl .st { flex-direction: row; gap: 12px; text-align: left; justify-content: flex-start; }
   .pp .flow.inl .st .ic { margin: 0; flex: none; width: 70px; height: 70px; font-size: 36px; }
   .pp .bar.top span.b { background: var(--pp-coral); }
@@ -256,8 +266,8 @@
   /* Thẻ bấm để mở trên slide pp: biểu tượng trong vòng tròn, căn giữa */
   .pp .fold.cardf > .fold-h { align-items: center; text-align: center; border-color: transparent; box-shadow: 0 6px 0 #f0e4cc; padding-top: 18px; }
   .pp .fold.cardf > .fold-h:hover { border-color: var(--pp-coral); }
-  .pp .fold-h .fic { width: 96px; height: 96px; border-radius: 50%; background: var(--pp-green); display: flex; align-items: center; justify-content: center;
-    font-size: 50px; box-shadow: 0 0 0 7px var(--pp-green-bg); margin-bottom: 8px; }
+  .pp .fold-h .fic { width: 80px; height: 80px; border-radius: 50%; background: var(--pp-green); display: flex; align-items: center; justify-content: center;
+    font-size: 42px; box-shadow: 0 0 0 7px var(--pp-green-bg); margin-bottom: 6px; }
   .pp .fold-h .ft { font-family: var(--serif); color: var(--pp-green); font-size: 30px; }
   .pp .foldrow > .fold.open > .fold-h { background: #fff; border-color: var(--pp-coral); box-shadow: 0 6px 0 var(--pp-pink); }
   /* Bảng kiểu mẫu: hàng đầu hồng chữ san hô đậm, cột đầu xanh đậm chữ trắng */
@@ -310,8 +320,14 @@
         <div><span class="num sm goal">5</span>Mang về 1 đoạn hướng dẫn để AI luôn trả lời đúng kiểu mình muốn.</div>
       </div>
     </div>
-    <div style="flex:1;text-align:center"><div class="icn sm pink">🙋</div><b style="font:700 30px var(--serif);color:var(--pp-green)">Dành cho ai</b>
-      <p style="font-size:22px;margin:6px 0 0">Người bận rộn, không rành kỹ thuật.<br>Giáo viên, nhân sự, nhân viên văn phòng.<br>Dùng ChatGPT hoặc Gemini bản miễn phí.</p>
+    <div style="flex:1.1">
+      <div style="display:flex;align-items:center;gap:16px"><div class="icn sm pink" style="margin:6px">🙋</div><b style="font:700 30px var(--serif);color:var(--pp-green)">Dành cho ai</b></div>
+      <ul class="dot">
+        <li>Người bận rộn</li>
+        <li>Không rành kỹ thuật</li>
+        <li>Giáo viên, nhân sự, văn phòng</li>
+        <li>Dùng ChatGPT hoặc Gemini bản miễn phí</li>
+      </ul>
     </div>
   </div>
   <div class="flow inl" style="margin-top:20px">
@@ -333,11 +349,6 @@
     <div class="it"><span class="num">03</span><div><b>✋ 5 nguyên tắc</b><span class="d">5 ngón tay khi làm việc với AI</span></div></div>
     <div class="it goal"><span class="num goal">07</span><div><b>🎯 Bài tập cuối</b><span class="d">Đoạn hướng dẫn mang về dùng</span></div></div>
     <div class="it"><span class="num">04</span><div><b>✍️ Cách giao việc</b><span class="d">Công thức 5 phần</span></div></div>
-  </div>
-  <div class="tips">
-    <div><b>💻 Mở sẵn AI</b>ChatGPT hoặc Gemini, bản miễn phí.</div>
-    <div><b>🙋 Hỏi thoải mái</b>Không có câu hỏi ngớ ngẩn.</div>
-    <div><b>🛠️ Làm thật</b>Dùng việc thật của mình để thực hành.</div>
   </div>
   <div class="chot">Mỗi phần có <em>1 bài thực hành nhỏ</em>.</div>
 </section>
@@ -372,7 +383,10 @@
   <div class="bar"><span class="l">cơm</span><span class="b" style="width:250px">25%</span></div>
   <div class="bar"><span class="l">chuột</span><span class="b" style="width:100px">10%</span></div>
   <div class="bar"><span class="l">…</span><span class="b" style="width:56px;padding-left:6px">5%</span></div>
-  <p>AI chọn chữ có khả năng cao, viết ra, rồi lại đoán chữ sau. Cả bài văn được viết <b>từng chữ một</b>, rất nhanh.</p>
+  <ul class="dot big">
+    <li>AI chọn chữ có khả năng cao, viết ra, rồi đoán chữ sau.</li>
+    <li>Cả bài văn được viết <b>từng chữ một</b>, rất nhanh.</li>
+  </ul>
   <div class="chot">Nhớ đơn giản: AI là <em>máy đoán chữ</em>.<small>Tên gọi: "mô hình ngôn ngữ lớn" (tiếng Anh: LLM).</small></div>
 </section>
 
@@ -400,12 +414,19 @@
   <h2>2 loại AI</h2>
   <div class="icgrid duo" style="--n:2">
     <div class="it side"><div class="icn sm pink">🔮</div><b class="t">AI dự đoán</b>
-      <p>Đoán điều sắp xảy ra, phân loại.</p>
-      <p class="cap">Gmail lọc thư rác · YouTube gợi ý video · Dự báo thời tiết</p><p class="cap">Có từ lâu, chạy ngầm.</p></div>
+      <ul class="dot">
+        <li>Đoán điều sắp xảy ra, phân loại</li>
+        <li>Ví dụ: Gmail lọc thư rác</li>
+        <li>Ví dụ: YouTube gợi ý video</li>
+        <li>Có từ lâu, chạy ngầm</li>
+      </ul></div>
     <div class="it main"><div class="icn lg">✨</div><b class="t">AI tạo nội dung</b>
-      <p style="font-size:26px">Viết, vẽ, nói ra thứ mới.</p>
-      <p class="muted">ChatGPT viết thư · Gemini soạn giáo án · Vẽ tranh</p>
-      <p style="font-weight:700;font-size:26px">Mới nổi từ 2022. Mình trò chuyện trực tiếp.</p></div>
+      <ul class="dot big">
+        <li>Viết, vẽ, nói ra thứ mới</li>
+        <li>Ví dụ: ChatGPT viết thư, Gemini soạn giáo án</li>
+        <li>Mới nổi từ 2022</li>
+        <li><b>Mình trò chuyện trực tiếp</b></li>
+      </ul></div>
   </div>
 </section>
 
@@ -428,21 +449,24 @@
   <span class="tag">2 · BẢN ĐỒ AI</span>
   <h2>🗺️ 4 cái tên hay gặp</h2>
   <div class="foldrow" data-one style="--n:4">
-    <div class="fold cardf"><button type="button" class="fold-h"><span class="fic">💬</span><b class="ft">ChatGPT</b><span class="fs">Dùng khi: hỏi nhanh, viết thư, soạn bài</span></button>
-      <div class="fold-b"><p><b>ChatGPT</b> <span class="muted">(OpenAI)</span>: phổ biến nhất, đa năng.</p></div></div>
-    <div class="fold cardf"><button type="button" class="fold-h"><span class="fic">🔵</span><b class="ft">Gemini</b><span class="fs">Dùng khi: làm việc với Gmail, Google Drive</span></button>
-      <div class="fold-b"><p><b>Gemini</b> <span class="muted">(Google)</span>: gắn với Gmail, Drive, YouTube.</p></div></div>
-    <div class="fold cardf"><button type="button" class="fold-h"><span class="fic">✍️</span><b class="ft">Claude</b><span class="fs">Dùng khi: viết văn bản dài; <b>mạnh cả lập trình</b></span></button>
-      <div class="fold-b"><p><b>Claude</b> <span class="muted">(Anthropic)</span>: viết tự nhiên, giọng tự nhiên, đọc tài liệu dài, <b>mạnh cả lập trình</b>.</p></div></div>
-    <div class="fold cardf"><button type="button" class="fold-h"><span class="fic">🔎</span><b class="ft">Perplexity</b><span class="fs">Dùng khi: cần thông tin mới, cần biết nguồn</span></button>
-      <div class="fold-b"><p><b>Perplexity</b>: tìm trên mạng, ghi rõ nguồn.</p></div></div>
+    <div class="fold cardf"><button type="button" class="fold-h"><span class="fic">💬</span><b class="ft">ChatGPT</b><span class="ls"><span>Dùng khi: hỏi nhanh, viết thư</span><span>Mạnh: đa năng, phổ biến nhất</span></span></button>
+      <div class="fold-b"><ul class="dot"><li>Hãng: OpenAI</li><li>Vào: chatgpt.com</li></ul></div></div>
+    <div class="fold cardf"><button type="button" class="fold-h"><span class="fic">🔵</span><b class="ft">Gemini</b><span class="ls"><span>Dùng khi: làm với Gmail, Drive</span><span>Mạnh: gắn với đồ Google</span></span></button>
+      <div class="fold-b"><ul class="dot"><li>Hãng: Google</li><li>Vào: gemini.google.com</li><li>Đọc được Gmail, Drive, YouTube</li></ul></div></div>
+    <div class="fold cardf"><button type="button" class="fold-h"><span class="fic">✍️</span><b class="ft">Claude</b><span class="ls"><span>Dùng khi: viết, đọc tài liệu dài</span><span>Mạnh: giọng tự nhiên, <b>lập trình</b></span></span></button>
+      <div class="fold-b"><ul class="dot"><li>Hãng: Anthropic</li><li>Vào: claude.ai</li></ul></div></div>
+    <div class="fold cardf"><button type="button" class="fold-h"><span class="fic">🔎</span><b class="ft">Perplexity</b><span class="ls"><span>Dùng khi: cần thông tin mới</span><span>Mạnh: ghi rõ nguồn</span></span></button>
+      <div class="fold-b"><ul class="dot"><li>Tìm trên mạng rồi tóm tắt</li><li>Vào: perplexity.ai</li></ul></div></div>
   </div>
   <p class="fold-hint">👆 Bấm vào từng ô để xem thêm. Cả 4 đều có bản miễn phí (giới hạn số lượt mỗi ngày).</p>
   <div class="fold" style="margin-top:12px">
     <button type="button" class="fold-h">🛠️ Còn nghe tên Codex, Claude Code? <span class="muted" style="font-weight:500">&nbsp;Công cụ cho lập trình viên</span></button>
     <div class="fold-b">
-      <p><b>💬 ChatGPT</b> khác <b>🛠️ Codex</b> (cùng của OpenAI): ChatGPT để <b>trò chuyện</b>. Codex là công cụ giúp lập trình viên <b>viết và sửa phần mềm</b>.</p>
-      <p><b>✍️ Claude</b> khác <b>🛠️ Claude Code</b> (cùng của Anthropic): Claude để <b>trò chuyện</b>. Claude Code là công cụ <b>lập trình</b>, làm việc thẳng trên máy tính của lập trình viên.</p>
+      <ul class="dot">
+        <li><b>💬 ChatGPT</b> và <b>✍️ Claude</b>: để <b>trò chuyện</b>.</li>
+        <li><b>🛠️ Codex</b> (của OpenAI): giúp lập trình viên <b>viết, sửa phần mềm</b>.</li>
+        <li><b>🛠️ Claude Code</b> (của Anthropic): công cụ <b>lập trình</b>, chạy thẳng trên máy của lập trình viên.</li>
+      </ul>
     </div>
   </div>
   <div class="chot"><em>Cách hỏi</em> quan trọng hơn <em>chọn app</em>.<small>Buổi này chỉ dùng phần trò chuyện. Chọn 1–2 cái, dùng cho quen tay.</small></div>
@@ -918,7 +942,8 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
 <div id="more">⬇ Cuộn xuống xem tiếp</div>
 <nav id="nav">
   <button id="prev" title="Trang trước (←)">◀</button>
-  <span id="count"></span>
+  <button id="count" title="Bấm để gõ số slide muốn tới (rồi Enter)"></button>
+  <input id="goto" type="number" min="1" inputmode="numeric" aria-label="Đi tới slide số" hidden>
   <button id="next" title="Trang sau (→)">▶</button>
   <button id="full" title="Toàn màn hình (F)">⛶</button>
   <a href="handouts/index.html" title="Phiếu thực hành">📄</a>
@@ -951,6 +976,22 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
 
   document.getElementById('prev').onclick = function () { show(cur - 1); };
   document.getElementById('next').onclick = function () { show(cur + 1); };
+  // Bấm "x / 30" → gõ số + Enter để nhảy tới slide đó (Esc hoặc bấm ra ngoài để thôi)
+  var go = document.getElementById('goto');
+  function closeGo() { go.hidden = true; go.classList.remove('bad'); count.hidden = false; }
+  count.onclick = function () {
+    go.max = slides.length; go.value = cur + 1;
+    count.hidden = true; go.hidden = false; go.focus(); go.select();
+  };
+  go.onkeydown = function (e) {
+    e.stopPropagation();
+    if (e.key === 'Enter') {
+      var n = parseInt(go.value, 10);
+      if (n >= 1 && n <= slides.length) { show(n - 1); closeGo(); }
+      else { go.classList.add('bad'); go.select(); }
+    } else if (e.key === 'Escape') closeGo();
+  };
+  go.onblur = closeGo;
   document.getElementById('full').onclick = function () {
     if (!document.fullscreenElement) document.documentElement.requestFullscreen(); else document.exitFullscreen();
   };

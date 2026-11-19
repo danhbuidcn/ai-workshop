@@ -1,11 +1,11 @@
 # Slide kiểu PowerPoint có điểm nhấn + sửa menu Gemini theo giao diện thật
 Nhánh: .
 Phụ thuộc: 4_design-pass.md
-## Handoff (2026-11-19 17:55)
-- **Đang ở đâu:** xong đợt 1 theo lệnh owner: bộ mẫu CSS kiểu PowerPoint + slide 1–10. DỪNG chờ owner duyệt. Slide 11–30 vẫn kiểu cũ, trang chạy bình thường.
-- **Owner xem:** ảnh `img/5_slide-01.png … 5_slide-10.png`, hoặc mở `index.html#1` … `#10`. So sánh với mẫu: mục "So với ảnh mẫu" trong `## Kết quả`.
-- **Bước tiếp (sau khi duyệt, `spawn --resume`):** sửa theo góp ý → thêm class `pp` + sắp layout cho slide 11–30 (bước 3) → sửa menu Gemini (bước 4) → máy trung gian 20 lượt/5 phút (bước 5) → kiểm tra (bước 6).
-- **File:** `index.html` (CSS mục "Kiểu PowerPoint" + slide 1–10), `outline/00-mo-dau.md` (dòng slide 3).
+## Handoff (2026-11-19 17:45)
+- **Đang ở đâu:** xong đợt 1b (góp ý của owner cho slide 1–10). DỪNG chờ owner duyệt. Slide 11–30 vẫn kiểu cũ, trang chạy bình thường.
+- **Owner xem:** ảnh mới `img/5_slide-02, 03, 05, 07, 09.png`, hoặc mở `index.html#2` …; thử bấm "x / 30" góc phải dưới, gõ số + Enter. Chi tiết: mục "Đợt 1b" trong `## Kết quả`.
+- **Bước tiếp (sau khi duyệt, `spawn --resume`):** thêm class `pp` + sắp layout cho slide 11–30, theo luật "nhiều ý → danh sách căn trái" (bước 3) → sửa menu Gemini (bước 4) → máy trung gian 20 lượt/5 phút (bước 5) → kiểm tra (bước 6).
+- **File:** `index.html` (CSS mục "Kiểu PowerPoint", `ul.dot`/`.ls`, ô `#goto` + slide 1–10).
 ## Input
 Owner (2026-11-19):
 1. Thiết kế slide "như PowerPoint" (các slide mẫu owner gửi, từ slide 4 của mẫu trở đi), vì chữ/khối hiện tại không tạo được điểm nhấn. Tham khảo thêm thư mục mẫu: https://drive.google.com/drive/folders/1T6xAyeMAyJ42Oaj2-FvZOQV9eLaPngXq
@@ -37,6 +37,14 @@ Thử mở thư mục Drive bằng WebFetch; không đọc được thì chỉ d
 - Việc: sửa mọi chỗ "Customize → Connectors" thành `Tuỳ chỉnh → Trình kết nối → Google Workspace → +` (đường phụ: `Trí thông minh cá nhân → Các ứng dụng có thể kết nối`). Bài tập cuối: thêm `Trí thông minh cá nhân → Chỉ dẫn cho Gemini` là chỗ dán khung trả lời cố định; Gem là cách khác. Thêm câu "không thấy thì tìm chữ 'Trình kết nối' hoặc 'Connectors'".
 - Ảnh chụp có tên + lịch sử chat riêng của owner: KHÔNG đưa vào repo.
 ## Plan
+- **Đợt 1b (owner góp ý sau khi xem 10 slide, 2026-11-19). Chỉ sửa slide 1–10 + thành phần chung, rồi DỪNG chờ duyệt, chưa làm slide 11–30:**
+  - [x] Thêm ô **nhập số để nhảy tới slide** (vd gõ 12 + Enter → tới slide 12; hợp lệ 1–30; hiện "x / 30" bấm vào để gõ số; cũng giữ `#số` trên địa chỉ). Không ảnh hưởng phím ←/→. — xong (17:45): "x / 30" thành nút; bấm → ô số; Enter nhảy, số sai (vd 99) ô đỏ + giữ nguyên, Esc/bấm ra ngoài thì thôi. Thử thật: #3 → gõ 12 → #12; → #13; ←← #11; 99 → không đổi; 30 → #30.
+  - [x] Slide 2, mục "Dành cho ai": đổi sang **danh sách theo dòng**, căn trái, mỗi dòng 1 ý ngắn (gạch đầu dòng hoặc vòng tròn nhỏ), thay vì đoạn văn căn giữa. — xong: vòng tròn 🙋 + tên cạnh nhau, 4 dòng chấm san hô.
+  - [x] Slide 2, ba ý "Mở sẵn AI / Hỏi thoải mái / Làm thật": **bỏ hẳn mục này**. — xong: 3 ý này nằm ở slide 3 (Bản đồ buổi học), đã bỏ ở đó + bỏ CSS `.tips`.
+  - [x] Slide 7 ("2 loại AI"): mỗi loại viết **gạch đầu dòng căn trái** (ví dụ, đặc điểm), bỏ các câu liền nhau dài; vẫn giữ vòng tròn biểu tượng và tên loại. — xong: mỗi loại 4 dòng.
+  - [x] Slide 9 ("4 cái tên hay gặp"): mỗi tên (ChatGPT, Gemini, Claude, Perplexity) có các ý bên trong dạng **danh sách gạch đầu dòng căn trái** (Dùng khi nào; Mạnh ở đâu…), không viết cụm văn căn giữa. Sửa tiêu đề cho khớp số thẻ thực tế (nếu còn Codex/Claude Code như một mục riêng thì đếm đúng). — xong: thẻ có 2 dòng "Dùng khi / Mạnh"; bấm mở thấy "Hãng / Vào: trang web"; ô Codex thành 3 dòng. Tiêu đề giữ "4": đúng 4 thẻ, Codex/Claude Code là ô phụ.
+  - **Luật chung từ nay cho mọi slide:** nội dung nhiều ý → danh sách căn trái, mỗi dòng 1 ý ngắn; chỉ tiêu đề và câu chốt mới căn giữa. Thông tin so sánh nhiều mục → danh sách, không đoạn văn.
+  - [x] Chụp lại ảnh các slide đã đổi (ghi đè `img/5_slide-0N.png`), commit, ghi Handoff, DỪNG. — xong: ghi đè ảnh 02, 03, 05, 07, 09.
 - **Nhắc lại của owner:** 10 slide đầu phải làm GIỐNG POWERPOINT NHƯ CÁC ẢNH MẪU (`mau-17…21.png`): nền kem có trang trí góc, tiêu đề to đậm, mục lục số trong vòng tròn, vòng tròn biểu tượng, số lớn, hình minh hoạ lớn, bảng màu. Không phải giao diện web/thẻ chữ như hiện tại. Nhìn ảnh mẫu bên cạnh slide mình làm để so (chụp cạnh nhau, ghi vào Kết quả: giống ở đâu, khác ở đâu).
 - **Owner (2026-11-19): làm trước 10 slide đầu để duyệt.** Chỉ làm bộ mẫu + slide 1–10 theo phong cách mới, chạy được trên trang thật (file `index.html`), chụp ảnh 10 slide vào `wip/2026-11-19/img/5_slide-01.png … 5_slide-10.png`, commit, rồi **DỪNG** (ghi Handoff: đã làm gì, bước tiếp, ảnh ở đâu). KHÔNG áp cho slide 11 trở đi, KHÔNG sửa menu Gemini (mục C) và KHÔNG nâng giới hạn lượt ở bước này: để sau khi owner duyệt. Slide 11–30 để nguyên kiểu cũ trong lúc chờ, trang vẫn chạy bình thường.
 - Chỉ sau khi owner duyệt mới làm phần còn lại (owner ra lệnh nối tiếp bằng `spawn --resume`).
@@ -87,6 +95,20 @@ Chung: nền kem, trang trí góc (tam giác, vòng cung, chấm, nét lượn) 
 - Slide 1 thêm 1 câu phụ "Học cách giao việc cho trợ lý AI." (lấy từ câu chốt slide 2). Slide 3: mô tả 1 dòng cho 7 phần lấy từ nội dung các phần; 3 lời dặn thành hàng 3 cột.
 - Đã viết sẵn CSS bảng kiểu mẫu (`.pp table`) để dùng ở đợt 2 (slide 23); "Trung tâm + 4 ý" làm ở đợt 2.
 - Có 2 worker cùng id chạy song song lúc đầu (pid 549174 và 550070); đã nhắn nhau, worker sau dừng, không sửa code.
+
+### Đợt 1b: sửa theo góp ý owner (2026-11-19 17:45)
+| Việc | Sau | Ảnh |
+|---|---|---|
+| Nhảy tới slide | Bấm "x / 30" (gạch chân chấm) → gõ số → Enter. Sai số: ô đỏ. Phím ←/→, `#số` trên địa chỉ vẫn chạy | — |
+| Slide 2 | "Dành cho ai": 4 dòng căn trái, chấm san hô | [5_slide-02](img/5_slide-02.png) |
+| Slide 3 | Bỏ 3 ý "Mở sẵn AI / Hỏi thoải mái / Làm thật" | [5_slide-03](img/5_slide-03.png) |
+| Slide 5 | Đoạn văn dưới cột → 2 dòng danh sách (theo luật chung) | [5_slide-05](img/5_slide-05.png) |
+| Slide 7 | Mỗi loại AI 4 dòng căn trái; giữ vòng tròn + tên | [5_slide-07](img/5_slide-07.png) |
+| Slide 9 | Thẻ: "Dùng khi / Mạnh" thành danh sách; chi tiết khi bấm: "Hãng / Vào: …" xếp 1 hàng; ô Codex 3 dòng | [5_slide-09](img/5_slide-09.png) |
+
+- Kiểm (1280×720, Chrome headless): tràn dọc 0 ở slide 1–7, 9; slide thực hành 8, 10 cuộn như trước (94px, 115px); chữ < 18px: 0; lỗi JS: 0; in PDF 30 trang; laptop 1024×600 vẫn vừa.
+- Quyết định tự chọn: owner ghi "slide 2" cho 3 ý cần bỏ, nhưng 3 ý đó chỉ có ở slide 3 → bỏ ở slide 3. Kiểu danh sách chung: `ul.dot` (và `.ls` để dùng trong nút bấm). Vòng tròn biểu tượng ở slide 9 nhỏ lại 96 → 80px để thẻ không tràn. Slide 9 giữ tên "4 cái tên" vì có đúng 4 thẻ.
+- Còn lệch: ở slide 9, khi bấm mở 1 thẻ, slide dài thêm 80px và phải cuộn (trước là 39px), vì thẻ giờ có 2 dòng danh sách. Nhãn "⬇ Cuộn xuống xem tiếp" hiện như cũ.
 
 ### Còn lại (chờ owner duyệt)
 - Bước 3–6 ở `## Plan`: áp cho slide 11–30, sửa menu Gemini, máy trung gian 20 lượt/5 phút, kiểm tra toàn bộ.
