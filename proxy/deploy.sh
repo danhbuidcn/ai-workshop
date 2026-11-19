@@ -24,10 +24,13 @@ if [ -z "$SCRIPT_ID" ]; then
 fi
 printf '{"scriptId":"%s","rootDir":"."}\n' "$SCRIPT_ID" > "$TMP/.clasp.json"
 cp appsscript.json "$TMP/"
-# Chèn key vào bản tạm (chỉ chỗ trống đầu tiên)
+# Chèn key vào bản tạm: chỉ thay đúng dòng `var KEY_IN_CODE = '__GEMINI_KEY__';`
 node -e 'const fs=require("fs");const k=fs.readFileSync(process.argv[1],"utf8").trim();const s=fs.readFileSync("Code.gs","utf8");
-if(!s.includes("__GEMINI_KEY__")){console.error("Code.gs thiếu chỗ trống __GEMINI_KEY__");process.exit(2)}
-fs.writeFileSync(process.argv[2],s.replace("__GEMINI_KEY__",()=>k))' "$KEY_FILE" "$TMP/Code.gs"
+const re=/^var KEY_IN_CODE = \x27__GEMINI_KEY__\x27;$/m;
+if(!re.test(s)){console.error("Code.gs thiếu dòng: var KEY_IN_CODE = \x27__GEMINI_KEY__\x27;");process.exit(2)}
+const out=s.replace(re,()=>"var KEY_IN_CODE = "+JSON.stringify(k)+";");
+if(out.includes("__GEMINI_KEY__")){console.error("Chèn key thất bại");process.exit(2)}
+fs.writeFileSync(process.argv[2],out)' "$KEY_FILE" "$TMP/Code.gs"
 
 (cd "$TMP" && "${CLASP[@]}" push -f)
 

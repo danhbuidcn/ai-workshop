@@ -1,6 +1,6 @@
 // Máy trung gian Gemini cho ai-workshop (Google Apps Script).
 // Trang web gọi vào đây; máy này gọi Gemini bằng key chung. Học viên không thấy key.
-// Bản trong git chỉ có chỗ trống __GEMINI_KEY__. Key thật: deploy.sh chèn lúc đẩy lên,
+// Bản trong git chỉ có chỗ trống ở dòng KEY_IN_CODE. Key thật: deploy.sh chèn lúc đẩy lên,
 // hoặc dán tay vào Cài đặt dự án → Thuộc tính tập lệnh, tên GEMINI_KEY.
 
 var MODELS = ['gemini-3.5-flash-lite', 'gemini-3.1-flash-lite']; // thử lần lượt; đổi model ở đây

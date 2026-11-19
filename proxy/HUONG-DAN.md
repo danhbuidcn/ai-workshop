@@ -6,7 +6,7 @@ Trang workshop có nút **▶ Chạy thử**. Nút này gửi câu hỏi tới m
 
 | File | Việc |
 |---|---|
-| [Code.gs](Code.gs) | Code máy trung gian. Chỉ có chỗ trống `__GEMINI_KEY__`, không có key. |
+| [Code.gs](Code.gs) | Code máy trung gian. Chỉ có chỗ trống ở dòng `var KEY_IN_CODE`, không có key. |
 | [appsscript.json](appsscript.json) | Cài đặt: ai cũng gọi được, chạy bằng tài khoản chủ. |
 | [deploy.sh](deploy.sh) | Đẩy code lên Apps Script, chèn key vào bản tạm, ghi địa chỉ vào [../ai.js](../ai.js). |
 | [test-proxy.js](test-proxy.js) | Kiểm tra code trên máy, không cần Google: `node proxy/test-proxy.js`. |
