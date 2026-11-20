@@ -1,8 +1,8 @@
 # wip 2026-11-19
 | File | Trạng thái |
 |---|---|
-| [11_ai-definition-text](11_ai-definition-text.md) | ⏳ chờ file 10 |
-| [10_reveal-on-enter-all-slides](10_reveal-on-enter-all-slides.md) | 🔄 worker |
+| [11_ai-definition-text](11_ai-definition-text.md) | 🔄 worker |
+| [10_reveal-on-enter-all-slides](10_reveal-on-enter-all-slides.md) | ⏸ xong, chờ owner xem |
 | [9_agenda-reveal-on-enter](9_agenda-reveal-on-enter.md) | ✅ xong |
 | [8_goal-critical-thinking](8_goal-critical-thinking.md) | ⏸ xong, chờ owner xem + push |
 | [7_swap-slides-2-3](7_swap-slides-2-3.md) | ⏸ xong, chờ owner xem + push |
