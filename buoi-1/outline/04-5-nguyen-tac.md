@@ -1,6 +1,6 @@
 # 4. 5 nguyên tắc cốt lõi (10 phút)
 
-Slide 13–19: slide 13 bàn tay 5 ngón (chỉ tên nguyên tắc, không ví dụ) · slide 14–18 mỗi nguyên tắc 1 slide (tiêu đề = câu tiếng Anh gốc, nội dung giữ nguyên văn bản owner duyệt, dòng cuối là câu chốt) · slide 19 thực hành.
+Slide 11–17: slide 11 bàn tay 5 ngón (mỗi ngón = câu tiếng Anh gốc) · slide 12–16 mỗi nguyên tắc 1 slide (tiêu đề = câu tiếng Anh gốc, nội dung giữ nguyên văn bản owner duyệt, dòng cuối là câu chốt) · slide 17 thực hành.
 
 Nguồn: chương 1 Claude 101 (Anthropic). Dùng được cho mọi AI, không riêng Claude.
 
@@ -31,7 +31,7 @@ Nguồn: chương 1 Claude 101 (Anthropic). Dùng được cho mọi AI, không 
 - Sau khi validate, vẫn check sanity ở mỗi output mới.
 
 ## Thực hành: "Viết lại câu trả lời đầu" (3 phút)
-1. Slide 19 có khung so sánh 2 cột: trái `Viết thông báo cho phụ huynh về buổi họp lớp.`, phải cùng việc viết theo công thức 5 phần (mỗi phần 1 màu).
+1. Slide 17 có khung so sánh 2 cột: trái `Viết thông báo cho phụ huynh về buổi họp lớp.`, phải cùng việc viết theo công thức 5 phần (mỗi phần 1 màu).
 2. Bấm **So sánh**: Gemini chạy cả 2 câu cùng lúc, 2 kết quả nằm cạnh nhau.
 3. Hỏi lớp: "2 kết quả khác nhau ở đâu?" → bấm 3 ô "nên nhìn" (giờ họp, giọng, độ dài).
 4. Nhắc: AI có thể khác mỗi lần, quan trọng là xu hướng. Cho học viên thử thêm cách gõ câu chỉnh trong cùng cuộc trò chuyện.

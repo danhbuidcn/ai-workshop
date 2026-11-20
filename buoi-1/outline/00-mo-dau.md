@@ -1,6 +1,6 @@
 # 0. Mở đầu (3 phút)
 
-Slide 1–3. Buổi học 1 giờ, 35 slide. Slide không ghi số phút, không ghi "lớp 5": số phút và lời nói chỉ ở `outline/`.
+Slide 1–3. Buổi học 1 giờ, 33 slide. Slide không ghi số phút, không ghi "lớp 5": số phút và lời nói chỉ ở `outline/`.
 
 ## Mục tiêu
 Mục tiêu của khoá: cho học viên tư duy làm việc với AI (tư duy phản biện: không tin ngay, luôn kiểm tra). Học viên biết hôm nay học gì, học xong làm được gì.
@@ -34,17 +34,17 @@ Mục tiêu của khoá: cho học viên tư duy làm việc với AI (tư duy p
 ## Luật chơi (cuối slide 3)
 - Mở sẵn ChatGPT hoặc Gemini (bản free) trên máy.
 - Hỏi bất cứ lúc nào. Không có câu hỏi ngớ ngẩn.
-- Mỗi phần có 1 bài thực hành nhỏ (2–5 phút).
+- Phần 4–6 và 8 có bài thực hành.
 
-## Thời gian (khoảng 1 giờ 5 phút)
+## Thời gian (khoảng 1 giờ)
 | Phần | Slide | Phút | Trong đó thực hành |
 |---|---|---|---|
 | 0. Mở đầu | 1–3 | 3 | – |
 | 1. Tư duy phản biện | 4–6 | 4 | – |
-| 2. AI là gì | 7–10 | 8 | 2 |
-| 3. Bản đồ AI | 11–12 | 4 | 2 |
-| 4. 5 nguyên tắc | 13–19 | 10 | 3 |
-| 5. Cách giao việc | 20–24 | 12 | 5 |
-| 6. Tài liệu | 25–29 | 10 | 4 |
-| 7. Tổng kết | 30 | 2 | – |
-| 8. Bài tập cuối | 31–35 | 11 | 9 |
+| 2. AI là gì | 7–9 | 6 | – |
+| 3. Bản đồ AI | 10 | 2 | – |
+| 4. 5 nguyên tắc | 11–17 | 10 | 3 |
+| 5. Cách giao việc | 18–22 | 12 | 5 |
+| 6. Tài liệu | 23–27 | 10 | 4 |
+| 7. Tổng kết | 28 | 2 | – |
+| 8. Bài tập cuối | 29–33 | 11 | 9 |

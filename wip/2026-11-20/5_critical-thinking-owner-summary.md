@@ -9,7 +9,8 @@ Owner (2026-11-20): tóm tắt 5 ý (không phải mù quáng hỏi mọi thứ 
 - [x] Slide 8 "Vì đoán, nên có thể sai": bỏ hình vẹt, thay bằng 2 câu ví dụ không nên / nên
 - [x] 5 nguyên tắc (slide 13–18): bỏ ví dụ so sánh (đầu bếp, cắt tóc, phụ bếp...), bỏ hình, ví dụ email, flow, ô "Hỏi lại"; nội dung giữ nguyên văn owner gửi
 - [x] Slide 2: bỏ sơ đồ 3 bước, danh sách "dành cho ai", 5 ý dài → "Học xong được gì" 3 ý + câu chốt (bỏ cả dòng đối tượng)
-- [x] Số slide 38 → 35: sửa tham chiếu trong deck (slide 19, 22, 24; slide 26, kiểm theo nội dung), README, outline 00–08, index gốc
+- [x] Xoá 2 slide thực hành "Đoán chữ tiếp theo", "Hỏi 1 câu, 2 AI"; slide 5 ngón tay = 5 câu tiếng Anh gốc; bỏ in đậm tự thêm ở slide nguyên tắc (chữ y nguyên owner gửi); bỏ câu "Mỗi phần có 1 bài thực hành nhỏ"
+- [x] Số slide 38 → 33: sửa tham chiếu trong deck (slide 19, 22, 24; slide 26, kiểm theo nội dung), README, outline 00–08, index gốc
 - [x] Chụp slide 4–7, kiểm tra không tràn
 ## Kết quả
-Sửa trực tiếp. 35 slide. Đã commit, chưa push. Owner sẽ nhờ ChatGPT review.
+Sửa trực tiếp. 33 slide. Đã commit, chưa push. Owner sẽ nhờ ChatGPT review.
