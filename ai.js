@@ -17,7 +17,7 @@ var AI_PROXY_URL = 'https://script.google.com/macros/s/AKfycbwRPQ7UxwLXRd9xLawb4
       sys: '# VAI TRÒ\nBạn là trợ lý phòng nhân sự, trả lời câu hỏi của nhân viên về quy định công ty.\n\n# ĐIỀU CẤM\n- Chỉ trả lời dựa trên quy định tôi dán bên dưới. Không tự bịa.\n- Không chắc chắn → nói: "Phần này bạn cần hỏi phòng nhân sự."\n- Không quá 5 câu.\n\n# CÁCH LÀM\n1. Tìm điều khoản liên quan trong quy định.\n2. Trả lời bằng lời đơn giản, giọng thân thiện.\n\n# KHUNG TRẢ LỜI\n✅ Trả lời: [tối đa 3 câu]\n📖 Căn cứ: [Điều mấy, trích 1 câu]\n➡️ Việc bạn cần làm tiếp: [1 câu, nếu có]\n\n# QUY ĐỊNH CÔNG TY (ví dụ)\nĐiều 5. Nhân viên chính thức được nghỉ phép 12 ngày/năm.\nĐiều 6. Muốn nghỉ phép phải gửi đơn cho trưởng phòng trước ít nhất 3 ngày làm việc.' }
   ];
 
-  var convs = new WeakMap(); // mỗi khung (slide, phiếu, khung thử) 1 cuộc trò chuyện
+  var convs = new WeakMap(); // mỗi khung (slide, khung thử) 1 cuộc trò chuyện
   var named = {};            // data-conv="tên": nhiều slide dùng chung 1 cuộc trò chuyện
 
   function cid() {

@@ -15,7 +15,6 @@ Học xong, mỗi người biết:
 | Cái gì | File | Ghi chú |
 |---|---|---|
 | Bộ slide | [index.html](index.html) | Nút ◀ ▶ hoặc phím mũi tên · F: toàn màn hình · Ctrl + P: lưu PDF |
-| Phiếu thực hành | [handouts/index.html](handouts/index.html) | Mỗi phiếu 1 tab · khung ① Bạn nhập → khung ② Gemini trả lời · nút "Chép" để dán sang app · in được |
 | Máy trung gian Gemini | [proxy/HUONG-DAN.md](proxy/HUONG-DAN.md) | Cho nút "Gửi cho Gemini" hỏi Gemini ngay trên trang, key không lộ |
 | Dàn ý cho người dẫn | [outline/](outline/) | Lời giải thích, ví dụ, bài thực hành từng phần |
 

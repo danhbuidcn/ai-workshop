@@ -1,4 +1,4 @@
-/* Bài thực hành: khung ① "Bạn nhập" + khung ② "Gemini trả lời", dùng chung cho slide và phiếu (xem ai.js). */
+/* Bài thực hành: khung ① "Bạn nhập" + khung ② "Gemini trả lời", dùng trên slide (xem ai.js). */
 /* Màu có nghĩa: xanh dương = bạn nhập · cam = nút hành động (nổi nhất) · xám = kết quả/phụ · xanh lá/đỏ = nên/tránh */
 /* ① Bạn nhập: nền xanh dương nhạt, viền nét đứt, bấm vào để sửa */
 .ai-in { position: relative; background: #eff6ff; color: #1f2937; border: 3px dashed #3b82f6; border-radius: 14px;

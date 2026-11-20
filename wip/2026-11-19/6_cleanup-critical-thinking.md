@@ -29,8 +29,8 @@ Yêu cầu chi tiết:
 8. **Xoá dòng** "Nguồn: khung AI Fluency (Anthropic)." ở mọi nơi xuất hiện (slide, handout, README, outline).
 Ràng buộc: sửa ít nhất, không đổi phần không nêu. Font-size có thể giảm ở slide quá đầy. Sau khi đổi số slide, sửa tham chiếu số slide (mục lục, outline, nhãn tiến độ nếu có).
 ## Plan
-- [ ] Đọc `index.html`, `ai.css`, `ai.js`, `outline/`, xác định đúng slide 4, 9, 14 hiện tại
-- [ ] Xoá phiếu thực hành (handouts + liên kết + README/outline)
+- [x] Đọc `index.html`, `ai.css`, `ai.js`, `outline/`, xác định đúng slide 4, 9, 14 hiện tại — slide 4/9/14 = đúng như yêu cầu (14 = thực hành "Viết lại câu trả lời đầu"); sau khi thêm 1 + 3 slide tổng = 34
+- [x] Xoá phiếu thực hành (handouts + liên kết + README/outline) — xoá `handouts/`, nút 📄, link ở slide cuối, chữ "phiếu"; các slide `prac` đều là thực hành thật nên giữ
 - [ ] Slide 4: đổi chuỗi, thêm định nghĩa AI, giảm font-size
 - [ ] Slide 9: xoá dòng gợi ý, xoá thẻ Codex/Claude Code, thêm gạch con
 - [ ] Thêm slide tư duy phản biện (Socrate, bấm để hiện tiếp) ở đầu bài
