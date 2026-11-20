@@ -1,6 +1,7 @@
 # wip 2026-11-19
 | File | Trạng thái |
 |---|---|
+| [11_ai-definition-text](11_ai-definition-text.md) | ⏳ chờ file 10 |
 | [10_reveal-on-enter-all-slides](10_reveal-on-enter-all-slides.md) | 🔄 worker |
 | [9_agenda-reveal-on-enter](9_agenda-reveal-on-enter.md) | ✅ xong |
 | [8_goal-critical-thinking](8_goal-critical-thinking.md) | ⏸ xong, chờ owner xem + push |
