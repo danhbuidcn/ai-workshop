@@ -338,6 +338,8 @@
     background: #f59e0b; color: #1f2937; cursor: pointer; box-shadow: 0 3px 0 #b45309; }
   .socr-go:hover { background: #fbbf24; } .socr-go[hidden], .socr-bridge[hidden] { display: none; }
   .socr-bridge { margin-top: 10px; }
+  .rv-hide { visibility: hidden; opacity: 0; } .rv { transition: opacity .35s; }
+  body.pmode .rv-hide { visibility: visible; opacity: 1; }
   body.pmode .socr-go { display: none !important; } body.pmode .socr .ln { display: flex; } body.pmode .socr-bridge { display: block !important; }
   .fprog { display: flex; gap: 10px; justify-content: center; margin: 0 0 6px; }
   .fprog span { width: 40px; height: 40px; border-radius: 50%; background: #e5e7eb; color: #4b5563; font: 800 20px/40px var(--serif); text-align: center; }
@@ -425,7 +427,7 @@
   <div class="chot socr-bridge" id="socrEnd" hidden>Hỏi AI cũng vậy: <em>đừng tin câu trả lời đầu</em>.<small>Hỏi tiếp: "Vì sao? Có ngoại lệ không?"</small></div>
 </section>
 
-<section class="slide pp" data-s="0">
+<section class="slide pp" data-s="0" id="agenda">
   <span class="tag">MỞ ĐẦU</span>
   <h2>Bản đồ buổi học</h2>
   <div class="toc">
@@ -1128,6 +1130,7 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
   document.addEventListener('keydown', function (e) {
     if (e.target.closest && e.target.closest('input, textarea, select, [contenteditable]')) return; // đang gõ
     var k = e.key;
+    if (k === 'Enter' && slides[cur] === agendaEl) { e.preventDefault(); if (!agendaNext()) show(cur + 1); return; } // slide Bản đồ: Enter hiện từng mục
     if ((k === ' ' || k === 'Enter') && e.target.closest && e.target.closest('button')) return; // đang bấm nút (ô bấm để mở, Gửi)
     if (k === 'ArrowRight' || k === 'PageDown' || k === ' ') { e.preventDefault(); show(cur + 1); }
     else if (k === 'ArrowLeft' || k === 'PageUp') { e.preventDefault(); show(cur - 1); }
@@ -1151,6 +1154,21 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
   AI.lab('.ai-lab');
   AI.compare('.ai-cmp');
   AI.folds();
+
+  // Slide "Bản đồ buổi học": lúc đầu chỉ có tiêu đề, mỗi lần Enter hiện thêm 1 mục (01→07), rồi ô cuối
+  var agendaEl = document.getElementById('agenda'), agendaN = 0, agendaItems = [];
+  (function () {
+    agendaItems = [].slice.call(agendaEl.querySelectorAll('.toc .it')).sort(function (a, b) {
+      return a.querySelector('.num').textContent - b.querySelector('.num').textContent;
+    });
+    agendaItems.push(agendaEl.querySelector('.chot'));
+    agendaItems.forEach(function (el) { el.classList.add('rv', 'rv-hide'); });
+  })();
+  function agendaNext() { // true nếu vừa hiện thêm 1 mục; false nếu đã hiện hết
+    if (agendaN >= agendaItems.length) return false;
+    agendaItems[agendaN++].classList.remove('rv-hide');
+    return true;
+  }
 
   // Demo Socrate: mỗi lần bấm hiện thêm 1 câu
   (function () {
