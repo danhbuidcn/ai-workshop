@@ -457,26 +457,30 @@
     <div class="ex">
       <div class="lab">Ví dụ 1: câu không rõ ràng</div>
       <div class="exq">Viết email nhắc nợ.</div>
-      <div class="chot">AI phải <em>đoán nhiều</em>.</div>
+      <div class="chot">Người nhận phải <em>đoán nhiều</em>.</div>
     </div>
     <div class="ex">
       <div class="lab">Ví dụ 2: câu rõ ràng (theo 3W2H)</div>
       <div class="exq"><span class="w w1">Viết email nhắc nợ<sub>What</sub></span> <span class="w w2">để khách trả trước hạn 25/11<sub>Why</sub></span>, <span class="w w3">gửi chị Lan, kế toán công ty ABC<sub>Who</sub></span>, <span class="w w4">giọng lịch sự, 3 đoạn<sub>How</sub></span>, <span class="w w5">dưới 100 chữ<sub>How much</sub></span>.</div>
-      <div class="chot">AI <em>làm đúng ngay</em>.</div>
+      <div class="chot">Người nhận <em>hiểu đúng ngay</em>.</div>
     </div>
   </div>
 </section>
 
 <section class="slide pp" data-s="1">
   <span class="tag">1 · TƯ DUY PHẢN BIỆN</span>
-  <h2>🧐 Tư duy phản biện</h2>
-  <div class="icgrid" style="--n:4">
-    <div class="it"><div class="icn pink">🛑</div><b class="t">Chưa tin vội</b><p>Câu đầu chưa chắc đúng.</p></div>
-    <div class="it"><div class="icn">🔎</div><b class="t">Hỏi nguồn</b><p>Ai nói? Dựa vào đâu?</p></div>
-    <div class="it"><div class="icn pink">🔄</div><b class="t">Tìm ngoại lệ</b><p>Có lúc nào khác không?</p></div>
-    <div class="it"><div class="icn">✅</div><b class="t">Kiểm tra lại</b><p>Đối chiếu với nguồn thật.</p></div>
+  <h2>🧐 Tư duy phản biện <small>không tin vội, kiểm tra rồi mới kết luận</small></h2>
+  <div class="icgrid" style="--n:5">
+    <div class="it"><div class="icn">🔎</div><b class="t">Đặt câu hỏi</b><p>Vì sao? Ai nói? Dựa vào đâu?</p></div>
+    <div class="it"><div class="icn pink">🧩</div><b class="t">Tách sự việc và ý kiến</b><p>Số liệu thật hay nhận định?</p></div>
+    <div class="it"><div class="icn">📚</div><b class="t">Xét bằng chứng</b><p>Nguồn tin cậy không? Còn mới không?</p></div>
+    <div class="it"><div class="icn pink">👁️</div><b class="t">Nhận ra thiên kiến</b><p>Có đang nghiêng về một phía?</p></div>
+    <div class="it"><div class="icn">🔄</div><b class="t">Xét góc nhìn khác</b><p>Có ngoại lệ, cách giải thích khác?</p></div>
   </div>
-  <div class="chot">AI nói trôi chảy, nhưng <em>có lúc sai</em>.<small>Bạn là người chịu trách nhiệm với kết quả.</small></div>
+  <div style="margin:14px 0 4px;padding:12px 18px;border-radius:14px;background:#fff;box-shadow:0 3px 0 #eadfc8;font-size:19px;line-height:1.5">
+    <b>Ví dụ:</b> bạn đọc "doanh thu quý 3 tăng 30%". Hỏi: số này từ đâu? Là số thật hay ước tính? Báo cáo kế toán có khớp không? Có tháng nào giảm không?
+  </div>
+  <div class="chot">Với AI cũng vậy: AI nói trôi chảy nhưng <em>có lúc sai</em>.<small>Bạn là người chịu trách nhiệm với kết quả.</small></div>
 </section>
 
 <section class="slide pp" data-s="1" data-rv="custom">
@@ -495,7 +499,7 @@
   <div class="chot socr-bridge" id="socrEnd" hidden>Hỏi AI cũng vậy: <em>đừng tin câu trả lời đầu</em>.<small>Hỏi tiếp: "Vì sao? Có ngoại lệ không?"</small></div>
 </section>
 
-<section class="slide pp" data-s="1">
+<section class="slide pp" data-s="1" data-rv="none">
   <span class="tag">1 · KĨ NĂNG MỀM</span>
   <h2>🎬 Xem thêm: video gợi ý</h2>
   <div class="icgrid duo">
@@ -1229,7 +1233,7 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
   // ===== Mọi slide: lúc đầu chỉ có tiêu đề, mỗi lần Enter hiện thêm 1 khối nội dung =====
   // Tự chia khối theo cấu trúc: mỗi mục danh sách, thẻ, ô, dòng = 1 khối (xem RV_BOX). Tiêu đề, nhãn góc, hình trang trí luôn hiện.
   // Muốn chia khác: data-rv="phần | phần" trên <section>. Mỗi phần là 1 selector: mỗi phần tử khớp = 1 lần Enter;
-  // "all:" ở đầu = cả nhóm khớp hiện cùng lúc. data-rv="custom" = slide tự xử lý (demo Socrate). Hiện hết khi in PDF (body.pmode).
+  // "all:" ở đầu = cả nhóm khớp hiện cùng lúc. data-rv="custom" = slide tự xử lý (demo Socrate). data-rv="none" = hiện hết ngay. Hiện hết khi in PDF (body.pmode).
   var RV_SKIP = '.tag, h1, h2, .practice, .fprog, .hero';
   var RV_BOX = 'ul, ol, .toc, .icgrid, .grid, .hand, .concepts, .foldrow, .learn, .steps3, .hub, .hub > .col, .row, .opener, .opener > div, .vs';
   var RV_PRE = '.to, .joint, .icn, .num, .opener > div > b'; // hiện cùng khối kế tiếp
@@ -1249,7 +1253,7 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
   }
   slides.forEach(function (s) {
     var st = { steps: [], pre: [], n: 0 }, spec = s.getAttribute('data-rv');
-    if (spec && spec !== 'custom') {
+    if (spec && spec !== 'custom' && spec !== 'none') {
       spec.split('|').forEach(function (part) {
         part = part.trim();
         var all = part.slice(0, 4) === 'all:';
