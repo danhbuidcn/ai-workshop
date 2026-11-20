@@ -1,6 +1,7 @@
 # wip 2026-11-19
 | File | Trạng thái |
 |---|---|
+| [10_reveal-on-enter-all-slides](10_reveal-on-enter-all-slides.md) | ⏳ chờ file 9 |
 | [9_agenda-reveal-on-enter](9_agenda-reveal-on-enter.md) | 🔄 worker |
 | [8_goal-critical-thinking](8_goal-critical-thinking.md) | ⏸ xong, chờ owner xem + push |
 | [7_swap-slides-2-3](7_swap-slides-2-3.md) | ⏸ xong, chờ owner xem + push |
