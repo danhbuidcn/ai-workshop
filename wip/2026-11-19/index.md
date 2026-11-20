@@ -1,7 +1,7 @@
 # wip 2026-11-19
 | File | Trạng thái |
 |---|---|
-| [7_swap-slides-2-3](7_swap-slides-2-3.md) | 🔄 chờ ok |
+| [7_swap-slides-2-3](7_swap-slides-2-3.md) | ⏸ xong, chờ owner xem + push |
 | [6_cleanup-critical-thinking](6_cleanup-critical-thinking.md) | ⏸ xong, chờ owner xem + push |
 | [5_powerpoint-style-and-gemini-menu](5_powerpoint-style-and-gemini-menu.md) | 🔄 worker aw-2026-11-19-5-powerpoint-style-and-gemini-menu |
 | [4_design-pass](4_design-pass.md) | ⏸ xong, chờ owner push |
