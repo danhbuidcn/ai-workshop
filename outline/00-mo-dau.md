@@ -5,14 +5,14 @@ Slide 1–4. Buổi học 1 giờ, 34 slide. Slide không ghi số phút, không
 ## Mục tiêu
 Học viên biết hôm nay học gì, học xong làm được gì.
 
-## Slide 2: Hỏi tiếp như Socrate (tư duy phản biện)
+## Slide 2: Dành cho ai · Học xong được gì
+- Dành cho: người bận rộn, không rành kỹ thuật; giáo viên, nhân sự, nhân viên văn phòng; dùng ChatGPT hoặc Gemini bản miễn phí.
+- Học xong biết: AI là gì và vì sao có lúc sai · 5 nguyên tắc · công thức 5 phần · cho AI đọc tài liệu · mang về 1 đoạn hướng dẫn để AI trả lời đúng kiểu mình muốn.
+
+## Slide 3: Hỏi tiếp như Socrate (tư duy phản biện)
 - Bấm nút "Bấm để nghe tiếp": mỗi lần hiện thêm 1 câu hỏi/đáp (7 câu). Cho lớp đoán câu trả lời trước khi bấm.
 - Dòng nối cuối: hỏi AI cũng vậy, không tin câu trả lời đầu, hỏi tiếp "Vì sao? Có ngoại lệ không?".
 - Tư duy phản biện + kỹ năng mềm đi xuyên bài: nguyên tắc 5, slide "4 năng lực", bài tập cuối, tổng kết, chia sẻ nhóm.
-
-## Slide 3: Dành cho ai · Học xong được gì
-- Dành cho: người bận rộn, không rành kỹ thuật; giáo viên, nhân sự, nhân viên văn phòng; dùng ChatGPT hoặc Gemini bản miễn phí.
-- Học xong biết: AI là gì và vì sao có lúc sai · 5 nguyên tắc · công thức 5 phần · cho AI đọc tài liệu · mang về 1 đoạn hướng dẫn để AI trả lời đúng kiểu mình muốn.
 
 ## Lời nói (lớp 5)
 - "Hôm nay mình không học máy tính. Mình học cách **giao việc** cho một trợ lý rất giỏi nhưng chưa biết gì về mình."
