@@ -8,7 +8,7 @@ Owner (2026-11-20): tóm tắt 5 ý (không phải mù quáng hỏi mọi thứ 
 - [x] Slide 7 "AI là gì?": định nghĩa + 3 bước (đọc → nhớ → đoán) + câu chốt
 - [x] Slide 8 "Vì đoán, nên có thể sai": bỏ hình vẹt, thay bằng 2 câu ví dụ không nên / nên
 - [x] 5 nguyên tắc (slide 13–18): bỏ ví dụ so sánh (đầu bếp, cắt tóc, phụ bếp...), bỏ hình, ví dụ email, flow, ô "Hỏi lại"; nội dung giữ nguyên văn owner gửi
-- [x] Slide 2: bỏ sơ đồ 3 bước, danh sách "dành cho ai", 5 ý dài → "Học xong được gì" 3 ý + 1 dòng đối tượng + câu chốt
+- [x] Slide 2: bỏ sơ đồ 3 bước, danh sách "dành cho ai", 5 ý dài → "Học xong được gì" 3 ý + câu chốt (bỏ cả dòng đối tượng)
 - [x] Số slide 38 → 35: sửa tham chiếu trong deck (slide 19, 22, 24; slide 26, kiểm theo nội dung), README, outline 00–08, index gốc
 - [x] Chụp slide 4–7, kiểm tra không tràn
 ## Kết quả

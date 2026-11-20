@@ -7,7 +7,6 @@ Mục tiêu của khoá: cho học viên tư duy làm việc với AI (tư duy p
 
 ## Slide 2: Học xong được gì
 - 3 ý: hiểu vì sao AI có lúc sai · giao việc rõ ràng cho AI · kiểm tra trước khi dùng kết quả.
-- 1 dòng: dành cho người không rành kỹ thuật, dùng ChatGPT hoặc Gemini bản miễn phí.
 - Câu chốt: mục tiêu là tư duy phản biện khi làm việc với AI.
 
 ## Slide 3: Bản đồ buổi học
