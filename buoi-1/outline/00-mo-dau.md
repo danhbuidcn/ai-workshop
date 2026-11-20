@@ -5,13 +5,12 @@ Slide 1–3. Buổi học 1 giờ, 35 slide. Slide không ghi số phút, không
 ## Mục tiêu
 Mục tiêu của khoá: cho học viên tư duy làm việc với AI (tư duy phản biện: không tin ngay, luôn kiểm tra). Học viên biết hôm nay học gì, học xong làm được gì.
 
-## Slide 2: Dành cho ai · Học xong được gì
-- Dành cho: người bận rộn, không rành kỹ thuật; giáo viên, nhân sự, nhân viên văn phòng; dùng ChatGPT hoặc Gemini bản miễn phí.
-- Mục tiêu (đầu ô): tư duy làm việc với AI = tư duy phản biện.
-- Học xong biết: vì sao AI có lúc sai, không tin câu trả lời đầu · biết đặt câu hỏi và hỏi tiếp · giao việc bằng công thức 5 phần · cho AI đọc tài liệu rồi kiểm tra lại với nguồn · tự chịu trách nhiệm với kết quả, mang về 1 đoạn hướng dẫn để AI trả lời đúng kiểu mình muốn.
+## Slide 2: Học xong được gì
+- 3 ý: hiểu vì sao AI có lúc sai · giao việc rõ ràng cho AI · kiểm tra trước khi dùng kết quả.
+- 1 dòng: dành cho người không rành kỹ thuật, dùng ChatGPT hoặc Gemini bản miễn phí.
+- Câu chốt: mục tiêu là tư duy phản biện khi làm việc với AI.
 
 ## Slide 3: Bản đồ buổi học
-- Hiện đủ 8 phần ngay, không cần bấm Enter.
 - Tư duy phản biện + kỹ năng mềm đi xuyên bài: nguyên tắc 5, slide "4 năng lực", bài tập cuối, tổng kết, chia sẻ nhóm.
 
 ## Lời nói (lớp 5)
