@@ -1,4 +1,5 @@
 # Sửa slide: bỏ phiếu, thêm tư duy phản biện, tách 5 nguyên tắc
+Nhánh: .
 ## Input
 Owner (2026-11-20): xoá phiếu thực hành (đã nằm trong bài giảng); sửa slide 4, 9, 14; thêm slide tư duy phản biện (Socrate) ở đầu; 5 nguyên tắc mỗi cái 1 slide kèm key tiếng Anh; áp dụng tư duy phản biện + kỹ năng mềm xuyên bài.
 ## Context
