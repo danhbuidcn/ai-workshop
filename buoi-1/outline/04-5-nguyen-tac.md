@@ -1,6 +1,6 @@
 # 4. 5 nguyên tắc cốt lõi (10 phút)
 
-Slide 11–17: slide 11 bàn tay 5 ngón (mỗi ngón = câu tiếng Anh gốc) · slide 12–16 mỗi nguyên tắc 1 slide (tiêu đề = câu tiếng Anh gốc, nội dung giữ nguyên văn bản owner duyệt, dòng cuối là câu chốt) · slide 17 thực hành.
+Slide 11–17: slide 11 bàn tay 5 ngón (mỗi ngón = câu tiếng Anh gốc; phụ đề "Có 5 nguyên tắc sẽ lặp lại nhiều lần.") · slide 12–16 mỗi nguyên tắc 1 slide (tiêu đề = câu tiếng Anh gốc, tiêu đề "N. \"câu gốc\"", mọi dòng là gạch đầu dòng, nguyên văn owner gửi, không ô câu chốt) · slide 17 thực hành.
 
 Nguồn: chương 1 Claude 101 (Anthropic). Dùng được cho mọi AI, không riêng Claude.
 

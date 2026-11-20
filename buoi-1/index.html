@@ -542,7 +542,7 @@
 <!-- ===================== 3. 5 NGUYÊN TẮC ===================== -->
 <section class="slide pp" data-s="4">
   <span class="tag">4 · 5 NGUYÊN TẮC</span>
-  <h2>✋ 5 nguyên tắc = 5 ngón tay</h2>
+  <h2>✋ 5 nguyên tắc = 5 ngón tay <small>Có 5 nguyên tắc sẽ lặp lại nhiều lần.</small></h2>
   <div class="hand">
     <div class="finger" style="height:230px"><b>1</b>"Claude bring intelligence. You bring context and expertise."</div>
     <div class="finger" style="height:260px"><b>2</b>"First response is a starting point, not a final answer."</div>
@@ -556,58 +556,57 @@
 <section class="slide pp" data-s="4">
   <span class="tag">4 · NGUYÊN TẮC 1</span>
   <div class="fprog"><span class="on">1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
-  <h2 class="eng">Claude bring intelligence.<br>You bring context and expertise.</h2>
+  <h2 class="eng">1. "Claude bring intelligence. You bring context and expertise."</h2>
   <ul class="dot big pr5">
     <li>AI có khả năng reasoning, viết, research.</li>
     <li>Nhưng bối cảnh của công việc — team đang ở đâu, khách hàng này đặc biệt thế nào, quyết định tháng trước vì lý do gì — chỉ có bạn biết.</li>
     <li>Claude chỉ giỏi khi bạn đưa đủ context.</li>
+    <li>Prompt rỗng → output rỗng.</li>
   </ul>
-  <div class="chot">Prompt rỗng → output rỗng.</div>
 </section>
 
 <section class="slide pp" data-s="4">
   <span class="tag">4 · NGUYÊN TẮC 2</span>
   <div class="fprog"><span>1</span><span class="on">2</span><span>3</span><span>4</span><span>5</span></div>
-  <h2 class="eng">First response is a starting point,<br>not a final answer.</h2>
+  <h2 class="eng">2. "First response is a starting point, not a final answer."</h2>
   <ul class="dot big pr5">
     <li>Người mới hay nhìn response đầu tiên, không ưng → bỏ đi viết lại từ đầu.</li>
     <li>Người thạo sẽ iterate: "bớt formal hơn", "rút thành 3 bullet", "đổi góc nhìn sang khách hàng".</li>
+    <li>Iteration là feature, không phải bug.</li>
   </ul>
-  <div class="chot">Iteration là feature, không phải bug.</div>
 </section>
 
 <section class="slide pp" data-s="4">
   <span class="tag">4 · NGUYÊN TẮC 3</span>
   <div class="fprog"><span>1</span><span>2</span><span class="on">3</span><span>4</span><span>5</span></div>
-  <h2 class="eng">Projects store knowledge.<br>Skills perform tasks.</h2>
+  <h2 class="eng">3. "Projects store knowledge. Skills perform tasks."</h2>
   <ul class="dot big pr5">
-    <li>Hai feature hay bị nhầm.</li>
-    <li>Project = kho kiến thức (brand guide, past projects, references).</li>
+    <li>Hai feature hay bị nhầm. Project = kho kiến thức (brand guide, past projects, references).</li>
     <li>Skill = cỗ máy quy trình (template viết blog, checklist compliance, flow phân tích data).</li>
+    <li>Dùng cùng nhau, không thay thế.</li>
   </ul>
-  <div class="chot">Dùng cùng nhau, không thay thế.</div>
 </section>
 
 <section class="slide pp" data-s="4">
   <span class="tag">4 · NGUYÊN TẮC 4</span>
   <div class="fprog"><span>1</span><span>2</span><span>3</span><span class="on">4</span><span>5</span></div>
-  <h2 class="eng">Delegate what's repeatable.<br>Keep what needs judgment.</h2>
+  <h2 class="eng">4. "Delegate what's repeatable. Keep what needs judgment."</h2>
   <ul class="dot big pr5">
     <li>AI rất giỏi những việc có pattern: format, tổng hợp, phân loại, first draft.</li>
     <li>AI không nên — và bạn không nên — giao cho AI những quyết định cần trách nhiệm: chiến lược, hire/fire, giá trị đạo đức.</li>
+    <li>Rule of thumb: nếu bạn sai ai sẽ chịu trách nhiệm, người đó phải review trước khi ship.</li>
   </ul>
-  <div class="chot">Rule of thumb: nếu bạn sai ai sẽ chịu trách nhiệm, người đó phải review trước khi ship.</div>
 </section>
 
 <section class="slide pp" data-s="4">
   <span class="tag">4 · NGUYÊN TẮC 5</span>
   <div class="fprog"><span>1</span><span>2</span><span>3</span><span>4</span><span class="on">5</span></div>
-  <h2 class="eng">Test before you trust.<br>Trust but keep verifying.</h2>
+  <h2 class="eng">5. "Test before you trust. Trust but keep verifying."</h2>
   <ul class="dot big pr5">
     <li>AI có thể tự tin sai (hallucination).</li>
     <li>Trước khi giao việc quan trọng cho Claude, chạy "delegation-diligence loop": lấy 1 task bạn đã làm rồi, xem Claude có reproduce kết quả đúng không.</li>
+    <li>Sau khi validate, vẫn check sanity ở mỗi output mới.</li>
   </ul>
-  <div class="chot">Sau khi validate, vẫn check sanity ở mỗi output mới.</div>
 </section>
 
 <section class="slide pp prac" data-s="4">
