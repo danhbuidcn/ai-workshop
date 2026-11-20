@@ -328,6 +328,23 @@
   .toc.sum ul.dot > li { font-size: 20px; margin: 0 0 4px; break-inside: avoid; }
   .pp .act { border: 0; border-left: 10px solid var(--pp-green); box-shadow: 0 6px 0 #f0e4cc; margin-top: 14px; }
   .pp .pill { background: #fff; border-color: var(--pp-green); color: var(--pp-ink); }
+  /* Socrate: bấm nút → hiện thêm 1 câu. Tiến độ 5 nguyên tắc: 5 vòng tròn nhỏ. Ô "Hỏi lại như Socrate". */
+  .socr { display: flex; flex-direction: column; gap: 8px; margin-top: 6px; }
+  .socr .ln { display: none; align-items: baseline; gap: 12px; font-size: 22px; line-height: 1.35; padding: 8px 16px; border-radius: 14px; background: #fff; box-shadow: 0 4px 0 #f0e4cc; }
+  .socr .ln.on { display: flex; }
+  .socr .ln b { flex: none; width: 150px; font: 700 20px var(--serif); color: var(--pp-green); }
+  .socr .ln.me b { color: #a63a24; } .socr .ln.me { background: #fff1ee; }
+  .socr-go { align-self: center; margin-top: 6px; font: 800 22px "Segoe UI", system-ui, sans-serif; padding: 10px 28px; border-radius: 12px; border: 0;
+    background: #f59e0b; color: #1f2937; cursor: pointer; box-shadow: 0 3px 0 #b45309; }
+  .socr-go:hover { background: #fbbf24; } .socr-go[hidden], .socr-bridge[hidden] { display: none; }
+  .socr-bridge { margin-top: 10px; }
+  body.pmode .socr-go { display: none !important; } body.pmode .socr .ln { display: flex; } body.pmode .socr-bridge { display: block !important; }
+  .fprog { display: flex; gap: 10px; justify-content: center; margin: 0 0 6px; }
+  .fprog span { width: 40px; height: 40px; border-radius: 50%; background: #e5e7eb; color: #4b5563; font: 800 20px/40px var(--serif); text-align: center; }
+  .fprog span.on { background: var(--pp-coral); color: #23283b; box-shadow: 0 0 0 5px var(--pp-pink); }
+  .pp h2.eng { font-size: 46px; text-align: center; color: var(--pp-green); margin: 0 0 6px; }
+  .pp p.vi { text-align: center; font-size: 25px; margin: 0 0 8px; }
+  .socq { margin-top: 12px; background: #fff; border-left: 10px solid var(--pp-green); border-radius: 12px; padding: 8px 18px; font-size: 22px; box-shadow: 0 5px 0 #f0e4cc; }
   /* Đo trước khi in: ẩn phần chỉ dùng trên màn hình, mở hết ô bấm để mở (giống @media print) */
   body.pmode .ai-out, body.pmode .ai-arrow, body.pmode .ai-foot, body.pmode .cmp-two, body.pmode .cmp-go, body.pmode .cmp-pick,
   body.pmode .copy, body.pmode .fold-hint, body.pmode .ai-lab { display: none !important; }
@@ -358,6 +375,22 @@
       <span class="b b1">🤖</span><span class="b b2">🙋</span><span class="b b3">🤝</span>
     </div>
   </div>
+</section>
+
+<section class="slide pp" data-s="0">
+  <span class="tag">MỞ ĐẦU · TƯ DUY PHẢN BIỆN</span>
+  <h2 style="font-size:46px;margin-bottom:6px">🧐 Hỏi tiếp như Socrate</h2>
+  <div class="socr" id="socr">
+    <div class="ln"><b>Socrate</b><span>Bạn cho rằng ăn cắp là sai, đúng không?</span></div>
+    <div class="ln me"><b>Người đối thoại</b><span>Đúng, lấy đồ của người khác mà không được phép là sai.</span></div>
+    <div class="ln"><b>Socrate</b><span>Nếu bạn thấy một người bạn đang có vũ khí và định tự sát, bạn giấu vũ khí của anh ta đi mà không hỏi ý. Đó có phải là lấy đồ không được phép không?</span></div>
+    <div class="ln me"><b>Người đối thoại</b><span>Có, nhưng đó là để cứu người, không phải ăn cắp xấu.</span></div>
+    <div class="ln"><b>Socrate</b><span>Vậy hành động lấy đi thứ không thuộc về mình không phải lúc nào cũng xấu, nếu nó hướng tới điều tốt?</span></div>
+    <div class="ln me"><b>Người đối thoại</b><span>Có lẽ vậy.</span></div>
+    <div class="ln"><b>Socrate</b><span>Thế còn kẻ ăn cắp đồ của người khác để làm giàu cho riêng mình thì sao? Anh ta có làm điều tốt cho chính mình không, hay đang làm hại linh hồn và sự công chính của bản thân?</span></div>
+  </div>
+  <button type="button" class="socr-go" id="socrGo">Bấm để nghe tiếp ▶</button>
+  <div class="chot socr-bridge" id="socrEnd" hidden>Hỏi AI cũng vậy: <em>đừng tin câu trả lời đầu</em>.<small>Hỏi tiếp: "Vì sao? Có ngoại lệ không?"</small></div>
 </section>
 
 <section class="slide pp" data-s="0">
@@ -544,83 +577,87 @@
 </section>
 
 <section class="slide pp" data-s="3">
-  <span class="tag">3 · NGUYÊN TẮC 1–2</span>
-  <div class="concepts">
-    <div class="concept kA">
-      <div class="top"><span class="no">1</span><span class="big-ic">👨‍🍳</span></div>
-      <h3>AI mang trí tuệ,<br><span class="key">bạn mang bối cảnh</span></h3>
-      <ul class="dot">
-        <li>AI như <b>đầu bếp giỏi chưa vào bếp nhà bạn</b></li>
-        <li>Không nói nhà có gì, ai ăn, ăn cay không → nấu đại</li>
-      </ul>
-      <div class="fold push">
-        <button type="button" class="fold-h">Xem ví dụ: hỏi trống ↔ có bối cảnh</button>
-        <div class="fold-b">
-          <div class="card bad mini" style="margin-top:0"><b>❌ Hỏi trống:</b> Viết email xin nghỉ.</div>
-          <div class="card good mini"><b>✅ Có bối cảnh:</b> Viết email xin nghỉ 2 ngày (20–21/11) gửi trưởng phòng, lý do việc gia đình, giọng lịch sự, dưới 80 chữ.</div>
-        </div>
-      </div>
-    </div>
-    <div class="concept kB">
-      <div class="top"><span class="no">2</span><span class="big-ic">💇</span></div>
-      <h3>Câu trả lời đầu<br>là <span class="key">bản nháp</span></h3>
-      <ul class="dot">
-        <li>Như đi <b>cắt tóc</b>: cắt xong soi gương</li>
-        <li>Chưa ưng thì nói "ngắn thêm chút"</li>
-      </ul>
-      <div class="flow sm">
-        <div class="st"><span class="ic">📝</span>Nháp</div><span class="to">➜</span>
-        <div class="st"><span class="ic">✂️</span>Chỉnh</div><span class="to">➜</span>
-        <div class="st goal"><span class="ic">😊</span>Ưng ý</div>
-      </div>
-      <div class="fold push">
-        <button type="button" class="fold-h">Câu chỉnh hay dùng</button>
-        <div class="fold-b">
-          <p>Nói thẳng: <span class="pill">ngắn hơn</span><span class="pill">bỏ phần 2</span><span class="pill">giọng vui hơn</span><span class="pill">làm thành bảng</span></p>
-          <p class="cap">Không ai bỏ tiệm vì lần đầu chưa ưng.</p>
-        </div>
-      </div>
-    </div>
+  <span class="tag">3 · NGUYÊN TẮC 1</span>
+  <div class="fprog"><span class="on">1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+  <h2 class="eng">Claude bring intelligence.<br>You bring context and expertise.</h2>
+  <p class="vi">AI mang trí tuệ, <span class="key">bạn mang bối cảnh</span>.</p>
+  <div class="row" style="align-items:center;gap:26px">
+    <div class="icn pink" style="margin:8px">👨‍🍳</div>
+    <ul class="dot big" style="flex:1">
+      <li>AI giỏi suy luận, viết, tìm hiểu</li>
+      <li>Team bạn ở đâu, khách đặc biệt thế nào, quyết định tháng trước vì sao: <b>chỉ bạn biết</b></li>
+      <li>Như đầu bếp giỏi chưa vào bếp nhà bạn: không nói ai ăn, ăn cay không → nấu đại</li>
+    </ul>
   </div>
-  <div class="chot">Hỏi trống → <em>trả lời trống</em>. Chưa ưng → <em>nói thẳng</em> để chỉnh.</div>
+  <div class="grid g2" style="margin-top:10px">
+    <div class="card bad mini" style="margin-top:0"><b>❌ Hỏi trống:</b> Viết email xin nghỉ.</div>
+    <div class="card good mini" style="margin-top:0"><b>✅ Có bối cảnh:</b> Viết email xin nghỉ 2 ngày (20–21/11) gửi trưởng phòng, lý do việc gia đình, giọng lịch sự, dưới 80 chữ.</div>
+  </div>
+  <div class="chot">Prompt rỗng → <em>trả lời rỗng</em>.</div>
 </section>
 
 <section class="slide pp" data-s="3">
-  <span class="tag">3 · NGUYÊN TẮC 3–5</span>
-  <h2>3 nguyên tắc còn lại</h2>
-  <div class="foldrow" data-one>
-    <div class="fold cardf">
-      <button type="button" class="fold-h"><span class="fno">③</span><span class="fic">🗄️</span><b class="ft">Tủ tài liệu + công thức</b><span class="fs">Lưu 1 lần, dùng mãi.</span></button>
-      <div class="fold-b">
-        <ul class="dot">
-          <li>🗄️ <b>Tủ tài liệu (Project)</b>: giáo trình, quy định công ty, mẫu cũ</li>
-          <li>📋 <b>Công thức (Skill)</b>: cách làm 1 việc lặp lại, từng bước. Ghi 1 lần, không giải thích lại</li>
-          <li>Bản miễn phí: ChatGPT Projects, Gemini Gem, NotebookLM, hoặc 1 file ghi chú (phần 5)</li>
-        </ul>
-      </div>
-    </div>
-    <div class="fold cardf">
-      <button type="button" class="fold-h"><span class="fno">④</span><span class="fic">🧑‍🍳</span><b class="ft">Giao việc lặp lại, giữ việc phán đoán</b><span class="fs">AI làm phụ bếp, bạn nêm nếm.</span></button>
-      <div class="fold-b">
-        <ul class="dot">
-          <li>AI thái rau, rửa bát. Nêm nếm, quyết món nào ra bàn là <b>bạn</b></li>
-          <li>🤖 <b>Giao AI:</b> soạn nháp, tóm tắt, đổi định dạng, nghĩ ý tưởng, sửa chính tả</li>
-          <li>🙋 <b>Bạn giữ:</b> chấm điểm, quyết định tuyển ai, nói chuyện khó với phụ huynh, nhân viên</li>
-        </ul>
-      </div>
-    </div>
-    <div class="fold cardf">
-      <button type="button" class="fold-h"><span class="fno">⑤</span><span class="fic">🔍</span><b class="ft">Kiểm tra trước khi tin</b><span class="fs">AI nói rất tự tin, kể cả khi sai.</span></button>
-      <div class="fold-b">
-        <ul class="dot">
-          <li>AI như <b>người bạn nói chuyện rất tự tin</b></li>
-          <li>Thử với việc <b>mình đã làm rồi</b>, biết đáp án → so sánh</li>
-          <li>Số liệu, tên người, luật, trích dẫn → <b>luôn kiểm tra lại</b></li>
-        </ul>
-      </div>
-    </div>
+  <span class="tag">3 · NGUYÊN TẮC 2</span>
+  <div class="fprog"><span>1</span><span class="on">2</span><span>3</span><span>4</span><span>5</span></div>
+  <h2 class="eng">First response is a starting point,<br>not a final answer.</h2>
+  <p class="vi">Câu trả lời đầu là <span class="key">bản nháp</span>, chưa phải bản cuối.</p>
+  <div class="row" style="align-items:center;gap:26px">
+    <div class="icn pink" style="margin:8px">💇</div>
+    <ul class="dot big" style="flex:1">
+      <li>Người mới: bỏ đi, tự viết lại</li>
+      <li>Người thạo: <b>chỉnh tiếp</b> (iterate) cho tới khi ưng</li>
+      <li>Chỉnh đi chỉnh lại là <b>cách dùng đúng</b>, không phải lỗi</li>
+    </ul>
   </div>
-  <div class="chot">Việc mình chịu trách nhiệm → <em>mình xem lại</em>. Tự tin <em>khác</em> đúng.</div>
+  <div class="flow sm">
+    <div class="st"><span class="ic">📝</span>Nháp</div><span class="to">➜</span>
+    <div class="st"><span class="ic">✂️</span>Chỉnh</div><span class="to">➜</span>
+    <div class="st goal"><span class="ic">😊</span>Ưng ý</div>
+  </div>
+  <p style="text-align:center;margin:6px 0 0"><span class="pill">bớt formal hơn</span><span class="pill">rút thành 3 bullet</span><span class="pill">đổi góc nhìn sang khách hàng</span></p>
+  <div class="chot">Chưa ưng → <em>nói thẳng</em> để chỉnh.</div>
+</section>
+
+<section class="slide pp" data-s="3">
+  <span class="tag">3 · NGUYÊN TẮC 3</span>
+  <div class="fprog"><span>1</span><span>2</span><span class="on">3</span><span>4</span><span>5</span></div>
+  <h2 class="eng">Projects store knowledge.<br>Skills perform tasks.</h2>
+  <p class="vi"><b>Project</b> là kho kiến thức. <b>Skill</b> là quy trình làm việc.</p>
+  <div class="grid g2" style="gap:24px">
+    <div class="card" style="text-align:center"><span class="ic">🗄️</span><b class="t">Project = kho kiến thức</b>Brand guide, dự án cũ, tài liệu công ty</div>
+    <div class="card" style="text-align:center"><span class="ic">📋</span><b class="t">Skill = quy trình</b>Template viết blog, checklist, các bước phân tích</div>
+  </div>
+  <ul class="dot" style="margin-top:12px">
+    <li>Lưu 1 lần, dùng mãi, không giải thích lại</li>
+    <li>Bản miễn phí: ChatGPT Projects, Gemini Gem, NotebookLM, hoặc 1 file ghi chú (phần 5)</li>
+  </ul>
+  <div class="chot">Dùng <em>cùng nhau</em>: kho cho AI biết, quy trình cho AI làm.</div>
+</section>
+
+<section class="slide pp" data-s="3">
+  <span class="tag">3 · NGUYÊN TẮC 4</span>
+  <div class="fprog"><span>1</span><span>2</span><span>3</span><span class="on">4</span><span>5</span></div>
+  <h2 class="eng">Delegate what's repeatable.<br>Keep what needs judgment.</h2>
+  <p class="vi">Giao việc <b>có khuôn mẫu</b>. Giữ việc <b>cần phán đoán</b>.</p>
+  <div class="grid g2" style="gap:24px">
+    <div class="card good"><b class="t">🤖 Giao AI</b><ul class="dot"><li>Sắp xếp theo format</li><li>Tóm tắt, phân loại</li><li>Soạn bản nháp đầu</li></ul></div>
+    <div class="card bad"><b class="t">🙋 Bạn giữ</b><ul class="dot"><li>Chiến lược</li><li>Tuyển, cho nghỉ việc</li><li>Việc liên quan đạo đức</li></ul></div>
+  </div>
+  <p class="cap" style="text-align:center;margin-top:12px">Bạn sai thì ai chịu trách nhiệm? → <b>người đó</b> phải xem lại trước khi gửi đi.</p>
+  <div class="chot">AI làm phụ bếp, <em>bạn nêm nếm</em>.</div>
+</section>
+
+<section class="slide pp" data-s="3">
+  <span class="tag">3 · NGUYÊN TẮC 5</span>
+  <div class="fprog"><span>1</span><span>2</span><span>3</span><span>4</span><span class="on">5</span></div>
+  <h2 class="eng">Test before you trust.<br>Trust but keep verifying.</h2>
+  <p class="vi">AI có thể <b>tự tin mà sai</b> (hallucination).</p>
+  <ul class="dot big">
+    <li>Lấy <b>1 việc bạn đã làm</b>, biết đáp án → xem AI làm lại có đúng không</li>
+    <li>Đúng rồi vẫn <b>kiểm tra từng kết quả mới</b>: số liệu, tên người, luật, trích dẫn</li>
+  </ul>
+  <div class="socq">🧐 <b>Hỏi lại như Socrate:</b> "Vì sao bạn kết luận vậy? Có ngoại lệ không? Nguồn ở đâu?"</div>
+  <div class="chot">Tự tin <em>khác</em> đúng. Tin, nhưng <em>vẫn kiểm tra</em>.</div>
 </section>
 
 <section class="slide pp prac" data-s="3">
@@ -1112,6 +1149,17 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
   AI.lab('.ai-lab');
   AI.compare('.ai-cmp');
   AI.folds();
+
+  // Demo Socrate: mỗi lần bấm hiện thêm 1 câu
+  (function () {
+    var lns = document.querySelectorAll('#socr .ln'), go = document.getElementById('socrGo'), end = document.getElementById('socrEnd'), n = 0;
+    go.onclick = function () {
+      if (n < lns.length) lns[n++].classList.add('on');
+      lns[n - 1].scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      if (n >= lns.length) { go.hidden = true; end.hidden = false; end.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }
+      else go.textContent = 'Bấm để nghe tiếp ▶ (' + n + '/' + lns.length + ')';
+    };
+  })();
 
   // Slide dài (bài thực hành): nhắc "cuộn xuống" khi còn nội dung bên dưới
   var more = document.getElementById('more');
