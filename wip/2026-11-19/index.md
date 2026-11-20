@@ -1,6 +1,7 @@
 # wip 2026-11-19
 | File | Trạng thái |
 |---|---|
+| [6_cleanup-critical-thinking](6_cleanup-critical-thinking.md) | 🔄 chờ ok |
 | [5_powerpoint-style-and-gemini-menu](5_powerpoint-style-and-gemini-menu.md) | 🔄 worker aw-2026-11-19-5-powerpoint-style-and-gemini-menu |
 | [4_design-pass](4_design-pass.md) | ⏸ xong, chờ owner push |
 | [3_interactive-practice-and-ai-map](3_interactive-practice-and-ai-map.md) | ⏸ xong, chờ owner push |
