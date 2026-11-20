@@ -31,13 +31,30 @@ Ràng buộc: sửa ít nhất, không đổi phần không nêu. Font-size có 
 ## Plan
 - [x] Đọc `index.html`, `ai.css`, `ai.js`, `outline/`, xác định đúng slide 4, 9, 14 hiện tại — slide 4/9/14 = đúng như yêu cầu (14 = thực hành "Viết lại câu trả lời đầu"); sau khi thêm 1 + 3 slide tổng = 34
 - [x] Xoá phiếu thực hành (handouts + liên kết + README/outline) — xoá `handouts/`, nút 📄, link ở slide cuối, chữ "phiếu"; các slide `prac` đều là thực hành thật nên giữ
-- [ ] Slide 4: đổi chuỗi, thêm định nghĩa AI, giảm font-size
-- [ ] Slide 9: xoá dòng gợi ý, xoá thẻ Codex/Claude Code, thêm gạch con
-- [ ] Thêm slide tư duy phản biện (Socrate, bấm để hiện tiếp) ở đầu bài
-- [ ] Tách 5 nguyên tắc thành 5 slide, có key tiếng Anh
-- [ ] Thêm ô tư duy phản biện / kỹ năng mềm ở các phần chính
-- [ ] Slide 14: viết lại theo lần 1 / lần 2 / kết luận
-- [ ] Xoá dòng "Nguồn: khung AI Fluency (Anthropic)."
-- [ ] Sửa số slide, mục lục, tham chiếu; mở trang kiểm tra không lỗi JS, bấm thử demo Socrate
-- [ ] Ghi `## Kết quả`, tick checkbox, cập nhật index
+- [x] Slide 4: đổi chuỗi, thêm định nghĩa AI, giảm font-size
+- [x] Slide 9: xoá dòng gợi ý, xoá thẻ Codex/Claude Code, thêm gạch con
+- [x] Thêm slide tư duy phản biện (Socrate, bấm để hiện tiếp) ở đầu bài
+- [x] Tách 5 nguyên tắc thành 5 slide, có key tiếng Anh
+- [x] Thêm ô tư duy phản biện / kỹ năng mềm ở các phần chính
+- [x] Slide 14: viết lại theo lần 1 / lần 2 / kết luận
+- [x] Xoá dòng "Nguồn: khung AI Fluency (Anthropic)."
+- [x] Sửa số slide, mục lục, tham chiếu; mở trang kiểm tra không lỗi JS, bấm thử demo Socrate
+- [x] Ghi `## Kết quả`, tick checkbox, cập nhật index
 ## Kết quả
+
+Đã làm xong cả 8 yêu cầu (không còn việc dở). Tổng 34 slide (trước 30).
+
+- **Phiếu**: xoá `handouts/`, nút 📄, link ở slide cuối, mọi chữ "phiếu" (slide, README, outline, comment). Các slide `prac` đều là bài thực hành thật nên giữ.
+- **Slide 5 (cũ 4)**: "A ➜ 01000001"; thêm câu định nghĩa AI; giảm font.
+- **Slide 10 (cũ 9)**: bỏ dòng gợi ý và thẻ Codex/Claude Code; Codex, Claude Code thành gạch con hiện sẵn dưới ChatGPT, Claude.
+- **Slide 2 (mới)**: demo Socrate, nút "Bấm để nghe tiếp" hiện thêm 1 câu (7 câu) rồi hiện dòng nối về AI. Khi in PDF tự hiện hết.
+- **Slide 13–17**: 5 nguyên tắc, mỗi cái 1 slide, tiêu đề lớn là câu tiếng Anh, có thanh tiến độ 5 vòng tròn. Slide 12 (5 ngón) giữ nguyên.
+- **Slide 18 (cũ 14)**: bước viết theo thứ tự Lần 1 → Lần 2 → so sánh, thêm câu kết luận ở cuối.
+- **Tư duy phản biện/kỹ năng mềm** (chọn cách đơn giản nhất, 1 dòng mỗi chỗ): nguyên tắc 5 (ô "Hỏi lại như Socrate"), slide "4 năng lực" (thay dòng Nguồn), tổng kết, bước 4 bài tập cuối, chia sẻ nhóm ở slide cuối.
+- **"Nguồn: khung AI Fluency"**: xoá ở slide và README/outline. Dòng "Nguồn: khoá Claude 101" ở slide 12 giữ (owner không yêu cầu bỏ).
+- Sửa số slide ở slide (18/21/23, 25), README (lịch), `outline/` 00–07.
+
+Quyết định: slide 18 vẫn dùng khung so sánh 2 cột có sẵn (không đổi `ai.js`); thứ tự thời gian nằm ở các bước + câu kết luận bên trên/dưới. Số phút trong README/outline giữ nguyên.
+
+Kiểm tra: Chrome headless, 0 lỗi JS; bấm nút Socrate 8 lần → 7 câu + dòng nối, nút ẩn; xem ảnh slide 5 và 13 thấy ổn. Slide 2 khi hiện hết cao ~820px nên cuộn được (có tự cuộn).
+

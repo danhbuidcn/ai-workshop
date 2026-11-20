@@ -1,6 +1,6 @@
 # Làm việc với AI — workshop 1 giờ
 
-Tài liệu cho buổi học 1 giờ (30 slide) dành cho người không rành kỹ thuật, dùng ChatGPT hoặc Gemini bản miễn phí.
+Tài liệu cho buổi học 1 giờ (34 slide) dành cho người không rành kỹ thuật, dùng ChatGPT hoặc Gemini bản miễn phí.
 
 Học xong, mỗi người biết:
 
@@ -24,19 +24,18 @@ Cách mở trên máy (Windows): tải repo về (nút **Code → Download ZIP**
 
 | # | Phần | Slide | Phút |
 |---|---|---|---|
-| 0 | Mở đầu | 1–3 | 3 |
-| 1 | AI là gì | 4–8 | 8 |
-| 2 | Bản đồ AI | 9–10 | 4 |
-| 3 | 5 nguyên tắc | 11–14 | 10 |
-| 4 | Cách giao việc (prompt) | 15–19 | 12 |
-| 5 | Cho AI đọc tài liệu | 20–24 | 10 |
-| 6 | Tổng kết | 25 | 2 |
-| 7 | Bài tập cuối | 26–30 | 11 |
+| 0 | Mở đầu (có demo Socrate) | 1–4 | 4 |
+| 1 | AI là gì | 5–9 | 8 |
+| 2 | Bản đồ AI | 10–11 | 4 |
+| 3 | 5 nguyên tắc (mỗi cái 1 slide) | 12–18 | 10 |
+| 4 | Cách giao việc (prompt) | 19–23 | 12 |
+| 5 | Cho AI đọc tài liệu | 24–28 | 10 |
+| 6 | Tổng kết | 29 | 2 |
+| 7 | Bài tập cuối | 30–34 | 11 |
 
 Số phút chỉ ghi ở đây và trong `outline/`, không ghi trên slide.
 
 ## Nguồn
 
 - 5 nguyên tắc: chương 1 khoá Claude 101 (Anthropic). Dùng được cho mọi AI.
-- Khung "4 năng lực": AI Fluency (Anthropic).
 - Ví dụ Gemini: [sources/gemini-mau.md](sources/gemini-mau.md).
