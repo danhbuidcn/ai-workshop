@@ -1,6 +1,6 @@
 # Buổi 1: Làm việc với AI — workshop 1 giờ
 
-Tài liệu cho buổi học 1 giờ (37 slide) dành cho người không rành kỹ thuật, dùng ChatGPT hoặc Gemini bản miễn phí.
+Tài liệu cho buổi học 1 giờ (38 slide) dành cho người không rành kỹ thuật, dùng ChatGPT hoặc Gemini bản miễn phí.
 
 Mục tiêu của khoá: có tư duy làm việc với AI (tư duy phản biện: không tin ngay, luôn kiểm tra).
 
@@ -28,14 +28,14 @@ Cách mở trên máy (Windows): tải repo về (nút **Code → Download ZIP**
 | # | Phần | Slide | Phút |
 |---|---|---|---|
 | 0 | Mở đầu (bản đồ 8 phần) | 1–3 | 3 |
-| 1 | Kĩ năng mềm (3W2H, tư duy phản biện, demo Socrate, video) | 4–7 | 4 |
-| 2 | AI là gì | 8–12 | 8 |
-| 3 | Bản đồ AI | 13–14 | 4 |
-| 4 | 5 nguyên tắc (mỗi cái 1 slide) | 15–21 | 10 |
-| 5 | Cách giao việc (prompt) | 22–26 | 12 |
-| 6 | Cho AI đọc tài liệu | 27–31 | 10 |
-| 7 | Tổng kết | 32 | 2 |
-| 8 | Bài tập cuối | 33–37 | 11 |
+| 1 | Kĩ năng mềm (3W2H + ví dụ, tư duy phản biện, demo Socrate, video) | 4–8 | 4 |
+| 2 | AI là gì | 9–13 | 8 |
+| 3 | Bản đồ AI | 14–15 | 4 |
+| 4 | 5 nguyên tắc (mỗi cái 1 slide) | 16–22 | 10 |
+| 5 | Cách giao việc (prompt) | 23–27 | 12 |
+| 6 | Cho AI đọc tài liệu | 28–32 | 10 |
+| 7 | Tổng kết | 33 | 2 |
+| 8 | Bài tập cuối | 34–38 | 11 |
 
 Số phút chỉ ghi ở đây và trong `outline/`, không ghi trên slide.
 

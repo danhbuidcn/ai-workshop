@@ -1,6 +1,6 @@
 # 5. Cách giao việc cho AI (12 phút)
 
-Slide 22–26: slide 22 = 2 từ + Ý 1 · slide 23 = Ý 3 + Ý 5 · slide 24 = Ý 4 · slide 25 = Ý 6 · slide 26 thực hành. Ý 2 và Ý 7 chỉ nói miệng (Ý 7 trùng nguyên tắc 4).
+Slide 23–27: slide 23 = 2 từ + Ý 1 · slide 24 = Ý 3 + Ý 5 · slide 25 = Ý 4 · slide 26 = Ý 6 · slide 27 thực hành. Ý 2 và Ý 7 chỉ nói miệng (Ý 7 trùng nguyên tắc 4).
 
 "Prompt" = câu mình gõ để giao việc cho AI. "Bối cảnh" (context) = những gì AI cần biết để làm đúng.
 
@@ -53,6 +53,6 @@ Khung "4 năng lực", nói bằng lời thường:
 
 ## Thực hành: "Viết prompt theo công thức" (5 phút)
 1. Chọn 1 việc thật tuần này phải làm.
-2. Khung so sánh (slide 26): trái viết 1 câu ngắn như vẫn hỏi; phải điền đủ 5 phần (mỗi phần 1 màu).
+2. Khung so sánh (slide 27): trái viết 1 câu ngắn như vẫn hỏi; phải điền đủ 5 phần (mỗi phần 1 màu).
 3. Bấm **So sánh** → xem 2 kết quả cạnh nhau. Chưa ưng → sửa 1 phần ở khung phải → **Chạy lại**.
 4. 1–2 người đọc to prompt + kết quả.

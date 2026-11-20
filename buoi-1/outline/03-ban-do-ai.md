@@ -1,6 +1,6 @@
 # 3. Bản đồ AI (4 phút)
 
-Slide 13–14. Ý 2 + Ý 3 gộp trong slide 13 (Codex, Claude Code là gạch con dưới ChatGPT, Claude) (mỗi thẻ có dòng "Dùng khi"). Ý 1 "chọn điện thoại" chỉ nói miệng.
+Slide 14–15. Ý 2 + Ý 3 gộp trong slide 14 (Codex, Claude Code là gạch con dưới ChatGPT, Claude) (mỗi thẻ có dòng "Dùng khi"). Ý 1 "chọn điện thoại" chỉ nói miệng.
 
 ## Mục tiêu
 Biết 4 cái tên hay gặp, mỗi cái mạnh ở đâu. Không cần dùng hết: chọn 1–2 cái quen tay.

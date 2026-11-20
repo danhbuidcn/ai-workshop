@@ -1,6 +1,6 @@
 # 0. Mở đầu (3 phút)
 
-Slide 1–3. Buổi học 1 giờ, 37 slide. Slide không ghi số phút, không ghi "lớp 5": số phút và lời nói chỉ ở `outline/`.
+Slide 1–3. Buổi học 1 giờ, 38 slide. Slide không ghi số phút, không ghi "lớp 5": số phút và lời nói chỉ ở `outline/`.
 
 ## Mục tiêu
 Mục tiêu của khoá: cho học viên tư duy làm việc với AI (tư duy phản biện: không tin ngay, luôn kiểm tra). Học viên biết hôm nay học gì, học xong làm được gì.
@@ -42,11 +42,11 @@ Mục tiêu của khoá: cho học viên tư duy làm việc với AI (tư duy p
 | Phần | Slide | Phút | Trong đó thực hành |
 |---|---|---|---|
 | 0. Mở đầu | 1–3 | 3 | – |
-| 1. Kĩ năng mềm | 4–7 | 4 | – |
-| 2. AI là gì | 8–12 | 8 | 2 |
-| 3. Bản đồ AI | 13–14 | 4 | 2 |
-| 4. 5 nguyên tắc | 15–21 | 10 | 3 |
-| 5. Cách giao việc | 22–26 | 12 | 5 |
-| 6. Tài liệu | 27–31 | 10 | 4 |
-| 7. Tổng kết | 32 | 2 | – |
-| 8. Bài tập cuối | 33–37 | 11 | 9 |
+| 1. Kĩ năng mềm | 4–8 | 4 | – |
+| 2. AI là gì | 9–13 | 8 | 2 |
+| 3. Bản đồ AI | 14–15 | 4 | 2 |
+| 4. 5 nguyên tắc | 16–22 | 10 | 3 |
+| 5. Cách giao việc | 23–27 | 12 | 5 |
+| 6. Tài liệu | 28–32 | 10 | 4 |
+| 7. Tổng kết | 33 | 2 | – |
+| 8. Bài tập cuối | 34–38 | 11 | 9 |

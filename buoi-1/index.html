@@ -338,6 +338,14 @@
     background: #f59e0b; color: #1f2937; cursor: pointer; box-shadow: 0 3px 0 #b45309; }
   .socr-go:hover { background: #fbbf24; } .socr-go[hidden], .socr-bridge[hidden] { display: none; }
   .socr-bridge { margin-top: 10px; }
+  /* Ví dụ 3W2H: mỗi phần của câu 1 màu */
+  .ex3 .lab { font: 700 22px/1.2 var(--serif); margin-bottom: 8px; }
+  .ex3 .exq { background: #1f2937; color: #f9fafb; border-radius: 14px; font-size: 21px; padding: 18px 22px; line-height: 1.9; }
+  .ex3 .exq .w { color: #1f2937; border-radius: 8px; padding: 1px 6px; }
+  .ex3 .exq .w sub { font-size: 13px; font-weight: 700; vertical-align: baseline; margin-left: 4px; color: #4b5563; }
+  .ex3 .w1 { background: #fde68a; } .ex3 .w2 { background: #fbcfe8; } .ex3 .w3 { background: #bfdbfe; }
+  .ex3 .w4 { background: #bbf7d0; } .ex3 .w5 { background: #ddd6fe; }
+  .ex3 .chot { margin-top: 14px; font-size: 24px; }
   .rv-hide { visibility: hidden; opacity: 0; } .rv { transition: opacity .35s; }
   body.pmode .rv-hide { visibility: visible; opacity: 1; }
   body.pmode .socr-go { display: none !important; } body.pmode .socr .ln { display: flex; } body.pmode .socr-bridge { display: block !important; }
@@ -439,7 +447,24 @@
     <div class="it"><div class="icn">🛠️</div><b class="t">How</b><p>Làm thế nào?</p></div>
     <div class="it"><div class="icn">🔢</div><b class="t">How much</b><p>Bao nhiêu? Bao lâu?</p></div>
   </div>
-  <div class="chot">Trả lời đủ 5 câu → <em>giao việc rõ</em>.<small>Ví dụ: viết email nhắc nợ · vì khách trễ hạn · gửi chị Lan · giọng lịch sự · dưới 100 chữ.</small></div>
+  <div class="chot">Trả lời đủ 5 câu → <em>giao việc rõ</em>.<small>Xem ví dụ ở slide sau.</small></div>
+</section>
+
+<section class="slide pp ex3" data-s="1">
+  <span class="tag">1 · KĨ NĂNG MỀM</span>
+  <h2>✍️ Cùng 1 việc, hai cách hỏi</h2>
+  <div class="grid g2">
+    <div class="ex">
+      <div class="lab">Ví dụ 1: câu không rõ ràng</div>
+      <div class="exq">Viết email nhắc nợ.</div>
+      <div class="chot">AI phải <em>đoán nhiều</em>.</div>
+    </div>
+    <div class="ex">
+      <div class="lab">Ví dụ 2: câu rõ ràng (theo 3W2H)</div>
+      <div class="exq"><span class="w w1">Viết email nhắc nợ<sub>What</sub></span> <span class="w w2">để khách trả trước hạn 25/11<sub>Why</sub></span>, <span class="w w3">gửi chị Lan, kế toán công ty ABC<sub>Who</sub></span>, <span class="w w4">giọng lịch sự, 3 đoạn<sub>How</sub></span>, <span class="w w5">dưới 100 chữ<sub>How much</sub></span>.</div>
+      <div class="chot">AI <em>làm đúng ngay</em>.</div>
+    </div>
+  </div>
 </section>
 
 <section class="slide pp" data-s="1">
@@ -764,7 +789,7 @@
     <div class="card p4"><span class="ic">📐</span><b class="t">4. Kết quả</b>Dài bao nhiêu, dạng gì, giọng gì</div>
     <div class="card p5"><span class="ic">❓</span><b class="t">5. Hỏi lại</b>"Thiếu thông tin thì hỏi tôi"</div>
   </div>
-  <p class="cap">5 màu này cũng tô trong các câu mẫu ở slide 18, 21, 23.</p>
+  <p class="cap">5 màu này cũng tô trong các câu mẫu ở slide 19, 22, 24.</p>
   <div class="row" style="align-items:center;margin-top:16px">
     <div class="icn sm pink" style="margin:6px">🩺</div>
     <p style="margin:0">Chưa biết bắt đầu? <b>Để AI hỏi ngược</b> — giống đi khám: bác sĩ hỏi trước, kê đơn sau.</p>
@@ -852,7 +877,7 @@
     <div class="fold cardf"><button type="button" class="fold-h"><span class="fic">📋</span><b class="ft">Dán chữ</b><span class="fs">Free: luôn được</span></button>
       <div class="fold-b"><p>Copy nội dung, dán vào ô chat.</p></div></div>
     <div class="fold cardf"><button type="button" class="fold-h"><span class="fic">🔗</span><b class="ft">Kết nối Drive, Gmail</b><span class="fs">Free: Gemini có. ChatGPT free không có.</span></button>
-      <div class="fold-b"><p>Gemini: gõ <b>@</b> rồi chọn Gmail hoặc Google Drive. Các bước: slide 25.</p></div></div>
+      <div class="fold-b"><p>Gemini: gõ <b>@</b> rồi chọn Gmail hoặc Google Drive. Các bước: slide 26.</p></div></div>
   </div>
   <p class="cap">App đổi giao diện thường xuyên. Không thấy nút → dùng 📎 hoặc 📋. Hai cách này luôn được.</p>
 </section>
@@ -998,7 +1023,7 @@ Nếu chưa rõ, hãy hỏi tôi trước.</div>
       </ol>
     </div>
   </div>
-  <p class="app">Cách C · file trong Google Drive: chỉ Gemini làm được, xem các bước ở slide 25.</p>
+  <p class="app">Cách C · file trong Google Drive: chỉ Gemini làm được, xem các bước ở slide 26.</p>
 </section>
 
 <!-- ===================== 6. TỔNG KẾT ===================== -->

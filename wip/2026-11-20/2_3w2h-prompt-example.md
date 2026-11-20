@@ -12,8 +12,14 @@ Owner (2026-11-20): trên slide 4 "Kĩ năng mềm: hỏi 5 câu" (3W2H), lấy 
 - Giữ kiểu thuyết trình: ít chữ, cỡ chữ theo mặt bằng đã giảm 5px; hiện prompt 2 sau prompt 1 bằng Enter (cơ chế `data-rv` có sẵn) nếu dễ làm.
 - Đồng bộ ví dụ nhỏ ở slide 4 để không lặp (bỏ hoặc rút gọn dòng ví dụ).
 ## Plan
-- [ ] Đọc slide 4, class `.prompt`, cơ chế `data-rv` trong `index.html`/`ai.js`
-- [ ] Thêm slide ví dụ 2 prompt sau slide 4, màu từng phần theo 3W2H
-- [ ] Rút gọn dòng ví dụ ở slide 4; cập nhật số slide (37 → 38) ở README, `index.html` gốc, `outline/01-ki-nang-mem.md`, số slide các outline sau
-- [ ] Mở thử trên Chrome: slide mới không tràn, Enter hiện đúng, không lỗi JS; chụp ảnh vào `wip/2026-11-20/img/`
+- [x] Đọc slide 4, class `.prompt`, cơ chế `data-rv` trong `index.html`/`ai.js`
+- [x] Thêm slide ví dụ 2 prompt sau slide 4, màu từng phần theo 3W2H
+- [x] Rút gọn dòng ví dụ ở slide 4; cập nhật số slide (37 → 38) ở README, `index.html` gốc, `outline/01-ki-nang-mem.md`, số slide các outline sau
+- [x] Mở thử trên Chrome: slide mới không tràn, Enter hiện đúng, không lỗi JS; chụp ảnh vào `wip/2026-11-20/img/`
 ## Kết quả
+- Slide mới số 5 (`buoi-1/index.html`): 2 khung cạnh nhau, nhãn "Ví dụ 1: câu không rõ ràng" / "Ví dụ 2: câu rõ ràng (theo 3W2H)"; prompt 2 tô 5 màu What/Why/Who/How/How much. Enter hiện từng khung (cơ chế tự chia khối có sẵn).
+- Slide 4: bỏ dòng ví dụ, thay bằng "Xem ví dụ ở slide sau."
+- Tổng 38 slide. Đã sửa số slide ở `README.md`, `outline/00..08`, 2 chỗ "slide 19, 22, 24" và "slide 26" trong `index.html`. Thêm mô tả slide 5 vào `outline/01-ki-nang-mem.md`.
+- Quyết định: dùng class `.exq` (không dùng `.prompt`) vì `AI.setup('.prompt')` biến mọi `.prompt` thành ô nhập có nút Chép/Gửi.
+- Test: Chrome headless, 38 slide, không tràn. Ảnh: `wip/2026-11-20/img/slide5-chua-enter.png`, `slide5-day-du.png`, `slide4.png`. Chưa tự bấm Enter thật (headless), chỉ kiểm slide ẩn ban đầu và hiện đủ.
+- Còn lại: không.
