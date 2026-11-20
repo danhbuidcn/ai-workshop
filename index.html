@@ -233,6 +233,7 @@
     border-radius: 50%; background: var(--pp-coral); }
   .pp ul.dot.big > li { font-size: 25px; }
   .pp .icgrid ul.dot { display: inline-block; }
+  .pp .ls > span.sub { margin-left: 24px; font-size: 20px; } .pp .ls > span.sub::before { width: 9px; height: 9px; background: none; border: 3px solid var(--pp-coral); }
   .pp .foldrow .fold-b ul.dot { display: flex; flex-wrap: wrap; gap: 0 44px; margin: 0; } /* chi tiết thẻ: các ý nằm 1 hàng cho đỡ dài */
   .pp .flow.inl .st { flex-direction: row; gap: 12px; text-align: left; justify-content: flex-start; }
   .pp .flow.inl .st .ic { margin: 0; flex: none; width: 70px; height: 70px; font-size: 36px; }
@@ -408,21 +409,22 @@
 <!-- ===================== 1. AI LÀ GÌ ===================== -->
 <section class="slide pp" data-s="1">
   <span class="tag">1 · AI LÀ GÌ</span>
-  <h2>🧠 AI là gì?</h2>
-  <div class="steps3">
+  <h2 style="font-size:46px;margin-bottom:10px">🧠 AI là gì?</h2>
+  <p style="font-size:23px;margin:0 0 10px;background:var(--hi-bg);border-left:8px solid var(--pp-coral);border-radius:12px;padding:8px 16px"><b>AI (trí tuệ nhân tạo)</b> là phần mềm làm được việc thường cần người nghĩ: đọc, viết, trả lời, nhận ra hình ảnh. Bên trong, nó chỉ là <b>con số</b>:</p>
+  <div class="steps3" style="font-size:90%">
     <div><span class="num">1</span><b class="t">Máy tính chỉ hiểu <span class="key">bật</span> và <span class="key">tắt</span></b>
       <div class="bulbs"><div class="bulb on">1</div><div class="bulb">0</div><div class="bulb on">1</div><div class="bulb on">1</div><div class="bulb">0</div><div class="bulb">0</div><div class="bulb on">1</div><div class="bulb">0</div></div>
       <p style="font-size:21px;margin:0">Giống công tắc đèn. Bật = <b>1</b>. Tắt = <b>0</b>.</p></div><span class="to">›</span>
     <div><span class="num">2</span><b class="t">Mỗi chữ cái có 1 con số</b>
-      <div style="font-size:28px;font-weight:800;margin:6px 0">A ➜ 65 ➜ <span style="font-family:Consolas,monospace">01000001</span></div>
+      <div style="font-size:28px;font-weight:800;margin:6px 0">A ➜ <span style="font-family:Consolas,monospace">01000001</span></div>
       <p class="cap" style="margin:0">Bảng tra "chữ ↔ số" tên là ASCII. Chỉ cần nhớ: mỗi chữ có 1 số.</p></div><span class="to">›</span>
     <div><span class="num">3</span><b class="t">Chữ, ảnh, nhạc… đều là số</b>
       <div style="font-size:38px;margin:2px 0">📝 🖼️ 🎵</div>
       <p style="font-size:21px;margin:0">Trong máy đều là <b>một dãy số</b>: <span style="font-family:Consolas,monospace">0101…</span></p></div>
   </div>
-  <div class="bignum" style="margin-top:26px">
-    <div class="icn lg pink" style="margin:0">📚</div>
-    <div class="n">Hàng tỉ<small>trang chữ AI đã đọc</small></div>
+  <div class="bignum" style="margin-top:14px">
+    <div class="icn pink" style="margin:0">📚</div>
+    <div class="n" style="font-size:96px">Hàng tỉ<small>trang chữ AI đã đọc</small></div>
     <p>Nó không <i>hiểu</i> như người, nhưng nhớ rất giỏi: <b>chữ nào hay đi sau chữ nào</b>.</p>
   </div>
 </section>
@@ -501,25 +503,14 @@
   <span class="tag">2 · BẢN ĐỒ AI</span>
   <h2>🗺️ 4 cái tên hay gặp</h2>
   <div class="foldrow" data-one style="--n:4">
-    <div class="fold cardf"><button type="button" class="fold-h"><span class="fic">💬</span><b class="ft">ChatGPT</b><span class="ls"><span>Dùng khi: hỏi nhanh, viết thư</span><span>Mạnh: đa năng, phổ biến nhất</span></span></button>
+    <div class="fold cardf"><button type="button" class="fold-h"><span class="fic">💬</span><b class="ft">ChatGPT</b><span class="ls"><span>Dùng khi: hỏi nhanh, viết thư</span><span>Mạnh: đa năng, phổ biến nhất</span><span class="sub"><b>Codex</b>: công cụ cho lập trình viên</span></span></button>
       <div class="fold-b"><ul class="dot"><li>Hãng: OpenAI</li><li>Vào: chatgpt.com</li></ul></div></div>
     <div class="fold cardf"><button type="button" class="fold-h"><span class="fic">🔵</span><b class="ft">Gemini</b><span class="ls"><span>Dùng khi: làm với Gmail, Drive</span><span>Mạnh: gắn với đồ Google</span></span></button>
       <div class="fold-b"><ul class="dot"><li>Hãng: Google</li><li>Vào: gemini.google.com</li><li>Đọc được Gmail, Drive, YouTube</li></ul></div></div>
-    <div class="fold cardf"><button type="button" class="fold-h"><span class="fic">✍️</span><b class="ft">Claude</b><span class="ls"><span>Dùng khi: viết, đọc tài liệu dài</span><span>Mạnh: giọng tự nhiên, <b>lập trình</b></span></span></button>
+    <div class="fold cardf"><button type="button" class="fold-h"><span class="fic">✍️</span><b class="ft">Claude</b><span class="ls"><span>Dùng khi: viết, đọc tài liệu dài</span><span>Mạnh: giọng tự nhiên, <b>lập trình</b></span><span class="sub"><b>Claude Code</b>: công cụ cho lập trình viên</span></span></button>
       <div class="fold-b"><ul class="dot"><li>Hãng: Anthropic</li><li>Vào: claude.ai</li></ul></div></div>
     <div class="fold cardf"><button type="button" class="fold-h"><span class="fic">🔎</span><b class="ft">Perplexity</b><span class="ls"><span>Dùng khi: cần thông tin mới</span><span>Mạnh: ghi rõ nguồn</span></span></button>
       <div class="fold-b"><ul class="dot"><li>Tìm trên mạng rồi tóm tắt</li><li>Vào: perplexity.ai</li></ul></div></div>
-  </div>
-  <p class="fold-hint">👆 Bấm vào từng ô để xem thêm. Cả 4 đều có bản miễn phí (giới hạn số lượt mỗi ngày).</p>
-  <div class="fold" style="margin-top:12px">
-    <button type="button" class="fold-h">🛠️ Còn nghe tên Codex, Claude Code? <span class="muted" style="font-weight:500">&nbsp;Công cụ cho lập trình viên</span></button>
-    <div class="fold-b">
-      <ul class="dot">
-        <li><b>💬 ChatGPT</b> và <b>✍️ Claude</b>: để <b>trò chuyện</b>.</li>
-        <li><b>🛠️ Codex</b> (của OpenAI): giúp lập trình viên <b>viết, sửa phần mềm</b>.</li>
-        <li><b>🛠️ Claude Code</b> (của Anthropic): công cụ <b>lập trình</b>, chạy thẳng trên máy của lập trình viên.</li>
-      </ul>
-    </div>
   </div>
   <div class="chot"><em>Cách hỏi</em> quan trọng hơn <em>chọn app</em>.<small>Buổi này chỉ dùng phần trò chuyện. Chọn 1–2 cái, dùng cho quen tay.</small></div>
 </section>
@@ -732,7 +723,7 @@
       <div class="it goal"><div class="icn sm">🛡️</div><div><b class="t">Chịu trách nhiệm</b><p>Mình ký tên cuối cùng</p><p class="q">"Nếu sai, ai chịu?" → <b>mình</b></p></div></div>
     </div>
   </div>
-  <p class="cap" style="margin-top:22px;text-align:center">Nguồn: khung AI Fluency (Anthropic).</p>
+  <p class="cap" style="margin-top:22px;text-align:center">🧐 Hỏi lại như Socrate trước khi tin: "Vì sao? Có ngoại lệ không? Bằng chứng ở đâu?"</p>
 </section>
 
 <section class="slide pp prac" data-s="4">
