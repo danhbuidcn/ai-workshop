@@ -1,12 +1,12 @@
 # Buổi 1: Làm việc với AI — workshop 1 giờ
 
-Tài liệu cho buổi học 1 giờ (38 slide) dành cho người không rành kỹ thuật, dùng ChatGPT hoặc Gemini bản miễn phí.
+Tài liệu cho buổi học 1 giờ (35 slide) dành cho người không rành kỹ thuật, dùng ChatGPT hoặc Gemini bản miễn phí.
 
 Mục tiêu của khoá: có tư duy làm việc với AI (tư duy phản biện: không tin ngay, luôn kiểm tra).
 
 Học xong, mỗi người biết:
 
-- Tư duy phản biện: phản biện soi người khác, tư duy phản biện soi chính mình; 5 câu tự hỏi mình.
+- Tư duy phản biện: phản biện soi người khác, tư duy phản biện soi chính mình; 3 cấp độ; vượt qua "cái tôi phi lý".
 - AI là gì (phần mềm tự học từ ví dụ, trả lời bằng cách đoán chữ tiếp theo), vì sao có lúc sai, nên không tin câu trả lời đầu.
 - 5 nguyên tắc làm việc với AI.
 - Công thức 5 phần để giao việc cho AI.
@@ -28,14 +28,14 @@ Cách mở trên máy (Windows): tải repo về (nút **Code → Download ZIP**
 | # | Phần | Slide | Phút |
 |---|---|---|---|
 | 0 | Mở đầu (bản đồ 8 phần) | 1–3 | 3 |
-| 1 | Tư duy phản biện (định nghĩa, 5 câu tự hỏi, vì sao cần khi dùng AI, Socrate, video) | 4–8 | 4 |
-| 2 | AI là gì | 9–13 | 8 |
-| 3 | Bản đồ AI | 14–15 | 4 |
-| 4 | 5 nguyên tắc (mỗi cái 1 slide) | 16–22 | 10 |
-| 5 | Cách giao việc (prompt) | 23–27 | 12 |
-| 6 | Cho AI đọc tài liệu | 28–32 | 10 |
-| 7 | Tổng kết | 33 | 2 |
-| 8 | Bài tập cuối | 34–38 | 11 |
+| 1 | Tư duy phản biện (định nghĩa + link video, 3 cấp độ, cái tôi phi lý) | 4–6 | 4 |
+| 2 | AI là gì | 7–10 | 8 |
+| 3 | Bản đồ AI | 11–12 | 4 |
+| 4 | 5 nguyên tắc (mỗi cái 1 slide) | 13–19 | 10 |
+| 5 | Cách giao việc (prompt) | 20–24 | 12 |
+| 6 | Cho AI đọc tài liệu | 25–29 | 10 |
+| 7 | Tổng kết | 30 | 2 |
+| 8 | Bài tập cuối | 31–35 | 11 |
 
 Số phút chỉ ghi ở đây và trong `outline/`, không ghi trên slide.
 

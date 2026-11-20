@@ -328,33 +328,33 @@
   .toc.sum ul.dot > li { font-size: 15px; margin: 0 0 4px; break-inside: avoid; }
   .pp .act { border: 0; border-left: 10px solid var(--pp-green); box-shadow: 0 6px 0 #f0e4cc; margin-top: 14px; }
   .pp .pill { background: #fff; border-color: var(--pp-green); color: var(--pp-ink); }
-  /* Socrate: hiện hết các câu ngay. Tiến độ 5 nguyên tắc: 5 vòng tròn nhỏ. Ô "Hỏi lại như Socrate". */
-  .socr { display: flex; flex-direction: column; gap: 8px; margin-top: 6px; }
-  .socr .ln { display: flex; align-items: baseline; gap: 12px; font-size: 17px; line-height: 1.35; padding: 8px 16px; border-radius: 14px; background: #fff; box-shadow: 0 4px 0 #f0e4cc; }
-  .socr .ln b { flex: none; width: 150px; font: 700 15px var(--serif); color: var(--pp-green); }
-  .socr .ln.me b { color: #a63a24; } .socr .ln.me { background: #fff1ee; }
-  .socr-go { align-self: center; margin-top: 6px; font: 800 17px "Segoe UI", system-ui, sans-serif; padding: 10px 28px; border-radius: 12px; border: 0;
-    background: #f59e0b; color: #1f2937; cursor: pointer; box-shadow: 0 3px 0 #b45309; }
-  .socr-go:hover { background: #fbbf24; }
-  .socr-intro { font-size: 19px; margin: 0 0 6px; text-align: center; }
+  /* Link video ở slide "Phản biện khác Tư duy phản biện" */
+  .pp .vid { text-align: center; margin: 14px 0 0; font-size: 19px; }
+  .pp .vid a { color: #a63a24; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
   /* Slide chỉ có chữ (phần 1, "AI là gì?"): 2 thẻ định nghĩa, danh sách 5 câu, ô định nghĩa */
   .pp .defs .card { padding: 18px 24px; }
   .pp .defs .card b.t { font: 700 27px var(--serif); color: var(--pp-green); margin-bottom: 8px; }
   .pp .defs .card p { font-size: 19px; line-height: 1.45; margin: 6px 0; }
   .pp .defs .card p.eg { font-size: 17px; color: #374151; border-top: 2px dashed #eadfc8; padding-top: 8px; margin-top: 10px; }
   .pp .defs .card.bad b.t { color: #b91c1c; } .pp .defs .card.good b.t { color: #15803d; }
-  .pp ol.ask5 { margin: 0 auto; padding-left: 34px; max-width: 1020px; }
-  .pp ol.ask5 li { font-size: 21px; line-height: 1.4; margin: 8px 0; padding-left: 6px; }
-  .pp ol.ask5 li::marker { font: 800 22px var(--serif); color: var(--pp-coral); }
+  .pp .defs.lv3 .card p { font-size: 20px; margin: 8px 0; }
+  .pp .lvn { display: inline-block; font: 700 21px var(--serif); color: #fff; background: var(--pp-green); border-radius: 999px; padding: 4px 16px; margin-bottom: 6px; }
+  .pp .lv3 .card.good .lvn { background: var(--pp-coral); color: #23283b; }
+  .pp .notx { margin-top: 16px; padding: 12px 24px; }
+  .pp .notx b.t { font: 700 23px var(--serif); color: #b91c1c; }
+  .pp .notx p { display: inline-block; font-size: 19px; margin: 2px 32px 0 0; }
+  .pp .notx p::before { content: "• "; color: #b91c1c; }
   .pp .ai-def { font-size: 21px; margin: 0 0 14px; background: var(--hi-bg); border-left: 8px solid var(--pp-coral); border-radius: 12px; padding: 10px 18px; }
-  .pp .ai-how { font-size: 18px; line-height: 1.45; margin: 14px 0 0; }
-  body.pmode .socr-go { display: none !important; } body.pmode .socr .ln { display: flex; } body.pmode .socr-bridge { display: block !important; }
+  .pp .ai-how { font-size: 21px; line-height: 1.45; margin: 16px 0 0; text-align: center; }
+  .pp .ai-sub { font: 700 25px var(--serif); color: var(--pp-green); text-align: center; margin: 6px 0 12px; }
+  .pp .ai-flow .st { font-size: 20px; font-weight: 500; padding: 16px 14px; } .pp .ai-flow .st .ic { font-size: 44px; margin-bottom: 4px; }
+  /* Tiến độ 5 nguyên tắc: 5 vòng tròn nhỏ. */
+  .pp ul.dot.big.pr5 { max-width: 1020px; margin: 6px auto 0; } .pp ul.dot.big.pr5 > li { font-size: 23px; line-height: 1.45; margin: 12px 0; }
   .fprog { display: flex; gap: 10px; justify-content: center; margin: 0 0 6px; }
   .fprog span { width: 40px; height: 40px; border-radius: 50%; background: #e5e7eb; color: #4b5563; font: 800 15px/40px var(--serif); text-align: center; }
   .fprog span.on { background: var(--pp-coral); color: #23283b; box-shadow: 0 0 0 5px var(--pp-pink); }
   .pp h2.eng { font-size: 41px; text-align: center; color: var(--pp-green); margin: 0 0 6px; }
   .pp p.vi { text-align: center; font-size: 20px; margin: 0 0 8px; }
-  .socq { margin-top: 12px; background: #fff; border-left: 10px solid var(--pp-green); border-radius: 12px; padding: 8px 18px; font-size: 17px; box-shadow: 0 5px 0 #f0e4cc; }
   /* Đo trước khi in: ẩn phần chỉ dùng trên màn hình, mở hết ô bấm để mở (giống @media print) */
   body.pmode .ai-out, body.pmode .ai-arrow, body.pmode .ai-foot, body.pmode .cmp-two, body.pmode .cmp-go, body.pmode .cmp-pick,
   body.pmode .copy, body.pmode .fold-hint, body.pmode .ai-lab { display: none !important; }
@@ -441,136 +441,82 @@
   <h2>Phản biện khác Tư duy phản biện</h2>
   <div class="grid g2 defs">
     <div class="card">
-      <b class="t">🗣️ Phản biện</b>
-      <p><b>Là gì:</b> dùng lý lẽ và bằng chứng để chỉ ra chỗ chưa đúng, chưa đủ trong ý kiến của người khác.</p>
-      <p><b>Đối tượng:</b> <span class="key">người khác</span>: lời nói, bài viết, đề xuất của họ.</p>
-      <p class="eg"><b>Ví dụ:</b> đồng nghiệp nói "khách chê giá cao". Bạn hỏi lại: "Bao nhiêu khách chê? Số liệu ở đâu?"</p>
+      <b class="t">🗣️ Hành động phản biện</b>
+      <p>Chỉ ra chỗ chưa đúng trong ý kiến của <span class="key">người khác</span>.</p>
     </div>
     <div class="card">
       <b class="t">🪞 Tư duy phản biện</b>
-      <p><b>Là gì:</b> thói quen tự đặt câu hỏi, kiểm tra lại chính suy nghĩ và kết luận của mình trước khi tin hoặc làm theo.</p>
-      <p><b>Đối tượng:</b> <span class="key">chính mình</span>: điều mình đang tin, điều mình sắp kết luận.</p>
-      <p class="eg"><b>Ví dụ:</b> định chia sẻ một tin trên Facebook, bạn tự hỏi: "Mình tin vì có bằng chứng, hay vì nó hợp ý mình?"</p>
+      <p>Tự <b>nhìn nhận, phán đoán, đánh giá</b> <span class="key">chính mình</span>.</p>
     </div>
   </div>
-  <div class="chot">Phản biện: soi <em>người khác</em>. Tư duy phản biện: soi <em>chính mình</em> trước.</div>
+  <div class="card bad notx">
+    <b class="t">❌ Tư duy phản biện không phải là</b>
+    <p>Mù quáng đặt câu hỏi về mọi thứ.</p>
+    <p>Đi phản biện người khác.</p>
+  </div>
+  <div class="chot">Phản biện: soi <em>người khác</em>. Tư duy phản biện: soi <em>chính mình</em>.</div>
+  <p class="vid"><a href="https://www.youtube.com/watch?v=sGTkYMrWX6U" target="_blank" rel="noopener noreferrer">🎬 Video gợi ý: xem thêm về tư duy phản biện trên YouTube ↗</a></p>
 </section>
 
 <section class="slide pp" data-s="1">
   <span class="tag">1 · TƯ DUY PHẢN BIỆN</span>
-  <h2>Tư duy phản biện: 5 câu tự hỏi mình <small>Hỏi trước khi tin, trước khi kết luận, trước khi gửi đi</small></h2>
-  <ol class="ask5">
-    <li><b>Mình đang tin điều gì?</b> Nói rõ ra thành 1 câu.</li>
-    <li><b>Mình dựa vào đâu?</b> Có bằng chứng, hay chỉ là cảm giác?</li>
-    <li><b>Đó là sự thật hay ý kiến?</b> "Doanh thu tăng 30%" là số liệu, kiểm tra được. "Sản phẩm này tốt nhất" là ý kiến.</li>
-    <li><b>Mình có đang thiên vị không?</b> Mình tin vì nó đúng, hay vì nó hợp ý mình, hay vì người nói là người mình quý?</li>
-    <li><b>Nếu mình sai thì sao?</b> Có ngoại lệ không? Có cách giải thích nào khác không?</li>
-  </ol>
-  <div class="chot">Người có tư duy phản biện không phải người hay cãi,<br>mà là người <em>dám nghi ngờ chính mình</em>.</div>
+  <h2>3 cấp độ tư duy <small>Nội quan = tự nhìn vào suy nghĩ của chính mình</small></h2>
+  <div class="grid g3 defs lv3">
+    <div class="card"><span class="lvn">Cấp 1 · Thấp</span>
+      <p><b>Không có nội quan.</b></p>
+      <p>Không tự nhìn lại mình, phán đoán theo trực giác.</p></div>
+    <div class="card"><span class="lvn">Cấp 2 · Cao hơn</span>
+      <p><b>Nội quan có chọn lọc.</b></p>
+      <p>Suy nghĩ giỏi nhưng thiếu công bằng: dùng tiêu chuẩn riêng chấm người khác, luôn cho mình đúng.</p></div>
+    <div class="card good"><span class="lvn">Cấp 3 · Cao nhất 🎯</span>
+      <p><b>Ngoại hoá nội quan.</b></p>
+      <p>Đem suy nghĩ của mình ra cho người khác soi. Sai thì nhận góp ý. Suy nghĩ công bằng.</p></div>
+  </div>
+  <div class="chot">Tư duy phản biện = <em>cấp 3</em>, cấp tư duy chất lượng cao nhất.</div>
 </section>
 
 <section class="slide pp" data-s="1">
   <span class="tag">1 · TƯ DUY PHẢN BIỆN</span>
-  <h2>Vì sao dùng AI cần tư duy phản biện?</h2>
+  <h2>Mục tiêu: vượt qua "cái tôi phi lý"</h2>
   <div class="grid g2 defs">
-    <div class="card bad">
-      <b class="t">❌ Không có</b>
-      <p>AI trả lời rất trôi chảy, nghe rất hợp lý.</p>
-      <p>Mình thấy ổn, chép lại, gửi cho sếp, khách hàng.</p>
-      <p>Trong đó có 1 con số sai. <b>Người chịu trách nhiệm là mình.</b></p>
+    <div class="card">
+      <b class="t">🙋 Lấy mình làm trung tâm</b>
+      <p>"Đúng vì đó là ý của mình."</p>
+      <p class="eg"><b>Với AI:</b> tin ngay vì câu trả lời hợp ý mình.</p>
     </div>
-    <div class="card good">
-      <b class="t">✅ Có</b>
-      <p>AI trả lời. Mình dừng lại, tự hỏi: <i>"Mình tin vì nó đúng, hay vì nó nghe hay?"</i></p>
-      <p>Hỏi lại AI: "Dựa vào đâu? Nguồn ở đâu?". Tự đối chiếu những chỗ quan trọng: số liệu, tên, ngày tháng.</p>
-      <p>Kiểm tra xong mới dùng.</p>
+    <div class="card">
+      <b class="t">👥 Lấy xã hội làm trung tâm</b>
+      <p>"Đúng vì ai cũng nghĩ vậy."</p>
+      <p class="eg"><b>Với AI:</b> tin ngay vì ai cũng dùng AI.</p>
     </div>
   </div>
-  <div class="chot">AI không chịu trách nhiệm. Người gửi kết quả đi là <em>bạn</em>.</div>
-</section>
-
-<section class="slide pp" data-s="1">
-  <span class="tag">1 · TƯ DUY PHẢN BIỆN</span>
-  <h2 style="font-size:41px;margin-bottom:6px">🧐 Hỏi như Socrate</h2>
-  <p class="socr-intro">Socrate (triết gia Hy Lạp) không tranh cãi. Ông chỉ hỏi tiếp, để người kia <b>tự xét lại điều chính mình đang tin</b>.</p>
-  <div class="socr">
-    <div class="ln"><b>Socrate</b><span>Bạn cho rằng ăn cắp là sai, đúng không?</span></div>
-    <div class="ln me"><b>Người đối thoại</b><span>Đúng, lấy đồ của người khác mà không được phép là sai.</span></div>
-    <div class="ln"><b>Socrate</b><span>Nếu bạn thấy một người bạn đang có vũ khí và định tự sát, bạn giấu vũ khí của anh ta đi mà không hỏi ý. Đó có phải là lấy đồ không được phép không?</span></div>
-    <div class="ln me"><b>Người đối thoại</b><span>Có, nhưng đó là để cứu người, không phải ăn cắp xấu.</span></div>
-    <div class="ln"><b>Socrate</b><span>Vậy hành động lấy đi thứ không thuộc về mình không phải lúc nào cũng xấu, nếu nó hướng tới điều tốt?</span></div>
-    <div class="ln me"><b>Người đối thoại</b><span>Có lẽ vậy.</span></div>
-  </div>
-  <div class="chot">Tự hỏi mình như Socrate hỏi: <em>"Vì sao mình tin? Có ngoại lệ không?"</em></div>
-</section>
-
-<section class="slide pp" data-s="1">
-  <span class="tag">1 · TƯ DUY PHẢN BIỆN</span>
-  <h2>🎬 Xem thêm: video gợi ý</h2>
-  <div class="icgrid duo">
-    <div class="side"><div class="icn lg pink">▶️</div></div>
-    <div class="main">
-      <b class="t">Video do người hướng dẫn gợi ý</b>
-      <p>Xem sau buổi học để hiểu sâu hơn về tư duy phản biện.</p>
-      <a class="socr-go" id="ytBtn" href="https://www.youtube.com/watch?v=sGTkYMrWX6U" target="_blank" rel="noopener noreferrer" style="display:inline-block;text-decoration:none">▶ Mở video trên YouTube</a>
-      <p class="cap">Mở ở tab mới. youtube.com/watch?v=sGTkYMrWX6U</p>
-    </div>
-  </div>
+  <div class="chot">Tin vì <em>có bằng chứng</em>, không phải vì hợp ý mình hay hợp ý số đông.</div>
 </section>
 
 <!-- ===================== 2. AI LÀ GÌ ===================== -->
 <section class="slide pp" data-s="2">
   <span class="tag">2 · AI LÀ GÌ</span>
   <h2 style="margin-bottom:12px">🧠 AI là gì?</h2>
-  <p class="ai-def"><b>AI (trí tuệ nhân tạo)</b> là phần mềm <b>tự học từ rất nhiều ví dụ</b>, thay vì được con người viết sẵn từng quy tắc.</p>
-  <div class="grid g2 defs">
-    <div class="card">
-      <b class="t">🧮 Phần mềm thường</b>
-      <p>Con người viết sẵn từng quy tắc. Máy chỉ làm đúng theo quy tắc đó.</p>
-      <p class="eg"><b>Ví dụ:</b> máy tính bỏ túi. 2 + 2 luôn ra 4. Không có quy tắc thì không làm được.</p>
-    </div>
-    <div class="card">
-      <b class="t">🧠 AI</b>
-      <p>Cho máy xem thật nhiều ví dụ. Máy tự rút ra quy luật.</p>
-      <p class="eg"><b>Ví dụ:</b> Gmail xem hàng triệu thư rác, tự nhận ra thư rác mới dù chưa ai chỉ cho từng thư.</p>
-    </div>
+  <p class="ai-def"><b>AI (trí tuệ nhân tạo)</b> là phần mềm <b>tự học từ rất nhiều ví dụ</b>, thay vì được người viết sẵn từng quy tắc.</p>
+  <p class="ai-sub">ChatGPT, Gemini học và trả lời thế nào?</p>
+  <div class="flow ai-flow">
+    <div class="st"><span class="ic">📚</span>Đọc hàng tỉ trang chữ<br>(sách, báo, web)</div><span class="to">➜</span>
+    <div class="st"><span class="ic">🧠</span>Nhớ <b>chữ nào hay đi sau chữ nào</b></div><span class="to">➜</span>
+    <div class="st goal"><span class="ic">✍️</span>Bạn hỏi: nó <b>đoán từng chữ</b> để viết câu trả lời</div>
   </div>
-  <p class="ai-how"><b>ChatGPT, Gemini học thế nào?</b> Chúng đã đọc hàng tỉ trang chữ (sách, báo, trang web) và học được <b>chữ nào hay đi sau chữ nào</b>. Khi bạn hỏi, chúng <b>không tra cứu sự thật</b>: chúng viết câu trả lời bằng cách <b>đoán từng chữ tiếp theo</b> (xem slide sau).</p>
+  <p class="ai-how">Nó <b>không tra cứu sự thật</b>. Nó viết ra câu <b>nghe hợp lý nhất</b>.</p>
   <div class="chot">AI <em>bắt chước rất giỏi</em>, nhưng không biết mình đúng hay sai.</div>
 </section>
 
 <section class="slide pp" data-s="2">
   <span class="tag">2 · AI LÀ GÌ</span>
-  <h2>AI chơi trò "đoán chữ tiếp theo"</h2>
-  <p style="font:700 35px var(--serif);margin:0 0 10px">Con mèo đang ăn <span class="blank">&nbsp;</span></p>
-  <div class="bar top"><span class="l">cá</span><span class="b" style="width:600px">60%</span></div>
-  <div class="bar"><span class="l">cơm</span><span class="b" style="width:250px">25%</span></div>
-  <div class="bar"><span class="l">chuột</span><span class="b" style="width:100px">10%</span></div>
-  <div class="bar"><span class="l">…</span><span class="b" style="width:56px;padding-left:6px">5%</span></div>
-  <ul class="dot big">
-    <li>AI chọn chữ có khả năng cao, viết ra, rồi đoán chữ sau.</li>
-    <li>Cả bài văn được viết <b>từng chữ một</b>, rất nhanh.</li>
-  </ul>
-  <div class="chot">Nhớ đơn giản: AI là <em>máy đoán chữ</em>.<small>Tên gọi: "mô hình ngôn ngữ lớn" (tiếng Anh: LLM).</small></div>
-</section>
-
-<section class="slide pp" data-s="2">
-  <span class="tag">2 · AI LÀ GÌ</span>
-  <div class="opener">
-    <div>
-      <h2>Vì đoán,<br>nên có thể sai</h2>
-      <div class="vs">
-        <p><span class="lb">AI chọn</span> cái <b>nghe hợp lý nhất</b></p>
-        <p class="k">khác</p>
-        <p class="hi"><span class="lb">Không chắc là</span> cái <b>đúng nhất</b></p>
-      </div>
-    </div>
-    <div class="hero" aria-hidden="true" style="width:380px;height:380px">
-      <span class="ring"></span>
-      <span class="b b1" style="font-size:165px">🦜</span><span class="b b2">💬</span><span class="b b3">❓</span>
-    </div>
+  <h2>Vì đoán, nên có thể sai</h2>
+  <p class="ai-how" style="margin:0 0 18px">AI viết câu <b>nghe hợp lý nhất</b>, không chắc là câu <b>đúng nhất</b>.</p>
+  <div class="grid g2 defs">
+    <div class="card bad"><b class="t">❌ Không nên</b><p>"AI viết vậy chắc đúng, gửi luôn."</p></div>
+    <div class="card good"><b class="t">✅ Nên</b><p>"AI viết vậy dựa vào đâu? Kiểm tra lại rồi mới gửi."</p></div>
   </div>
-  <div class="chot">Giống con vẹt nói rất trôi chảy — nhưng <em>không tự kiểm tra lại</em>.</div>
+  <div class="chot">AI nói trôi chảy, nhưng <em>không tự kiểm tra lại</em>.</div>
 </section>
 
 <section class="slide pp" data-s="2">
@@ -644,11 +590,11 @@
   <span class="tag">4 · 5 NGUYÊN TẮC</span>
   <h2>✋ 5 nguyên tắc = 5 ngón tay</h2>
   <div class="hand">
-    <div class="finger" style="height:230px"><b>1</b>Bạn mang bối cảnh<span>đầu bếp chưa vào bếp nhà bạn</span></div>
-    <div class="finger" style="height:290px"><b>2</b>Lần đầu là bản nháp<span>cắt tóc xong, soi gương, chỉnh</span></div>
-    <div class="finger" style="height:320px"><b>3</b>Tủ tài liệu + công thức<span>lưu 1 lần, dùng mãi</span></div>
-    <div class="finger" style="height:290px"><b>4</b>Giao việc lặp lại, giữ việc phán đoán<span>AI là phụ bếp</span></div>
-    <div class="finger" style="height:250px"><b>5</b>Kiểm tra trước khi tin<span>tự tin khác đúng</span></div>
+    <div class="finger" style="height:170px"><b>1</b>Bạn mang bối cảnh</div>
+    <div class="finger" style="height:200px"><b>2</b>Lần đầu là bản nháp</div>
+    <div class="finger" style="height:220px"><b>3</b>Kho kiến thức + quy trình</div>
+    <div class="finger" style="height:200px"><b>4</b>Giao việc lặp lại, giữ việc phán đoán</div>
+    <div class="finger" style="height:180px"><b>5</b>Kiểm tra trước khi tin</div>
   </div>
   <p class="cap" style="text-align:center;margin-top:14px">Nguồn: khoá Claude 101 (Anthropic). Dùng được cho mọi AI.</p>
 </section>
@@ -657,84 +603,57 @@
   <span class="tag">4 · NGUYÊN TẮC 1</span>
   <div class="fprog"><span class="on">1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
   <h2 class="eng">Claude bring intelligence.<br>You bring context and expertise.</h2>
-  <p class="vi">AI mang trí tuệ, <span class="key">bạn mang bối cảnh</span>.</p>
-  <div class="row" style="align-items:center;gap:26px">
-    <div class="icn pink" style="margin:8px">👨‍🍳</div>
-    <ul class="dot big" style="flex:1">
-      <li>AI giỏi suy luận, viết, tìm hiểu</li>
-      <li>Team bạn ở đâu, khách đặc biệt thế nào, quyết định tháng trước vì sao: <b>chỉ bạn biết</b></li>
-      <li>Như đầu bếp giỏi chưa vào bếp nhà bạn: không nói ai ăn, ăn cay không → nấu đại</li>
-    </ul>
-  </div>
-  <div class="grid g2" style="margin-top:10px">
-    <div class="card bad mini" style="margin-top:0"><b>❌ Hỏi trống:</b> Viết email xin nghỉ.</div>
-    <div class="card good mini" style="margin-top:0"><b>✅ Có bối cảnh:</b> Viết email xin nghỉ 2 ngày (20–21/11) gửi trưởng phòng, lý do việc gia đình, giọng lịch sự, dưới 80 chữ.</div>
-  </div>
-  <div class="chot">Prompt rỗng → <em>trả lời rỗng</em>.</div>
+  <ul class="dot big pr5">
+    <li>AI có khả năng reasoning, viết, research.</li>
+    <li>Nhưng bối cảnh của công việc — team đang ở đâu, khách hàng này đặc biệt thế nào, quyết định tháng trước vì lý do gì — <b>chỉ có bạn biết</b>.</li>
+    <li>Claude chỉ giỏi khi bạn đưa đủ context.</li>
+  </ul>
+  <div class="chot">Prompt rỗng → <em>output rỗng</em>.</div>
 </section>
 
 <section class="slide pp" data-s="4">
   <span class="tag">4 · NGUYÊN TẮC 2</span>
   <div class="fprog"><span>1</span><span class="on">2</span><span>3</span><span>4</span><span>5</span></div>
   <h2 class="eng">First response is a starting point,<br>not a final answer.</h2>
-  <p class="vi">Câu trả lời đầu là <span class="key">bản nháp</span>, chưa phải bản cuối.</p>
-  <div class="row" style="align-items:center;gap:26px">
-    <div class="icn pink" style="margin:8px">💇</div>
-    <ul class="dot big" style="flex:1">
-      <li>Người mới: bỏ đi, tự viết lại</li>
-      <li>Người thạo: <b>chỉnh tiếp</b> (iterate) cho tới khi ưng</li>
-      <li>Chỉnh đi chỉnh lại là <b>cách dùng đúng</b>, không phải lỗi</li>
-    </ul>
-  </div>
-  <div class="flow sm">
-    <div class="st"><span class="ic">📝</span>Nháp</div><span class="to">➜</span>
-    <div class="st"><span class="ic">✂️</span>Chỉnh</div><span class="to">➜</span>
-    <div class="st goal"><span class="ic">😊</span>Ưng ý</div>
-  </div>
-  <p style="text-align:center;margin:6px 0 0"><span class="pill">bớt formal hơn</span><span class="pill">rút thành 3 bullet</span><span class="pill">đổi góc nhìn sang khách hàng</span></p>
-  <div class="chot">Chưa ưng → <em>nói thẳng</em> để chỉnh.</div>
+  <ul class="dot big pr5">
+    <li>Người mới hay nhìn response đầu tiên, không ưng → bỏ đi viết lại từ đầu.</li>
+    <li>Người thạo sẽ <b>iterate</b>: "bớt formal hơn", "rút thành 3 bullet", "đổi góc nhìn sang khách hàng".</li>
+  </ul>
+  <div class="chot">Iteration là <em>feature</em>, không phải bug.</div>
 </section>
 
 <section class="slide pp" data-s="4">
   <span class="tag">4 · NGUYÊN TẮC 3</span>
   <div class="fprog"><span>1</span><span>2</span><span class="on">3</span><span>4</span><span>5</span></div>
   <h2 class="eng">Projects store knowledge.<br>Skills perform tasks.</h2>
-  <p class="vi"><b>Project</b> là kho kiến thức. <b>Skill</b> là quy trình làm việc.</p>
-  <div class="grid g2" style="gap:24px">
-    <div class="card" style="text-align:center"><span class="ic">🗄️</span><b class="t">Project = kho kiến thức</b>Brand guide, dự án cũ, tài liệu công ty</div>
-    <div class="card" style="text-align:center"><span class="ic">📋</span><b class="t">Skill = quy trình</b>Template viết blog, checklist, các bước phân tích</div>
-  </div>
-  <ul class="dot" style="margin-top:12px">
-    <li>Lưu 1 lần, dùng mãi, không giải thích lại</li>
-    <li>Bản miễn phí: ChatGPT Projects, Gemini Gem, NotebookLM, hoặc 1 file ghi chú (phần 6)</li>
+  <ul class="dot big pr5">
+    <li>Hai feature hay bị nhầm.</li>
+    <li><b>Project</b> = kho kiến thức (brand guide, past projects, references).</li>
+    <li><b>Skill</b> = cỗ máy quy trình (template viết blog, checklist compliance, flow phân tích data).</li>
   </ul>
-  <div class="chot">Dùng <em>cùng nhau</em>: kho cho AI biết, quy trình cho AI làm.</div>
+  <div class="chot">Dùng <em>cùng nhau</em>, không thay thế.</div>
 </section>
 
 <section class="slide pp" data-s="4">
   <span class="tag">4 · NGUYÊN TẮC 4</span>
   <div class="fprog"><span>1</span><span>2</span><span>3</span><span class="on">4</span><span>5</span></div>
   <h2 class="eng">Delegate what's repeatable.<br>Keep what needs judgment.</h2>
-  <p class="vi">Giao việc <b>có khuôn mẫu</b>. Giữ việc <b>cần phán đoán</b>.</p>
-  <div class="grid g2" style="gap:24px">
-    <div class="card good"><b class="t">🤖 Giao AI</b><ul class="dot"><li>Sắp xếp theo format</li><li>Tóm tắt, phân loại</li><li>Soạn bản nháp đầu</li></ul></div>
-    <div class="card bad"><b class="t">🙋 Bạn giữ</b><ul class="dot"><li>Chiến lược</li><li>Tuyển, cho nghỉ việc</li><li>Việc liên quan đạo đức</li></ul></div>
-  </div>
-  <p class="cap" style="text-align:center;margin-top:12px">Bạn sai thì ai chịu trách nhiệm? → <b>người đó</b> phải xem lại trước khi gửi đi.</p>
-  <div class="chot">AI làm phụ bếp, <em>bạn nêm nếm</em>.</div>
+  <ul class="dot big pr5">
+    <li>AI rất giỏi những việc có pattern: format, tổng hợp, phân loại, first draft.</li>
+    <li>AI không nên — và bạn không nên — giao cho AI những quyết định cần trách nhiệm: chiến lược, hire/fire, giá trị đạo đức.</li>
+  </ul>
+  <div class="chot">Rule of thumb: nếu bạn sai ai sẽ chịu trách nhiệm, <em>người đó phải review</em> trước khi ship.</div>
 </section>
 
 <section class="slide pp" data-s="4">
   <span class="tag">4 · NGUYÊN TẮC 5</span>
   <div class="fprog"><span>1</span><span>2</span><span>3</span><span>4</span><span class="on">5</span></div>
   <h2 class="eng">Test before you trust.<br>Trust but keep verifying.</h2>
-  <p class="vi">AI có thể <b>tự tin mà sai</b> (hallucination).</p>
-  <ul class="dot big">
-    <li>Lấy <b>1 việc bạn đã làm</b>, biết đáp án → xem AI làm lại có đúng không</li>
-    <li>Đúng rồi vẫn <b>kiểm tra từng kết quả mới</b>: số liệu, tên người, luật, trích dẫn</li>
+  <ul class="dot big pr5">
+    <li>AI có thể tự tin sai (<b>hallucination</b>).</li>
+    <li>Trước khi giao việc quan trọng cho Claude, chạy "delegation-diligence loop": lấy 1 task bạn đã làm rồi, xem Claude có reproduce kết quả đúng không.</li>
   </ul>
-  <div class="socq">🧐 <b>Hỏi lại như Socrate:</b> "Vì sao bạn kết luận vậy? Có ngoại lệ không? Nguồn ở đâu?"</div>
-  <div class="chot">Tự tin <em>khác</em> đúng. Tin, nhưng <em>vẫn kiểm tra</em>.</div>
+  <div class="chot">Sau khi validate, <em>vẫn check sanity</em> ở mỗi output mới.</div>
 </section>
 
 <section class="slide pp prac" data-s="4">
@@ -838,7 +757,7 @@
       <div class="it goal"><div class="icn sm">🛡️</div><div><b class="t">Chịu trách nhiệm</b><p>Mình ký tên cuối cùng</p><p class="q">"Nếu sai, ai chịu?" → <b>mình</b></p></div></div>
     </div>
   </div>
-  <p class="cap" style="margin-top:22px;text-align:center">🧐 Hỏi lại như Socrate trước khi tin: "Vì sao? Có ngoại lệ không? Bằng chứng ở đâu?"</p>
+  <p class="cap" style="margin-top:22px;text-align:center">🧐 Hỏi lại trước khi tin: "Vì sao? Có ngoại lệ không? Bằng chứng ở đâu?"</p>
 </section>
 
 <section class="slide pp prac" data-s="5">
@@ -1047,7 +966,7 @@ Nếu chưa rõ, hãy hỏi tôi trước.</div>
     <div class="it"><span class="num">04</span><div><b>📁 Tài liệu</b>
       <ul class="dot"><li>Gom 1 folder</li><li>Tải lên / dán / @Drive</li><li>File "yêu cầu cố định"</li><li>Không đưa thông tin riêng tư</li></ul></div></div>
   </div>
-  <div class="chot">AI giỏi đến đâu là do mình <em>giao việc rõ</em> đến đâu.<small>Tư duy phản biện đi cùng: tự hỏi "Vì sao mình tin? Có ngoại lệ không?"</small></div>
+  <div class="chot">AI giỏi đến đâu là do mình <em>giao việc rõ</em> đến đâu.<small>Tư duy phản biện đi cùng: tin vì có bằng chứng, không vì hợp ý mình.</small></div>
   <div class="act"><b>✅ Làm ngay tuần này:</b> chọn 1 việc lặp lại mỗi tuần → viết 1 prompt mẫu → lưu vào file .txt.</div>
 </section>
 
@@ -1115,7 +1034,7 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
     <li>Ô <b>Chọn mẫu</b>: chọn GV tiếng Anh (sửa bài viết), GV tiếng Trung (thẻ từ vựng), Nhân sự (trả lời nhân viên), hoặc "Tự viết".</li>
     <li>Phần A: sửa từng dòng cho đúng việc của bạn. Giữ đủ 4 khối: vai trò, điều cấm, cách làm, khung trả lời.</li>
     <li>Phần B: gõ 1 câu hỏi thử → bấm <b>So sánh</b> (gửi 2 lần: không có và có Phần A).</li>
-    <li>Xem 2 khung ②: bên phải có đúng khung không? Chưa đúng → sửa 1 dòng ở Phần A → <b>Chạy lại</b>. <b>(Nguyên tắc 2!)</b> Hỏi lại như Socrate: "Vì sao AI viết vậy? Có ngoại lệ không?"</li>
+    <li>Xem 2 khung ②: bên phải có đúng khung không? Chưa đúng → sửa 1 dòng ở Phần A → <b>Chạy lại</b>. <b>(Nguyên tắc 2!)</b> Hỏi lại: "Vì sao AI viết vậy? Có ngoại lệ không?"</li>
     <li>Ưng rồi → mang về app Gemini: bấm ⚙️ cạnh tên mình (góc dưới trái) → <b>Trí thông minh cá nhân</b> → <b>Chỉ dẫn cho Gemini</b> → dán Phần A → <b>Lưu</b>. <span class="muted">Cách khác: ⚙️ → <b>Gem</b> → tạo Gem mới → dán vào ô <b>Hướng dẫn</b> → <b>Lưu</b>.</span></li>
   </ol>
   <div class="ai-lab"></div>
@@ -1238,7 +1157,7 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
     more.style.display = s.scrollHeight - s.clientHeight - s.scrollTop > 8 ? 'block' : 'none';
   }, 400);
 
-  // In PDF: mở hết ô bấm để mở; slide dài thì thu nhỏ cho vừa 1 trang (giữ 37 trang)
+  // In PDF: mở hết ô bấm để mở; slide dài thì thu nhỏ cho vừa 1 trang (giữ 35 trang)
   window.addEventListener('beforeprint', function () {
     document.body.classList.add('pmode');
     slides.forEach(function (s) {
