@@ -12,8 +12,9 @@ Owner (2026-11-20): tóm tắt 5 ý (không phải mù quáng hỏi mọi thứ 
 - [x] Xoá 2 slide thực hành "Đoán chữ tiếp theo", "Hỏi 1 câu, 2 AI"; slide 5 ngón tay = 5 câu tiếng Anh gốc; bỏ in đậm tự thêm ở slide nguyên tắc (chữ y nguyên owner gửi); bỏ câu "Mỗi phần có 1 bài thực hành nhỏ"
 - [x] Slide nguyên tắc theo đúng tài liệu owner (ảnh): tiêu đề "N. \"câu gốc\"", mọi dòng là bullet, bỏ ô câu chốt; slide 5 ngón tay thêm "Có 5 nguyên tắc sẽ lặp lại nhiều lần."
 - [x] Slide 17: thực hành "Viết lại câu trả lời đầu" → ví dụ chữ: không nên (câu 1) / nên (câu 2, giữ 5 màu)
-- [ ] Copy nội dung từ NotebookLM: link riêng tư, cần đăng nhập, chưa truy cập được, chờ owner dán nội dung
-- [x] Số slide 38 → 33: sửa tham chiếu trong deck (slide 19, 22, 24; slide 26, kiểm theo nội dung), README, outline 00–08, index gốc
+- [x] NotebookLM (owner gửi ảnh): chương 2 → phần 5 = C-T-R + 4D (bỏ 2 từ, 5 phần, Trước và sau, 4 năng lực, thực hành); slide "Nhập môn Claude" ở phần 3; ví dụ slide 18 tô C-T-R
+- [x] Chương 3–6 → phần 6 "Dùng Gemini miễn phí": tài liệu, Gem, Chat/Canvas/Deep Research, riêng tư; bỏ "Để AI luôn nhớ" + thực hành; tổng kết lấy ý chương 6 (lặp lại nhiều, 30 ngày)
+- [x] Số slide 38 → 30: sửa tham chiếu trong deck (slide 19, 22, 24; slide 26, kiểm theo nội dung), README, outline 00–08, index gốc
 - [x] Chụp slide 4–7, kiểm tra không tràn
 ## Kết quả
-Sửa trực tiếp. 33 slide. Đã commit, chưa push. Owner sẽ nhờ ChatGPT review.
+Sửa trực tiếp. 30 slide. Đã commit, chưa push. Owner sẽ nhờ ChatGPT review.

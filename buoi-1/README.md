@@ -1,6 +1,6 @@
 # Buổi 1: Làm việc với AI — workshop 1 giờ
 
-Tài liệu cho buổi học 1 giờ (33 slide) dành cho người không rành kỹ thuật, dùng ChatGPT hoặc Gemini bản miễn phí.
+Tài liệu cho buổi học 1 giờ (30 slide) dành cho người không rành kỹ thuật, dùng ChatGPT hoặc Gemini bản miễn phí.
 
 Mục tiêu của khoá: có tư duy làm việc với AI (tư duy phản biện: không tin ngay, luôn kiểm tra).
 
@@ -9,8 +9,8 @@ Học xong, mỗi người biết:
 - Tư duy phản biện: phản biện soi người khác, tư duy phản biện soi chính mình; 3 cấp độ; vượt qua "cái tôi phi lý".
 - AI là gì (phần mềm tự học từ ví dụ, trả lời bằng cách đoán chữ tiếp theo), vì sao có lúc sai, nên không tin câu trả lời đầu.
 - 5 nguyên tắc làm việc với AI.
-- Công thức 5 phần để giao việc cho AI.
-- Cách cho AI đọc tài liệu (file, Drive, Gmail, Excel) trên bản miễn phí.
+- Công thức C-T-R và khung 4D để giao việc cho AI.
+- Dùng Gemini miễn phí: cho đọc tài liệu, Gem, Chat/Canvas/Deep Research.
 - Cách viết 1 đoạn hướng dẫn để AI luôn trả lời đúng kiểu mình muốn.
 
 ## Mở thế nào
@@ -30,12 +30,12 @@ Cách mở trên máy (Windows): tải repo về (nút **Code → Download ZIP**
 | 0 | Mở đầu (bản đồ 8 phần) | 1–3 | 3 |
 | 1 | Tư duy phản biện (định nghĩa + link video, 3 cấp độ, cái tôi phi lý) | 4–6 | 4 |
 | 2 | AI là gì | 7–9 | 6 |
-| 3 | Bản đồ AI | 10 | 2 |
-| 4 | 5 nguyên tắc (mỗi cái 1 slide + ví dụ) | 11–17 | 8 |
-| 5 | Cách giao việc (prompt) | 18–22 | 12 |
-| 6 | Cho AI đọc tài liệu | 23–27 | 10 |
-| 7 | Tổng kết | 28 | 2 |
-| 8 | Bài tập cuối | 29–33 | 11 |
+| 3 | Bản đồ AI (4 cái tên, nhập môn Claude) | 10–11 | 3 |
+| 4 | 5 nguyên tắc (mỗi cái 1 slide + ví dụ) | 12–18 | 8 |
+| 5 | Cách giao việc (C-T-R, 4D) | 19–20 | 6 |
+| 6 | Dùng Gemini miễn phí (tài liệu, Gem, Chat/Canvas/Deep Research, riêng tư) | 21–24 | 8 |
+| 7 | Tổng kết | 25 | 2 |
+| 8 | Bài tập cuối | 26–30 | 11 |
 
 Số phút chỉ ghi ở đây và trong `outline/`, không ghi trên slide.
 

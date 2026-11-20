@@ -1,50 +1,31 @@
-# 6. Cho AI đọc tài liệu của mình (10 phút)
+# 6. Dùng Gemini miễn phí (8 phút)
 
-Slide 23–27: slide 23 = Ý 1 + Ý 2 · slide 24 = Gemini @Gmail/@Drive + Ý 3 · slide 25 = Ý 4 · slide 26 = Ý 5 + Ý 6 · slide 27 thực hành.
+Slide 21–24. Nguồn: NotebookLM chương 3–6, chỉ giữ phần người không rành kỹ thuật dùng được trên Gemini bản miễn phí.
 
-## Mục tiêu
-Biết 3 cách đưa tài liệu cho AI trên bản free, và cách lưu "yêu cầu cố định" để không phải gõ lại.
+| NotebookLM (Claude) | Gemini free |
+|---|---|
+| Chat mode | Chat |
+| Projects + Instructions | Gem |
+| Artifacts | Canvas |
+| Connectors (Drive) | @Gmail, @Google Drive |
+| Research mode + citation | Deep Research (có nguồn) |
 
-## Ý 1: Gom vào 1 folder
-- "AI chỉ biết những gì mình đưa. Tài liệu rải rác 5 nơi → mình mệt, AI thiếu."
-- Làm 1 folder (trên máy hoặc Google Drive): `AI - Lop 7A` hoặc `AI - Tuyen dung`. Bỏ vào: giáo trình, đề mẫu, quy định, mẫu email cũ.
-- Hình: nhiều tờ giấy bay → 1 folder 📁.
+Bỏ: Cowork, Code, Quick Entry, Skills, Enterprise Search, Claude for Excel/Slack/Chrome (chỉ Claude hoặc cần kỹ thuật).
 
-## Ý 2: 3 cách đưa tài liệu cho AI
-| Cách | Làm thế nào | Free? |
-|---|---|---|
-| 📎 Tải file lên | Bấm dấu **+** hoặc 📎 trong ô chat, chọn file (Word, PDF, Excel, ảnh) | Có (ChatGPT free giới hạn số file mỗi ngày) |
-| 📋 Dán chữ | Copy nội dung, dán vào ô chat | Có, luôn được |
-| 🔗 Kết nối Drive/Gmail | Gemini: gõ **@Gmail** hoặc **@Google Drive** trong ô chat (lần đầu: thanh trái → Tuỳ chỉnh → tab Trình kết nối → Google Workspace → +; đường khác: ⚙️ cạnh tên → Trí thông minh cá nhân → Các ứng dụng có thể kết nối; không thấy thì tìm chữ "Trình kết nối" hoặc "Connectors") | Gemini: có. ChatGPT bản free: không có kết nối → dùng cách tải file |
+## Slide 21: Cho Gemini đọc tài liệu
+- Tải file lên (+) · dán chữ · @Gmail / @Google Drive.
+- Câu chốt: AI chỉ biết những gì bạn đưa. Đọc xong vẫn kiểm tra lại.
 
-Lưu ý: tính năng các app đổi thường xuyên. Không thấy nút → dùng cách 📎 hoặc 📋.
+## Slide 22: Gem
+- Gom tài liệu tham chiếu và chỉ dẫn riêng cho 1 việc; viết chỉ dẫn 1 lần để trả lời nhất quán.
+- Ví dụ chỉ dẫn: giáo viên tiếng Anh lớp 6–7, ngắn, có bảng, thân thiện, chưa rõ thì hỏi.
 
-## Ý 3: Excel
-- Tải file `.xlsx` lên, hỏi: "Tóm tắt bảng này", "Ai đi muộn quá 3 lần trong tháng 10?", "Vẽ biểu đồ số lượng theo tháng".
-- File quá lớn → lọc bớt cột, chỉ giữ phần cần hỏi, hoặc lưu thành `.csv`.
-- Luôn kiểm tra lại 1–2 con số bằng tay (nguyên tắc 5).
+## Slide 23: 3 cách dùng Gemini
+- Chat: hỏi nhanh, brainstorm. Canvas: tài liệu/trang riêng để sửa trực tiếp. Deep Research: nhiều nguồn, báo cáo, có trích dẫn để kiểm chứng.
+- Bản miễn phí giới hạn lượt; không thấy nút thì dùng Chat.
 
-## Ý 4: An toàn
-- Không đưa: số CCCD, lương cụ thể từng người, thông tin sức khoẻ, mật khẩu.
-- Cần dùng dữ liệu thật → đổi tên thành "Nhân viên A", "Học sinh B".
+## Slide 24: Đừng đưa cho AI
+- CCCD, số tài khoản, lương từng người, sức khoẻ, mật khẩu. Đổi tên thành "Nhân viên A".
 
-## Ý 5: File "yêu cầu cố định" (.txt)
-- Viết 1 file `yeu-cau-cua-toi.txt` (Notepad) gồm: mình là ai, dạy/làm gì, thích kết quả kiểu gì, điều cấm.
-- Mỗi lần chat mới: dán vào đầu, hoặc tải file lên.
-- Đuôi `.md` cũng là file chữ thường, có thêm dấu `#` để làm tiêu đề — mở bằng Notepad được.
-- Hình: tờ giấy dán tủ lạnh 📝 "Nhà mình ăn ít cay".
-
-## Ý 6: Ý tưởng "Project" (dự án) — tủ tài liệu luôn mở sẵn
-- "Thay vì mỗi lần mang tài liệu đến, mình để sẵn 1 tủ. Vào là AI đã biết."
-| Bản free | Tên tính năng | Dùng để |
-|---|---|---|
-| ChatGPT | Projects (Dự án) | Gom các cuộc chat + file + hướng dẫn cho 1 việc |
-| Gemini | Gem | Trợ lý riêng có hướng dẫn cố định, gắn được file |
-| Gemini | Chỉ dẫn cho Gemini (⚙️ → Trí thông minh cá nhân) | Dặn cách trả lời cố định cho mọi cuộc chat |
-| Google | NotebookLM | Tải nhiều tài liệu lên, hỏi đáp chỉ dựa trên tài liệu đó |
-- Không thấy tính năng / bị giới hạn → dùng file `.txt` ở Ý 5. Cách này luôn được.
-
-## Thực hành: "Cho AI đọc 1 tài liệu" (4 phút)
-1. Slide 27: bấm **So sánh** — trái hỏi "nghỉ phép mấy ngày?" không đưa tài liệu (AI đoán theo luật chung), phải dán quy định công ty (14 ngày) → AI trả lời đúng quy định.
-2. Thử với file thật (giáo án, danh sách lớp đã đổi tên, quy định nghỉ phép): dán 1 đoạn vào khung phải, hoặc tải cả file lên ChatGPT/Gemini (cách B), hoặc @Google Drive trên Gemini (cách C).
-3. Hỏi 1 câu mình đã biết đáp án → kiểm tra AI đúng không.
+## Tổng kết (slide 25) lấy từ chương 6
+- Bắt đầu: chọn việc lặp lại nhiều, tiết kiệm nhiều thời gian → dùng Gemini mỗi ngày trong 30 ngày đầu.

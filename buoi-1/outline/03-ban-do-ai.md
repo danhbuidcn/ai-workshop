@@ -1,6 +1,6 @@
 # 3. Bản đồ AI (4 phút)
 
-Slide 10. Ý 2 + Ý 3 gộp trong slide 10 (Codex, Claude Code là gạch con dưới ChatGPT, Claude) (mỗi thẻ có dòng "Dùng khi"). Ý 1 "chọn điện thoại" chỉ nói miệng.
+Slide 10–11. Ý 2 + Ý 3 gộp trong slide 10 (Codex, Claude Code là gạch con dưới ChatGPT, Claude) (mỗi thẻ có dòng "Dùng khi"). Ý 1 "chọn điện thoại" chỉ nói miệng.
 
 ## Mục tiêu
 Biết 4 cái tên hay gặp, mỗi cái mạnh ở đâu. Không cần dùng hết: chọn 1–2 cái quen tay.
@@ -33,3 +33,9 @@ Hình: 4 thẻ màu, mỗi thẻ 1 biểu tượng (💬 🔵 ✍️ 🔎).
 | Viết văn bản dài, tự nhiên | Claude |
 
 Câu chốt: "Cách hỏi quan trọng hơn chọn app. Hỏi tốt thì app nào cũng tốt."
+
+## Slide 11: Nhập môn Claude (nguồn: NotebookLM, chương 2)
+- Claude là trợ lý AI thiết kế cho việc cộng tác phức tạp.
+- Constitutional AI giữ Claude hữu ích, vô hại và trung thực.
+- Sonnet: cân bằng giữa tốc độ và chất lượng cho việc hằng ngày.
+- Extended thinking: bật cho bài toán logic hoặc lập kế hoạch khó.
