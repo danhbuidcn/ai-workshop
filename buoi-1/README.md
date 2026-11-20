@@ -6,8 +6,8 @@ Mục tiêu của khoá: có tư duy làm việc với AI (tư duy phản biện
 
 Học xong, mỗi người biết:
 
-- Kĩ năng mềm: 3W2H (hỏi 5 câu trước khi giao việc) và tư duy phản biện.
-- AI là gì (máy đoán chữ tiếp theo), vì sao có lúc sai, nên không tin câu trả lời đầu.
+- Tư duy phản biện: phản biện soi người khác, tư duy phản biện soi chính mình; 5 câu tự hỏi mình.
+- AI là gì (phần mềm tự học từ ví dụ, trả lời bằng cách đoán chữ tiếp theo), vì sao có lúc sai, nên không tin câu trả lời đầu.
 - 5 nguyên tắc làm việc với AI.
 - Công thức 5 phần để giao việc cho AI.
 - Cách cho AI đọc tài liệu (file, Drive, Gmail, Excel) trên bản miễn phí.
@@ -28,7 +28,7 @@ Cách mở trên máy (Windows): tải repo về (nút **Code → Download ZIP**
 | # | Phần | Slide | Phút |
 |---|---|---|---|
 | 0 | Mở đầu (bản đồ 8 phần) | 1–3 | 3 |
-| 1 | Kĩ năng mềm (3W2H + ví dụ, tư duy phản biện, demo Socrate, video) | 4–8 | 4 |
+| 1 | Tư duy phản biện (định nghĩa, 5 câu tự hỏi, vì sao cần khi dùng AI, Socrate, video) | 4–8 | 4 |
 | 2 | AI là gì | 9–13 | 8 |
 | 3 | Bản đồ AI | 14–15 | 4 |
 | 4 | 5 nguyên tắc (mỗi cái 1 slide) | 16–22 | 10 |

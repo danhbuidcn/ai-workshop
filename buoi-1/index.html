@@ -328,26 +328,26 @@
   .toc.sum ul.dot > li { font-size: 15px; margin: 0 0 4px; break-inside: avoid; }
   .pp .act { border: 0; border-left: 10px solid var(--pp-green); box-shadow: 0 6px 0 #f0e4cc; margin-top: 14px; }
   .pp .pill { background: #fff; border-color: var(--pp-green); color: var(--pp-ink); }
-  /* Socrate: bấm nút → hiện thêm 1 câu. Tiến độ 5 nguyên tắc: 5 vòng tròn nhỏ. Ô "Hỏi lại như Socrate". */
+  /* Socrate: hiện hết các câu ngay. Tiến độ 5 nguyên tắc: 5 vòng tròn nhỏ. Ô "Hỏi lại như Socrate". */
   .socr { display: flex; flex-direction: column; gap: 8px; margin-top: 6px; }
-  .socr .ln { display: none; align-items: baseline; gap: 12px; font-size: 17px; line-height: 1.35; padding: 8px 16px; border-radius: 14px; background: #fff; box-shadow: 0 4px 0 #f0e4cc; }
-  .socr .ln.on { display: flex; }
+  .socr .ln { display: flex; align-items: baseline; gap: 12px; font-size: 17px; line-height: 1.35; padding: 8px 16px; border-radius: 14px; background: #fff; box-shadow: 0 4px 0 #f0e4cc; }
   .socr .ln b { flex: none; width: 150px; font: 700 15px var(--serif); color: var(--pp-green); }
   .socr .ln.me b { color: #a63a24; } .socr .ln.me { background: #fff1ee; }
   .socr-go { align-self: center; margin-top: 6px; font: 800 17px "Segoe UI", system-ui, sans-serif; padding: 10px 28px; border-radius: 12px; border: 0;
     background: #f59e0b; color: #1f2937; cursor: pointer; box-shadow: 0 3px 0 #b45309; }
-  .socr-go:hover { background: #fbbf24; } .socr-go[hidden], .socr-bridge[hidden] { display: none; }
-  .socr-bridge { margin-top: 10px; }
-  /* Ví dụ 3W2H: mỗi phần của câu 1 màu */
-  .ex3 .lab { font: 700 22px/1.2 var(--serif); margin-bottom: 8px; }
-  .ex3 .exq { background: #1f2937; color: #f9fafb; border-radius: 14px; font-size: 21px; padding: 18px 22px; line-height: 1.9; }
-  .ex3 .exq .w { color: #1f2937; border-radius: 8px; padding: 1px 6px; }
-  .ex3 .exq .w sub { font-size: 13px; font-weight: 700; vertical-align: baseline; margin-left: 4px; color: #4b5563; }
-  .ex3 .w1 { background: #fde68a; } .ex3 .w2 { background: #fbcfe8; } .ex3 .w3 { background: #bfdbfe; }
-  .ex3 .w4 { background: #bbf7d0; } .ex3 .w5 { background: #ddd6fe; }
-  .ex3 .chot { margin-top: 14px; font-size: 24px; }
-  .rv-hide { visibility: hidden; opacity: 0; } .rv { transition: opacity .35s; }
-  body.pmode .rv-hide { visibility: visible; opacity: 1; }
+  .socr-go:hover { background: #fbbf24; }
+  .socr-intro { font-size: 19px; margin: 0 0 6px; text-align: center; }
+  /* Slide chỉ có chữ (phần 1, "AI là gì?"): 2 thẻ định nghĩa, danh sách 5 câu, ô định nghĩa */
+  .pp .defs .card { padding: 18px 24px; }
+  .pp .defs .card b.t { font: 700 27px var(--serif); color: var(--pp-green); margin-bottom: 8px; }
+  .pp .defs .card p { font-size: 19px; line-height: 1.45; margin: 6px 0; }
+  .pp .defs .card p.eg { font-size: 17px; color: #374151; border-top: 2px dashed #eadfc8; padding-top: 8px; margin-top: 10px; }
+  .pp .defs .card.bad b.t { color: #b91c1c; } .pp .defs .card.good b.t { color: #15803d; }
+  .pp ol.ask5 { margin: 0 auto; padding-left: 34px; max-width: 1020px; }
+  .pp ol.ask5 li { font-size: 21px; line-height: 1.4; margin: 8px 0; padding-left: 6px; }
+  .pp ol.ask5 li::marker { font: 800 22px var(--serif); color: var(--pp-coral); }
+  .pp .ai-def { font-size: 21px; margin: 0 0 14px; background: var(--hi-bg); border-left: 8px solid var(--pp-coral); border-radius: 12px; padding: 10px 18px; }
+  .pp .ai-how { font-size: 18px; line-height: 1.45; margin: 14px 0 0; }
   body.pmode .socr-go { display: none !important; } body.pmode .socr .ln { display: flex; } body.pmode .socr-bridge { display: block !important; }
   .fprog { display: flex; gap: 10px; justify-content: center; margin: 0 0 6px; }
   .fprog span { width: 40px; height: 40px; border-radius: 50%; background: #e5e7eb; color: #4b5563; font: 800 15px/40px var(--serif); text-align: center; }
@@ -366,7 +366,6 @@
     .slide { display: flex !important; position: relative; width: calc(1280px / var(--z, 1)); height: calc(720px / var(--z, 1)); zoom: var(--z, 1);
       overflow: hidden; page-break-after: always; break-after: page; } /* --z: slide dài thu nhỏ cho vừa 1 trang (script beforeprint) */
     #nav, #bar, #more, .copy { display: none !important; }
-    .rv-hide { visibility: visible !important; opacity: 1 !important; }
     * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   }
 </style>
@@ -420,11 +419,11 @@
   <div class="chot">Học cách <em>giao việc</em> cho trợ lý AI.</div>
 </section>
 
-<section class="slide pp" data-s="0" data-rv="custom">
+<section class="slide pp" data-s="0">
   <span class="tag">MỞ ĐẦU</span>
   <h2>Bản đồ buổi học</h2>
   <div class="toc">
-    <div class="it"><span class="num">01</span><div><b>💬 Kĩ năng mềm</b><span class="d">3W2H, tư duy phản biện</span></div></div>
+    <div class="it"><span class="num">01</span><div><b>🧐 Tư duy phản biện</b><span class="d">Soi người khác ≠ soi chính mình</span></div></div>
     <div class="it"><span class="num">05</span><div><b>✍️ Cách giao việc</b><span class="d">Công thức 5 phần</span></div></div>
     <div class="it"><span class="num">02</span><div><b>🧠 AI là gì</b><span class="d">Máy đoán chữ, vì sao có lúc sai</span></div></div>
     <div class="it"><span class="num">06</span><div><b>📁 Cho AI đọc tài liệu</b><span class="d">Tải file, dán chữ, nối Drive</span></div></div>
@@ -436,107 +435,111 @@
   <div class="chot">Mỗi phần có <em>1 bài thực hành nhỏ</em>.</div>
 </section>
 
-<!-- ===================== 1. KĨ NĂNG MỀM ===================== -->
+<!-- ===================== 1. TƯ DUY PHẢN BIỆN ===================== -->
 <section class="slide pp" data-s="1">
-  <span class="tag">1 · KĨ NĂNG MỀM</span>
-  <h2>💬 Kĩ năng mềm: hỏi 5 câu <small>3W2H: nghĩ rõ trước khi giao việc</small></h2>
-  <div class="icgrid" style="--n:5">
-    <div class="it"><div class="icn">❓</div><b class="t">What</b><p>Làm việc gì?</p></div>
-    <div class="it"><div class="icn">🎯</div><b class="t">Why</b><p>Vì sao làm? Để đạt gì?</p></div>
-    <div class="it"><div class="icn">🙋</div><b class="t">Who</b><p>Cho ai? Ai làm?</p></div>
-    <div class="it"><div class="icn">🛠️</div><b class="t">How</b><p>Làm thế nào?</p></div>
-    <div class="it"><div class="icn">🔢</div><b class="t">How much</b><p>Bao nhiêu? Bao lâu?</p></div>
-  </div>
-  <div class="chot">Trả lời đủ 5 câu → <em>giao việc rõ</em>.<small>Xem ví dụ ở slide sau.</small></div>
-</section>
-
-<section class="slide pp ex3" data-s="1">
-  <span class="tag">1 · KĨ NĂNG MỀM</span>
-  <h2>✍️ Cùng 1 việc, hai cách hỏi</h2>
-  <div class="grid g2">
-    <div class="ex">
-      <div class="lab">Ví dụ 1: câu không rõ ràng</div>
-      <div class="exq">Viết email nhắc nợ.</div>
-      <div class="chot">Người nhận phải <em>đoán nhiều</em>.</div>
+  <span class="tag">1 · TƯ DUY PHẢN BIỆN</span>
+  <h2>Phản biện khác Tư duy phản biện</h2>
+  <div class="grid g2 defs">
+    <div class="card">
+      <b class="t">🗣️ Phản biện</b>
+      <p><b>Là gì:</b> dùng lý lẽ và bằng chứng để chỉ ra chỗ chưa đúng, chưa đủ trong ý kiến của người khác.</p>
+      <p><b>Đối tượng:</b> <span class="key">người khác</span>: lời nói, bài viết, đề xuất của họ.</p>
+      <p class="eg"><b>Ví dụ:</b> đồng nghiệp nói "khách chê giá cao". Bạn hỏi lại: "Bao nhiêu khách chê? Số liệu ở đâu?"</p>
     </div>
-    <div class="ex">
-      <div class="lab">Ví dụ 2: câu rõ ràng (theo 3W2H)</div>
-      <div class="exq"><span class="w w1">Viết email nhắc nợ<sub>What</sub></span> <span class="w w2">để khách trả trước hạn 25/11<sub>Why</sub></span>, <span class="w w3">gửi chị Lan, kế toán công ty ABC<sub>Who</sub></span>, <span class="w w4">giọng lịch sự, 3 đoạn<sub>How</sub></span>, <span class="w w5">dưới 100 chữ<sub>How much</sub></span>.</div>
-      <div class="chot">Người nhận <em>hiểu đúng ngay</em>.</div>
+    <div class="card">
+      <b class="t">🪞 Tư duy phản biện</b>
+      <p><b>Là gì:</b> thói quen tự đặt câu hỏi, kiểm tra lại chính suy nghĩ và kết luận của mình trước khi tin hoặc làm theo.</p>
+      <p><b>Đối tượng:</b> <span class="key">chính mình</span>: điều mình đang tin, điều mình sắp kết luận.</p>
+      <p class="eg"><b>Ví dụ:</b> định chia sẻ một tin trên Facebook, bạn tự hỏi: "Mình tin vì có bằng chứng, hay vì nó hợp ý mình?"</p>
     </div>
   </div>
+  <div class="chot">Phản biện: soi <em>người khác</em>. Tư duy phản biện: soi <em>chính mình</em> trước.</div>
 </section>
 
 <section class="slide pp" data-s="1">
   <span class="tag">1 · TƯ DUY PHẢN BIỆN</span>
-  <h2>🧐 Tư duy phản biện <small>không tin vội, kiểm tra rồi mới kết luận</small></h2>
-  <div class="icgrid" style="--n:5">
-    <div class="it"><div class="icn">🔎</div><b class="t">Đặt câu hỏi</b><p>Vì sao? Ai nói? Dựa vào đâu?</p></div>
-    <div class="it"><div class="icn pink">🧩</div><b class="t">Tách sự việc và ý kiến</b><p>Số liệu thật hay nhận định?</p></div>
-    <div class="it"><div class="icn">📚</div><b class="t">Xét bằng chứng</b><p>Nguồn tin cậy không? Còn mới không?</p></div>
-    <div class="it"><div class="icn pink">👁️</div><b class="t">Nhận ra thiên kiến</b><p>Có đang nghiêng về một phía?</p></div>
-    <div class="it"><div class="icn">🔄</div><b class="t">Xét góc nhìn khác</b><p>Có ngoại lệ, cách giải thích khác?</p></div>
-  </div>
-  <div style="margin:14px 0 4px;padding:12px 18px;border-radius:14px;background:#fff;box-shadow:0 3px 0 #eadfc8;font-size:19px;line-height:1.5">
-    <b>Ví dụ:</b> bạn đọc "doanh thu quý 3 tăng 30%". Hỏi: số này từ đâu? Là số thật hay ước tính? Báo cáo kế toán có khớp không? Có tháng nào giảm không?
-  </div>
-  <div class="chot">Với AI cũng vậy: AI nói trôi chảy nhưng <em>có lúc sai</em>.<small>Bạn là người chịu trách nhiệm với kết quả.</small></div>
+  <h2>Tư duy phản biện: 5 câu tự hỏi mình <small>Hỏi trước khi tin, trước khi kết luận, trước khi gửi đi</small></h2>
+  <ol class="ask5">
+    <li><b>Mình đang tin điều gì?</b> Nói rõ ra thành 1 câu.</li>
+    <li><b>Mình dựa vào đâu?</b> Có bằng chứng, hay chỉ là cảm giác?</li>
+    <li><b>Đó là sự thật hay ý kiến?</b> "Doanh thu tăng 30%" là số liệu, kiểm tra được. "Sản phẩm này tốt nhất" là ý kiến.</li>
+    <li><b>Mình có đang thiên vị không?</b> Mình tin vì nó đúng, hay vì nó hợp ý mình, hay vì người nói là người mình quý?</li>
+    <li><b>Nếu mình sai thì sao?</b> Có ngoại lệ không? Có cách giải thích nào khác không?</li>
+  </ol>
+  <div class="chot">Người có tư duy phản biện không phải người hay cãi,<br>mà là người <em>dám nghi ngờ chính mình</em>.</div>
 </section>
 
-<section class="slide pp" data-s="1" data-rv="custom">
+<section class="slide pp" data-s="1">
   <span class="tag">1 · TƯ DUY PHẢN BIỆN</span>
-  <h2 style="font-size:41px;margin-bottom:6px">🧐 Hỏi tiếp như Socrate</h2>
-  <div class="socr" id="socr">
+  <h2>Vì sao dùng AI cần tư duy phản biện?</h2>
+  <div class="grid g2 defs">
+    <div class="card bad">
+      <b class="t">❌ Không có</b>
+      <p>AI trả lời rất trôi chảy, nghe rất hợp lý.</p>
+      <p>Mình thấy ổn, chép lại, gửi cho sếp, khách hàng.</p>
+      <p>Trong đó có 1 con số sai. <b>Người chịu trách nhiệm là mình.</b></p>
+    </div>
+    <div class="card good">
+      <b class="t">✅ Có</b>
+      <p>AI trả lời. Mình dừng lại, tự hỏi: <i>"Mình tin vì nó đúng, hay vì nó nghe hay?"</i></p>
+      <p>Hỏi lại AI: "Dựa vào đâu? Nguồn ở đâu?". Tự đối chiếu những chỗ quan trọng: số liệu, tên, ngày tháng.</p>
+      <p>Kiểm tra xong mới dùng.</p>
+    </div>
+  </div>
+  <div class="chot">AI không chịu trách nhiệm. Người gửi kết quả đi là <em>bạn</em>.</div>
+</section>
+
+<section class="slide pp" data-s="1">
+  <span class="tag">1 · TƯ DUY PHẢN BIỆN</span>
+  <h2 style="font-size:41px;margin-bottom:6px">🧐 Hỏi như Socrate</h2>
+  <p class="socr-intro">Socrate (triết gia Hy Lạp) không tranh cãi. Ông chỉ hỏi tiếp, để người kia <b>tự xét lại điều chính mình đang tin</b>.</p>
+  <div class="socr">
     <div class="ln"><b>Socrate</b><span>Bạn cho rằng ăn cắp là sai, đúng không?</span></div>
     <div class="ln me"><b>Người đối thoại</b><span>Đúng, lấy đồ của người khác mà không được phép là sai.</span></div>
     <div class="ln"><b>Socrate</b><span>Nếu bạn thấy một người bạn đang có vũ khí và định tự sát, bạn giấu vũ khí của anh ta đi mà không hỏi ý. Đó có phải là lấy đồ không được phép không?</span></div>
     <div class="ln me"><b>Người đối thoại</b><span>Có, nhưng đó là để cứu người, không phải ăn cắp xấu.</span></div>
     <div class="ln"><b>Socrate</b><span>Vậy hành động lấy đi thứ không thuộc về mình không phải lúc nào cũng xấu, nếu nó hướng tới điều tốt?</span></div>
     <div class="ln me"><b>Người đối thoại</b><span>Có lẽ vậy.</span></div>
-    <div class="ln"><b>Socrate</b><span>Thế còn kẻ ăn cắp đồ của người khác để làm giàu cho riêng mình thì sao? Anh ta có làm điều tốt cho chính mình không, hay đang làm hại linh hồn và sự công chính của bản thân?</span></div>
   </div>
-  <button type="button" class="socr-go" id="socrGo">Bấm để nghe tiếp ▶</button>
-  <div class="chot socr-bridge" id="socrEnd" hidden>Hỏi AI cũng vậy: <em>đừng tin câu trả lời đầu</em>.<small>Hỏi tiếp: "Vì sao? Có ngoại lệ không?"</small></div>
+  <div class="chot">Tự hỏi mình như Socrate hỏi: <em>"Vì sao mình tin? Có ngoại lệ không?"</em></div>
 </section>
 
-<section class="slide pp" data-s="1" data-rv="none">
-  <span class="tag">1 · KĨ NĂNG MỀM</span>
+<section class="slide pp" data-s="1">
+  <span class="tag">1 · TƯ DUY PHẢN BIỆN</span>
   <h2>🎬 Xem thêm: video gợi ý</h2>
   <div class="icgrid duo">
     <div class="side"><div class="icn lg pink">▶️</div></div>
     <div class="main">
       <b class="t">Video do người hướng dẫn gợi ý</b>
-      <p>Xem sau buổi học để hiểu sâu hơn về kĩ năng mềm.</p>
+      <p>Xem sau buổi học để hiểu sâu hơn về tư duy phản biện.</p>
       <a class="socr-go" id="ytBtn" href="https://www.youtube.com/watch?v=sGTkYMrWX6U" target="_blank" rel="noopener noreferrer" style="display:inline-block;text-decoration:none">▶ Mở video trên YouTube</a>
       <p class="cap">Mở ở tab mới. youtube.com/watch?v=sGTkYMrWX6U</p>
     </div>
   </div>
 </section>
 
-<!-- ===================== 1. AI LÀ GÌ ===================== -->
+<!-- ===================== 2. AI LÀ GÌ ===================== -->
 <section class="slide pp" data-s="2">
   <span class="tag">2 · AI LÀ GÌ</span>
-  <h2 style="font-size:41px;margin-bottom:10px">🧠 AI là gì?</h2>
-  <p style="font-size:18px;margin:0 0 10px;background:var(--hi-bg);border-left:8px solid var(--pp-coral);border-radius:12px;padding:8px 16px"><b>AI (trí tuệ nhân tạo)</b> là công nghệ giúp máy tính có thể suy nghĩ, học hỏi và đưa ra quyết định giống như con người. Bên trong, nó chỉ là <b>con số</b>:</p>
-  <div class="steps3" style="font-size:90%">
-    <div><span class="num">1</span><b class="t">Máy tính chỉ hiểu <span class="key">bật</span> và <span class="key">tắt</span></b>
-      <div class="bulbs"><div class="bulb on">1</div><div class="bulb">0</div><div class="bulb on">1</div><div class="bulb on">1</div><div class="bulb">0</div><div class="bulb">0</div><div class="bulb on">1</div><div class="bulb">0</div></div>
-      <p style="font-size:16px;margin:0">Giống công tắc đèn. Bật = <b>1</b>. Tắt = <b>0</b>.</p></div><span class="to">›</span>
-    <div><span class="num">2</span><b class="t">Mỗi chữ cái có 1 con số</b>
-      <div style="font-size:23px;font-weight:800;margin:6px 0">A ➜ <span style="font-family:Consolas,monospace">01000001</span></div>
-      <p class="cap" style="margin:0">Bảng tra "chữ ↔ số" tên là ASCII. Chỉ cần nhớ: mỗi chữ có 1 số.</p></div><span class="to">›</span>
-    <div><span class="num">3</span><b class="t">Chữ, ảnh, nhạc… đều là số</b>
-      <div style="font-size:33px;margin:2px 0">📝 🖼️ 🎵</div>
-      <p style="font-size:16px;margin:0">Trong máy đều là <b>một dãy số</b>: <span style="font-family:Consolas,monospace">0101…</span></p></div>
+  <h2 style="margin-bottom:12px">🧠 AI là gì?</h2>
+  <p class="ai-def"><b>AI (trí tuệ nhân tạo)</b> là phần mềm <b>tự học từ rất nhiều ví dụ</b>, thay vì được con người viết sẵn từng quy tắc.</p>
+  <div class="grid g2 defs">
+    <div class="card">
+      <b class="t">🧮 Phần mềm thường</b>
+      <p>Con người viết sẵn từng quy tắc. Máy chỉ làm đúng theo quy tắc đó.</p>
+      <p class="eg"><b>Ví dụ:</b> máy tính bỏ túi. 2 + 2 luôn ra 4. Không có quy tắc thì không làm được.</p>
+    </div>
+    <div class="card">
+      <b class="t">🧠 AI</b>
+      <p>Cho máy xem thật nhiều ví dụ. Máy tự rút ra quy luật.</p>
+      <p class="eg"><b>Ví dụ:</b> Gmail xem hàng triệu thư rác, tự nhận ra thư rác mới dù chưa ai chỉ cho từng thư.</p>
+    </div>
   </div>
-  <div class="bignum" style="margin-top:14px">
-    <div class="icn pink" style="margin:0">📚</div>
-    <div class="n" style="font-size:91px">Hàng tỉ<small>trang chữ AI đã đọc</small></div>
-    <p>Nó không <i>hiểu</i> như người, nhưng nhớ rất giỏi: <b>chữ nào hay đi sau chữ nào</b>.</p>
-  </div>
+  <p class="ai-how"><b>ChatGPT, Gemini học thế nào?</b> Chúng đã đọc hàng tỉ trang chữ (sách, báo, trang web) và học được <b>chữ nào hay đi sau chữ nào</b>. Khi bạn hỏi, chúng <b>không tra cứu sự thật</b>: chúng viết câu trả lời bằng cách <b>đoán từng chữ tiếp theo</b> (xem slide sau).</p>
+  <div class="chot">AI <em>bắt chước rất giỏi</em>, nhưng không biết mình đúng hay sai.</div>
 </section>
 
-<section class="slide pp" data-s="2" data-rv=":scope > p | all:.bar | ul li | .chot">
+<section class="slide pp" data-s="2">
   <span class="tag">2 · AI LÀ GÌ</span>
   <h2>AI chơi trò "đoán chữ tiếp theo"</h2>
   <p style="font:700 35px var(--serif);margin:0 0 10px">Con mèo đang ăn <span class="blank">&nbsp;</span></p>
@@ -570,7 +573,7 @@
   <div class="chot">Giống con vẹt nói rất trôi chảy — nhưng <em>không tự kiểm tra lại</em>.</div>
 </section>
 
-<section class="slide pp" data-s="2" data-rv=".icgrid > .it | all:.main ul">
+<section class="slide pp" data-s="2">
   <span class="tag">2 · AI LÀ GÌ</span>
   <h2>2 loại AI</h2>
   <div class="icgrid duo" style="--n:2">
@@ -1044,7 +1047,7 @@ Nếu chưa rõ, hãy hỏi tôi trước.</div>
     <div class="it"><span class="num">04</span><div><b>📁 Tài liệu</b>
       <ul class="dot"><li>Gom 1 folder</li><li>Tải lên / dán / @Drive</li><li>File "yêu cầu cố định"</li><li>Không đưa thông tin riêng tư</li></ul></div></div>
   </div>
-  <div class="chot">AI giỏi đến đâu là do mình <em>giao việc rõ</em> đến đâu.<small>Kỹ năng mềm đi cùng: đặt câu hỏi, giao tiếp rõ, hỏi lại như Socrate.</small></div>
+  <div class="chot">AI giỏi đến đâu là do mình <em>giao việc rõ</em> đến đâu.<small>Tư duy phản biện đi cùng: tự hỏi "Vì sao mình tin? Có ngoại lệ không?"</small></div>
   <div class="act"><b>✅ Làm ngay tuần này:</b> chọn 1 việc lặp lại mỗi tuần → viết 1 prompt mẫu → lưu vào file .txt.</div>
 </section>
 
@@ -1083,7 +1086,7 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
   </ul>
 </section>
 
-<section class="slide pp" data-s="8" data-rv=".icgrid > .it | all:.grid.g3 | all:ul.dot | .chot">
+<section class="slide pp" data-s="8">
   <span class="tag">8 · BÀI TẬP CUỐI · KẾT QUẢ</span>
   <h2>Gemini đưa 1 đoạn hướng dẫn <span class="key">4 khối</span></h2>
   <div class="icgrid" style="--n:4;gap:10px 24px">
@@ -1166,10 +1169,8 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
     stage.style.transform = 'translate(-50%, -50%) scale(' + s + ')';
   }
   function show(i) {
-    var prev = cur;
     cur = Math.max(0, Math.min(slides.length - 1, i));
     slides.forEach(function (el, k) { el.classList.toggle('active', k === cur); });
-    if (cur < prev) rvAll(slides[cur]); // quay lại slide trước: hiện sẵn đầy đủ
     count.textContent = (cur + 1) + ' / ' + slides.length;
     bar.style.width = ((cur + 1) / slides.length * 100) + '%';
     if (location.hash !== '#' + (cur + 1)) history.replaceState(null, '', '#' + (cur + 1));
@@ -1204,8 +1205,8 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
     if (e.target.closest && e.target.closest('input, textarea, select, [contenteditable]')) return; // đang gõ
     var k = e.key;
     var onBtn = e.target.closest && e.target.closest('button');
-    // Enter: hiện thêm 1 khối; hiện hết rồi thì sang slide kế. Còn khối chưa hiện thì Enter luôn dành cho việc hiện khối (kể cả đang chọn 1 nút)
-    if (k === 'Enter' && (rvLeft(slides[cur]) || !onBtn)) { e.preventDefault(); if (!rvNext()) show(cur + 1); return; }
+    // Enter: sang slide kế (trừ khi đang chọn 1 nút). Mọi slide hiện hết nội dung ngay.
+    if (k === 'Enter' && !onBtn) { e.preventDefault(); show(cur + 1); return; }
     if ((k === ' ' || k === 'Enter') && onBtn) return; // đang bấm nút (ô bấm để mở, Gửi)
     if (k === 'ArrowRight' || k === 'PageDown' || k === ' ') { e.preventDefault(); show(cur + 1); }
     else if (k === 'ArrowLeft' || k === 'PageUp') { e.preventDefault(); show(cur - 1); }
@@ -1229,71 +1230,6 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
   AI.lab('.ai-lab');
   AI.compare('.ai-cmp');
   AI.folds();
-
-  // ===== Mọi slide: lúc đầu chỉ có tiêu đề, mỗi lần Enter hiện thêm 1 khối nội dung =====
-  // Tự chia khối theo cấu trúc: mỗi mục danh sách, thẻ, ô, dòng = 1 khối (xem RV_BOX). Tiêu đề, nhãn góc, hình trang trí luôn hiện.
-  // Muốn chia khác: data-rv="phần | phần" trên <section>. Mỗi phần là 1 selector: mỗi phần tử khớp = 1 lần Enter;
-  // "all:" ở đầu = cả nhóm khớp hiện cùng lúc. data-rv="custom" = slide tự xử lý (demo Socrate). data-rv="none" = hiện hết ngay. Hiện hết khi in PDF (body.pmode).
-  var RV_SKIP = '.tag, h1, h2, .practice, .fprog, .hero';
-  var RV_BOX = 'ul, ol, .toc, .icgrid, .grid, .hand, .concepts, .foldrow, .learn, .steps3, .hub, .hub > .col, .row, .opener, .opener > div, .vs';
-  var RV_PRE = '.to, .joint, .icn, .num, .opener > div > b'; // hiện cùng khối kế tiếp
-  var RV_POST = '.ai-arrow, .ai-out';                         // hiện cùng khối đứng trước
-  var rvCustom = new Map();
-  function rvTarget(el) { return el.matches('.foldrow > .fold') ? el.querySelector('.fold-h') : el; } // .fold là display:contents
-  function rvCollect(parent, st) {
-    var kids = [].slice.call(parent.children);
-    if (parent.matches('.toc')) kids.sort(function (a, b) { return parseInt(a.querySelector('.num').textContent, 10) - parseInt(b.querySelector('.num').textContent, 10); });
-    kids.forEach(function (c) {
-      if (c.matches(RV_SKIP)) return;
-      if (c.matches(RV_POST)) { if (st.steps.length) st.steps[st.steps.length - 1].push(c); return; }
-      if (c.matches(RV_PRE)) { st.pre.push(c); return; }
-      if (c.matches(RV_BOX)) { rvCollect(c, st); return; }
-      st.steps.push(st.pre.concat(rvTarget(c))); st.pre = [];
-    });
-  }
-  slides.forEach(function (s) {
-    var st = { steps: [], pre: [], n: 0 }, spec = s.getAttribute('data-rv');
-    if (spec && spec !== 'custom' && spec !== 'none') {
-      spec.split('|').forEach(function (part) {
-        part = part.trim();
-        var all = part.slice(0, 4) === 'all:';
-        var els = [].slice.call(s.querySelectorAll(all ? part.slice(4) : part)).map(rvTarget);
-        if (all) st.steps.push(els); else els.forEach(function (el) { st.steps.push([el]); });
-      });
-    } else if (!spec) rvCollect(s, st);
-    if (st.pre.length && st.steps.length) st.steps[st.steps.length - 1] = st.steps[st.steps.length - 1].concat(st.pre);
-    st.steps.forEach(function (g) { g.forEach(function (el) { el.classList.add('rv', 'rv-hide'); }); });
-    s._rv = st;
-  });
-  function rvLeft(s) { var c = rvCustom.get(s); return c ? c.left() : s._rv.n < s._rv.steps.length; }
-  function rvShow(s, g) {
-    g.forEach(function (el) { el.classList.remove('rv-hide'); });
-    if (s.scrollHeight > s.clientHeight + 4) g[g.length - 1].scrollIntoView({ block: 'nearest', behavior: 'smooth' }); // slide dài: cuộn tới khối vừa hiện
-  }
-  function rvNext() { // true nếu vừa hiện thêm 1 khối; false nếu đã hiện hết
-    var s = slides[cur], c = rvCustom.get(s), st = s._rv;
-    if (c) return c.next();
-    if (st.n >= st.steps.length) return false;
-    rvShow(s, st.steps[st.n++]);
-    return true;
-  }
-  function rvAll(s) {
-    var c = rvCustom.get(s), st = s._rv;
-    if (c) { while (c.left()) c.next(); return; }
-    while (st.n < st.steps.length) st.steps[st.n++].forEach(function (el) { el.classList.remove('rv-hide'); });
-  }
-
-  // Demo Socrate: mỗi lần bấm hiện thêm 1 câu
-  (function () {
-    var lns = document.querySelectorAll('#socr .ln'), go = document.getElementById('socrGo'), end = document.getElementById('socrEnd'), n = 0;
-    go.onclick = function () {
-      if (n < lns.length) lns[n++].classList.add('on');
-      lns[n - 1].scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-      if (n >= lns.length) { go.hidden = true; end.hidden = false; end.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }
-      else go.textContent = 'Bấm để nghe tiếp ▶ (' + n + '/' + lns.length + ')';
-    };
-    rvCustom.set(go.closest('.slide'), { left: function () { return !go.hidden; }, next: function () { if (go.hidden) return false; go.onclick(); return true; } }); // Enter = bấm nút
-  })();
 
   // Slide dài (bài thực hành): nhắc "cuộn xuống" khi còn nội dung bên dưới
   var more = document.getElementById('more');

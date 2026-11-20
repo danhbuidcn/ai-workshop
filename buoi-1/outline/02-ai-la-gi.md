@@ -1,19 +1,15 @@
 # 2. AI là gì (8 phút)
 
-Slide 9–13. Ý 1 + Ý 2 gộp trong slide 9 (có câu định nghĩa AI; chữ "A ➜ 01000001"). Ví dụ "Good morning / 你好" (Ý 3) chỉ nói miệng, không có slide.
+Slide 9–13. Ví dụ "Good morning / 你好" (Ý 3) chỉ nói miệng, không có slide.
 
 ## Mục tiêu
 Hiểu 1 câu: **AI tạo chữ bằng cách đoán chữ tiếp theo.** Vì đoán, nên có lúc sai.
 
-## Ý 1: Máy tính chỉ hiểu số
-- Lời nói: "Máy tính giống cái công tắc đèn: chỉ có **bật (1)** và **tắt (0)**."
-- Hình: 8 bóng đèn xếp hàng, bật/tắt theo mẫu `0 1 0 0 0 0 0 1`.
-- Ví dụ: chữ **A** = số **65** = `01000001`. Chữ **a** = 97 = `01100001`. Bảng này tên là ASCII (bảng tra chữ ↔ số), chỉ cần nhớ "mỗi chữ có 1 số".
-- Câu chốt: "Mọi thứ trong máy — chữ, ảnh, nhạc — đều là một dãy số."
-
-## Ý 2: AI đọc rất, rất nhiều chữ
-- Lời nói: "AI đã đọc hàng tỉ trang sách, bài báo, trang web. Nó không *hiểu* như người, nhưng nó nhớ **chữ nào hay đi sau chữ nào**."
-- Hình: chồng sách cao → bộ não 🤖.
+## Ý 1 (slide 9): AI là gì
+- Định nghĩa: AI là phần mềm tự học từ rất nhiều ví dụ, thay vì được con người viết sẵn từng quy tắc.
+- So sánh: phần mềm thường (máy tính bỏ túi, 2 + 2 luôn ra 4) và AI (Gmail xem hàng triệu thư rác, tự nhận ra thư rác mới).
+- ChatGPT, Gemini: đọc hàng tỉ trang chữ, học chữ nào hay đi sau chữ nào. Khi hỏi, không tra cứu sự thật, mà đoán từng chữ tiếp theo.
+- Câu chốt: AI bắt chước rất giỏi, nhưng không biết mình đúng hay sai.
 
 ## Ý 3: AI đoán chữ tiếp theo
 - Ví dụ: "Con mèo đang ăn ___" → cá (60%), cơm (25%), chuột (10%), … Hình: 3 cột cao thấp.

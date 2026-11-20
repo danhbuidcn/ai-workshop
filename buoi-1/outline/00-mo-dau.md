@@ -24,7 +24,7 @@ Mục tiêu của khoá: cho học viên tư duy làm việc với AI (tư duy p
 
 | Ô | Biểu tượng | Tên |
 |---|---|---|
-| 1 | 💬 | Kĩ năng mềm |
+| 1 | 🧐 | Tư duy phản biện |
 | 2 | 🧠 | AI là gì |
 | 3 | 🗺️ | Bản đồ AI |
 | 4 | ✋ | 5 nguyên tắc |
@@ -42,7 +42,7 @@ Mục tiêu của khoá: cho học viên tư duy làm việc với AI (tư duy p
 | Phần | Slide | Phút | Trong đó thực hành |
 |---|---|---|---|
 | 0. Mở đầu | 1–3 | 3 | – |
-| 1. Kĩ năng mềm | 4–8 | 4 | – |
+| 1. Tư duy phản biện | 4–8 | 4 | – |
 | 2. AI là gì | 9–13 | 8 | 2 |
 | 3. Bản đồ AI | 14–15 | 4 | 2 |
 | 4. 5 nguyên tắc | 16–22 | 10 | 3 |
