@@ -34,16 +34,16 @@ Mục tiêu của khoá: cho học viên tư duy làm việc với AI (tư duy p
 ## Luật chơi (cuối slide 3)
 - Mở sẵn ChatGPT hoặc Gemini (bản free) trên máy.
 - Hỏi bất cứ lúc nào. Không có câu hỏi ngớ ngẩn.
-- Phần 4–6 và 8 có bài thực hành.
+- Phần 5, 6 và 8 có bài thực hành.
 
-## Thời gian (khoảng 1 giờ)
+## Thời gian (khoảng 55 phút)
 | Phần | Slide | Phút | Trong đó thực hành |
 |---|---|---|---|
 | 0. Mở đầu | 1–3 | 3 | – |
 | 1. Tư duy phản biện | 4–6 | 4 | – |
 | 2. AI là gì | 7–9 | 6 | – |
 | 3. Bản đồ AI | 10 | 2 | – |
-| 4. 5 nguyên tắc | 11–17 | 10 | 3 |
+| 4. 5 nguyên tắc | 11–17 | 8 | – |
 | 5. Cách giao việc | 18–22 | 12 | 5 |
 | 6. Tài liệu | 23–27 | 10 | 4 |
 | 7. Tổng kết | 28 | 2 | – |

@@ -351,6 +351,7 @@
   /* Tiến độ 5 nguyên tắc: 5 vòng tròn nhỏ. */
   .pp ul.dot.big.pr5 { max-width: 1020px; margin: 6px auto 0; } .pp ul.dot.big.pr5 > li { font-size: 23px; line-height: 1.45; margin: 12px 0; }
   .pp .learn3 { max-width: 760px; margin: 0 auto; } .pp .learn3 > div { font-size: 27px; margin: 14px 0; }
+  .pp .ex2 .card p { line-height: 1.8; }
   .fprog { display: flex; gap: 10px; justify-content: center; margin: 0 0 6px; }
   .fprog span { width: 40px; height: 40px; border-radius: 50%; background: #e5e7eb; color: #4b5563; font: 800 15px/40px var(--serif); text-align: center; }
   .fprog span.on { background: var(--pp-coral); color: #23283b; box-shadow: 0 0 0 5px var(--pp-pink); }
@@ -609,32 +610,19 @@
   </ul>
 </section>
 
-<section class="slide pp prac" data-s="4">
+<section class="slide pp" data-s="4">
   <span class="tag">4 · 5 NGUYÊN TẮC</span>
-  <span class="practice">✋ THỰC HÀNH</span>
-  <h2>Viết lại câu trả lời đầu</h2>
-  <ol class="steps sm">
-    <li><b>Lần 1:</b> nhập prompt 1 (câu ngắn) ở khung ① trái → bấm <b>So sánh</b> → xem kết quả ở khung ② trái.</li>
-    <li><b>Lần 2:</b> nhập prompt đầy đủ hơn (theo công thức, mỗi màu là 1 phần) ở khung ① phải → xem kết quả ở khung ② phải.</li>
-    <li><b>So sánh:</b> 2 kết quả khác nhau ở đâu? Bấm 3 ô "nên nhìn" để kiểm tra.</li>
-  </ol>
-  <div class="ai-cmp">
-    <div class="cmp-set" data-sum="Lần 2: có giờ họp, dưới 60 chữ, giọng thân thiện.">
-      <div class="cmp-p">Viết thông báo cho phụ huynh về buổi họp lớp.</div>
-      <div class="cmp-p"><span class="pp1">Bạn là giáo viên chủ nhiệm lớp 7A.</span>
-<span class="pp2">Bối cảnh: lớp có 35 học sinh. Họp phụ huynh cuối học kỳ 1, 19h thứ Sáu tuần này, tại phòng 204.</span>
-<span class="pp3">Việc cần làm: viết thông báo mời phụ huynh đi họp.</span>
-<span class="pp4">Kết quả: dưới 60 chữ, giọng thân thiện, có giờ, ngày, phòng họp.</span>
-<span class="pp5">Nếu thiếu thông tin, hãy hỏi tôi trước khi viết.</span></div>
-      <div class="cmp-look"><div class="foldrow" data-one>
-        <div class="fold"><button type="button" class="fold-h">🕖 Có ghi giờ họp?</button><div class="fold-b">Lần 1 thường để trống [giờ], [địa điểm] cho bạn tự điền. Lần 2 có sẵn 19h thứ Sáu, phòng 204.</div></div>
-        <div class="fold"><button type="button" class="fold-h">😊 Đúng giọng?</button><div class="fold-b">Lần 1 hay dùng giọng hành chính ("Kính gửi Quý phụ huynh…"). Lần 2 làm theo yêu cầu "giọng thân thiện".</div></div>
-        <div class="fold"><button type="button" class="fold-h">📏 Dài bao nhiêu?</button><div class="fold-b">Lần 1 thường dài, nhiều mục. Lần 2 dưới 60 chữ, vừa 1 màn hình điện thoại.</div></div>
-      </div></div>
-    </div>
+  <h2>Ví dụ: cùng 1 việc, 2 cách hỏi</h2>
+  <div class="grid g2 defs ex2">
+    <div class="card bad"><b class="t">❌ Không nên</b>
+      <p>Viết thông báo cho phụ huynh về buổi họp lớp.</p></div>
+    <div class="card good"><b class="t">✅ Nên</b>
+      <p><span class="pp1">Bạn là giáo viên chủ nhiệm lớp 7A.</span><br>
+      <span class="pp2">Bối cảnh: lớp có 35 học sinh. Họp phụ huynh cuối học kỳ 1, 19h thứ Sáu tuần này, tại phòng 204.</span><br>
+      <span class="pp3">Việc cần làm: viết thông báo mời phụ huynh đi họp.</span><br>
+      <span class="pp4">Kết quả: dưới 60 chữ, giọng thân thiện, có giờ, ngày, phòng họp.</span><br>
+      <span class="pp5">Nếu thiếu thông tin, hãy hỏi tôi trước khi viết.</span></p></div>
   </div>
-  <p class="app">Làm trên app: gửi câu lần 1 → đọc → gõ câu lần 2 vào <b>cùng ô chat</b> → <b>Enter</b> → so sánh 2 câu trả lời.</p>
-  <div class="chot">Prompt đủ <em>context</em> → kết quả <em>tốt hơn</em>.</div>
 </section>
 
 <!-- ===================== 4. PROMPT ===================== -->

@@ -31,7 +31,7 @@ Cách mở trên máy (Windows): tải repo về (nút **Code → Download ZIP**
 | 1 | Tư duy phản biện (định nghĩa + link video, 3 cấp độ, cái tôi phi lý) | 4–6 | 4 |
 | 2 | AI là gì | 7–9 | 6 |
 | 3 | Bản đồ AI | 10 | 2 |
-| 4 | 5 nguyên tắc (mỗi cái 1 slide) | 11–17 | 10 |
+| 4 | 5 nguyên tắc (mỗi cái 1 slide + ví dụ) | 11–17 | 8 |
 | 5 | Cách giao việc (prompt) | 18–22 | 12 |
 | 6 | Cho AI đọc tài liệu | 23–27 | 10 |
 | 7 | Tổng kết | 28 | 2 |

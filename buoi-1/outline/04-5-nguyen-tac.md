@@ -1,6 +1,6 @@
 # 4. 5 nguyên tắc cốt lõi (10 phút)
 
-Slide 11–17: slide 11 bàn tay 5 ngón (mỗi ngón = câu tiếng Anh gốc; phụ đề "Có 5 nguyên tắc sẽ lặp lại nhiều lần.") · slide 12–16 mỗi nguyên tắc 1 slide (tiêu đề = câu tiếng Anh gốc, tiêu đề "N. \"câu gốc\"", mọi dòng là gạch đầu dòng, nguyên văn owner gửi, không ô câu chốt) · slide 17 thực hành.
+Slide 11–17: slide 11 bàn tay 5 ngón (mỗi ngón = câu tiếng Anh gốc; phụ đề "Có 5 nguyên tắc sẽ lặp lại nhiều lần.") · slide 12–16 mỗi nguyên tắc 1 slide (tiêu đề = câu tiếng Anh gốc, tiêu đề "N. \"câu gốc\"", mọi dòng là gạch đầu dòng, nguyên văn owner gửi, không ô câu chốt) · slide 17 ví dụ không nên / nên.
 
 Nguồn: chương 1 Claude 101 (Anthropic). Dùng được cho mọi AI, không riêng Claude.
 
@@ -30,8 +30,6 @@ Nguồn: chương 1 Claude 101 (Anthropic). Dùng được cho mọi AI, không 
 - Trước khi giao việc quan trọng cho Claude, chạy "delegation-diligence loop": lấy 1 task bạn đã làm rồi, xem Claude có reproduce kết quả đúng không.
 - Sau khi validate, vẫn check sanity ở mỗi output mới.
 
-## Thực hành: "Viết lại câu trả lời đầu" (3 phút)
-1. Slide 17 có khung so sánh 2 cột: trái `Viết thông báo cho phụ huynh về buổi họp lớp.`, phải cùng việc viết theo công thức 5 phần (mỗi phần 1 màu).
-2. Bấm **So sánh**: Gemini chạy cả 2 câu cùng lúc, 2 kết quả nằm cạnh nhau.
-3. Hỏi lớp: "2 kết quả khác nhau ở đâu?" → bấm 3 ô "nên nhìn" (giờ họp, giọng, độ dài).
-4. Nhắc: AI có thể khác mỗi lần, quan trọng là xu hướng. Cho học viên thử thêm cách gõ câu chỉnh trong cùng cuộc trò chuyện.
+## Slide 17: Ví dụ 2 cách hỏi (chỉ chữ, không thực hành)
+- ❌ Không nên: "Viết thông báo cho phụ huynh về buổi họp lớp."
+- ✅ Nên: 5 dòng tô 5 màu (vai trò · bối cảnh · việc cần làm · kết quả · hỏi lại nếu thiếu).
