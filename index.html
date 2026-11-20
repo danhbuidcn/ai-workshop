@@ -358,6 +358,7 @@
     .slide { display: flex !important; position: relative; width: calc(1280px / var(--z, 1)); height: calc(720px / var(--z, 1)); zoom: var(--z, 1);
       overflow: hidden; page-break-after: always; break-after: page; } /* --z: slide dài thu nhỏ cho vừa 1 trang (script beforeprint) */
     #nav, #bar, #more, .copy { display: none !important; }
+    .rv-hide { visibility: visible !important; opacity: 1 !important; }
     * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   }
 </style>
@@ -411,7 +412,7 @@
   <div class="chot">Học cách <em>giao việc</em> cho trợ lý AI.</div>
 </section>
 
-<section class="slide pp" data-s="0">
+<section class="slide pp" data-s="0" data-rv="custom">
   <span class="tag">MỞ ĐẦU · TƯ DUY PHẢN BIỆN</span>
   <h2 style="font-size:46px;margin-bottom:6px">🧐 Hỏi tiếp như Socrate</h2>
   <div class="socr" id="socr">
@@ -427,7 +428,7 @@
   <div class="chot socr-bridge" id="socrEnd" hidden>Hỏi AI cũng vậy: <em>đừng tin câu trả lời đầu</em>.<small>Hỏi tiếp: "Vì sao? Có ngoại lệ không?"</small></div>
 </section>
 
-<section class="slide pp" data-s="0" id="agenda">
+<section class="slide pp" data-s="0">
   <span class="tag">MỞ ĐẦU</span>
   <h2>Bản đồ buổi học</h2>
   <div class="toc">
@@ -465,7 +466,7 @@
   </div>
 </section>
 
-<section class="slide pp" data-s="1">
+<section class="slide pp" data-s="1" data-rv=":scope > p | all:.bar | ul li | .chot">
   <span class="tag">1 · AI LÀ GÌ</span>
   <h2>AI chơi trò "đoán chữ tiếp theo"</h2>
   <p style="font:700 40px var(--serif);margin:0 0 10px">Con mèo đang ăn <span class="blank">&nbsp;</span></p>
@@ -499,7 +500,7 @@
   <div class="chot">Giống con vẹt nói rất trôi chảy — nhưng <em>không tự kiểm tra lại</em>.</div>
 </section>
 
-<section class="slide pp" data-s="1">
+<section class="slide pp" data-s="1" data-rv=".icgrid > .it | all:.main ul">
   <span class="tag">1 · AI LÀ GÌ</span>
   <h2>2 loại AI</h2>
   <div class="icgrid duo" style="--n:2">
@@ -1012,7 +1013,7 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
   </ul>
 </section>
 
-<section class="slide pp" data-s="7">
+<section class="slide pp" data-s="7" data-rv=".icgrid > .it | all:.grid.g3 | all:ul.dot | .chot">
   <span class="tag">7 · BÀI TẬP CUỐI · KẾT QUẢ</span>
   <h2>Gemini đưa 1 đoạn hướng dẫn <span class="key">4 khối</span></h2>
   <div class="icgrid" style="--n:4;gap:10px 24px">
@@ -1095,8 +1096,10 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
     stage.style.transform = 'translate(-50%, -50%) scale(' + s + ')';
   }
   function show(i) {
+    var prev = cur;
     cur = Math.max(0, Math.min(slides.length - 1, i));
     slides.forEach(function (el, k) { el.classList.toggle('active', k === cur); });
+    if (cur < prev) rvAll(slides[cur]); // quay lại slide trước: hiện sẵn đầy đủ
     count.textContent = (cur + 1) + ' / ' + slides.length;
     bar.style.width = ((cur + 1) / slides.length * 100) + '%';
     if (location.hash !== '#' + (cur + 1)) history.replaceState(null, '', '#' + (cur + 1));
@@ -1130,8 +1133,10 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
   document.addEventListener('keydown', function (e) {
     if (e.target.closest && e.target.closest('input, textarea, select, [contenteditable]')) return; // đang gõ
     var k = e.key;
-    if (k === 'Enter' && slides[cur] === agendaEl) { e.preventDefault(); if (!agendaNext()) show(cur + 1); return; } // slide Bản đồ: Enter hiện từng mục
-    if ((k === ' ' || k === 'Enter') && e.target.closest && e.target.closest('button')) return; // đang bấm nút (ô bấm để mở, Gửi)
+    var onBtn = e.target.closest && e.target.closest('button');
+    // Enter: hiện thêm 1 khối; hiện hết rồi thì sang slide kế. Còn khối chưa hiện thì Enter luôn dành cho việc hiện khối (kể cả đang chọn 1 nút)
+    if (k === 'Enter' && (rvLeft(slides[cur]) || !onBtn)) { e.preventDefault(); if (!rvNext()) show(cur + 1); return; }
+    if ((k === ' ' || k === 'Enter') && onBtn) return; // đang bấm nút (ô bấm để mở, Gửi)
     if (k === 'ArrowRight' || k === 'PageDown' || k === ' ') { e.preventDefault(); show(cur + 1); }
     else if (k === 'ArrowLeft' || k === 'PageUp') { e.preventDefault(); show(cur - 1); }
     else if (k === 'Home') show(0);
@@ -1155,19 +1160,57 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
   AI.compare('.ai-cmp');
   AI.folds();
 
-  // Slide "Bản đồ buổi học": lúc đầu chỉ có tiêu đề, mỗi lần Enter hiện thêm 1 mục (01→07), rồi ô cuối
-  var agendaEl = document.getElementById('agenda'), agendaN = 0, agendaItems = [];
-  (function () {
-    agendaItems = [].slice.call(agendaEl.querySelectorAll('.toc .it')).sort(function (a, b) {
-      return a.querySelector('.num').textContent - b.querySelector('.num').textContent;
+  // ===== Mọi slide: lúc đầu chỉ có tiêu đề, mỗi lần Enter hiện thêm 1 khối nội dung =====
+  // Tự chia khối theo cấu trúc: mỗi mục danh sách, thẻ, ô, dòng = 1 khối (xem RV_BOX). Tiêu đề, nhãn góc, hình trang trí luôn hiện.
+  // Muốn chia khác: data-rv="phần | phần" trên <section>. Mỗi phần là 1 selector: mỗi phần tử khớp = 1 lần Enter;
+  // "all:" ở đầu = cả nhóm khớp hiện cùng lúc. data-rv="custom" = slide tự xử lý (demo Socrate). Hiện hết khi in PDF (body.pmode).
+  var RV_SKIP = '.tag, h1, h2, .practice, .fprog, .hero';
+  var RV_BOX = 'ul, ol, .toc, .icgrid, .grid, .hand, .concepts, .foldrow, .learn, .steps3, .hub, .hub > .col, .row, .opener, .opener > div, .vs';
+  var RV_PRE = '.to, .joint, .icn, .num, .opener > div > b'; // hiện cùng khối kế tiếp
+  var RV_POST = '.ai-arrow, .ai-out';                         // hiện cùng khối đứng trước
+  var rvCustom = new Map();
+  function rvTarget(el) { return el.matches('.foldrow > .fold') ? el.querySelector('.fold-h') : el; } // .fold là display:contents
+  function rvCollect(parent, st) {
+    var kids = [].slice.call(parent.children);
+    if (parent.matches('.toc')) kids.sort(function (a, b) { return parseInt(a.querySelector('.num').textContent, 10) - parseInt(b.querySelector('.num').textContent, 10); });
+    kids.forEach(function (c) {
+      if (c.matches(RV_SKIP)) return;
+      if (c.matches(RV_POST)) { if (st.steps.length) st.steps[st.steps.length - 1].push(c); return; }
+      if (c.matches(RV_PRE)) { st.pre.push(c); return; }
+      if (c.matches(RV_BOX)) { rvCollect(c, st); return; }
+      st.steps.push(st.pre.concat(rvTarget(c))); st.pre = [];
     });
-    agendaItems.push(agendaEl.querySelector('.chot'));
-    agendaItems.forEach(function (el) { el.classList.add('rv', 'rv-hide'); });
-  })();
-  function agendaNext() { // true nếu vừa hiện thêm 1 mục; false nếu đã hiện hết
-    if (agendaN >= agendaItems.length) return false;
-    agendaItems[agendaN++].classList.remove('rv-hide');
+  }
+  slides.forEach(function (s) {
+    var st = { steps: [], pre: [], n: 0 }, spec = s.getAttribute('data-rv');
+    if (spec && spec !== 'custom') {
+      spec.split('|').forEach(function (part) {
+        part = part.trim();
+        var all = part.slice(0, 4) === 'all:';
+        var els = [].slice.call(s.querySelectorAll(all ? part.slice(4) : part)).map(rvTarget);
+        if (all) st.steps.push(els); else els.forEach(function (el) { st.steps.push([el]); });
+      });
+    } else if (!spec) rvCollect(s, st);
+    if (st.pre.length && st.steps.length) st.steps[st.steps.length - 1] = st.steps[st.steps.length - 1].concat(st.pre);
+    st.steps.forEach(function (g) { g.forEach(function (el) { el.classList.add('rv', 'rv-hide'); }); });
+    s._rv = st;
+  });
+  function rvLeft(s) { var c = rvCustom.get(s); return c ? c.left() : s._rv.n < s._rv.steps.length; }
+  function rvShow(s, g) {
+    g.forEach(function (el) { el.classList.remove('rv-hide'); });
+    if (s.scrollHeight > s.clientHeight + 4) g[g.length - 1].scrollIntoView({ block: 'nearest', behavior: 'smooth' }); // slide dài: cuộn tới khối vừa hiện
+  }
+  function rvNext() { // true nếu vừa hiện thêm 1 khối; false nếu đã hiện hết
+    var s = slides[cur], c = rvCustom.get(s), st = s._rv;
+    if (c) return c.next();
+    if (st.n >= st.steps.length) return false;
+    rvShow(s, st.steps[st.n++]);
     return true;
+  }
+  function rvAll(s) {
+    var c = rvCustom.get(s), st = s._rv;
+    if (c) { while (c.left()) c.next(); return; }
+    while (st.n < st.steps.length) st.steps[st.n++].forEach(function (el) { el.classList.remove('rv-hide'); });
   }
 
   // Demo Socrate: mỗi lần bấm hiện thêm 1 câu
@@ -1179,6 +1222,7 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
       if (n >= lns.length) { go.hidden = true; end.hidden = false; end.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }
       else go.textContent = 'Bấm để nghe tiếp ▶ (' + n + '/' + lns.length + ')';
     };
+    rvCustom.set(go.closest('.slide'), { left: function () { return !go.hidden; }, next: function () { if (go.hidden) return false; go.onclick(); return true; } }); // Enter = bấm nút
   })();
 
   // Slide dài (bài thực hành): nhắc "cuộn xuống" khi còn nội dung bên dưới
