@@ -1,4 +1,4 @@
-# Làm việc với AI — workshop 1 giờ
+# Buổi 1: Làm việc với AI — workshop 1 giờ
 
 Tài liệu cho buổi học 1 giờ (34 slide) dành cho người không rành kỹ thuật, dùng ChatGPT hoặc Gemini bản miễn phí.
 
@@ -17,7 +17,7 @@ Học xong, mỗi người biết:
 | Cái gì | File | Ghi chú |
 |---|---|---|
 | Bộ slide | [index.html](index.html) | Nút ◀ ▶ hoặc phím mũi tên · F: toàn màn hình · Ctrl + P: lưu PDF |
-| Máy trung gian Gemini | [proxy/HUONG-DAN.md](proxy/HUONG-DAN.md) | Cho nút "Gửi cho Gemini" hỏi Gemini ngay trên trang, key không lộ |
+| Máy trung gian Gemini | [proxy/HUONG-DAN.md](../proxy/HUONG-DAN.md) | Cho nút "Gửi cho Gemini" hỏi Gemini ngay trên trang, key không lộ |
 | Dàn ý cho người dẫn | [outline/](outline/) | Lời giải thích, ví dụ, bài thực hành từng phần |
 
 Cách mở trên máy (Windows): tải repo về (nút **Code → Download ZIP**), giải nén, bấm đúp `index.html`. Không cần cài gì, không cần mạng. Nút "Gửi cho Gemini" chỉ chạy trên trang `danhbuidcn.github.io` (cần mạng); mở từ máy thì dùng nút "Chép" rồi dán sang ChatGPT, Gemini.

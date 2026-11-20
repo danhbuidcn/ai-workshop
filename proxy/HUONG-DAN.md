@@ -8,7 +8,7 @@ Trang workshop có nút **Gửi cho Gemini**. Nút này gửi câu hỏi tới m
 |---|---|
 | [Code.gs](Code.gs) | Code máy trung gian. Chỉ có chỗ trống ở dòng `var KEY_IN_CODE`, không có key. |
 | [appsscript.json](appsscript.json) | Cài đặt: ai cũng gọi được, chạy bằng tài khoản chủ. |
-| [deploy.sh](deploy.sh) | Đẩy code lên Apps Script, chèn key vào bản tạm, ghi địa chỉ vào [../ai.js](../ai.js). |
+| [deploy.sh](deploy.sh) | Đẩy code lên Apps Script, chèn key vào bản tạm, ghi địa chỉ vào [../buoi-1/ai.js](../buoi-1/ai.js). |
 | [test-proxy.js](test-proxy.js) | Kiểm tra code trên máy, không cần Google: `node proxy/test-proxy.js`. |
 
 ## Giới hạn có sẵn (sửa ở đầu `Code.gs`)
@@ -59,7 +59,7 @@ Cách khác (không dùng `deploy.sh`): dán key vào **Cài đặt dự án →
 ## 4. Đổi key / tắt
 
 - Đổi key: sửa `~/.config/ai-workshop/gemini.key` → chạy lại `bash proxy/deploy.sh`.
-- Tắt nút chạy thử: để `var AI_PROXY_URL = '';` trong [../ai.js](../ai.js). Trang báo học viên bấm "Chép" rồi dán vào Gemini.
+- Tắt nút chạy thử: để `var AI_PROXY_URL = '';` trong [../buoi-1/ai.js](../buoi-1/ai.js). Trang báo học viên bấm "Chép" rồi dán vào Gemini.
 - Tắt hẳn: vào trình soạn Apps Script → **Triển khai → Quản lý bản triển khai** → lưu trữ bản triển khai.
 
 ## Kiểm tra không lộ key

@@ -7,7 +7,7 @@ cd "$(dirname "$0")"
 KEY_FILE="${GEMINI_KEY_FILE:-$HOME/.config/ai-workshop/gemini.key}"
 STATE="${CLASP_STATE:-$HOME/.config/ai-workshop/clasp-state.json}" # scriptId + deploymentId, ngoài repo
 CLASP=(npx -y @google/clasp@3)
-AI_JS="$(cd .. && pwd)/ai.js"
+AI_JS="$(cd .. && pwd)/buoi-1/ai.js"
 
 [ -f "$HOME/.clasprc.json" ] || { echo "Chưa đăng nhập Google. Chạy: npx @google/clasp login"; exit 1; }
 [ -s "$KEY_FILE" ] || { echo "Không thấy key ở $KEY_FILE"; exit 1; }
