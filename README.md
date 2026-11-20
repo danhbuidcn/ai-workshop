@@ -2,9 +2,11 @@
 
 Tài liệu cho buổi học 1 giờ (34 slide) dành cho người không rành kỹ thuật, dùng ChatGPT hoặc Gemini bản miễn phí.
 
+Mục tiêu của khoá: có tư duy làm việc với AI (tư duy phản biện: không tin ngay, luôn kiểm tra).
+
 Học xong, mỗi người biết:
 
-- AI là gì (máy đoán chữ tiếp theo) và vì sao có lúc sai.
+- AI là gì (máy đoán chữ tiếp theo), vì sao có lúc sai, nên không tin câu trả lời đầu.
 - 5 nguyên tắc làm việc với AI.
 - Công thức 5 phần để giao việc cho AI.
 - Cách cho AI đọc tài liệu (file, Drive, Gmail, Excel) trên bản miễn phí.
