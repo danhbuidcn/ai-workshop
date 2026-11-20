@@ -6,8 +6,8 @@ Slide 4–6: phản biện khác tư duy phản biện (có link video) · 3 c�
 Học viên phân biệt được phản biện và tư duy phản biện, biết mình đang ở cấp nào, và tin vì có bằng chứng.
 
 ## Slide 4: Phản biện khác tư duy phản biện
-- Hành động phản biện: chỉ ra chỗ sai của người khác.
-- Tư duy phản biện: tự nhìn nhận, phán đoán, đánh giá chính mình.
+- Phản biện: Phản = ngược lại, đáp lại; Biện = biện luận, lập luận. Dùng lý lẽ và bằng chứng để đối chiếu, phân tích, đánh giá một vấn đề một cách logic, khách quan. Đối tượng: người khác.
+- Tư duy phản biện: tự nhìn nhận, phán đoán, đánh giá suy nghĩ của mình. Đối tượng: chính mình.
 - Không phải: mù quáng đặt câu hỏi về mọi thứ; đi phản biện người khác.
 - Link "Video gợi ý" mở YouTube tab mới: https://www.youtube.com/watch?v=sGTkYMrWX6U
 
