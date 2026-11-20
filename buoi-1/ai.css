@@ -49,11 +49,11 @@
 /* Slide có bài thực hành: cuộn được, không bị cắt mép trên */
 .slide.has-out { justify-content: flex-start; overflow-y: auto; }
 /* Trên slide (máy chiếu): chữ ≥ 18px */
-.slide .ai-out { font-size: 20px; }
-.slide .ai-lbl { font-size: 20px; } .slide .ai-lbl small { font-size: 18px; }
-.slide .ai-head .copy, .slide .ai-arrow, .slide .ai-more label, .slide .ai-row input, .slide .ai-note { font-size: 18px; }
-.slide .run { font-size: 22px; padding: 10px 26px; }
-.slide .ai-lab label, .slide .ai-lab select { font-size: 18px; } .slide .ai-lab textarea { font-size: 18px; }
+.slide .ai-out { font-size: 15px; }
+.slide .ai-lbl { font-size: 15px; } .slide .ai-lbl small { font-size: 13px; }
+.slide .ai-head .copy, .slide .ai-arrow, .slide .ai-more label, .slide .ai-row input, .slide .ai-note { font-size: 13px; }
+.slide .run { font-size: 17px; padding: 10px 26px; }
+.slide .ai-lab label, .slide .ai-lab select { font-size: 13px; } .slide .ai-lab textarea { font-size: 13px; }
 /* Ô "bấm để mở" (xem ai.js folds): đầu mục luôn hiện, chi tiết hiện khi bấm */
 .fold-h { position: relative; display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; font: inherit; color: inherit;
   background: #fff; border: 3px solid #d1d5db; border-radius: 14px; padding: 10px 56px 10px 14px; cursor: pointer; line-height: 1.35; }
@@ -115,11 +115,11 @@
 .pp-legend[hidden] { display: none; }
 .pp-legend span { font-size: 14px; font-weight: 700; padding: 1px 8px; border-radius: 6px; }
 /* Trên slide: chữ ≥ 18px */
-.slide .cmp-ask { font-size: 26px; } .slide .cmp-h { font-size: 22px; }
-.slide .cmp-tip, .slide .cmp-all, .slide .pp-legend span, .slide .cmp-pick button { font-size: 18px; }
-.slide .cmp-sum { font-size: 22px; }
-.slide .cmp-out .ai-ans { max-height: 200px; font-size: 18px; }
-.slide .cmp-col .ai-txt { font-size: 20px; } .slide .cmp-look .fold-h { font-size: 20px; } .slide .cmp-look .fold-b { font-size: 20px; }
+.slide .cmp-ask { font-size: 21px; } .slide .cmp-h { font-size: 17px; }
+.slide .cmp-tip, .slide .cmp-all, .slide .pp-legend span, .slide .cmp-pick button { font-size: 13px; }
+.slide .cmp-sum { font-size: 17px; }
+.slide .cmp-out .ai-ans { max-height: 200px; font-size: 13px; }
+.slide .cmp-col .ai-txt { font-size: 15px; } .slide .cmp-look .fold-h { font-size: 15px; } .slide .cmp-look .fold-b { font-size: 15px; }
 .cmp-look .foldrow > .fold > .fold-h { border-radius: 14px; }
 @media (max-width: 700px) { .ai-lab .lab-grid, .cmp-row { grid-template-columns: 1fr; } }
 @media print { .run, .ai-foot, .ai-arrow, .ai-out, .ai-head .copy, .ai-lab, .ai-lab-wrap, .cmp-two, .cmp-go, .cmp-pick { display: none !important; } }

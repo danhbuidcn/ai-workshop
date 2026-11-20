@@ -1,6 +1,6 @@
-# 5. Cho AI đọc tài liệu của mình (10 phút)
+# 6. Cho AI đọc tài liệu của mình (10 phút)
 
-Slide 24–28: slide 24 = Ý 1 + Ý 2 · slide 25 = Gemini @Gmail/@Drive + Ý 3 · slide 26 = Ý 4 · slide 27 = Ý 5 + Ý 6 · slide 28 thực hành.
+Slide 27–31: slide 27 = Ý 1 + Ý 2 · slide 28 = Gemini @Gmail/@Drive + Ý 3 · slide 29 = Ý 4 · slide 30 = Ý 5 + Ý 6 · slide 31 thực hành.
 
 ## Mục tiêu
 Biết 3 cách đưa tài liệu cho AI trên bản free, và cách lưu "yêu cầu cố định" để không phải gõ lại.
@@ -45,6 +45,6 @@ Lưu ý: tính năng các app đổi thường xuyên. Không thấy nút → d�
 - Không thấy tính năng / bị giới hạn → dùng file `.txt` ở Ý 5. Cách này luôn được.
 
 ## Thực hành: "Cho AI đọc 1 tài liệu" (4 phút)
-1. Slide 28: bấm **So sánh** — trái hỏi "nghỉ phép mấy ngày?" không đưa tài liệu (AI đoán theo luật chung), phải dán quy định công ty (14 ngày) → AI trả lời đúng quy định.
+1. Slide 31: bấm **So sánh** — trái hỏi "nghỉ phép mấy ngày?" không đưa tài liệu (AI đoán theo luật chung), phải dán quy định công ty (14 ngày) → AI trả lời đúng quy định.
 2. Thử với file thật (giáo án, danh sách lớp đã đổi tên, quy định nghỉ phép): dán 1 đoạn vào khung phải, hoặc tải cả file lên ChatGPT/Gemini (cách B), hoặc @Google Drive trên Gemini (cách C).
 3. Hỏi 1 câu mình đã biết đáp án → kiểm tra AI đúng không.

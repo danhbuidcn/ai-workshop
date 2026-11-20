@@ -1,6 +1,6 @@
-# 3. 5 nguyên tắc cốt lõi (10 phút)
+# 4. 5 nguyên tắc cốt lõi (10 phút)
 
-Slide 12–18: slide 12 bàn tay 5 ngón · slide 13–17 mỗi nguyên tắc 1 slide (tiêu đề lớn là câu tiếng Anh gốc + giải thích tiếng Việt, 5 vòng tròn nhỏ ở trên là thanh tiến độ) · slide 18 thực hành (Lần 1 → Lần 2 → kết luận).
+Slide 15–21: slide 15 bàn tay 5 ngón · slide 16–20 mỗi nguyên tắc 1 slide (tiêu đề lớn là câu tiếng Anh gốc + giải thích tiếng Việt, 5 vòng tròn nhỏ ở trên là thanh tiến độ) · slide 21 thực hành (Lần 1 → Lần 2 → kết luận).
 
 Nguồn: chương 1 Claude 101 (Anthropic). Dùng được cho mọi AI, không riêng Claude.
 Hình chung: bàn tay 5 ngón ✋, mỗi ngón 1 nguyên tắc.
@@ -19,7 +19,7 @@ Hình chung: bàn tay 5 ngón ✋, mỗi ngón 1 nguyên tắc.
 ## Nguyên tắc 3: Tủ tài liệu + công thức nấu ăn
 - Lời nói: "**Tủ tài liệu** (Project) giữ những gì AI cần biết về bạn: giáo trình, quy định công ty. **Công thức** (Skill) là cách làm 1 việc lặp lại, từng bước."
 - Câu chốt: **Lưu cái cần biết 1 lần, dùng mãi. Lưu cách làm 1 lần, làm lại không cần giải thích.**
-- Bản free: ChatGPT Projects, Gemini Gem, NotebookLM, hoặc 1 file ghi chú mình tự dán vào (xem phần 5).
+- Bản free: ChatGPT Projects, Gemini Gem, NotebookLM, hoặc 1 file ghi chú mình tự dán vào (xem phần 6).
 - Hình: tủ 🗄️ + tờ công thức 📋.
 
 ## Nguyên tắc 4: Giao việc lặp lại, giữ việc cần phán đoán
@@ -34,10 +34,10 @@ Hình chung: bàn tay 5 ngón ✋, mỗi ngón 1 nguyên tắc.
 - Cách kiểm tra: thử với việc mình đã làm rồi (biết đáp án) → so sánh. Số liệu, tên người, luật, trích dẫn → luôn kiểm tra lại.
 - Câu chốt: **Tự tin ≠ đúng.**
 - Hình: kính lúp 🔍 trên tờ giấy.
-- Hỏi lại như Socrate: "Vì sao bạn kết luận vậy? Có ngoại lệ không? Nguồn ở đâu?" (ô riêng trên slide 17).
+- Hỏi lại như Socrate: "Vì sao bạn kết luận vậy? Có ngoại lệ không? Nguồn ở đâu?" (ô riêng trên slide 20).
 
 ## Thực hành: "Viết lại câu trả lời đầu" (3 phút)
-1. Slide 18 có khung so sánh 2 cột: trái `Viết thông báo cho phụ huynh về buổi họp lớp.`, phải cùng việc viết theo công thức 5 phần (mỗi phần 1 màu).
+1. Slide 21 có khung so sánh 2 cột: trái `Viết thông báo cho phụ huynh về buổi họp lớp.`, phải cùng việc viết theo công thức 5 phần (mỗi phần 1 màu).
 2. Bấm **So sánh**: Gemini chạy cả 2 câu cùng lúc, 2 kết quả nằm cạnh nhau.
 3. Hỏi lớp: "2 kết quả khác nhau ở đâu?" → bấm 3 ô "nên nhìn" (giờ họp, giọng, độ dài).
 4. Nhắc: AI có thể khác mỗi lần, quan trọng là xu hướng. Cho học viên thử thêm cách gõ câu chỉnh trong cùng cuộc trò chuyện.

@@ -1,6 +1,6 @@
-# 1. AI là gì (8 phút)
+# 2. AI là gì (8 phút)
 
-Slide 5–9. Ý 1 + Ý 2 gộp trong slide 5 (có câu định nghĩa AI; chữ "A ➜ 01000001"). Ví dụ "Good morning / 你好" (Ý 3) chỉ nói miệng, không có slide.
+Slide 8–12. Ý 1 + Ý 2 gộp trong slide 8 (có câu định nghĩa AI; chữ "A ➜ 01000001"). Ví dụ "Good morning / 你好" (Ý 3) chỉ nói miệng, không có slide.
 
 ## Mục tiêu
 Hiểu 1 câu: **AI tạo chữ bằng cách đoán chữ tiếp theo.** Vì đoán, nên có lúc sai.
