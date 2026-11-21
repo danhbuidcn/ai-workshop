@@ -52,6 +52,6 @@ Mỗi lần phản hồi, chỉ được xuất ra đúng 3 phần ngắn gọn 
 ## Bài học dùng cho workshop
 
 - Lượt 1 thiếu "muốn kết quả trông thế nào" → AI tự đoán → dài.
-- Lượt 2 thêm: chê thẳng ("quá dài"), nói rõ người dùng cuối, ví dụ cụ thể, muốn khung trả lời cố định → kết quả dùng được.
+- Lượt 2 (prompt C-T-R): Context (ai dùng, để làm gì) + Task (bài toán chưa rõ) + Rules (4 khối, tối đa 3 câu, khung 3 phần) + chê thẳng "quá dài" → 1 đoạn hướng dẫn 4 khối dùng được ngay.
 - Đúng nguyên tắc 2: câu trả lời đầu chỉ là điểm khởi đầu.
 - Đoạn hướng dẫn có 4 khối dễ bắt chước: **Vai trò – Điều cấm – Cách làm – Khung trả lời**.
