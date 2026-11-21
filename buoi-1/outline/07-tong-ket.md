@@ -1,6 +1,6 @@
 # 7. Tổng kết (2 phút)
 
-Slide 32: 1 slide, mục lục theo phần 01–06. Mỗi phần ghi tên các slide trong phần đó. Bấm tên phần thì nhảy tới slide chuyển phần, bấm tên slide thì nhảy tới đúng slide đó (người dẫn dùng để mở lại phần cần nhắc). Không có slide chuyển phần riêng, tiêu đề slide ghi "07".
+Slide 32: 1 slide, mục lục dạng bảng, mỗi dòng 1 phần (01 → 06), tên phần bên trái, tên các slide bên phải theo thứ tự. Phần 06 có ghi chú 1 dòng: "Làm thật: gửi thư cho 3 học viên". Mỗi phần ghi tên các slide trong phần đó. Bấm tên phần thì nhảy tới slide chuyển phần, bấm tên slide thì nhảy tới đúng slide đó (người dẫn dùng để mở lại phần cần nhắc). Không có slide chuyển phần riêng, tiêu đề slide ghi "07".
 
 ## Nhắc lại theo từng phần (lời nói, không có trên slide)
 - 01 Tư duy phản biện: phản biện soi người khác · tư duy phản biện soi chính mình · cấp 3 (ngoại hoá nội quan) là cao nhất · vượt "cái tôi phi lý".

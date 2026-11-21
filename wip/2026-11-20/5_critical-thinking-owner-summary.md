@@ -19,7 +19,7 @@ Owner (2026-11-20): tóm tắt 5 ý (không phải mù quáng hỏi mọi thứ 
 - [x] Slide 20 chuyển phần "Giờ làm thật với Gemini miễn phí" (owner: 19→20 nhảy chủ đề không báo): ví dụ, 5 bước, nối 4 năng lực
 - [x] Slide chuyển phần có số 01–08 (slide 4, 8, 12, 14, 22, 25, 36); tổng kết viết lại thành 2 slide gạch đầu dòng (34–35); 38 slide
 - [x] Bỏ slide "3 cách dùng Gemini" và "Đừng đưa cho AI" (owner: số 27, 28 theo bản 34 slide); bỏ 2 ý tương ứng ở tổng kết; 38 slide
-- [x] Tổng kết 1 slide (32): mục lục 01–06, mỗi phần liệt kê tên slide, bấm tên → nhảy tới slide đó (id trên slide đích + data-to); đã bấm thử 28 link; 38 slide
+- [x] Tổng kết 1 slide (32): mục lục 01–06, mỗi phần liệt kê tên slide, bấm tên → nhảy tới slide đó (id trên slide đích + data-to); bố cục bảng 1 cột (owner: trình bày chưa khoa học), phần 06 có note 1 dòng; đã bấm thử 28 link; 38 slide
 - [x] Số slide 38 → 30: sửa tham chiếu trong deck (slide 19, 22, 24; slide 26, kiểm theo nội dung), README, outline 00–08, index gốc
 - [x] Chụp slide 4–7, kiểm tra không tràn
 ## Kết quả
