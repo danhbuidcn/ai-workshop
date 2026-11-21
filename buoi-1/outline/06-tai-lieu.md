@@ -30,5 +30,5 @@ File mẫu để học viên tải về: [tai-lieu-mau/](../tai-lieu-mau/) (quy 
 - Gõ 1 câu cho từng học viên (An, Bình, Chi). Gemini đọc danh sách + mẫu thư, điền tên và ghi chú riêng.
 ## Slide 31: Bước 5, đọc kỹ rồi gửi
 - Gemini chỉ tạo thư nháp trong Gmail. Mở Thư nháp, kiểm tra người nhận, nội dung, rồi bấm Gửi.
-## Tổng kết (slide 33) lấy từ chương 6
+## Tổng kết (slide 32) lấy từ chương 6
 - Bắt đầu: chọn việc lặp lại nhiều, tiết kiệm nhiều thời gian → dùng Gemini mỗi ngày trong 30 ngày đầu.

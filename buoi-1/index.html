@@ -364,6 +364,11 @@
   .pp .sumg { gap: 14px; } .pp .sumg .card { padding: 12px 20px; }
   .pp .sumg .card b.t { font: 700 23px var(--serif); color: var(--pp-green); margin-bottom: 2px; }
   .pp .sumg ul.dot > li { font-size: 17px; line-height: 1.3; margin: 3px 0; }
+  .toc.go { gap: 14px 40px; padding: 0 30px; }
+  .toc.go a.it { color: inherit; text-decoration: none; cursor: pointer; border-radius: 18px; padding: 12px 16px; }
+  .toc.go a.it:hover, .toc.go a.it:focus { background: var(--hi-bg); outline: none; }
+  .toc.go a.it:hover b, .toc.go a.it:focus b { text-decoration: underline; text-underline-offset: 6px; }
+  .toc.go b { font-size: 31px; }
   .fprog { display: flex; gap: 10px; justify-content: center; margin: 0 0 6px; }
   .fprog span { width: 40px; height: 40px; border-radius: 50%; background: #e5e7eb; color: #4b5563; font: 800 15px/40px var(--serif); text-align: center; }
   .fprog span.on { background: var(--pp-coral); color: #23283b; box-shadow: 0 0 0 5px var(--pp-pink); }
@@ -835,23 +840,16 @@ Thiếu thông tin thì hỏi lại, không tự bịa.</div>
 <!-- ===================== 6. TỔNG KẾT ===================== -->
 <section class="slide pp" data-s="7">
   <span class="tag">7 · TỔNG KẾT</span>
-  <h2>07 · Tổng kết (1/2): tư duy</h2>
-  <div class="grid g2 sumg">
-    <div class="card"><b class="t">01 🧐 Tư duy phản biện</b><ul class="dot"><li>Phản biện: dùng lý lẽ, bằng chứng để đánh giá ý kiến của <b>người khác</b>.</li><li>Tư duy phản biện: tự nhìn nhận, đánh giá <b>chính mình</b>.</li><li>Cấp 3 (ngoại hoá nội quan) là cao nhất.</li><li>Vượt "cái tôi phi lý": lấy mình / xã hội làm trung tâm.</li></ul></div>
-    <div class="card"><b class="t">02 🧠 AI là gì</b><ul class="dot"><li>AI tự học từ rất nhiều ví dụ.</li><li>ChatGPT, Gemini viết bằng cách đoán từng chữ tiếp theo.</li><li>Nghe hợp lý chưa chắc đúng → luôn kiểm tra.</li></ul></div>
-    <div class="card"><b class="t">03 🗺 Bản đồ AI</b><ul class="dot"><li>ChatGPT, Gemini, Claude, Perplexity.</li><li>Cách hỏi quan trọng hơn chọn app.</li></ul></div>
-    <div class="card"><b class="t">04 ✋ 5 nguyên tắc</b><ul class="dot"><li>Bạn mang bối cảnh, AI mang trí tuệ.</li><li>Câu trả lời đầu là điểm khởi đầu: iterate.</li><li>Projects lưu kiến thức, Skills thực thi quy trình.</li><li>Giao việc lặp lại, giữ việc cần phán đoán.</li><li>Test before you trust: kiểm chứng trước khi tin.</li></ul></div>
+  <h2>07 · Tổng kết</h2>
+  <div class="toc go">
+    <a class="it" data-go="1" href="#"><span class="num">01</span><div><b>🧐 Tư duy phản biện</b></div></a>
+    <a class="it" data-go="4" href="#"><span class="num">04</span><div><b>✋ 5 nguyên tắc</b></div></a>
+    <a class="it" data-go="2" href="#"><span class="num">02</span><div><b>🧠 AI là gì</b></div></a>
+    <a class="it" data-go="5" href="#"><span class="num">05</span><div><b>✍️ Cách giao việc</b></div></a>
+    <a class="it" data-go="3" href="#"><span class="num">03</span><div><b>🗺️ Bản đồ AI</b></div></a>
+    <a class="it" data-go="6" href="#"><span class="num">06</span><div><b>📁 Gemini miễn phí</b></div></a>
   </div>
-</section>
-
-<section class="slide pp" data-s="7">
-  <span class="tag">7 · TỔNG KẾT</span>
-  <h2>07 · Tổng kết (2/2): cách làm</h2>
-  <div class="grid g2 sumg">
-    <div class="card"><b class="t">05 ✍️ Cách giao việc</b><ul class="dot"><li>C-T-R: Context (bối cảnh), Task (việc cần làm), Rules (quy tắc).</li><li>Iteration: phản hồi cụ thể để chỉnh kết quả.</li><li>4D: Delegation, Description, Discernment, Diligence.</li></ul></div>
-    <div class="card"><b class="t">06 📁 Gemini miễn phí</b><ul class="dot"><li>Drive là kho tài liệu → nối vào sổ ghi chú.</li><li>Instructions: viết 1 lần, Gemini trả lời nhất quán.</li><li>Gemini soạn thư nháp, bạn đọc kỹ rồi mới gửi.</li></ul></div>
-  </div>
-  <div class="act"><b>✅ Bắt đầu:</b> chọn việc <b>lặp lại nhiều</b> và <b>tiết kiệm nhiều thời gian</b> nhất → dùng Gemini mỗi ngày trong 30 ngày đầu.</div>
+  <p class="cap" style="text-align:center;margin-top:22px">Bấm vào tên phần để quay lại slide đó.</p>
 </section>
 
 <!-- ===================== 7. BÀI TẬP CUỐI ===================== -->
@@ -1019,7 +1017,7 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
   document.addEventListener('keydown', function (e) {
     if (e.target.closest && e.target.closest('input, textarea, select, [contenteditable]')) return; // đang gõ
     var k = e.key;
-    var onBtn = e.target.closest && e.target.closest('button');
+    var onBtn = e.target.closest && e.target.closest('button, a');
     // Enter: sang slide kế (trừ khi đang chọn 1 nút). Mọi slide hiện hết nội dung ngay.
     if (k === 'Enter' && !onBtn) { e.preventDefault(); show(cur + 1); return; }
     if ((k === ' ' || k === 'Enter') && onBtn) return; // đang bấm nút (ô bấm để mở, Gửi)
@@ -1053,7 +1051,7 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
     more.style.display = s.scrollHeight - s.clientHeight - s.scrollTop > 8 ? 'block' : 'none';
   }, 400);
 
-  // In PDF: mở hết ô bấm để mở; slide dài thì thu nhỏ cho vừa 1 trang (giữ 39 trang)
+  // In PDF: mở hết ô bấm để mở; slide dài thì thu nhỏ cho vừa 1 trang (giữ 38 trang)
   window.addEventListener('beforeprint', function () {
     document.body.classList.add('pmode');
     slides.forEach(function (s) {
@@ -1069,6 +1067,13 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
     document.body.classList.remove('pmode');
     slides.forEach(function (s) { s.style.removeProperty('--z'); });
   });
+
+  // Tổng kết: tên từng phần là link, bấm thì nhảy tới slide chuyển phần (.secno) có số tương ứng
+  (function () {
+    var idx = {};
+    slides.forEach(function (sl, i) { var n = sl.querySelector('.secno .num'); if (n) idx[parseInt(n.textContent, 10)] = i; });
+    [].forEach.call(document.querySelectorAll('a[data-go]'), function (a) { var i = idx[+a.getAttribute('data-go')]; if (i != null) a.setAttribute('href', '#' + (i + 1)); });
+  })();
 
   window.addEventListener('resize', fit);
   window.addEventListener('hashchange', fromHash);
