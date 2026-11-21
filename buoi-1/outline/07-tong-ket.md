@@ -1,16 +1,14 @@
-# 7. Tổng kết 1 trang (2 phút)
+# 7. Tổng kết (2 phút)
 
-Slide 29 (4 ô + câu chốt + việc làm ngay, gộp 1 slide).
+Slide 34–35: 2 slide gạch đầu dòng để người dẫn nhắc lại. Không có slide chuyển phần riêng, tiêu đề slide 34 đã ghi "07".
 
-Hình: 1 trang chia 4 ô.
+## Slide 34: Tổng kết 1/2, tư duy
+- 01 Tư duy phản biện: phản biện = lý lẽ, bằng chứng để đánh giá ý kiến của người khác · tư duy phản biện = tự nhìn nhận, đánh giá chính mình · cấp 3 (ngoại hoá nội quan) là cao nhất · vượt "cái tôi phi lý".
+- 02 AI là gì: AI tự học từ nhiều ví dụ · đoán từng chữ tiếp theo · nghe hợp lý chưa chắc đúng → kiểm tra.
+- 03 Bản đồ AI: ChatGPT, Gemini, Claude, Perplexity · cách hỏi quan trọng hơn chọn app.
+- 04 5 nguyên tắc: bạn mang bối cảnh · câu trả lời đầu là điểm khởi đầu (iterate) · Projects lưu kiến thức, Skills thực thi quy trình · giao việc lặp lại, giữ việc cần phán đoán · test before you trust.
 
-| Ô | Nội dung |
-|---|---|
-| 🧠 AI là gì | Máy đoán chữ tiếp theo. Đoán hay, nhưng có thể sai. |
-| ✋ 5 nguyên tắc | Bạn mang bối cảnh · Lần đầu là nháp · Lưu tài liệu + cách làm · Giao việc lặp lại, giữ việc phán đoán · Kiểm tra trước khi tin |
-| ✍️ Công thức prompt | Vai trò · Bối cảnh · Việc cần làm · Kết quả trông thế nào · Hỏi lại nếu chưa rõ |
-| 📁 Tài liệu | Gom 1 folder · Tải lên / dán / @Drive · File "yêu cầu cố định" · Không đưa thông tin riêng tư |
-
-Câu chốt: **"AI giỏi đến đâu là do mình giao việc rõ đến đâu."**
-
-Việc làm ngay tuần này: chọn 1 việc lặp lại mỗi tuần → viết 1 prompt mẫu → lưu vào file `.txt`.
+## Slide 35: Tổng kết 2/2, cách làm
+- 05 Cách giao việc: C-T-R (Context, Task, Rules) · Iteration · 4D (Delegation, Description, Discernment, Diligence).
+- 06 Gemini miễn phí: Drive = kho tài liệu → nối vào sổ ghi chú · Instructions viết 1 lần · Gemini soạn thư nháp, bạn đọc kỹ rồi gửi · Chat, Canvas, Deep Research · không đưa CCCD, lương, sức khoẻ, mật khẩu.
+- Bắt đầu: chọn việc lặp lại nhiều và tiết kiệm nhiều thời gian nhất → dùng Gemini mỗi ngày trong 30 ngày đầu.

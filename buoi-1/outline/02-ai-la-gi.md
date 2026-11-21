@@ -1,11 +1,13 @@
 # 2. AI là gì (8 phút)
 
-Slide 7–9. Ví dụ "Good morning / 你好" (Ý 3) chỉ nói miệng, không có slide.
+Slide 8: chuyển phần (PHẦN 02 / 8).
+
+Slide 9–11. Ví dụ "Good morning / 你好" (Ý 3) chỉ nói miệng, không có slide.
 
 ## Mục tiêu
 Hiểu 1 câu: **AI tạo chữ bằng cách đoán chữ tiếp theo.** Vì đoán, nên có lúc sai.
 
-## Ý 1 (slide 7): AI là gì
+## Ý 1 (slide 9): AI là gì
 - Định nghĩa: AI là phần mềm tự học từ rất nhiều ví dụ, thay vì được con người viết sẵn từng quy tắc.
 - 3 bước: đọc hàng tỉ trang chữ → nhớ chữ nào hay đi sau chữ nào → khi hỏi, đoán từng chữ để trả lời. Không tra cứu sự thật, viết câu nghe hợp lý nhất.
 - Câu chốt: AI bắt chước rất giỏi, nhưng không biết mình đúng hay sai.
@@ -13,7 +15,7 @@ Hiểu 1 câu: **AI tạo chữ bằng cách đoán chữ tiếp theo.** Vì đo
 ## Ý 3: AI đoán chữ tiếp theo (chỉ nói miệng, không có slide riêng)
 - Ví dụ: "Con mèo đang ăn ___" → cá / cơm / chuột. Tên gọi: mô hình ngôn ngữ lớn (LLM).
 
-## Ý 4 (slide 8): Vì đoán nên có thể sai
+## Ý 4 (slide 10): Vì đoán nên có thể sai
 - AI viết câu nghe hợp lý nhất, không chắc là đúng nhất.
 - Không nên: "AI viết vậy chắc đúng, gửi luôn." · Nên: "AI viết vậy dựa vào đâu? Kiểm tra lại rồi mới gửi."
 

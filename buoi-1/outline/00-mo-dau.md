@@ -1,6 +1,6 @@
 # 0. Mở đầu (3 phút)
 
-Slide 1–3. Buổi học 1 giờ, 34 slide. Slide không ghi số phút, không ghi "lớp 5": số phút và lời nói chỉ ở `outline/`.
+Slide 1–3. Buổi học 1 giờ, 41 slide. Slide không ghi số phút, không ghi "lớp 5": số phút và lời nói chỉ ở `outline/`.
 
 ## Mục tiêu
 Mục tiêu của khoá: cho học viên tư duy làm việc với AI (tư duy phản biện: không tin ngay, luôn kiểm tra). Học viên biết hôm nay học gì, học xong làm được gì.
@@ -10,6 +10,7 @@ Mục tiêu của khoá: cho học viên tư duy làm việc với AI (tư duy p
 - Câu chốt: mục tiêu là tư duy phản biện khi làm việc với AI.
 
 ## Slide 3: Bản đồ buổi học
+- Mỗi phần mở đầu bằng 1 slide chuyển phần có số 01–08 khớp bản đồ này (slide 4, 8, 12, 14, 22, 25, 36); phần 07 mở bằng slide tổng kết.
 - Tư duy phản biện + kỹ năng mềm đi xuyên bài: nguyên tắc 5, slide "4 năng lực", bài tập cuối, tổng kết, chia sẻ nhóm.
 
 ## Lời nói (lớp 5)
@@ -36,15 +37,15 @@ Mục tiêu của khoá: cho học viên tư duy làm việc với AI (tư duy p
 - Hỏi bất cứ lúc nào. Không có câu hỏi ngớ ngẩn.
 - Phần 6 làm thật trên Gemini; phần 8 có bài thực hành.
 
-## Thời gian (khoảng 54 phút)
+## Thời gian (khoảng 55 phút)
 | Phần | Slide | Phút | Trong đó thực hành |
 |---|---|---|---|
 | 0. Mở đầu | 1–3 | 3 | – |
-| 1. Tư duy phản biện | 4–6 | 4 | – |
-| 2. AI là gì | 7–9 | 6 | – |
-| 3. Bản đồ AI | 10 | 2 | – |
-| 4. 5 nguyên tắc | 11–17 | 8 | – |
-| 5. Cách giao việc | 18–19 | 6 | – |
-| 6. Gemini miễn phí | 20–28 | 12 | 8 |
-| 7. Tổng kết | 29 | 2 | – |
-| 8. Bài tập cuối | 30–34 | 11 | 9 |
+| 1. Tư duy phản biện | 4–7 | 4 | – |
+| 2. AI là gì | 8–11 | 6 | – |
+| 3. Bản đồ AI | 12–13 | 3 | – |
+| 4. 5 nguyên tắc | 14–21 | 8 | – |
+| 5. Cách giao việc | 22–24 | 6 | – |
+| 6. Gemini miễn phí | 25–33 | 12 | 8 |
+| 7. Tổng kết | 34–35 | 3 | – |
+| 8. Bài tập cuối | 36–41 | 11 | 9 |

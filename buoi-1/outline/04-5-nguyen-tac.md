@@ -1,6 +1,8 @@
 # 4. 5 nguyên tắc cốt lõi (10 phút)
 
-Slide 11–17: slide 11 bàn tay 5 ngón (mỗi ngón = câu tiếng Anh gốc; phụ đề "Có 5 nguyên tắc sẽ lặp lại nhiều lần.") · slide 12–16 mỗi nguyên tắc 1 slide (tiêu đề = câu tiếng Anh gốc, tiêu đề "N. \"câu gốc\"", mọi dòng là gạch đầu dòng, nguyên văn owner gửi, không ô câu chốt) · slide 17 ví dụ không nên / nên.
+Slide 14: chuyển phần (PHẦN 04 / 8).
+
+Slide 15–21: slide 15 bàn tay 5 ngón (mỗi ngón = câu tiếng Anh gốc; phụ đề "Có 5 nguyên tắc sẽ lặp lại nhiều lần.") · slide 16–20 mỗi nguyên tắc 1 slide (tiêu đề = câu tiếng Anh gốc, tiêu đề "N. \"câu gốc\"", mọi dòng là gạch đầu dòng, nguyên văn owner gửi, không ô câu chốt) · slide 21 ví dụ không nên / nên.
 
 Nguồn: chương 1 Claude 101 (Anthropic). Dùng được cho mọi AI, không riêng Claude.
 
@@ -30,6 +32,6 @@ Nguồn: chương 1 Claude 101 (Anthropic). Dùng được cho mọi AI, không 
 - Trước khi giao việc quan trọng cho Claude, chạy "delegation-diligence loop": lấy 1 task bạn đã làm rồi, xem Claude có reproduce kết quả đúng không.
 - Sau khi validate, vẫn check sanity ở mỗi output mới.
 
-## Slide 17: Ví dụ 2 cách hỏi (chỉ chữ, không thực hành)
+## Slide 21: Ví dụ 2 cách hỏi (chỉ chữ, không thực hành)
 - ❌ Không nên: "Viết thông báo cho phụ huynh về buổi họp lớp."
 - ✅ Nên: 3 dòng theo C-T-R, mỗi dòng 1 màu (Context · Task · Rules).
