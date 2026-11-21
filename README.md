@@ -8,7 +8,7 @@ Mục tiêu của khoá: có tư duy làm việc với AI (tư duy phản biện
 
 | Buổi | Nội dung | Mở | Tài liệu |
 |---|---|---|---|
-| 1 | Làm việc với AI — workshop 1 giờ (39 slide) | [buoi-1/index.html](buoi-1/index.html) | [buoi-1/README.md](buoi-1/README.md) |
+| 1 | Làm việc với AI — workshop 1 giờ (36 slide) | [buoi-1/index.html](buoi-1/index.html) | [buoi-1/README.md](buoi-1/README.md) |
 
 ## Mở thế nào
 

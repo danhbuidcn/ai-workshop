@@ -364,11 +364,13 @@
   .pp .sumg { gap: 14px; } .pp .sumg .card { padding: 12px 20px; }
   .pp .sumg .card b.t { font: 700 23px var(--serif); color: var(--pp-green); margin-bottom: 2px; }
   .pp .sumg ul.dot > li { font-size: 17px; line-height: 1.3; margin: 3px 0; }
-  .pp ol.wf { list-style: none; margin: 4px auto 0; padding: 0; max-width: 1050px; }
+  .pp ol.wf { list-style: none; margin: 4px auto 0; padding: 0; max-width: 1100px; }
   .pp ol.wf > li { display: flex; align-items: center; gap: 18px; padding: 5px 0; position: relative; }
-  .pp ol.wf > li:not(:last-child)::after { content: ""; position: absolute; left: 21px; top: 50px; height: 10px; width: 2px; background: var(--pp-coral); opacity: .55; }
-  .pp ol.wf b { display: block; font-size: 21px; line-height: 1.2; }
-  .pp ol.wf .g { display: block; font-size: 15.5px; color: #4b5563; line-height: 1.25; }
+  .pp ol.wf > li:not(:last-child)::after { content: ""; position: absolute; left: 21px; top: 50px; height: 14px; width: 2px; background: var(--pp-coral); opacity: .55; }
+  .pp ol.wf .num::before, .pp ol.wf .num::after { display: none; }
+  .pp ol.wf > li { padding: 7px 0 !important; }
+  .pp ol.wf b { display: block; font-size: 27px; line-height: 1.2; }
+  .pp ol.wf .g { display: block; font-size: 19px; color: #4b5563; line-height: 1.25; }
   .recap { display: grid; grid-template-columns: 470px 1fr; gap: 28px; align-items: start; margin-top: 6px; }
   .recap a { color: inherit; text-decoration: none; cursor: pointer; }
   .recap .rtiles { display: flex; flex-direction: column; gap: 9px; }
@@ -895,93 +897,29 @@ Thiếu thông tin thì hỏi lại, không tự bịa.</div>
   </div>
 </section>
 
-<section class="slide pp" data-s="8" data-conv="vidu">
-  <span class="tag">8 · CÁCH TÔI XỬ LÝ · VÍ DỤ THẬT</span>
-  <span class="practice">BƯỚC 1–2 · LÀM RÕ YÊU CẦU, HỎI AI</span>
-  <h2>🎯 Lượt 1: hỏi chung chung</h2>
-  <div class="prompt sm">Tôi là một lập trình viên. Tôi đã viết 1 app để quản lý thời gian sử dụng tablet cho trẻ em… Tôi muốn hướng dẫn trẻ sử dụng AI Gemini. Nhưng lo sợ trẻ sẽ chụp và nhờ AI giải, tôi muốn trẻ dùng AI hướng dẫn cách giải và cách tư duy. Liệu tôi có thể làm gì? 1 bé 9 tuổi, 1 bé 6 tuổi dùng chung tablet.</div>
-  <div class="card long" style="margin-top:14px;font-size:13px;line-height:1.35;columns:2;column-gap:32px">
-    <b>Gemini:</b> Chào bạn, là một lập trình viên và là một người cha/mẹ…<br>
-    <b>1. Giải pháp Kỹ thuật &amp; Hệ thống</b><br>
-    • Vô hiệu hóa phím tắt chụp màn hình…<br>
-    • Dùng chế độ "App Locking", ghim ứng dụng…<br>
-    • Thiết lập "Tài khoản AI dành riêng cho trẻ"…<br>
-    <b>2. Giải pháp Cốt lõi: Lập trình "Hành vi" của AI</b><br>
-    • Thiết lập chỉ dẫn hệ thống… Quy tắc bất di bất dịch… 4 quy tắc…<br>
-    <b>3. Xây dựng "Quy tắc gia đình"</b><br>
-    • Thống nhất "Giao ước" với các con…<br>
-    • Dạy con cách đặt câu hỏi cho AI… Sai: … Đúng: … Đúng: …<br>
-    • Phân cấp theo độ tuổi: bé 6 tuổi… bé 9 tuổi…<br>
-    <b>Gợi ý bước tiếp theo</b><br>
-    • Viết một lớp trung gian bằng Python/Node.js…<br>
-    • Bạn có muốn chúng ta cùng phác thảo một đoạn code…
-  </div>
-  <div class="chot">😵 Đúng ý, nhưng <em>quá dài</em>, không dùng ngay được.</div>
-</section>
-
-<section class="slide pp" data-s="8" data-conv="vidu">
-  <span class="tag">8 · CÁCH TÔI XỬ LÝ · VÍ DỤ THẬT</span>
-  <span class="practice">BƯỚC 3–4 · KẾT QUẢ MONG MUỐN, CÁCH LÀM</span>
-  <h2>Lượt 2: nói rõ mình muốn gì</h2>
-  <div class="prompt sm" data-ai="chain">Câu trả lời trước quá dài, chưa dùng được. Hãy viết lại thành MỘT đoạn hướng dẫn ngắn để tôi dán vào Gemini cho cả hai con dùng.
-
-Context: Hai con tôi (6 và 9 tuổi) dùng chung 1 tablet. Tôi muốn Gemini giúp các con tư duy, không giải bài hộ.
-Task: Viết đoạn hướng dẫn cho Gemini: khi con đưa một bài toán chưa rõ, Gemini cùng con chia nhỏ bài và brainstorm cách làm.
-Rules: Đoạn hướng dẫn gồm 4 khối: Vai trò, Điều cấm, Cách làm, Khung trả lời. Mỗi câu trả lời cho con tối đa 3 câu, theo đúng 3 phần cố định. Giọng thân thiện, dễ hiểu với trẻ.</div>
-  <ul class="dot big" style="margin-top:16px;columns:2;column-gap:40px">
-    <li>😤 Chê thẳng: "quá dài"</li><li>👧 <b>Context</b>: ai dùng, để làm gì</li>
-    <li>🧩 <b>Task</b>: việc cụ thể (bài toán chưa rõ)</li><li>📐 <b>Rules</b>: 4 khối, tối đa 3 câu, khung 3 phần</li>
-  </ul>
-</section>
-
-<section class="slide pp" data-s="8">
-  <span class="tag">8 · CÁCH TÔI XỬ LÝ · KẾT QUẢ</span>
-  <span class="practice">BƯỚC 5 · THỰC HIỆN</span>
-  <h2>Gemini đưa 1 đoạn hướng dẫn <span class="key">4 khối</span></h2>
-  <div class="icgrid" style="--n:4;gap:10px 24px">
-    <div class="it"><div class="icn sm" style="margin:6px auto 8px">🎭</div><b class="t">Vai trò</b><p>"Bạn là người bạn đồng hành tư duy cho hai bé (6 và 9 tuổi)."</p></div>
-    <div class="it"><div class="icn sm" style="margin:6px auto 8px">🚫</div><b class="t">Điều cấm</b><p>"Không đưa đáp án cuối. Mỗi lượt tối đa 3 câu."</p></div>
-    <div class="it"><div class="icn sm" style="margin:6px auto 8px">🧩</div><b class="t">Cách làm</b><p>"Tóm tắt, chia bài thành bước nhỏ, gợi 1–2 hướng để con tự chọn."</p></div>
-    <div class="it"><div class="icn sm" style="margin:6px auto 8px;background:var(--pp-coral)">📐</div><b class="t" style="color:#a63a24">Khung trả lời</b><p>Mọi câu trả lời theo đúng 3 phần ↓</p></div>
-  </div>
-  <div class="grid g3" style="margin-top:10px">
-    <div class="card mini"><b>🔍 Hiểu bài</b><br>1 câu: bài hỏi gì, chỗ nào chưa rõ.</div>
-    <div class="card mini"><b>💡 Chia nhỏ &amp; thử làm</b><br>1 câu: tách bước nhỏ hoặc gợi ý cách thử.</div>
-    <div class="card mini"><b>❓ Câu hỏi cho con</b><br>1 câu hỏi ngắn để con nói ý nghĩ hoặc thử bước đầu.</div>
-  </div>
-  <ul class="dot" style="margin-top:12px">
-    <li>Dán vào Gemini: ⚙️ cạnh tên mình → <b>Trí thông minh cá nhân</b> → <b>Chỉ dẫn cho Gemini</b> (áp cho mọi cuộc chat)</li>
-    <li>Cách khác: ⚙️ → <b>Gem</b> → tạo 1 Gem riêng cho việc này</li>
-  </ul>
-  <div class="chot">Bước 6–7: <em>thử với 1 bài toán thật</em>, kiểm tra rồi mới tin.</div>
-</section>
-
-<section class="slide pp prac" data-s="8">
+<section class="slide pp prac" data-s="8" id="s8-de">
   <span class="tag">8 · BÀI TẬP</span>
-  <span class="practice">✋ ĐẾN LƯỢT BẠN · THỬ NGAY TRÊN TRANG</span>
-  <h2 style="margin-bottom:6px">Bài tập: viết hướng dẫn cho AI</h2>
-  <p style="margin:0 0 6px;font-size:21px"><b>Đề:</b> chọn 1 việc lặp lại của bạn, viết đoạn hướng dẫn <b>4 khối</b> (vai trò, điều cấm, cách làm, khung trả lời) để AI luôn trả lời đúng ý.</p>
-  <ol class="steps sm">
-    <li>Ô <b>Chọn mẫu</b>: chọn 1 mẫu gần việc của bạn, hoặc "Tự viết".</li>
-    <li>Phần A: sửa từng dòng cho đúng việc của bạn, giữ đủ 4 khối.</li>
-    <li>Phần B: gõ 1 câu hỏi thử → <b>So sánh</b> (không có / có Phần A).</li>
-    <li>Chưa đúng ý → sửa 1 dòng ở Phần A → <b>Chạy lại</b>.</li>
-    <li>Ưng rồi → Gemini: ⚙️ cạnh tên → <b>Trí thông minh cá nhân</b> → <b>Chỉ dẫn cho Gemini</b> → dán → <b>Lưu</b>.</li>
-  </ol>
-  <div class="ai-lab"></div>
+  <span class="practice">✋ ĐẾN LƯỢT BẠN</span>
+  <div class="opener">
+    <div>
+      <h2>Bài tập</h2>
+      <p class="sub" style="font-size:30px;line-height:1.35">Bạn muốn dùng AI để học và làm việc hiệu quả hơn, mà không bị phụ thuộc.<br><b>Hãy nhờ AI giúp bạn.</b></p>
+    </div>
+    <div class="hero" aria-hidden="true"><span class="ring"></span><span class="b b1">✋</span><span class="b b2">🤖</span><span class="b b3">💡</span></div>
+  </div>
 </section>
 
 <section class="slide pp" data-s="8" id="s8-quytrinh">
   <span class="tag">8 · CÁCH TÔI XỬ LÝ</span>
-  <h2 style="font-size:42px;margin-bottom:8px">Cách tôi xử lý bài tập <span style="font:500 18px 'Segoe UI', system-ui, sans-serif;color:var(--muted);letter-spacing:0">· tư duy làm rõ yêu cầu</span></h2>
+  <h2 style="font-size:42px;margin-bottom:8px">Cách tôi xử lý bài tập</h2>
   <ol class="wf">
-    <li><span class="num sm">1</span><div><b>Làm rõ yêu cầu</b><span class="g">Mình cần gì, cho ai, để làm gì?</span></div></li>
-    <li><span class="num sm">2</span><div><b>Chưa biết mình muốn gì → chat với AI để cùng làm rõ</b><span class="g">Brainstorm: nhờ AI hỏi ngược, gợi ý hướng.</span></div></li>
-    <li><span class="num sm">3</span><div><b>Xác định kết quả mong muốn</b><span class="g">Kết quả trông thế nào: dài bao nhiêu, dạng gì.</span></div></li>
-    <li><span class="num sm">4</span><div><b>Lập plan</b><span class="g">Todo, cách làm, các bước thực hiện.</span></div></li>
-    <li><span class="num sm">5</span><div><b>Thực hiện</b><span class="g">Làm theo plan, nhờ AI soạn, mình điều chỉnh.</span></div></li>
-    <li><span class="num sm">6</span><div><b>Verify</b><span class="g">Kết quả có đúng mong đợi (expect) không?</span></div></li>
-    <li><span class="num sm goal">7</span><div><b>Check, test, kiểm tra trước khi tin</b><span class="g">Thử với trường hợp thật rồi mới dùng.</span></div></li>
+    <li><span class="num sm">1</span><div><b>Làm rõ yêu cầu</b><span class="g">Học cái gì? Làm việc gì? Để làm gì?</span></div></li>
+    <li><span class="num sm">2</span><div><b>Chưa rõ → chat với AI để brainstorm</b><span class="g">Nhờ AI hỏi ngược: "bạn đang vướng ở đâu?"</span></div></li>
+    <li><span class="num sm">3</span><div><b>Xác định kết quả mong muốn</b><span class="g">1 quy trình ngắn: AI gợi ý, tôi tự quyết.</span></div></li>
+    <li><span class="num sm">4</span><div><b>Lập plan</b><span class="g">Todo: viết hướng dẫn → thử → chỉnh.</span></div></li>
+    <li><span class="num sm">5</span><div><b>Thực hiện</b><span class="g">Viết prompt C-T-R, nhờ AI soạn.</span></div></li>
+    <li><span class="num sm">6</span><div><b>Verify</b><span class="g">Có đúng mong muốn không?</span></div></li>
+    <li><span class="num sm goal">7</span><div><b>Check, test trước khi tin</b><span class="g">Thử 1 việc thật rồi mới dùng.</span></div></li>
   </ol>
 </section>
 
@@ -1081,7 +1019,7 @@ Rules: Đoạn hướng dẫn gồm 4 khối: Vai trò, Điều cấm, Cách là
 
   // Bài thực hành: khung ① Bạn nhập / ② Gemini trả lời + nút Sao chép (ai.js), khung thử hướng dẫn cho AI
   AI.setup('.prompt');
-  AI.lab('.ai-lab');
+  if (document.querySelector('.ai-lab')) AI.lab('.ai-lab');
   AI.compare('.ai-cmp');
   AI.folds();
 
@@ -1092,7 +1030,7 @@ Rules: Đoạn hướng dẫn gồm 4 khối: Vai trò, Điều cấm, Cách là
     more.style.display = s.scrollHeight - s.clientHeight - s.scrollTop > 8 ? 'block' : 'none';
   }, 400);
 
-  // In PDF: mở hết ô bấm để mở; slide dài thì thu nhỏ cho vừa 1 trang (giữ 39 trang)
+  // In PDF: mở hết ô bấm để mở; slide dài thì thu nhỏ cho vừa 1 trang (giữ 36 trang)
   window.addEventListener('beforeprint', function () {
     document.body.classList.add('pmode');
     slides.forEach(function (s) {
