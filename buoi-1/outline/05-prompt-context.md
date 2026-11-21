@@ -9,8 +9,8 @@ Slide 18–19. Nguồn: NotebookLM, chương 2.
 - Câu chốt: Iteration là chìa khoá, phản hồi cụ thể để điều chỉnh kết quả.
 - Màu C/T/R khớp màu tô trong ví dụ slide 17.
 
-## Slide 19: Khung 4D
-- Delegation: chọn việc nào giao cho AI.
-- Description: mô tả rõ để AI hiểu đúng.
-- Discernment: đánh giá kết quả đúng, đủ chưa.
-- Diligence: cẩn trọng, tự chịu trách nhiệm với kết quả.
+## Slide 19: 4 năng lực cốt lõi khi làm việc với AI (khung 4D)
+- Delegation: quyết định việc nào giao AI, việc nào giữ cho người.
+- Description: giao tiếp hiệu quả với AI (= công thức C-T-R).
+- Discernment: đánh giá quality, accuracy, appropriateness của output.
+- Diligence: dùng AI có trách nhiệm, transparent, accountable.
