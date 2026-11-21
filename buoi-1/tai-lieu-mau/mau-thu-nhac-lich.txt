@@ -1,0 +1,12 @@
+MẪU THƯ NHẮC LỊCH HỌC
+
+Tiêu đề: Nhắc lịch buổi {số buổi} – lớp Làm việc với AI
+
+Chào {tên},
+
+Buổi {số buổi} lớp "Làm việc với AI" diễn ra lúc {giờ}, {ngày}, tại {địa điểm}.
+{1 câu riêng cho người này, dựa vào cột Ghi chú}
+Nhớ mang laptop và đăng nhập sẵn Gmail nhé.
+
+Hẹn gặp bạn!
+Người hướng dẫn

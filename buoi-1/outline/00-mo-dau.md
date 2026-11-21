@@ -1,6 +1,6 @@
 # 0. Mở đầu (3 phút)
 
-Slide 1–3. Buổi học 1 giờ, 30 slide. Slide không ghi số phút, không ghi "lớp 5": số phút và lời nói chỉ ở `outline/`.
+Slide 1–3. Buổi học 1 giờ, 33 slide. Slide không ghi số phút, không ghi "lớp 5": số phút và lời nói chỉ ở `outline/`.
 
 ## Mục tiêu
 Mục tiêu của khoá: cho học viên tư duy làm việc với AI (tư duy phản biện: không tin ngay, luôn kiểm tra). Học viên biết hôm nay học gì, học xong làm được gì.
@@ -34,17 +34,17 @@ Mục tiêu của khoá: cho học viên tư duy làm việc với AI (tư duy p
 ## Luật chơi (cuối slide 3)
 - Mở sẵn ChatGPT hoặc Gemini (bản free) trên máy.
 - Hỏi bất cứ lúc nào. Không có câu hỏi ngớ ngẩn.
-- Chỉ phần 8 có bài thực hành.
+- Phần 6 làm thật trên Gemini; phần 8 có bài thực hành.
 
-## Thời gian (khoảng 50 phút)
+## Thời gian (khoảng 54 phút)
 | Phần | Slide | Phút | Trong đó thực hành |
 |---|---|---|---|
 | 0. Mở đầu | 1–3 | 3 | – |
 | 1. Tư duy phản biện | 4–6 | 4 | – |
 | 2. AI là gì | 7–9 | 6 | – |
-| 3. Bản đồ AI | 10–11 | 3 | – |
-| 4. 5 nguyên tắc | 12–18 | 8 | – |
-| 5. Cách giao việc | 19–20 | 6 | – |
-| 6. Gemini miễn phí | 21–24 | 8 | – |
-| 7. Tổng kết | 25 | 2 | – |
-| 8. Bài tập cuối | 26–30 | 11 | 9 |
+| 3. Bản đồ AI | 10 | 2 | – |
+| 4. 5 nguyên tắc | 11–17 | 8 | – |
+| 5. Cách giao việc | 18–19 | 6 | – |
+| 6. Gemini miễn phí | 20–27 | 12 | 8 |
+| 7. Tổng kết | 28 | 2 | – |
+| 8. Bài tập cuối | 29–33 | 11 | 9 |

@@ -1,6 +1,6 @@
 # Buổi 1: Làm việc với AI — workshop 1 giờ
 
-Tài liệu cho buổi học 1 giờ (30 slide) dành cho người không rành kỹ thuật, dùng ChatGPT hoặc Gemini bản miễn phí.
+Tài liệu cho buổi học 1 giờ (33 slide) dành cho người không rành kỹ thuật, dùng ChatGPT hoặc Gemini bản miễn phí.
 
 Mục tiêu của khoá: có tư duy làm việc với AI (tư duy phản biện: không tin ngay, luôn kiểm tra).
 
@@ -19,6 +19,7 @@ Học xong, mỗi người biết:
 |---|---|---|
 | Bộ slide | [index.html](index.html) | Nút ◀ ▶ hoặc phím mũi tên · F: toàn màn hình · Ctrl + P: lưu PDF |
 | Máy trung gian Gemini | [proxy/HUONG-DAN.md](../proxy/HUONG-DAN.md) | Cho nút "Gửi cho Gemini" hỏi Gemini ngay trên trang, key không lộ |
+| File mẫu cho phần 6 | [tai-lieu-mau/](tai-lieu-mau/) | 3 file để bỏ vào Drive |
 | Dàn ý cho người dẫn | [outline/](outline/) | Lời giải thích, ví dụ, bài thực hành từng phần |
 
 Cách mở trên máy (Windows): tải repo về (nút **Code → Download ZIP**), giải nén, bấm đúp `index.html`. Không cần cài gì, không cần mạng. Nút "Gửi cho Gemini" chỉ chạy trên trang `danhbuidcn.github.io` (cần mạng); mở từ máy thì dùng nút "Chép" rồi dán sang ChatGPT, Gemini.
@@ -30,12 +31,12 @@ Cách mở trên máy (Windows): tải repo về (nút **Code → Download ZIP**
 | 0 | Mở đầu (bản đồ 8 phần) | 1–3 | 3 |
 | 1 | Tư duy phản biện (định nghĩa + link video, 3 cấp độ, cái tôi phi lý) | 4–6 | 4 |
 | 2 | AI là gì | 7–9 | 6 |
-| 3 | Bản đồ AI (4 cái tên, nhập môn Claude) | 10–11 | 3 |
-| 4 | 5 nguyên tắc (mỗi cái 1 slide + ví dụ) | 12–18 | 8 |
-| 5 | Cách giao việc (C-T-R, 4D) | 19–20 | 6 |
-| 6 | Dùng Gemini miễn phí (tài liệu, Gem, Chat/Canvas/Deep Research, riêng tư) | 21–24 | 8 |
-| 7 | Tổng kết | 25 | 2 |
-| 8 | Bài tập cuối | 26–30 | 11 |
+| 3 | Bản đồ AI (4 cái tên) | 10 | 2 |
+| 4 | 5 nguyên tắc (mỗi cái 1 slide + ví dụ) | 11–17 | 8 |
+| 5 | Cách giao việc (C-T-R, 4D) | 18–19 | 6 |
+| 6 | Dùng Gemini miễn phí (làm thật: Drive → sổ ghi chú → Instructions → gửi thư cho 3 người) | 20–27 | 12 |
+| 7 | Tổng kết | 28 | 2 |
+| 8 | Bài tập cuối | 29–33 | 11 |
 
 Số phút chỉ ghi ở đây và trong `outline/`, không ghi trên slide.
 

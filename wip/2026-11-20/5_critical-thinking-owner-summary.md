@@ -14,7 +14,9 @@ Owner (2026-11-20): tóm tắt 5 ý (không phải mù quáng hỏi mọi thứ 
 - [x] Slide 17: thực hành "Viết lại câu trả lời đầu" → ví dụ chữ: không nên (câu 1) / nên (câu 2, giữ 5 màu)
 - [x] NotebookLM (owner gửi ảnh): chương 2 → phần 5 = C-T-R + 4D (bỏ 2 từ, 5 phần, Trước và sau, 4 năng lực, thực hành); slide "Nhập môn Claude" ở phần 3; ví dụ slide 18 tô C-T-R
 - [x] Chương 3–6 → phần 6 "Dùng Gemini miễn phí": tài liệu, Gem, Chat/Canvas/Deep Research, riêng tư; bỏ "Để AI luôn nhớ" + thực hành; tổng kết lấy ý chương 6 (lặp lại nhiều, 30 ngày)
+- [x] Bỏ slide "Nhập môn Claude" và "Cho Gemini đọc tài liệu"
+- [x] Phần 6 làm thật bằng Playwright (Chrome cá nhân, owner đăng nhập): Drive thư mục + 3 file mẫu → sổ ghi chú Gemini nối Drive → Chỉ dẫn → Gemini soạn 3 thư nháp → gửi 3 thư tới +hv1/+hv2/+hv3 (về hộp thư owner). 6 slide hướng dẫn có ảnh làm mờ (buoi-1/img/), file mẫu ở buoi-1/tai-lieu-mau/
 - [x] Số slide 38 → 30: sửa tham chiếu trong deck (slide 19, 22, 24; slide 26, kiểm theo nội dung), README, outline 00–08, index gốc
 - [x] Chụp slide 4–7, kiểm tra không tràn
 ## Kết quả
-Sửa trực tiếp. 30 slide. Đã commit, chưa push. Owner sẽ nhờ ChatGPT review.
+Sửa trực tiếp. 33 slide. Đã commit, chưa push. Owner sẽ nhờ ChatGPT review.

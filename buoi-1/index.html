@@ -355,6 +355,10 @@
   .pp .ctr .card { text-align: center; } .pp .ctr .card b.t { font-size: 30px; }
   .pp .ctr .card b.t span { display: inline-block; width: 52px; border-radius: 12px; margin-right: 8px; }
   .pp .ctr .card p, .pp .d4 .card p { font-size: 21px; }
+  .pp img.shot { border-radius: 14px; border: 2px solid #e5e7eb; box-shadow: 0 6px 0 #f0e4cc; background: #fff; }
+  .pp .files3 { gap: 14px; } .pp .files3 .card { padding: 12px 14px; } .pp .files3 .card b.t { font-size: 16px; margin-bottom: 4px; }
+  .pp .files3 pre { margin: 0; font: 14px/1.4 "Segoe UI", system-ui, sans-serif; white-space: pre-wrap; }
+  .pp ol.flowsteps { margin: 10px 0; padding-left: 30px; } .pp ol.flowsteps li { font-size: 21px; margin: 6px 0; }
   .fprog { display: flex; gap: 10px; justify-content: center; margin: 0 0 6px; }
   .fprog span { width: 40px; height: 40px; border-radius: 50%; background: #e5e7eb; color: #4b5563; font: 800 15px/40px var(--serif); text-align: center; }
   .fprog span.on { background: var(--pp-coral); color: #23283b; box-shadow: 0 0 0 5px var(--pp-pink); }
@@ -543,17 +547,6 @@
   <div class="chot"><em>Cách hỏi</em> quan trọng hơn <em>chọn app</em>.<small>Buổi này chỉ dùng phần trò chuyện. Chọn 1–2 cái, dùng cho quen tay.</small></div>
 </section>
 
-<section class="slide pp" data-s="3">
-  <span class="tag">3 · BẢN ĐỒ AI</span>
-  <h2>Nhập môn Claude</h2>
-  <ul class="dot big pr5">
-    <li>Claude là trợ lý AI thiết kế cho việc cộng tác phức tạp.</li>
-    <li>Constitutional AI giữ Claude hữu ích, vô hại và trung thực.</li>
-    <li>Sonnet: cân bằng giữa tốc độ và chất lượng cho việc hằng ngày.</li>
-    <li>Extended thinking: bật cho bài toán logic hoặc lập kế hoạch khó.</li>
-  </ul>
-</section>
-
 <!-- ===================== 3. 5 NGUYÊN TẮC ===================== -->
 <section class="slide pp" data-s="4">
   <span class="tag">4 · 5 NGUYÊN TẮC</span>
@@ -663,24 +656,100 @@
 <!-- ===================== 6. GEMINI MIỄN PHÍ ===================== -->
 <section class="slide pp" data-s="6">
   <span class="tag">6 · GEMINI</span>
-  <h2>📁 Cho Gemini đọc tài liệu</h2>
-  <div class="grid g3 defs ctr">
-    <div class="card"><b class="t">📎 Tải file lên</b><p>Bấm <b>+</b> trong ô chat, chọn Word, PDF, Excel, ảnh.</p></div>
-    <div class="card"><b class="t">📋 Dán chữ</b><p>Copy nội dung, dán vào ô chat.</p></div>
-    <div class="card"><b class="t">🔗 Gmail, Drive</b><p>Gõ <b>@Gmail</b> hoặc <b>@Google Drive</b> rồi hỏi.</p></div>
-  </div>
-  <div class="chot">AI chỉ biết những gì <em>bạn đưa</em>. Đọc xong vẫn kiểm tra lại.</div>
+  <h2>Bước 1: Kho tài liệu trên Drive</h2>
+  <img class="shot" src="img/drive-folder.png" alt="Thư mục Drive có 3 file" style="width:960px;display:block;margin:0 auto">
+  <div class="chot">Tạo 1 thư mục trên <em>Google Drive</em>, bỏ 3 file vào.</div>
 </section>
 
 <section class="slide pp" data-s="6">
   <span class="tag">6 · GEMINI</span>
-  <h2>🗄️ Gem: trợ lý riêng của bạn</h2>
-  <ul class="dot big pr5">
-    <li>Gom tài liệu tham chiếu và chỉ dẫn riêng cho 1 việc.</li>
-    <li>Viết <b>chỉ dẫn</b> (instructions) 1 lần để Gemini trả lời nhất quán.</li>
-    <li>Vào lại là Gemini đã biết, không phải giải thích lại.</li>
-  </ul>
-  <div class="card mini" style="margin-top:14px;font-size:18px"><b>Ví dụ chỉ dẫn:</b> Tôi là giáo viên tiếng Anh lớp 6–7. Trả lời ngắn, có bảng, giọng thân thiện. Chưa rõ thì hỏi tôi trước.</div>
+  <h2>3 file mẫu trong thư mục</h2>
+  <div class="grid g3 files3">
+    <div class="card"><b class="t">📄 quy-dinh-lop-hoc.txt</b><pre>QUY ĐỊNH LỚP "LÀM VIỆC VỚI AI"
+
+Lịch học: 3 buổi, mỗi buổi 1 giờ.
+- Buổi 1: thứ Ba 25/11, 19h00–20h00
+- Buổi 2: thứ Ba 02/12, 19h00–20h00
+- Buổi 3: thứ Ba 09/12, 19h00–20h00
+Địa điểm: phòng 204, tầng 2, toà nhà A.
+
+Học viên cần:
+- Mang laptop, đăng nhập sẵn Gmail cá nhân.
+- Báo vắng trước ít nhất 1 ngày qua email người hướng dẫn.
+- Nộp bài tập trước 22h ngày thứ Hai trước buổi học.
+
+Vắng buổi nào: xem lại slide trên trang khoá học, hỏi lại người hướng dẫn trong buổi sau.</pre></div>
+    <div class="card"><b class="t">📄 mau-thu-nhac-lich.txt</b><pre>MẪU THƯ NHẮC LỊCH HỌC
+
+Tiêu đề: Nhắc lịch buổi {số buổi} – lớp Làm việc với AI
+
+Chào {tên},
+
+Buổi {số buổi} lớp "Làm việc với AI" diễn ra lúc {giờ}, {ngày}, tại {địa điểm}.
+{1 câu riêng cho người này, dựa vào cột Ghi chú}
+Nhớ mang laptop và đăng nhập sẵn Gmail nhé.
+
+Hẹn gặp bạn!
+Người hướng dẫn</pre></div>
+    <div class="card"><b class="t">📊 danh-sach-hoc-vien.csv</b><pre>Tên | Email | Ghi chú
+An | hocvien1@example.com | Vắng buổi 1 - cần xem lại slide trước buổi 2
+Bình | hocvien2@example.com | Muốn hỏi thêm về Gem
+Chi | hocvien3@example.com | Đã nộp bài tập buổi 1</pre></div>
+  </div>
+</section>
+
+<section class="slide pp" data-s="6">
+  <span class="tag">6 · GEMINI</span>
+  <h2>Bước 2: Nối Drive vào Gemini</h2>
+  <img class="shot" src="img/gemini-sources.png" alt="Hộp thoại Nguồn của sổ ghi chú" style="width:720px;display:block;margin:0 auto">
+  <ol class="flowsteps">
+    <li>Gemini → <b>Sổ ghi chú mới</b>, đặt tên.</li>
+    <li>Bấm <b>Thêm nguồn</b> → <b>Thêm từ Drive</b>.</li>
+    <li>Chọn 3 file → <b>Chèn</b>.</li>
+  </ol>
+  <div class="chot">Sổ ghi chú = <em>kho kiến thức</em> của Gemini.</div>
+</section>
+
+<section class="slide pp" data-s="6">
+  <span class="tag">6 · GEMINI</span>
+  <h2>Bước 3: Viết Instructions</h2>
+  <div class="row" style="gap:28px;align-items:center">
+    <img class="shot" src="img/gemini-instructions.png" alt="Ô Chỉ dẫn" style="width:400px">
+    <div style="flex:1">
+      <ol class="flowsteps"><li>Menu <b>⋮</b> → <b>Cài đặt sổ ghi chú</b>.</li><li>Dán vào ô <b>Chỉ dẫn</b> → <b>Lưu</b>.</li></ol>
+      <div class="prompt col" data-ai="off">Bạn là trợ lý của người hướng dẫn lớp "Làm việc với AI".
+Chỉ trả lời dựa trên các nguồn trong sổ ghi chú này: quy định lớp, danh sách học viên, mẫu thư.
+Viết tiếng Việt, ngắn gọn, giọng thân thiện.
+Khi viết thư: dùng đúng mẫu thư, điền tên và ghi chú của từng học viên. Mỗi thư tách riêng, ghi rõ Người nhận, Tiêu đề, Nội dung.
+Thiếu thông tin thì hỏi lại, không tự bịa.</div>
+    </div>
+  </div>
+</section>
+
+<section class="slide pp" data-s="6">
+  <span class="tag">6 · GEMINI</span>
+  <h2>Bước 4: Nhờ Gemini soạn thư</h2>
+  <div class="row" style="gap:28px;align-items:center">
+    <div style="flex:1">
+      <p style="margin:0 0 8px"><b>Gõ trong sổ ghi chú:</b></p>
+      <div class="prompt col" data-ai="off">Soạn thư nhắc lịch buổi 2 theo mẫu thư cho học viên An trong danh sách. Chỉ soạn nháp trong Gmail, tôi sẽ tự bấm gửi.</div>
+      <p style="margin:12px 0 0">Làm lần lượt với <b>An</b>, <b>Bình</b>, <b>Chi</b>: mỗi người 1 thư riêng, cùng 1 mẫu.</p>
+    </div>
+    <img class="shot" src="img/gemini-draft.png" alt="Gemini soạn thư cho An" style="width:560px">
+  </div>
+</section>
+
+<section class="slide pp" data-s="6">
+  <span class="tag">6 · GEMINI</span>
+  <h2>Bước 5: Đọc kỹ, rồi mới bấm Gửi</h2>
+  <div class="row" style="gap:28px;align-items:center">
+    <img class="shot" src="img/gmail-compose.png" alt="Thư nháp trong Gmail" style="width:340px">
+    <div style="flex:1">
+      <ol class="flowsteps"><li>Gemini chỉ tạo <b>thư nháp</b> trong Gmail.</li><li>Mở <b>Thư nháp</b>, kiểm tra người nhận, tên, nội dung.</li><li>Đúng rồi mới bấm <b>Gửi</b>.</li></ol>
+      <img class="shot" src="img/gmail-inbox.png" alt="3 thư đã nhận" style="width:540px">
+    </div>
+  </div>
+  <div class="chot">AI soạn <em>nhanh</em>. Người gửi chịu trách nhiệm là <em>bạn</em>.</div>
 </section>
 
 <section class="slide pp" data-s="6">
@@ -911,7 +980,7 @@ Tôi cho trẻ dùng 1 account Gemini riêng biệt. Liệu có cách nào khuy�
     more.style.display = s.scrollHeight - s.clientHeight - s.scrollTop > 8 ? 'block' : 'none';
   }, 400);
 
-  // In PDF: mở hết ô bấm để mở; slide dài thì thu nhỏ cho vừa 1 trang (giữ 30 trang)
+  // In PDF: mở hết ô bấm để mở; slide dài thì thu nhỏ cho vừa 1 trang (giữ 33 trang)
   window.addEventListener('beforeprint', function () {
     document.body.classList.add('pmode');
     slides.forEach(function (s) {
