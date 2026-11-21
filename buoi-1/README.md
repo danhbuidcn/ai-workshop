@@ -1,6 +1,6 @@
 # Buổi 1: Làm việc với AI — workshop 1 giờ
 
-Tài liệu cho buổi học 1 giờ (33 slide) dành cho người không rành kỹ thuật, dùng ChatGPT hoặc Gemini bản miễn phí.
+Tài liệu cho buổi học 1 giờ (34 slide) dành cho người không rành kỹ thuật, dùng ChatGPT hoặc Gemini bản miễn phí.
 
 Mục tiêu của khoá: có tư duy làm việc với AI (tư duy phản biện: không tin ngay, luôn kiểm tra).
 
@@ -34,9 +34,9 @@ Cách mở trên máy (Windows): tải repo về (nút **Code → Download ZIP**
 | 3 | Bản đồ AI (4 cái tên) | 10 | 2 |
 | 4 | 5 nguyên tắc (mỗi cái 1 slide + ví dụ) | 11–17 | 8 |
 | 5 | Cách giao việc (C-T-R, 4D) | 18–19 | 6 |
-| 6 | Dùng Gemini miễn phí (làm thật: Drive → sổ ghi chú → Instructions → gửi thư cho 3 người) | 20–27 | 12 |
-| 7 | Tổng kết | 28 | 2 |
-| 8 | Bài tập cuối | 29–33 | 11 |
+| 6 | Dùng Gemini miễn phí (làm thật: Drive → sổ ghi chú → Instructions → gửi thư cho 3 người) | 20–28 | 12 |
+| 7 | Tổng kết | 29 | 2 |
+| 8 | Bài tập cuối | 30–34 | 11 |
 
 Số phút chỉ ghi ở đây và trong `outline/`, không ghi trên slide.
 

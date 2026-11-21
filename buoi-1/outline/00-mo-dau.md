@@ -1,6 +1,6 @@
 # 0. Mở đầu (3 phút)
 
-Slide 1–3. Buổi học 1 giờ, 33 slide. Slide không ghi số phút, không ghi "lớp 5": số phút và lời nói chỉ ở `outline/`.
+Slide 1–3. Buổi học 1 giờ, 34 slide. Slide không ghi số phút, không ghi "lớp 5": số phút và lời nói chỉ ở `outline/`.
 
 ## Mục tiêu
 Mục tiêu của khoá: cho học viên tư duy làm việc với AI (tư duy phản biện: không tin ngay, luôn kiểm tra). Học viên biết hôm nay học gì, học xong làm được gì.
@@ -45,6 +45,6 @@ Mục tiêu của khoá: cho học viên tư duy làm việc với AI (tư duy p
 | 3. Bản đồ AI | 10 | 2 | – |
 | 4. 5 nguyên tắc | 11–17 | 8 | – |
 | 5. Cách giao việc | 18–19 | 6 | – |
-| 6. Gemini miễn phí | 20–27 | 12 | 8 |
-| 7. Tổng kết | 28 | 2 | – |
-| 8. Bài tập cuối | 29–33 | 11 | 9 |
+| 6. Gemini miễn phí | 20–28 | 12 | 8 |
+| 7. Tổng kết | 29 | 2 | – |
+| 8. Bài tập cuối | 30–34 | 11 | 9 |
