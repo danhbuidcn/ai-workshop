@@ -35,7 +35,7 @@ Cách mở trên máy (Windows): tải repo về (nút **Code → Download ZIP**
 | 4 | 5 nguyên tắc (mỗi cái 1 slide + ví dụ) | 14–21 | 8 |
 | 5 | Cách giao việc (C-T-R, 4 năng lực) | 22–24 | 6 |
 | 6 | Dùng Gemini miễn phí (làm thật: Drive → sổ ghi chú → Instructions → gửi thư cho 3 người) | 25–31 | 10 |
-| 7 | Tổng kết (1 slide, bấm tên phần để quay lại) | 32 | 2 |
+| 7 | Tổng kết (1 slide, mục lục bấm được) | 32 | 2 |
 | 8 | Bài tập cuối | 33–38 | 11 |
 
 Số phút chỉ ghi ở đây và trong `outline/`, không ghi trên slide.
