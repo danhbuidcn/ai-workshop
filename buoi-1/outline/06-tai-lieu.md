@@ -2,13 +2,12 @@
 
 Slide 25: chuyển phần (PHẦN 06 / 8) kèm 5 bước làm thật.
 
-Slide 25–33. Nguồn: NotebookLM chương 4 và 6, chỉ giữ phần dùng được trên Gemini bản miễn phí. Slide 26–31 làm thật bằng tài khoản Gmail cá nhân (ảnh chụp trong `img/`, đã làm mờ tên, email, ảnh đại diện).
+Slide 25–31. Nguồn: NotebookLM chương 4 và 6, chỉ giữ phần dùng được trên Gemini bản miễn phí. Slide 26–31 làm thật bằng tài khoản Gmail cá nhân (ảnh chụp trong `img/`, đã làm mờ tên, email, ảnh đại diện).
 
 | NotebookLM (Claude) | Gemini free |
 |---|---|
 | Projects + Instructions | Sổ ghi chú (Notebook) + Chỉ dẫn |
 | Connectors (Drive) | Thêm nguồn từ Drive |
-| Chat mode · Artifacts · Research mode | Chat · Canvas · Deep Research |
 | Use case lặp lại, tiết kiệm thời gian | Ví dụ: gửi thư nhắc lịch cho 3 học viên theo 1 mẫu |
 
 Bỏ: Cowork, Code, Quick Entry, Skills, Enterprise Search, Claude for Excel/Slack/Chrome (chỉ Claude hoặc cần kỹ thuật).
@@ -31,10 +30,5 @@ File mẫu để học viên tải về: [tai-lieu-mau/](../tai-lieu-mau/) (quy 
 - Gõ 1 câu cho từng học viên (An, Bình, Chi). Gemini đọc danh sách + mẫu thư, điền tên và ghi chú riêng.
 ## Slide 31: Bước 5, đọc kỹ rồi gửi
 - Gemini chỉ tạo thư nháp trong Gmail. Mở Thư nháp, kiểm tra người nhận, nội dung, rồi bấm Gửi.
-## Slide 32: 3 cách dùng Gemini
-- Chat, Canvas, Deep Research. Bản miễn phí giới hạn lượt.
-## Slide 33: Đừng đưa cho AI
-- CCCD, số tài khoản, lương từng người, sức khoẻ, mật khẩu. Đổi tên thành "Nhân viên A".
-
-## Tổng kết (slide 34) lấy từ chương 6
+## Tổng kết (slide 33) lấy từ chương 6
 - Bắt đầu: chọn việc lặp lại nhiều, tiết kiệm nhiều thời gian → dùng Gemini mỗi ngày trong 30 ngày đầu.
